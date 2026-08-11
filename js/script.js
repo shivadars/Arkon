@@ -47,13 +47,17 @@ const categories = [
     { name: "Hospital Furniture", desc: "Durable and ergonomic furniture for medical facilities.", img: "https://placehold.co/300x200/F7F8F5/17211D?text=Hospital+Furniture" }
 ];
 
-const brands = [
-    { name: "Mindray", img: "https://placehold.co/150x50/FFFFFF/17211D?text=Mindray" },
-    { name: "Philips", img: "https://placehold.co/150x50/FFFFFF/17211D?text=Philips" },
-    { name: "Dräger", img: "https://placehold.co/150x50/FFFFFF/17211D?text=Dräger" },
-    { name: "B. Braun", img: "https://placehold.co/150x50/FFFFFF/17211D?text=B.+Braun" },
-    { name: "Comen", img: "https://placehold.co/150x50/FFFFFF/17211D?text=Comen" },
-    { name: "Yuwell", img: "https://placehold.co/150x50/FFFFFF/17211D?text=Yuwell" }
+const clients = [
+    { name: "Client 1", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+1" },
+    { name: "Client 2", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+2" },
+    { name: "Client 3", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+3" },
+    { name: "Client 4", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+4" },
+    { name: "Client 5", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+5" },
+    { name: "Client 6", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+6" },
+    { name: "Client 7", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+7" },
+    { name: "Client 8", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+8" },
+    { name: "Client 9", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+9" },
+    { name: "Client 10", img: "https://placehold.co/150x80/FFFFFF/17211D?text=Client+10" }
 ];
 
 const providers = [
@@ -82,7 +86,7 @@ const stats = [
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderProducts();
-    renderBrands();
+    renderClients();
 
 
     setupPhoneLinks();
@@ -132,19 +136,22 @@ function renderProducts() {
     grid.innerHTML = html;
 }
 
-function renderBrands() {
-    const grid = document.getElementById('brands-grid');
-    if (!grid) return;
+function renderClients() {
+    const track = document.getElementById('clients-track');
+    if (!track) return;
 
     let html = '';
-    brands.forEach(brand => {
+    // Duplicate the array so the marquee loops seamlessly
+    const marqueeItems = [...clients, ...clients];
+    
+    marqueeItems.forEach(client => {
         html += `
-            <div class="brand-item">
-                <img src="${brand.img}" alt="${brand.name}">
+            <div class="client-card">
+                <img src="${client.img}" alt="${client.name}">
             </div>
         `;
     });
-    grid.innerHTML = html;
+    track.innerHTML = html;
 }
 
 function renderProviders() {
