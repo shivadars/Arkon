@@ -106,8 +106,7 @@ function renderCategories() {
                     <img src="${cat.img}" alt="${cat.name}">
                 </div>
                 <h3>${cat.name}</h3>
-                <p>${cat.desc}</p>
-                <div class="explore">Explore &rarr;</div>
+                <div class="explore">Explore Products &rarr;</div>
             </div>
         `;
     });
@@ -127,11 +126,7 @@ function renderProducts() {
                 </div>
                 <h3>${prod.name}</h3>
                 <div class="brand">Brand: ${prod.brand}</div>
-                <p>${prod.description}</p>
-                <div class="product-actions">
-                    <button class="btn btn-outline" onclick="viewProductDetails('${prod.name}')">View Details</button>
-                    <button class="btn btn-primary" onclick="openQuoteModal('${prod.name}')">Quote</button>
-                </div>
+                <div class="explore product-link">View Details &rarr;</div>
             </div>
         `;
     });
