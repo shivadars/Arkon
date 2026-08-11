@@ -83,9 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderProducts();
     renderBrands();
-    renderProviders();
-    renderStats();
-    renderServices();
+
+
     setupPhoneLinks();
 });
 

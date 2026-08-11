@@ -548,32 +548,56 @@ p { margin-bottom: 16px; color: var(--text-muted); }
 }
 
 /* About Company */
-.about-inner {
+/* About Company */
+.about-card {
     display: flex;
-    align-items: center;
-    gap: 60px;
-}
-.about-image {
-    flex: 1;
-}
-.about-image img {
-    border-radius: var(--radius-lg);
-    width: 100%;
-    box-shadow: var(--shadow-md);
+    align-items: stretch;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 .about-content {
     flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.about-title {
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.about-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
 }
 .about-list {
     list-style: none;
-    margin: 24px 0;
+    margin-bottom: 32px;
 }
 .about-list li {
-    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 12px;
     font-weight: 500;
+    color: var(--text-muted);
+}
+.about-image-container {
+    flex: 1;
+    position: relative;
+    background-color: var(--surface);
+}
+.about-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 200px 0 0 200px;
 }
 
 /* Statistics */
