@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | MediCare Solutions</title>
-    <meta name="description" content="Learn more about MediCare Solutions, your reliable partner for medical equipment and healthcare solutions.">
+    <title>About Us | Arkon Medical System</title>
+    <meta name="description" content="Learn more about Arkon Medical System, your reliable partner for medical equipment and healthcare solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         <div class="container header-inner">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/logo/logo.svg" alt="MediCare Solutions Logo" onerror="this.src='https://placehold.co/180x40/FFFFFF/075C3A?text=MediCare+Solutions'">
+                    <img src="assets/logo/Arkon.png" alt="Arkon Medical System Logo" style="height: 50px; object-fit: contain;">
                 </a>
             </div>
             <nav class="main-nav">
@@ -24,8 +24,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="products.html">Categories</a></li>
-
-
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
@@ -37,10 +35,35 @@
                       <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                     </svg>
                 </a>
-                <button class="btn btn-primary" onclick="openQuoteModal()">Request a Quote &rarr;</button>
+                <button class="btn btn-primary" onclick="openQuoteModal()">Enquire Now &rarr;</button>
             </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <div class="mobile-nav-header">
+            <img src="assets/logo/Arkon.png" alt="Arkon Medical System" style="height: 40px; object-fit: contain;">
+            <button class="mobile-nav-close" onclick="toggleMobileNav()">&times;</button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="products.html">Categories</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="mobile-nav-actions">
+            <a href="tel:+919876543210" class="mobile-nav-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +91 98765 43210
+            </a>
+            <button class="btn btn-primary" style="width: 100%;" onclick="toggleMobileNav(); openQuoteModal();">Enquire Now &rarr;</button>
+        </div>
+    </div>
 
     <main>
         <!-- 1. Split Hero Section -->
@@ -53,7 +76,7 @@
                         </div>
                         <h1 style="font-size: 48px; line-height: 1.2; margin-bottom: 16px; color: var(--text-dark);">
                             About<br>
-                            <span class="text-primary">MediCare Solutions</span>
+                            <span class="text-primary">Arkon Medical System</span>
                         </h1>
                         <h3 style="font-size: 22px; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">
                             Reliable Medical Equipment<br>For Better Healthcare
@@ -62,7 +85,7 @@
                             We are a trusted supplier of high-quality medical equipment for hospitals, clinics, laboratories and healthcare professionals. Our focus is on reliability, quality and customer satisfaction.
                         </p>
                         <div class="ah-buttons" style="display: flex; gap: 16px;">
-                            <button class="btn btn-primary" onclick="openQuoteModal()">Request a Quote &rarr;</button>
+                            <button class="btn btn-primary" onclick="openQuoteModal()">Enquire Now &rarr;</button>
                             <a href="#" onclick="contactWhatsApp()" class="btn btn-outline" style="display: flex; align-items: center; gap: 8px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                                 WhatsApp Us
@@ -89,7 +112,7 @@
                         <span class="eyebrow" style="color: var(--primary); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; display: inline-block;">WHO WE ARE</span>
                         <h2 style="font-size: 36px; line-height: 1.3; margin-bottom: 24px; color: var(--text-dark);">Committed to Quality.<br>Focused on Care.</h2>
                         <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
-                            MediCare Solutions is dedicated to providing advanced and reliable medical equipment that supports better patient care and improves healthcare outcomes.
+                            Arkon Medical System is dedicated to providing advanced and reliable medical equipment that supports better patient care and improves healthcare outcomes.
                         </p>
                         <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px;">
                             We partner with trusted manufacturers to deliver genuine products and dependable support to our customers.
@@ -124,7 +147,7 @@
     <footer class="footer" id="contact">
         <div class="container footer-grid-compact">
             <div class="footer-col-compact">
-                <img src="assets/logo/logo-white.svg" alt="MediCare Solutions" class="footer-logo-compact" onerror="this.src='https://placehold.co/120x30/054028/FFFFFF?text=MediCare'">
+                <img src="assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color: white; padding: 6px; border-radius: 4px; object-fit: contain; max-height: 50px;">
                 <p class="footer-desc">Medical equipment solutions for hospitals, clinics, laboratories and healthcare providers.</p>
                 <div class="social-icons">
                     <a href="#">f</a>
@@ -158,7 +181,7 @@
                 <h4>Support</h4>
                 <ul>
                     <li><a href="index.html#contact">Contact Us</a></li>
-                    <li><a href="#" onclick="openQuoteModal()">Request a Quote</a></li>
+                    <li><a href="#" onclick="openQuoteModal()">Enquire Now</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                     <li><a href="#">Sitemap</a></li>
@@ -169,13 +192,13 @@
                 <ul class="contact-compact">
                     <li><span class="icon">📍</span> 123, Healthcare Avenue,<br>New Delhi - 110001, India</li>
                     <li><span class="icon" style="display: inline-flex; align-items: center; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A8F55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> +91 98765 43210</li>
-                    <li><span class="icon">✉️</span> info@medicaresolutions.in</li>
+                    <li><span class="icon">✉️</span> info@arkonmedicalsystem.com</li>
                     <li><span class="icon">🕒</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom-compact">
-            &copy; 2024 MediCare Solutions. All Rights Reserved.
+            &copy; 2024 Arkon Medical System. All Rights Reserved.
         </div>
     </footer>
 
@@ -184,7 +207,7 @@
         <div class="modal-container">
             <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
             <div class="modal-header">
-                <h2>Request a Quote</h2>
+                <h2>Enquire Now</h2>
                 <p>Fill out the form below and our team will get back to you shortly.</p>
             </div>
             <form id="quoteForm" onsubmit="submitQuoteForm(event)">

@@ -607,7 +607,7 @@ const stats = [
 const testimonials = [
   {
     id: 1,
-    quote: "MediCare Solutions has completely transformed our ICU setup. Their ventilators are top-tier and incredibly reliable.",
+    quote: "Arkon Medical System has completely transformed our ICU setup. Their ventilators are top-tier and incredibly reliable.",
     name: "Dr. Rajesh Kumar",
     role: "Medical Superintendent",
     company: "City Hospital",

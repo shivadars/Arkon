@@ -1,5 +1,14 @@
 
 
+// Mobile Navigation Toggle
+function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    if (nav) {
+        nav.classList.toggle('active');
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
@@ -8,6 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonials();
 
     setupPhoneLinks();
+    
+    // Mobile Footer Accordion
+    const footerHeaders = document.querySelectorAll('.footer-col-compact h4');
+    footerHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                const parent = header.parentElement;
+                
+                // If it's not already open, close all others first
+                if (!parent.classList.contains('active')) {
+                    document.querySelectorAll('.footer-col-compact').forEach(col => {
+                        col.classList.remove('active');
+                    });
+                }
+                
+                // Toggle the clicked one
+                parent.classList.toggle('active');
+            }
+        });
+    });
 });
 
 // Render Functions
