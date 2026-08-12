@@ -651,27 +651,27 @@ function scrollSlider(containerId, direction) {
 const testimonials = [
   {
     id: 1,
-    quote: "A rare talent who bridges the gap between aesthetics and functionality with remarkable precision.",
-    name: "Sarah Chen",
-    role: "Design Director",
-    company: "Figma",
-    image: "https://plus.unsplash.com/premium_photo-1689551671541-31a345ce6ae0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyc3xlbnwwfHwwfHx8MA%3D%3D"
+    quote: "MediCare Solutions has completely transformed our ICU setup. Their ventilators are top-tier and incredibly reliable.",
+    name: "Dr. Rajesh Kumar",
+    role: "Medical Superintendent",
+    company: "City Hospital",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9jdG9yfGVufDB8fDB8fHww"
   },
   {
     id: 2,
-    quote: "Every pixel tells a story. Working together elevated our entire brand experience.",
-    name: "Marcus Webb",
-    role: "Creative Lead",
-    company: "Stripe",
-    image: "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnN8ZW58MHx8MHx8fDA%3D"
+    quote: "The after-sales support is unmatched. When we needed urgent maintenance on our anesthesia machines, their team was there within hours.",
+    name: "Sarah Fernandez",
+    role: "Head of Procurement",
+    company: "St. Mary's Clinic",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
     id: 3,
-    quote: "Transforms complex problems into elegant, intuitive solutions that users love.",
-    name: "Elena Voss",
-    role: "Head of Product",
-    company: "Linear",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyc3xlbnwwfHwwfHx8MA%3D%3D"
+    quote: "We sourced all our new diagnostic equipment through them. The quality of the HugeMed endoscopes has been fantastic for our surgical wing.",
+    name: "Dr. Arvind Patel",
+    role: "Chief Surgeon",
+    company: "Metro Health",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
   }
 ];
 
