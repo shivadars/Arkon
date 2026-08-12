@@ -357,6 +357,132 @@ const products = [
         "description": "Advanced HUV-01 from HugeMed.",
         "image": "assets/products/hugemed-huv-01.jpg",
         "price": 88000
+    },
+    {
+        "id": 39,
+        "name": "CM100",
+        "brand": "COMEN",
+        "category": "ECG",
+        "price": 45000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CM100+ECG",
+        "description": "Portable design. The first one-channel ECG machine with automatic analysis and diagnostic function, compact and portable handle, convenient for house call, AC & DC power supply.",
+        "features": [
+            "Automatic ECG wave measuring & diagnostic report printout",
+            "Complete digital design, digital filtering, auto-gain, automatically adjust baseline and switchleads",
+            "Thermal printer, 50mm paper width",
+            "Synchronically collect and enlarge 12 leads, can choose any lead to calculate rhythm",
+            "Use unique high precision digital filter to eliminate baseline drifting, EMG and other interference, easier to analyze waveforms"
+        ]
+    },
+    {
+        "id": 40,
+        "name": "CM300",
+        "brand": "COMEN",
+        "category": "ECG",
+        "price": 65000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CM300+ECG",
+        "description": "Portable digital 3 channel ECG machine with 320X240 dot single color LCD screen.",
+        "features": [
+            "12-lead ECG simulataneous acquisition",
+            "Anti-defibrillation",
+            "Completely digital filter, resist baseline drift",
+            "Automatic baseline adjustment",
+            "Automatic ECG measurement and interpretation",
+            "Large patient data storage",
+            "Automatic system of a base line fluctuation compensation",
+            "Pacementmaker detectable",
+            "Support cleaning with disinfection solutions"
+        ]
+    },
+    {
+        "id": 41,
+        "name": "CM600",
+        "brand": "COMEN",
+        "category": "ECG",
+        "price": 125000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CM600+ECG",
+        "description": "Six-channel ECG with portable and lightweight handle design, perfect for house calls.",
+        "features": [
+            "Automatic measurement and interpretation",
+            "Manual/Auto/Rhythm modes selectable",
+            "Light and small, handle design, portable for house calls"
+        ],
+        "advancedSections": [
+            {
+                "title": "Record",
+                "points": [
+                    "110mm width folded or roll paper",
+                    "Printing format 6 X 2, 6 X 2+1R, 3 X 4, 3 X 4+1R 3 X 4+3R to meet different needs"
+                ]
+            },
+            {
+                "title": "Thermal printer",
+                "points": [
+                    "Intellectualized paper calibration function solve paper jam and paper deflection problems"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "name": "CM1200B",
+        "brand": "COMEN",
+        "category": "ECG",
+        "price": 185000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CM1200B+ECG",
+        "description": "Twelve-channel ECG with high performance and accurate measurement. Time constant≥5s, stand voltage≥±650mv, providing a strong guarantee for accurate measurement.",
+        "features": [
+            "5.7 inch TFT color screen",
+            "Lead status indication",
+            "Simple & clear keyboard layout, back light support",
+            "Internal memory of 300 ECG records",
+            "High accurate digital filter (EMG filter, AC filter, Drift filter, lowpass filter)",
+            "122 kinds of diagnosis report",
+            "120 seconds ECG waveforms review and print",
+            "Support 210mm rolling, Z-folded paper",
+            "USB port for external printer connection & data transmission",
+            "PC-ECG management system",
+            "Working mode: Auto, Manual, Rhythm"
+        ]
+    },
+    {
+        "id": 43,
+        "name": "CM1200A",
+        "brand": "COMEN",
+        "category": "ECG",
+        "price": 245000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CM1200A+ECG",
+        "description": "Twelve-channel ECG. Uses 12-lead ECG module and Comen's unique high precision digital filter to synchronically collect, enlarge and process 12 leads, eliminating external interference.",
+        "features": [
+            "8.4\" TFT touch screen, ECG operation via alphanumeric keyboard, function keyboard and touch screen buttons",
+            "Intellectualized paper calibration function solve paper jam and paper deflection problems",
+            "Convenient for house call"
+        ],
+        "advancedSections": [
+            {
+                "title": "Various Formats",
+                "points": [
+                    "Various Formats: 3×4, 3×4+1R, 3×4+3R, 6×2, 6×2+1R, 12×1, 12×1+T",
+                    "1min record of rhythm and leads, average template, Minnesota code etc., diagnosis report & picture printout"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "name": "CM1200",
+        "brand": "COMEN",
+        "category": "ECG",
+        "price": 325000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CM1200+ECG",
+        "description": "High Performance in a compact device. Folding-up 12.1” color TFT screen provides multi-angle observation. Touch screen and hand-writing pen enable easier operation control and quicker information input.",
+        "features": [
+            "Multi-language interfaces selection",
+            "Multi-size recording paper selectable",
+            "Intellectualized recording calibration system can solve the ECG paper jam, paper deflection problems completely",
+            "Advanced information-based solutions can realize paperless report and long-distance diagnose",
+            "World first-class standard 12-channel ECG machine"
+        ]
     }
 ];
 

@@ -266,7 +266,7 @@ p { margin-bottom: 16px; color: var(--text-muted); }
 /* Hero */
 .hero {
     background-color: var(--background);
-    padding: 80px 0;
+    padding: 40px 0 80px;
     overflow: hidden;
 }
 .hero-inner {
@@ -1563,7 +1563,8 @@ p { margin-bottom: 16px; color: var(--text-muted); }
 .product-detail-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    column-gap: 60px;
+    row-gap: 24px;
 }
 .pd-image-col {
     display: flex;
@@ -1706,7 +1707,7 @@ p { margin-bottom: 16px; color: var(--text-muted); }
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 0;
 }
 .info-box {
     background: white;
@@ -1833,5 +1834,13 @@ p { margin-bottom: 16px; color: var(--text-muted); }
     }
     .hero-buttons .btn {
         width: 100%;
+    }
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+    .trust-badges {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
     }
 }

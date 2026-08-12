@@ -211,40 +211,43 @@
             // Generate description HTML & Key Features
             let descriptionHtml = '';
             let featuresHtml = '';
+            let advancedSectionsHtml = '';
             const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
             
+            // Description (handle both string and array for backwards compatibility)
             if (Array.isArray(product.description)) {
-                // Use first string as short description, and all strings as feature list
                 descriptionHtml = `<p>${product.description[0]}</p>`;
+            } else {
+                const desc = product.description || 'Professional medical equipment designed for maximum reliability and ease of use in clinical settings.';
+                descriptionHtml = `<p>${desc}</p>`;
+            }
+
+            // Features (handle both new 'features' array and old 'description' array)
+            if (product.features && Array.isArray(product.features)) {
+                product.features.forEach(f => {
+                    featuresHtml += `<li>${checkIcon} ${f}</li>`;
+                });
+            } else if (Array.isArray(product.description)) {
                 product.description.forEach(p => {
                     featuresHtml += `<li>${checkIcon} ${p}</li>`;
                 });
             } else {
                 const desc = product.description || 'Professional medical equipment designed for maximum reliability and ease of use in clinical settings.';
-                descriptionHtml = `<p>${desc}</p>`;
                 featuresHtml = `<li>${checkIcon} ${desc}</li>`;
             }
 
-            // Find 4 related products
-            const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
-            let relatedHtml = '';
-            if (related.length > 0) {
-                relatedHtml = `
-                    <div class="related-section" style="grid-column: 1 / -1;">
-                        <h3>Related Products</h3>
-                        <div class="related-grid">
-                            ${related.map(r => `
-                                <div class="product-card" style="cursor:pointer;" onclick="window.location.href='product-detail.html?id=${r.id}'">
-                                    <div class="img-wrapper">
-                                        <img src="${r.image}" alt="${r.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
-                                    </div>
-                                    <h3>${r.name}</h3>
-                                    <div class="price">${r.price ? '₹ ' + r.price.toLocaleString('en-IN') : 'Contact for Price'}</div>
-                                </div>
-                            `).join('')}
+            // Advanced Sections
+            if (product.advancedSections && Array.isArray(product.advancedSections)) {
+                product.advancedSections.forEach(section => {
+                    advancedSectionsHtml += `
+                        <div style="margin-top: 24px;">
+                            <h4 style="margin-bottom: 12px; color: var(--text-dark); border-bottom: 1px solid var(--border); padding-bottom: 8px; font-size: 16px;">${section.title}</h4>
+                            <ul class="feature-list">
+                                ${section.points.map(p => `<li>${checkIcon} ${p}</li>`).join('')}
+                            </ul>
                         </div>
-                    </div>
-                `;
+                    `;
+                });
             }
 
             // Render Product
@@ -302,10 +305,9 @@
                         <div class="specs-table">
                             ${specsHtml}
                         </div>
+                        ${advancedSectionsHtml}
                     </div>
                 </div>
-
-                ${relatedHtml}
             `;
         });
     </script>
