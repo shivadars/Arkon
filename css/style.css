@@ -138,6 +138,14 @@ p {
     font-size: 18px;
 }
 
+.text-primary {
+    color: var(--primary);
+}
+
+.text-primary-light {
+    color: #E8F3EC;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -401,6 +409,31 @@ p {
     width: 100%;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+}
+
+/* Hero Banner Overlay */
+.hero-banner {
+    background: url('../assets/bg/banner1.png');
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+}
+
+.hero-banner .hero-inner {
+    display: block; /* Remove flex split */
+}
+
+.hero-banner .hero-content {
+    max-width: 650px;
+}
+
+.hero-dark-text {
+    color: var(--text) !important;
+}
+
+.hero-banner .eyebrow {
+    color: var(--primary); /* Dark green for light background */
 }
 
 /* Trust Bar */
