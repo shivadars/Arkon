@@ -44,7 +44,8 @@
     <main class="page-main bg-light">
 
 
-        <section class="page-content section-spacing">
+        <section class="page-content section-spacing" style="padding-top: 30px;">
+
             <div class="container products-layout">
                 <aside class="products-sidebar">
                     <div class="sidebar-section category-section">
@@ -56,14 +57,20 @@
                             <!-- Populated by JS -->
                         </div>
                     </div>
+                    
+
 
                 </aside>
 
                 <!-- Main Content -->
                 <div class="products-content">
-                    <div class="products-topbar">
-                        <div class="results-count" id="results-count">Showing 1-12 of 24 products</div>
+                    <div class="category-header-block" id="category-header-block">
+                        <!-- Populated by JS -->
+                    </div>
 
+                    <div class="search-container-large" style="margin-bottom: 24px;">
+                        <span class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                        <input type="text" id="product-search" class="form-control" placeholder="Search monitors, ventilators, and more...">
                     </div>
                     
                     <div class="products-main" id="page-product-grid">
@@ -330,6 +337,33 @@
                 
 
                 const totalItems = filtered.length;
+
+                // Update Category Header
+                const headerBlock = document.getElementById('category-header-block');
+                if (headerBlock) {
+                    if (activeCategories.length === 1) {
+                        const catData = categories.find(c => c.name === activeCategories[0]);
+                        if (catData) {
+                            headerBlock.innerHTML = `
+                                <div class="breadcrumbs"><a href="index.html">Home</a> &gt; <a href="products.html">Categories</a> &gt; ${catData.name}</div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px;">
+                                    <h1 style="margin-bottom: 0;">${catData.name} Equipment</h1>
+                                    <div class="meta">${totalItems} Products</div>
+                                </div>
+                                <p style="margin-bottom: 0;">${catData.desc}</p>
+                            `;
+                        }
+                    } else {
+                        headerBlock.innerHTML = `
+                            <div class="breadcrumbs"><a href="index.html">Home</a> &gt; <a href="products.html">Categories</a> &gt; All Products</div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px;">
+                                <h1 style="margin-bottom: 0;">All Medical Equipment</h1>
+                                <div class="meta">${totalItems} Products</div>
+                            </div>
+                            <p style="margin-bottom: 0;">Explore our comprehensive range of high-quality medical equipment, devices, and solutions for all your healthcare needs.</p>
+                        `;
+                    }
+                }
                 
                 if (totalItems === 0) {
                     grid.innerHTML = `
@@ -340,7 +374,6 @@
                             <button class="btn btn-outline" onclick="document.getElementById('clear-filters-btn').click()" style="margin-top: 16px;">Clear Filters</button>
                         </div>
                     `;
-                    resultsCount.textContent = 'Showing 0 products';
                     paginationContainer.innerHTML = '';
                     return;
                 }
@@ -349,8 +382,6 @@
                 const totalPages = Math.ceil(totalItems / itemsPerPage);
                 const startIndex = (currentPage - 1) * itemsPerPage;
                 const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
-                
-                resultsCount.textContent = `Showing ${startIndex + 1}-${endIndex} of ${totalItems} products`;
                 
                 const currentItems = filtered.slice(startIndex, endIndex);
 
@@ -370,7 +401,6 @@
                                 <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
                             <h3>${prod.name}</h3>
-                            <div class="brand">Brand: ${prod.brand}</div>
                             <div class="price">${formatPrice(prod.price)}</div>
                             <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary);" onclick="openQuoteModal('${prod.name}')">View Details</button>
                         </div>

@@ -46,7 +46,6 @@ function renderProducts() {
                     <img src="${prod.image}" alt="${prod.name}">
                 </div>
                 <h3>${prod.name}</h3>
-                <div class="brand">Brand: ${prod.brand}</div>
                 <div class="explore product-link">View Details &rarr;</div>
             </div>
         `;
