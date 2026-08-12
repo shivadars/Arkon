@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail | MediCare Solutions</title>
+    <meta name="description" content="Product details for MediCare Solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo/logo.svg" alt="MediCare Solutions Logo" onerror="this.src='https://placehold.co/180x40/FFFFFF/075C3A?text=MediCare+Solutions'">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="products.html">Categories</a></li>
+                    <li><a href="index.html#brands">Brands</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <span class="header-phone"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A8F55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 98765 43210</span>
+                <a href="#" onclick="contactWhatsApp()" class="whatsapp-icon" title="WhatsApp Us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0A8F55" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
+                </a>
+                <button class="btn btn-primary" onclick="openQuoteModal()">Request a Quote &rarr;</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-content section-spacing" style="padding-top: 30px; min-height: 70vh;">
+            <div class="container">
+                <div class="breadcrumbs" id="pd-breadcrumbs" style="margin-bottom: 24px;">
+                    <a href="index.html">Home</a> &gt; <a href="products.html">Products</a>
+                </div>
+                
+                <div class="product-detail-layout" id="product-detail-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-grid-compact">
+            <div class="footer-col-compact">
+                <img src="assets/logo/logo-white.svg" alt="MediCare Solutions" class="footer-logo-compact" onerror="this.src='https://placehold.co/120x30/054028/FFFFFF?text=MediCare'">
+                <p class="footer-desc">Medical equipment solutions for hospitals, clinics, laboratories and healthcare providers.</p>
+                <div class="social-icons">
+                    <a href="#">f</a>
+                    <a href="#">in</a>
+                    <a href="#">ig</a>
+                    <a href="#">yt</a>
+                </div>
+            </div>
+            <div class="footer-col-compact">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="products.html?category=ICU%20Equipment">ICU Equipment</a></li>
+                    <li><a href="products.html?category=Diagnostic%20Equipment">Diagnostic Equipment</a></li>
+                    <li><a href="products.html?category=Laboratory%20Equipment">Laboratory Equipment</a></li>
+                    <li><a href="products.html?category=Surgical%20Equipment">Surgical Equipment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-compact">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Our Brands</a></li>
+                    <li><a href="#">Why Choose Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-compact">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Request a Quote</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-compact">
+                <h4>Contact Us</h4>
+                <ul class="contact-compact">
+                    <li><span class="icon">dY"?</span> 123, Healthcare Avenue,<br>New Delhi - 110001, India</li>
+                    <li><span class="icon">o%,?</span> info@medicaresolutions.in</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-compact">
+            &copy; 2024 MediCare Solutions. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+            <div class="modal-header">
+                <h2>Request a Quote</h2>
+                <p>Fill out the form below and our team will get back to you shortly.</p>
+            </div>
+            <form id="quoteForm" onsubmit="submitQuoteForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quoteName">Name *</label>
+                        <input type="text" id="quoteName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quoteCompany">Company / Hospital</label>
+                        <input type="text" id="quoteCompany" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quotePhone">Phone *</label>
+                        <input type="tel" id="quotePhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quoteEmail">Email</label>
+                        <input type="email" id="quoteEmail" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quoteProduct">Product of Interest</label>
+                    <input type="text" id="quoteProduct" class="form-control">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quoteQuantity">Quantity</label>
+                        <input type="number" id="quoteQuantity" class="form-control" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="quoteLocation">Location</label>
+                        <input type="text" id="quoteLocation" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quoteMessage">Message</label>
+                    <textarea id="quoteMessage" class="form-control" rows="4"></textarea>
+                </div>
+                <div id="formSuccess" class="form-success" style="display: none; color: var(--secondary); margin-bottom: 16px; font-weight: 500;">
+                    Your enquiry has been submitted successfully! We will contact you soon.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeQuoteModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+            const container = document.getElementById('product-detail-container');
+            const breadcrumbs = document.getElementById('pd-breadcrumbs');
+
+            if (!productId || isNaN(productId)) {
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1 / -1;"><h3>Product Not Found</h3><p>The product you are looking for does not exist or has been removed.</p><a href="products.html" class="btn btn-primary" style="margin-top: 16px;">Back to Products</a></div>';
+                return;
+            }
+
+            const product = products.find(p => p.id === productId);
+
+            if (!product) {
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1 / -1;"><h3>Product Not Found</h3><p>The product you are looking for does not exist or has been removed.</p><a href="products.html" class="btn btn-primary" style="margin-top: 16px;">Back to Products</a></div>';
+                return;
+            }
+
+            // Generate mock specs since data.js doesn't have detailed specs
+            const mockSpecs = [
+                { label: 'Brand', value: product.brand },
+                { label: 'Category', value: product.category },
+                { label: 'Power Supply', value: 'AC 100-240V, 50/60Hz' },
+                { label: 'Warranty', value: '1 Year Manufacturer Warranty' },
+                { label: 'Certifications', value: 'CE, ISO 13485' },
+                { label: 'Delivery Time', value: '7-14 Business Days' }
+            ];
+            
+            let specsHtml = '';
+            mockSpecs.forEach(spec => {
+                specsHtml += `<div class="spec-row"><div class="spec-label">${spec.label}</div><div class="spec-value">${spec.value}</div></div>`;
+            });
+
+            // Update Breadcrumbs
+            breadcrumbs.innerHTML = `<a href="index.html">Home</a> &gt; <a href="products.html">Products</a> &gt; <a href="products.html?category=${encodeURIComponent(product.category)}">${product.category}</a> &gt; ${product.name}`;
+            document.title = product.name + ' | MediCare Solutions';
+
+            // Generate description HTML & Key Features
+            let descriptionHtml = '';
+            let featuresHtml = '';
+            const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+            
+            if (Array.isArray(product.description)) {
+                // Use first string as short description, and all strings as feature list
+                descriptionHtml = `<p>${product.description[0]}</p>`;
+                product.description.forEach(p => {
+                    featuresHtml += `<li>${checkIcon} ${p}</li>`;
+                });
+            } else {
+                const desc = product.description || 'Professional medical equipment designed for maximum reliability and ease of use in clinical settings.';
+                descriptionHtml = `<p>${desc}</p>`;
+                featuresHtml = `<li>${checkIcon} ${desc}</li>`;
+            }
+
+            // Find 4 related products
+            const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+            let relatedHtml = '';
+            if (related.length > 0) {
+                relatedHtml = `
+                    <div class="related-section" style="grid-column: 1 / -1;">
+                        <h3>Related Products</h3>
+                        <div class="related-grid">
+                            ${related.map(r => `
+                                <div class="product-card" style="cursor:pointer;" onclick="window.location.href='product-detail.html?id=${r.id}'">
+                                    <div class="img-wrapper">
+                                        <img src="${r.image}" alt="${r.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
+                                    </div>
+                                    <h3>${r.name}</h3>
+                                    <div class="price">${r.price ? '₹ ' + r.price.toLocaleString('en-IN') : 'Contact for Price'}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Render Product
+            container.innerHTML = `
+                <div class="pd-image-col">
+                    <div class="pd-main-image">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/800x800/E8F3EC/075C3A?text=Product'">
+                    </div>
+                </div>
+                <div class="pd-info-col">
+                    <div class="pd-badge-wrapper">
+                        <span class="badge in-stock">In Stock</span>
+                    </div>
+                    <h1 class="pd-title">${product.name}</h1>
+                    <div class="pd-rating">
+                        <span class="stars">★★★★★</span> 4.8 (24 Reviews)
+                    </div>
+                    <div class="pd-meta-table">
+                        <div class="pd-meta-label">Brand:</div>
+                        <div class="pd-meta-value">${product.brand}</div>
+                        <div class="pd-meta-label">Category:</div>
+                        <div class="pd-meta-value">${product.category}</div>
+                        <div class="pd-meta-label">Model:</div>
+                        <div class="pd-meta-value">${product.name.replace(/[^a-zA-Z0-9]/g, '').substring(0,6).toUpperCase()}-X</div>
+                        <div class="pd-meta-label">Availability:</div>
+                        <div class="pd-meta-value" style="color: #075C3A; font-weight:600;">In Stock</div>
+                    </div>
+                    
+                    <div class="pd-description" style="margin-bottom:24px; padding-bottom: 0; border: none;">
+                        ${descriptionHtml}
+                    </div>
+
+                    <div class="pd-action-btns">
+                        <button class="btn btn-primary" onclick="openQuoteModal('${product.name}')">Request Quote &rarr;</button>
+                        <button class="btn btn-outline" onclick="contactWhatsApp()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg> WhatsApp</button>
+                        <button class="btn btn-outline"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Us</button>
+                    </div>
+
+                    <div class="trust-badges">
+                        <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Expert Support</div>
+                        <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Secure Delivery</div>
+                        <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 1 Year Warranty</div>
+                    </div>
+                </div>
+
+                <div class="info-grid-section" style="grid-column: 1 / -1;">
+                    <div class="info-box">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            ${featuresHtml}
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Technical Specifications</h3>
+                        <div class="specs-table">
+                            ${specsHtml}
+                        </div>
+                    </div>
+                </div>
+
+                ${relatedHtml}
+            `;
+        });
+    </script>
+</body>
+</html>

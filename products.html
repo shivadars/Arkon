@@ -402,7 +402,7 @@
                             </div>
                             <h3>${prod.name}</h3>
                             <div class="price">${formatPrice(prod.price)}</div>
-                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary);" onclick="openQuoteModal('${prod.name}')">View Details</button>
+                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary);" onclick="window.location.href='product-detail.html?id=${prod.id}'">View Details</button>
                         </div>
                     `;
                 });

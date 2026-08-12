@@ -46,7 +46,7 @@ function renderProducts() {
                     <img src="${prod.image}" alt="${prod.name}">
                 </div>
                 <h3>${prod.name}</h3>
-                <div class="explore product-link">View Details &rarr;</div>
+                <div class="explore product-link" onclick="window.location.href='product-detail.html?id=${prod.id}'">View Details &rarr;</div>
             </div>
         `;
     });

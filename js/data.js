@@ -9,7 +9,11 @@ const products = [
         "name": "V8",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced V8 from COMEN.",
+        "description": [
+            "The COMEN V8 is a highly advanced modular patient monitor designed for high-acuity environments like Intensive Care Units and Emergency Departments.",
+            "It features a massive, high-definition touchscreen interface that allows clinicians to easily track 12-lead ECG, SpO2, NIBP, and advanced hemodynamic parameters in real-time.",
+            "Built with a plug-and-play module rack, the V8 provides ultimate flexibility, allowing hospitals to customize the monitor exactly to their specific clinical needs without purchasing entirely new systems."
+        ],
         "image": "assets/products/comen-v8.jpg",
         "price": 137000
     },
@@ -18,7 +22,11 @@ const products = [
         "name": "V3 / V3 Pro",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced V3 / V3 Pro from COMEN.",
+        "description": [
+            "The V3 and V3 Pro are versatile, compact patient monitors perfectly suited for general wards, outpatient clinics, and continuous transport monitoring.",
+            "Equipped with a long-lasting internal battery and a rugged, drop-resistant casing, these monitors ensure continuous patient surveillance even while in transit.",
+            "The Pro version adds specialized modules for End-tidal CO2 monitoring, making it an indispensable tool for post-operative care and procedural sedation."
+        ],
         "image": "assets/products/comen-v3-v3-pro.jpg",
         "price": 155000
     },
@@ -27,7 +35,11 @@ const products = [
         "name": "NV10",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced NV10 from COMEN.",
+        "description": [
+            "The COMEN NV10 is a dedicated non-invasive ventilation (NIV) solution engineered to provide exceptional respiratory support without the need for intubation.",
+            "It utilizes advanced leak-compensation algorithms and highly responsive triggers to ensure perfect patient-ventilator synchrony and maximize patient comfort.",
+            "With its intuitive touchscreen interface and comprehensive monitoring capabilities, the NV10 allows respiratory therapists to quickly adjust therapy and respond to changing patient needs."
+        ],
         "image": "assets/products/comen-nv10.jpg",
         "price": 66000
     },
