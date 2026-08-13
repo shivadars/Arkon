@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -72,7 +73,7 @@
 
         <section class="page-content section-spacing" style="padding-top: 30px;">
 
-            <div class="container products-layout">
+            <div class="container products-layout" data-aos="fade-up">
                 <button class="mobile-filter-toggle" onclick="document.querySelector('.products-sidebar').classList.toggle('show-mobile'); this.textContent = document.querySelector('.products-sidebar').classList.contains('show-mobile') ? '✕ Hide Categories' : '☰ Show Categories';">
                     ☰ Show Categories
                 </button>
@@ -472,6 +473,14 @@
             // Initialization
             renderFilters();
             renderProductGrid();
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
         });
     </script>
 </body>

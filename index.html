@@ -9,8 +9,8 @@
         content="Reliable medical equipment and healthcare solutions for hospitals, clinics, laboratories and healthcare institutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -81,7 +81,7 @@
         <!-- Hero Section -->
         <section class="hero hero-banner">
             <div class="container hero-inner">
-                <div class="hero-content">
+                <div class="hero-content" data-aos="fade-up">
                     <span class="eyebrow">PREMIUM QUALITY</span>
                     <h1 class="hero-dark-text">Reliable Medical Equipment<br>for <span class="text-secondary">Better Healthcare</span></h1>
                     <p class="hero-dark-text">We provide high-quality medical equipment and healthcare solutions for hospitals, clinics,
@@ -102,12 +102,12 @@
         <!-- Categories Section -->
         <section class="categories section-spacing" id="categories">
             <div class="container">
-                <div class="section-header header-grid">
+                <div class="section-header header-grid" data-aos="fade-up">
                     <div></div> <!-- spacer for grid centering -->
                     <h2>Explore Our Categories</h2>
                     <a href="products.html" class="link-action">View All Categories &rarr;</a>
                 </div>
-                <div class="slider-wrapper">
+                <div class="slider-wrapper" data-aos="fade-up" data-aos-delay="100">
                     <button class="slider-btn prev" onclick="scrollSlider('category-grid', -1)">&#10094;</button>
                     <div class="category-grid slider-container" id="category-grid">
                         <!-- Populated by JS -->
@@ -120,12 +120,12 @@
         <!-- Featured Products -->
         <section class="featured-products section-spacing" id="products">
             <div class="container">
-                <div class="section-header header-grid">
+                <div class="section-header header-grid" data-aos="fade-up">
                     <div></div> <!-- spacer for grid centering -->
                     <h2>Featured Products</h2>
                     <a href="products.html" class="link-action">View All Products &rarr;</a>
                 </div>
-                <div class="slider-wrapper">
+                <div class="slider-wrapper" data-aos="fade-up" data-aos-delay="100">
                     <button class="slider-btn prev" onclick="scrollSlider('product-grid', -1)">&#10094;</button>
                     <div class="product-grid slider-container" id="product-grid">
                         <!-- Populated by JS -->
@@ -138,10 +138,10 @@
         <!-- Why Choose Us -->
         <section class="why-choose-us bg-light">
             <div class="container">
-                <div class="section-header header-centered">
+                <div class="section-header header-centered" data-aos="fade-up">
                     <h2>Why Choose Arkon Medical System?</h2>
                 </div>
-                <div class="why-grid">
+                <div class="why-grid" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-item">
                         <div class="why-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
@@ -226,11 +226,11 @@
         <!-- Our Clients -->
         <section class="clients bg-light" id="clients">
             <div class="container">
-                <div class="section-header header-centered">
+                <div class="section-header header-centered" data-aos="fade-up">
                     <h2>Our Clients</h2>
                 </div>
             </div>
-            <div class="marquee-container">
+            <div class="marquee-container" data-aos="fade-in" data-aos-delay="100">
                 <div class="marquee-track" id="clients-track">
                     <!-- Populated by JS -->
                 </div>
@@ -241,7 +241,7 @@
         <!-- About Company -->
         <section class="about section-spacing" id="about">
             <div class="container">
-                <div class="about-card">
+                <div class="about-card" data-aos="fade-up">
                     <div class="about-content">
                         <h3 class="about-title">About Arkon Medical System</h3>
                         <p>We are a trusted medical equipment supplier committed to improving healthcare delivery by
@@ -266,10 +266,10 @@
         <!-- Testimonials -->
         <section class="testimonials-split section-spacing" id="testimonials">
             <div class="container">
-                <div class="section-header center">
+                <div class="section-header center" data-aos="fade-up">
                     <h2>What Our Clients Say</h2>
                 </div>
-                <div class="ts-wrapper" id="ts-wrapper">
+                <div class="ts-wrapper" id="ts-wrapper" data-aos="fade-up" data-aos-delay="100">
                     <!-- Left: Quote Content -->
                     <div class="ts-left">
                         <!-- Company Tag -->
@@ -322,7 +322,7 @@
 
         <!-- Final CTA -->
         <section class="final-cta">
-            <div class="container cta-container">
+            <div class="container cta-container" data-aos="zoom-in">
                 <img src="assets/bg/cta-outline-1.png" class="cta-bg-img left" alt=""
                     style="opacity: 0.15; height: 160px; mix-blend-mode: multiply; filter: contrast(1.2);">
                 <div class="cta-content">
@@ -492,6 +492,14 @@
 
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+    </script>
 </body>
 
 </html>
