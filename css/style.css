@@ -3234,3 +3234,118 @@ p {
     50% { transform: scale(1.05); opacity: 1; }
     100% { transform: scale(0.95); opacity: 0.8; }
 }
+
+/* ------------------------------------------- */
+/* Pop-out Contact Section                     */
+/* ------------------------------------------- */
+
+.popout-contact-section {
+    background-color: var(--background);
+    position: relative;
+    padding: 60px 0;
+}
+
+.popout-contact-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Left Side: Image */
+.popout-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.popout-image-wrapper img {
+    width: 100%;
+    max-width: 450px;
+    display: inline-block;
+}
+
+/* Right Side: Form */
+.popout-form-wrapper {
+    flex: 1;
+    color: var(--text);
+}
+
+.popout-form-wrapper h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.popout-form-wrapper h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.popout-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.popout-input {
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.popout-input::placeholder {
+    color: var(--text-muted);
+}
+
+.popout-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(49, 59, 130, 0.1);
+}
+
+.btn-white-solid {
+    background-color: var(--primary);
+    color: white;
+    padding: 16px 40px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-white-solid:hover {
+    background-color: var(--primary-hover);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 992px) {
+    .popout-contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .popout-image-wrapper {
+        margin-top: -120px;
+        margin-bottom: 20px;
+    }
+    .popout-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
