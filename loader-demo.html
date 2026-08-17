@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkon Loader Demo</title>
+    <style>
+        :root {
+            --primary: #075C3A;
+            --primary-light: #0d8a58;
+            --background: #f4f7f6;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--background);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent scrolling while loading */
+        }
+
+        /* The loader overlay */
+        #page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s cubic-bezier(0.8, 0, 0.2, 1), visibility 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+        }
+
+        /* Container for the logo and the spinning circle */
+        .loader-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The logo inside */
+        .loader-logo {
+            width: 90px;
+            height: auto;
+            z-index: 2;
+            animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* The outer spinning circle */
+        .loader-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary);
+            border-bottom-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+        
+        /* The inner spinning circle (spins opposite way) */
+        .loader-circle::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 3px solid transparent;
+            border-left-color: var(--primary-light);
+            border-right-color: var(--primary-light);
+            border-radius: 50%;
+            animation: spin-reverse 1.5s linear infinite;
+        }
+
+        /* Inner subtle dot that rotates */
+        .loader-circle::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(7, 92, 58, 0.8);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes spin-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        /* Mock content */
+        .content {
+            padding: 50px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Utility class to hide the loader */
+        .loader-hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader Structure -->
+    <div id="page-loader">
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <!-- Using the existing logo -->
+            <img src="assets/logo/Arkon.png" alt="Arkon Logo" class="loader-logo">
+        </div>
+    </div>
+
+    <div class="content" id="main-content">
+        <h1>Welcome to Arkon</h1>
+        <p>The loader disappears after 3 seconds for this demonstration, revealing the content below.</p>
+        <button onclick="location.reload()" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">Replay Loader</button>
+    </div>
+
+    <script>
+        // Simulate a page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('page-loader');
+                const content = document.getElementById('main-content');
+                
+                // Hide loader
+                loader.classList.add('loader-hidden');
+                
+                // Allow scrolling again
+                document.body.style.overflow = 'auto';
+                
+                // Show content
+                content.classList.add('visible');
+            }, 3000); // 3 second demo
+        });
+    </script>
+</body>
+</html>

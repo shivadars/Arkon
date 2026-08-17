@@ -360,3 +360,14 @@ function updateTestimonialContent(index) {
         image.alt = t.name;
     }
 }
+
+// Page Loader Logic
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('page-loader');
+        if (loader) {
+            loader.classList.add('loader-hidden');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    }, 1500); // 1.5 seconds delay
+});
