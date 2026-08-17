@@ -369,5 +369,5 @@ window.addEventListener('load', () => {
             loader.classList.add('loader-hidden');
             document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
-    }, 1500); // 1.5 seconds delay
+    }, 1000); // 1.0 seconds delay
 });

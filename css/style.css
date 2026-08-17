@@ -1,8 +1,8 @@
 :root {
-    --primary: #075C3A;
-    --primary-light: #E8F3EC;
-    --primary-hover: #064A2E;
-    --secondary: #0A8F55;
+    --primary: #313B82;
+    --primary-light: #E8EAF6;
+    --primary-hover: #262D66;
+    --secondary: #607D8B;
     --background: #F7F8F5;
     --surface: #FFFFFF;
     --text: #17211D;
@@ -1289,16 +1289,16 @@ p {
 
 /* Footer */
 .footer {
-    background-color: #0d4d33;
+    background-color: var(--primary);
     color: white;
-    padding: 32px 0 16px;
+    padding: 20px 0 10px;
     font-size: 14px;
 }
 
 .footer-grid-compact {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .footer-col-compact {
@@ -1317,12 +1317,12 @@ p {
 
 .footer-logo-compact {
     height: 40px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .footer-desc {
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     line-height: 1.4;
 }
 
@@ -1353,7 +1353,7 @@ p {
 .footer-col-compact h4 {
     color: white;
     font-size: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .footer-col-compact ul {
@@ -1391,7 +1391,7 @@ p {
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
     font-size: 13px;
-    padding-top: 24px;
+    padding-top: 16px;
 }
 
 /* Modal */
