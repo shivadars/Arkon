@@ -3242,19 +3242,25 @@ p {
 .popout-contact-section {
     background-color: var(--background);
     position: relative;
-    padding: 60px 0;
+    padding: 40px 0 60px 0;
+    margin-top: 120px;
+    margin-bottom: 60px;
 }
 
 .popout-contact-container {
     display: flex;
     align-items: center;
-    gap: 60px;
+    justify-content: flex-start;
+    gap: 40px;
 }
 
 /* Left Side: Image */
 .popout-image-wrapper {
-    flex: 1;
+    flex: 0 0 35%;
     position: relative;
+    margin-top: -160px;
+    margin-bottom: -40px;
+    text-align: center;
 }
 
 .popout-image-wrapper img {
@@ -3265,7 +3271,7 @@ p {
 
 /* Right Side: Form */
 .popout-form-wrapper {
-    flex: 1;
+    flex: 0 0 55%;
     color: var(--text);
 }
 
