@@ -371,3 +371,36 @@ window.addEventListener('load', () => {
         }
     }, 1000); // 1.0 seconds delay
 });
+
+// Scroll Heartbeat Progress Indicator
+document.addEventListener('DOMContentLoaded', () => {
+    const progressWrap = document.getElementById('scroll-heartbeat');
+    const progressPath = document.querySelector('.progress-circle path');
+    if (!progressWrap || !progressPath) return;
+
+    // The stroke-dasharray we set in CSS is ~308
+    const pathLength = 307.919;
+    
+    const updateProgress = () => {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        
+        // Show/hide based on scroll position (show after 50px)
+        if (scrollTop > 50) {
+            progressWrap.classList.add('active-progress');
+        } else {
+            progressWrap.classList.remove('active-progress');
+        }
+
+        // Calculate offset (progress fills as we scroll down)
+        // Ensure scrollHeight > 0 to avoid division by zero
+        if (scrollHeight > 0) {
+            const progress = pathLength - (scrollTop * pathLength / scrollHeight);
+            progressPath.style.strokeDashoffset = Math.max(0, progress);
+        }
+    };
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    // Run once on load to set initial state
+    updateProgress(); 
+});
