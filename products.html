@@ -474,6 +474,58 @@
                     `;
                 });
                 grid.innerHTML = html;
+
+                // Attach 3D Tilt & Parallax to product cards
+                grid.querySelectorAll('.product-card').forEach(card => {
+                    let bounds;
+                    let rafId = null;
+
+                    card.addEventListener('mouseenter', () => {
+                        bounds = card.getBoundingClientRect();
+                    });
+
+                    card.addEventListener('mousemove', (e) => {
+                        if (!bounds) bounds = card.getBoundingClientRect();
+                        if (rafId) cancelAnimationFrame(rafId);
+                        rafId = requestAnimationFrame(() => {
+                            const mouseX = e.clientX - bounds.left;
+                            const mouseY = e.clientY - bounds.top;
+                            const centerX = bounds.width / 2;
+                            const centerY = bounds.height / 2;
+                            const percentX = (mouseX - centerX) / centerX;
+                            const percentY = (mouseY - centerY) / centerY;
+
+                            const maxTilt = 10;
+                            const tiltX = -percentY * maxTilt;
+                            const tiltY = percentX * maxTilt;
+
+                            card.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateY(-4px)`;
+
+                            const img = card.querySelector('.img-wrapper');
+                            const title = card.querySelector('h3');
+                            const price = card.querySelector('.price');
+                            const btn = card.querySelector('.btn');
+
+                            if (img) img.style.transform = `translate3d(${percentX * 5}px, ${percentY * 5}px, 20px)`;
+                            if (title) title.style.transform = `translate3d(${percentX * 3}px, ${percentY * 3}px, 14px)`;
+                            if (price) price.style.transform = `translate3d(${percentX * 2}px, ${percentY * 2}px, 10px)`;
+                            if (btn) btn.style.transform = `translate3d(${percentX * 2}px, ${percentY * 2}px, 12px)`;
+                        });
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        if (rafId) cancelAnimationFrame(rafId);
+                        card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0)';
+                        const img = card.querySelector('.img-wrapper');
+                        const title = card.querySelector('h3');
+                        const price = card.querySelector('.price');
+                        const btn = card.querySelector('.btn');
+                        if (img) img.style.transform = 'translate3d(0, 0, 0)';
+                        if (title) title.style.transform = 'translate3d(0, 0, 0)';
+                        if (price) price.style.transform = 'translate3d(0, 0, 0)';
+                        if (btn) btn.style.transform = 'translate3d(0, 0, 0)';
+                    });
+                });
                 
                 // Render Pagination
                 let pageHtml = '';
