@@ -12,7 +12,7 @@ function toggleMobileNav() {
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
-    renderProducts();
+    initProductsGrid();
     initLogoCarousel();
     initTestimonials();
 
@@ -63,24 +63,53 @@ function renderCategories() {
     grid.innerHTML = html;
 }
 
-function renderProducts() {
-    const grid = document.getElementById('product-grid');
+function initProductsGrid() {
+    const grid = document.getElementById('products-grid');
     if (!grid) return;
 
-    let html = '';
-    products.forEach(prod => {
-        html += `
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="${prod.image}" alt="${prod.name}">
-                </div>
-                <h3>${prod.name}</h3>
-                <div class="explore product-link" onclick="window.location.href='product-detail.html?id=${prod.id}'">View Details &rarr;</div>
+    const displayProducts = products.slice(0, 10);
+
+    displayProducts.forEach((prod) => {
+        const item = document.createElement('a');
+        item.className = 'product-item';
+        item.href = `product-detail.html?id=${prod.id}`;
+        item.setAttribute('aria-label', prod.name);
+
+        item.innerHTML = `
+            <div class="product-image-wrapper">
+                <img
+                    src="${prod.image}"
+                    alt="${prod.name}"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x120/F7F8F5/607D8B?text=${encodeURIComponent(prod.name)}';"
+                >
             </div>
+            <span class="product-name">${prod.name}</span>
+            <span class="product-brand-tag">${prod.brand}</span>
         `;
+
+        grid.appendChild(item);
     });
-    grid.innerHTML = html;
+
+    function triggerAnimation() {
+        const rect = grid.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            const items = grid.querySelectorAll('.product-item:not(.is-visible)');
+            if (items.length === 0) return; // already animated
+            items.forEach((item, i) => {
+                setTimeout(() => item.classList.add('is-visible'), i * 130);
+            });
+            window.removeEventListener('scroll', triggerAnimation);
+        }
+    }
+
+    // Check on scroll
+    window.addEventListener('scroll', triggerAnimation, { passive: true });
+
+    // Also check after a brief delay on load (covers sections already in viewport)
+    setTimeout(triggerAnimation, 300);
 }
+
 
 function initLogoCarousel() {
     const carousel = document.getElementById('logo-carousel');
@@ -440,6 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // The stroke-dasharray we set in CSS is ~308
     const pathLength = 307.919;
+    let scrollTimeout = null;
     
     const updateProgress = () => {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -448,8 +478,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show/hide based on scroll position (show after 50px)
         if (scrollTop > 50) {
             progressWrap.classList.add('active-progress');
+            
+            // Mark as active scrolling so heartbeat animates
+            progressWrap.classList.add('is-scrolling');
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                progressWrap.classList.remove('is-scrolling');
+            }, 180);
         } else {
             progressWrap.classList.remove('active-progress');
+            progressWrap.classList.remove('is-scrolling');
         }
 
         // Calculate offset (progress fills as we scroll down)

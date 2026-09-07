@@ -106,38 +106,20 @@
             </div>
         </section>
 
-        <!-- Categories Section -->
-        <section class="categories section-spacing" id="categories">
-            <div class="container">
-                <div class="section-header header-grid" data-aos="fade-up">
-                    <div></div> <!-- spacer for grid centering -->
-                    <h2>Explore Our Categories</h2>
-                    <a href="products.html" class="link-action">View All Categories &rarr;</a>
-                </div>
-                <div class="slider-wrapper" data-aos="fade-up" data-aos-delay="100">
-                    <button class="slider-btn prev" onclick="scrollSlider('category-grid', -1)">&#10094;</button>
-                    <div class="category-grid slider-container" id="category-grid">
-                        <!-- Populated by JS -->
-                    </div>
-                    <button class="slider-btn next" onclick="scrollSlider('category-grid', 1)">&#10095;</button>
-                </div>
-            </div>
-        </section>
 
-        <!-- Featured Products -->
-        <section class="featured-products section-spacing" id="products">
+        <!-- Products Grid Section -->
+        <section class="products-section section-spacing" id="products">
             <div class="container">
-                <div class="section-header header-grid" data-aos="fade-up">
-                    <div></div> <!-- spacer for grid centering -->
-                    <h2>Featured Products</h2>
-                    <a href="products.html" class="link-action">View All Products &rarr;</a>
-                </div>
-                <div class="slider-wrapper" data-aos="fade-up" data-aos-delay="100">
-                    <button class="slider-btn prev" onclick="scrollSlider('product-grid', -1)">&#10094;</button>
-                    <div class="product-grid slider-container" id="product-grid">
-                        <!-- Populated by JS -->
+                <div class="products-header section-header header-grid" data-aos="fade-up">
+                    <div></div>
+                    <div>
+                        <h2>Our Products</h2>
+                        <p>Explore our range of professional-grade medical equipment.</p>
                     </div>
-                    <button class="slider-btn next" onclick="scrollSlider('product-grid', 1)">&#10095;</button>
+                    <a href="products.html" class="link-action" style="align-self:start; padding-top: 6px;">View All Products &rarr;</a>
+                </div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Populated by JS -->
                 </div>
             </div>
         </section>
@@ -486,9 +468,11 @@
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
         </svg>
         <div class="heartbeat-icon">
-            <svg class="heart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
+            <div class="ecg-monitor">
+                <svg class="heart-svg" viewBox="0 0 84 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 0,10 h 4.5 l 1.5,-2 l 1.5,2 h 1.5 l 1.5,2.5 l 2.5,-16.5 l 2.5,19 l 1.5,-5 c 1.8,-3 3.5,-3 5,0 h 6 h 4.5 l 1.5,-2 l 1.5,2 h 1.5 l 1.5,2.5 l 2.5,-16.5 l 2.5,19 l 1.5,-5 c 1.8,-3 3.5,-3 5,0 h 6 h 4.5 l 1.5,-2 l 1.5,2 h 1.5 l 1.5,2.5 l 2.5,-16.5 l 2.5,19 l 1.5,-5 c 1.8,-3 3.5,-3 5,0 h 6" />
+                </svg>
+            </div>
             <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
                 <path d="M12 19V5M5 12l7-7 7 7"/>
             </svg>
