@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socials — Animated Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --card-size: 440px;
+            --card-radius: 56px;
+            --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --spring-easing: cubic-bezier(0.34, 1.4, 0.64, 1);
+            --smooth-easing: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-family);
+            overflow-x: hidden;
+            perspective: 1200px;
+            padding: 20px;
+        }
+
+        /* 3D Perspective Container */
+        .socials-card-wrapper {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main Card */
+        .socials-card {
+            position: relative;
+            width: var(--card-size);
+            height: var(--card-size);
+            max-width: 90vw;
+            max-height: 90vw;
+            aspect-ratio: 1 / 1;
+            border-radius: var(--card-radius);
+            background: linear-gradient(135deg, 
+                #6b11ff 0%, 
+                #a800b7 25%, 
+                #e8006b 50%, 
+                #ff3d3d 72%, 
+                #ff8800 88%, 
+                #ffb700 100%
+            );
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 
+                0 30px 70px -15px rgba(232, 0, 107, 0.45),
+                0 15px 35px -10px rgba(107, 17, 255, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.25s var(--smooth-easing), box-shadow 0.3s ease;
+            user-select: none;
+        }
+
+        .socials-card:hover {
+            box-shadow: 
+                0 40px 85px -15px rgba(232, 0, 107, 0.55),
+                0 20px 45px -10px rgba(107, 17, 255, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.7);
+        }
+
+        /* Subtle Ambient Glow inside Card */
+        .card-ambient-glow {
+            position: absolute;
+            top: -20%;
+            right: -20%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* "Socials" Text */
+        .socials-title {
+            position: absolute;
+            top: 36px;
+            right: 42px;
+            font-size: 38px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            z-index: 5;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            transform: translateZ(30px);
+            transition: transform 0.25s var(--smooth-easing);
+        }
+
+        /* Nested Glass Panels Container */
+        .panels-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            transform-style: preserve-3d;
+        }
+
+        /* Common Panel Styles */
+        .glass-panel {
+            position: absolute;
+            bottom: -35px;
+            left: -35px;
+            border-radius: 54px;
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.7),
+                0 15px 35px rgba(0, 0, 0, 0.12);
+            pointer-events: auto;
+            transform-origin: bottom left;
+            opacity: 0;
+            transform: translate(-90px, 90px) scale(0.75);
+            transition: 
+                transform 0.3s var(--smooth-easing), 
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        /* Entrance Animations */
+        .socials-card.is-animated .glass-panel {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+
+        /* Layer 1: Outer / Largest Panel (Instagram) */
+        .panel-layer-1 {
+            width: 325px;
+            height: 325px;
+            background: linear-gradient(135deg, 
+                rgba(145, 0, 255, 0.42) 0%, 
+                rgba(235, 0, 120, 0.32) 100%
+            );
+            z-index: 2;
+            transition: 
+                opacity 0.8s var(--spring-easing) 0.1s,
+                transform 0.8s var(--spring-easing) 0.1s,
+                box-shadow 0.3s ease;
+        }
+
+        /* Layer 2: Middle Panel (Twitter / X) */
+        .panel-layer-2 {
+            width: 245px;
+            height: 245px;
+            border-radius: 48px;
+            background: linear-gradient(135deg, 
+                rgba(0, 130, 255, 0.48) 0%, 
+                rgba(0, 210, 255, 0.32) 100%
+            );
+            z-index: 3;
+            transition: 
+                opacity 0.8s var(--spring-easing) 0.22s,
+                transform 0.8s var(--spring-easing) 0.22s,
+                box-shadow 0.3s ease;
+        }
+
+        /* Layer 3: Inner / Smallest Panel (Discord) */
+        .panel-layer-3 {
+            width: 165px;
+            height: 165px;
+            border-radius: 42px;
+            background: linear-gradient(135deg, 
+                rgba(80, 160, 255, 0.58) 0%, 
+                rgba(150, 210, 255, 0.42) 100%
+            );
+            z-index: 4;
+            transition: 
+                opacity 0.8s var(--spring-easing) 0.34s,
+                transform 0.8s var(--spring-easing) 0.34s,
+                box-shadow 0.3s ease;
+        }
+
+        /* Parallax Transitions after initial entrance */
+        .socials-card.ready .glass-panel {
+            transition: transform 0.2s var(--smooth-easing), box-shadow 0.3s ease;
+        }
+
+        /* Social Icon Anchor Links */
+        .social-link {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s var(--spring-easing), background 0.2s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            transform: scale(1.15) translateZ(10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .social-link svg {
+            fill: #ffffff;
+            transition: transform 0.2s ease;
+        }
+
+        /* Icon Position 1 (Instagram on Layer 1) */
+        .icon-instagram {
+            width: 48px;
+            height: 48px;
+            top: 36px;
+            right: 36px;
+        }
+        .icon-instagram svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Icon Position 2 (Twitter/X on Layer 2) */
+        .icon-twitter {
+            width: 44px;
+            height: 44px;
+            top: 32px;
+            right: 32px;
+        }
+        .icon-twitter svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Icon Position 3 (Discord on Layer 3) */
+        .icon-discord {
+            width: 40px;
+            height: 40px;
+            top: 28px;
+            right: 28px;
+        }
+        .icon-discord svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 480px) {
+            :root {
+                --card-size: 340px;
+                --card-radius: 46px;
+            }
+
+            .socials-title {
+                font-size: 30px;
+                top: 28px;
+                right: 32px;
+            }
+
+            .panel-layer-1 {
+                width: 250px;
+                height: 250px;
+                border-radius: 44px;
+                bottom: -25px;
+                left: -25px;
+            }
+
+            .panel-layer-2 {
+                width: 190px;
+                height: 190px;
+                border-radius: 38px;
+                bottom: -25px;
+                left: -25px;
+            }
+
+            .panel-layer-3 {
+                width: 130px;
+                height: 130px;
+                border-radius: 32px;
+                bottom: -20px;
+                left: -20px;
+            }
+
+            .icon-instagram {
+                width: 42px;
+                height: 42px;
+                top: 28px;
+                right: 28px;
+            }
+            .icon-instagram svg { width: 20px; height: 20px; }
+
+            .icon-twitter {
+                width: 38px;
+                height: 38px;
+                top: 24px;
+                right: 24px;
+            }
+            .icon-twitter svg { width: 18px; height: 18px; }
+
+            .icon-discord {
+                width: 34px;
+                height: 34px;
+                top: 20px;
+                right: 20px;
+            }
+            .icon-discord svg { width: 16px; height: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="socials-card-wrapper">
+        <div class="socials-card" id="socialsCard">
+            
+            <!-- Ambient Glow -->
+            <div class="card-ambient-glow"></div>
+
+            <!-- "Socials" Title -->
+            <h2 class="socials-title">Socials</h2>
+
+            <!-- Nested Glass Panels -->
+            <div class="panels-container">
+
+                <!-- Layer 1: Purple/Pink Glass with Instagram -->
+                <div class="glass-panel panel-layer-1" data-depth="20">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link icon-instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Layer 2: Blue/Cyan Glass with Twitter/X -->
+                <div class="glass-panel panel-layer-2" data-depth="35">
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-link icon-twitter" aria-label="X / Twitter">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Layer 3: Light-Blue Glass with Discord -->
+                <div class="glass-panel panel-layer-3" data-depth="50">
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-link icon-discord" aria-label="Discord">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.getElementById('socialsCard');
+            const panels = card.querySelectorAll('.glass-panel');
+            const title = card.querySelector('.socials-title');
+
+            // Trigger entrance animation
+            setTimeout(() => {
+                card.classList.add('is-animated');
+            }, 100);
+
+            // Mark ready for smooth mouse parallax after entrance finishes
+            setTimeout(() => {
+                card.classList.add('ready');
+            }, 1000);
+
+            // Smooth 3D Tilt & Parallax on Mouse Move
+            let bounds;
+            let rafId = null;
+
+            function updateCardTransform(e) {
+                if (!bounds) bounds = card.getBoundingClientRect();
+                
+                const mouseX = e.clientX - bounds.left;
+                const mouseY = e.clientY - bounds.top;
+
+                const centerX = bounds.width / 2;
+                const centerY = bounds.height / 2;
+
+                const percentX = (mouseX - centerX) / centerX;
+                const percentY = (mouseY - centerY) / centerY;
+
+                // Max tilt angles
+                const maxTilt = 14;
+                const tiltX = -percentY * maxTilt;
+                const tiltY = percentX * maxTilt;
+
+                // Apply 3D rotation to main card
+                card.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
+
+                // Parallax depth for nested panels and title
+                panels.forEach(panel => {
+                    const depth = parseFloat(panel.getAttribute('data-depth')) || 25;
+                    const moveX = percentX * (depth * 0.35);
+                    const moveY = percentY * (depth * 0.35);
+                    panel.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, ${depth}px)`;
+                });
+
+                if (title) {
+                    title.style.transform = `translate3d(${percentX * 8}px, ${percentY * 8}px, 35px)`;
+                }
+            }
+
+            card.addEventListener('mouseenter', () => {
+                bounds = card.getBoundingClientRect();
+            });
+
+            card.addEventListener('mousemove', (e) => {
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(() => updateCardTransform(e));
+            });
+
+            card.addEventListener('mouseleave', () => {
+                if (rafId) cancelAnimationFrame(rafId);
+                card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                panels.forEach(panel => {
+                    panel.style.transform = 'translate3d(0, 0, 0)';
+                });
+                if (title) {
+                    title.style.transform = 'translate3d(0, 0, 30px)';
+                }
+            });
+
+            // Re-calculate bounds on window resize
+            window.addEventListener('resize', () => {
+                bounds = card.getBoundingClientRect();
+            });
+        });
+    </script>
+</body>
+</html>

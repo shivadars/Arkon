@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProductsGrid();
     initLogoCarousel();
     initTestimonials();
+    initSocialsCard();
 
     setupPhoneLinks();
     
@@ -502,3 +503,89 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run once on load to set initial state
     updateProgress(); 
 });
+
+// 3D Socials Animated Card Controller
+function initSocialsCard() {
+    const card = document.getElementById('socialsCard');
+    if (!card) return;
+
+    const panels = card.querySelectorAll('.glass-panel');
+    const title = card.querySelector('.socials-title');
+
+    // Trigger entrance animation when scrolled into view
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    card.classList.add('is-animated');
+                    setTimeout(() => {
+                        card.classList.add('ready');
+                    }, 1000);
+                    obs.unobserve(card);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        observer.observe(card);
+    } else {
+        card.classList.add('is-animated', 'ready');
+    }
+
+    // 3D Tilt & Layer Parallax
+    let bounds;
+    let rafId = null;
+
+    function updateCardTransform(e) {
+        if (!bounds) bounds = card.getBoundingClientRect();
+        
+        const mouseX = e.clientX - bounds.left;
+        const mouseY = e.clientY - bounds.top;
+
+        const centerX = bounds.width / 2;
+        const centerY = bounds.height / 2;
+
+        const percentX = (mouseX - centerX) / centerX;
+        const percentY = (mouseY - centerY) / centerY;
+
+        const maxTilt = 14;
+        const tiltX = -percentY * maxTilt;
+        const tiltY = percentX * maxTilt;
+
+        card.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
+
+        panels.forEach(panel => {
+            const depth = parseFloat(panel.getAttribute('data-depth')) || 25;
+            const moveX = percentX * (depth * 0.35);
+            const moveY = percentY * (depth * 0.35);
+            panel.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, ${depth}px)`;
+        });
+
+        if (title) {
+            title.style.transform = `translate3d(${percentX * 8}px, ${percentY * 8}px, 35px)`;
+        }
+    }
+
+    card.addEventListener('mouseenter', () => {
+        bounds = card.getBoundingClientRect();
+    });
+
+    card.addEventListener('mousemove', (e) => {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => updateCardTransform(e));
+    });
+
+    card.addEventListener('mouseleave', () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        panels.forEach(panel => {
+            panel.style.transform = 'translate3d(0, 0, 0)';
+        });
+        if (title) {
+            title.style.transform = 'translate3d(0, 0, 30px)';
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        bounds = card.getBoundingClientRect();
+    });
+}
