@@ -13,7 +13,7 @@ function toggleMobileNav() {
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderProducts();
-    renderClients();
+    initLogoCarousel();
     initTestimonials();
 
     setupPhoneLinks();
@@ -82,22 +82,82 @@ function renderProducts() {
     grid.innerHTML = html;
 }
 
-function renderClients() {
-    const track = document.getElementById('clients-track');
-    if (!track) return;
+function initLogoCarousel() {
+    const carousel = document.getElementById('logo-carousel');
+    if (!carousel) return;
+    
+    // Create 3 columns
+    const columnsCount = 3;
+    const columns = Array.from({ length: columnsCount }, () => []);
+    
+    // Shuffle logos and distribute into columns
+    const shuffledLogos = [...clients].sort(() => Math.random() - 0.5);
+    
+    shuffledLogos.forEach((logo, index) => {
+        columns[index % columnsCount].push(logo);
+    });
 
     let html = '';
-    // Duplicate the array so the marquee loops seamlessly
-    const marqueeItems = [...clients, ...clients];
-    
-    marqueeItems.forEach(client => {
-        html += `
-            <div class="client-card">
-                <img src="${client.img}" alt="${client.name}">
-            </div>
-        `;
+    columns.forEach((colLogos, colIndex) => {
+        html += `<div class="logo-column" id="logo-col-${colIndex}">`;
+        colLogos.forEach((logo, logoIndex) => {
+            // First logo is active, others are next
+            const stateClass = logoIndex === 0 ? 'active' : 'next';
+            html += `
+                <div class="logo-item ${stateClass}" data-index="${logoIndex}">
+                    <img src="${logo.img}" alt="${logo.name} logo" onerror="this.onerror=null;this.src='https://placehold.co/150x50/FFFFFF/607D8B?text=${encodeURIComponent(logo.name)}';">
+                </div>
+            `;
+        });
+        html += `</div>`;
     });
-    track.innerHTML = html;
+    
+    carousel.innerHTML = html;
+    
+    // Start animation loop
+    columns.forEach((_, colIndex) => {
+        // Offset timing for each column
+        setTimeout(() => {
+            setInterval(() => {
+                rotateColumn(colIndex);
+            }, 2000 + Math.random() * 500); // approx 2 seconds with slight variation
+        }, colIndex * 600); // 600ms stagger between columns
+    });
+}
+
+function rotateColumn(colIndex) {
+    const column = document.getElementById(`logo-col-${colIndex}`);
+    if (!column) return;
+    
+    const items = column.querySelectorAll('.logo-item');
+    if (items.length <= 1) return;
+    
+    let activeIndex = -1;
+    items.forEach((item, index) => {
+        if (item.classList.contains('active')) {
+            activeIndex = index;
+        }
+    });
+    
+    if (activeIndex === -1) activeIndex = 0;
+    
+    const nextIndex = (activeIndex + 1) % items.length;
+    
+    // Reset all to 'next' state without transition if they were 'prev'
+    items.forEach((item, index) => {
+        if (index !== activeIndex && index !== nextIndex) {
+            item.className = 'logo-item next'; // fast reset
+        }
+    });
+    
+    // Animate current to prev
+    items[activeIndex].className = 'logo-item prev';
+    
+    // Animate next to active
+    // Small timeout to ensure DOM update allows transition
+    setTimeout(() => {
+        items[nextIndex].className = 'logo-item active';
+    }, 50);
 }
 
 function renderProviders() {
