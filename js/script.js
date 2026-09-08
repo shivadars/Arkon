@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLogoCarousel();
     initTestimonials();
     initSocialsCard();
+    initSmartHeader();
 
     setupPhoneLinks();
     
@@ -39,6 +40,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Smart Header Logic
+function initSmartHeader() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+    
+    const showThreshold = 350; // Scroll distance after which the header reappears
+    const hideThreshold = 100; // Scroll distance to restore natural position near top
+    let isFixed = false;
+    let ticking = false;
+    
+    function onScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (!isFixed && currentScrollY > showThreshold) {
+            isFixed = true;
+            header.classList.add('header--fixed');
+            document.body.style.paddingTop = header.offsetHeight + 'px';
+        } else if (isFixed && currentScrollY <= hideThreshold) {
+            isFixed = false;
+            header.classList.remove('header--fixed');
+            document.body.style.paddingTop = '0';
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(onScroll);
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Check initial scroll state
+    onScroll();
+}
 
 // Render Functions
 function renderCategories() {
@@ -498,15 +535,21 @@ function updateTestimonialContent(index) {
 }
 
 // Page Loader Logic
+function hideLoader() {
+    const loader = document.getElementById('page-loader');
+    if (loader && !loader.classList.contains('loader-hidden')) {
+        loader.classList.add('loader-hidden');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+}
+
+// Hide loader when page fully loads
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('page-loader');
-        if (loader) {
-            loader.classList.add('loader-hidden');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        }
-    }, 1000); // 1.0 seconds delay
+    setTimeout(hideLoader, 500);
 });
+
+// Fallback: hide loader after 3 seconds even if some resources are still loading
+setTimeout(hideLoader, 3000);
 
 // Scroll Heartbeat Progress Indicator
 document.addEventListener('DOMContentLoaded', () => {

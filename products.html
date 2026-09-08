@@ -388,6 +388,8 @@
             }
 
             function renderProductGrid() {
+                const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
                 let filtered = products;
 
                 // Filter
@@ -402,8 +404,6 @@
                 if (activeCategories.length > 0) {
                     filtered = filtered.filter(p => activeCategories.includes(p.category));
                 }
-
-                
 
                 const totalItems = filtered.length;
 
@@ -458,12 +458,21 @@
                     clearBtn.style.display = (activeCategories.length > 0 || searchQuery) ? 'block' : 'none';
                 }
 
-                // Render Grid
+                // --- FLIP ANIMATION ---
+
+                // FIRST: Snapshot old card positions
+                const oldCards = grid.querySelectorAll('.product-card[data-product-id]');
+                const oldPositions = {};
+                oldCards.forEach(card => {
+                    const id = card.getAttribute('data-product-id');
+                    oldPositions[id] = card.getBoundingClientRect();
+                });
+
+                // Build new HTML
                 let html = '';
                 currentItems.forEach(prod => {
                     html += `
-                        <div class="product-card">
-
+                        <div class="product-card" data-product-id="${prod.id}">
                             <div class="img-wrapper">
                                 <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
@@ -475,7 +484,46 @@
                 });
                 grid.innerHTML = html;
 
-                // Attach 3D Tilt & Parallax to product cards
+                // LAST: Get new card positions & animate
+                const newCards = grid.querySelectorAll('.product-card[data-product-id]');
+
+                if (!isReducedMotion) {
+                    newCards.forEach((card, index) => {
+                        const id = card.getAttribute('data-product-id');
+                        const newRect = card.getBoundingClientRect();
+
+                        if (oldPositions[id]) {
+                            // INVERT + PLAY: card existed before — FLIP move it
+                            const oldRect = oldPositions[id];
+                            const deltaX = oldRect.left - newRect.left;
+                            const deltaY = oldRect.top - newRect.top;
+
+                            if (Math.abs(deltaX) > 1 || Math.abs(deltaY) > 1) {
+                                card.animate([
+                                    { transform: `translate(${deltaX}px, ${deltaY}px)`, opacity: 1 },
+                                    { transform: 'translate(0, 0)', opacity: 1 }
+                                ], {
+                                    duration: 600,
+                                    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                                    fill: 'backwards'
+                                });
+                            }
+                        } else {
+                            // ENTER: new card — fade + scale in with stagger
+                            card.animate([
+                                { opacity: 0, transform: 'scale(0.85) translateY(20px)' },
+                                { opacity: 1, transform: 'scale(1) translateY(0)' }
+                            ], {
+                                duration: 500,
+                                easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                                delay: index * 40,
+                                fill: 'backwards'
+                            });
+                        }
+                    });
+                }
+
+                // Attach 3D Tilt & Parallax to product cards (unchanged)
                 grid.querySelectorAll('.product-card').forEach(card => {
                     let bounds;
                     let rafId = null;
@@ -538,6 +586,7 @@
                 }
                 paginationContainer.innerHTML = pageHtml;
             }
+
             
             // Global pagination function
             window.goToPage = function(page) {
