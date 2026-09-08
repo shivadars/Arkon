@@ -558,38 +558,20 @@ function initSocialsCard() {
     const panels = card.querySelectorAll('.glass-panel');
     const title = card.querySelector('.socials-title');
 
-    // Trigger entrance animation when scrolled into view
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    card.classList.add('is-animated');
-                    setTimeout(() => {
-                        card.classList.add('ready');
-                    }, 1000);
-                    obs.unobserve(card);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        observer.observe(card);
-    } else {
-        card.classList.add('is-animated', 'ready');
-    }
-
-    // 3D Tilt & Layer Parallax
-    let bounds;
+    // Panels start hidden — they animate in on hover, out on leave
+    let revealTimeout = null;
     let rafId = null;
+    let bounds;
+    let isHovered = false;
 
     function updateCardTransform(e) {
         if (!bounds) bounds = card.getBoundingClientRect();
-        
+        if (!isHovered) return;
+
         const mouseX = e.clientX - bounds.left;
         const mouseY = e.clientY - bounds.top;
-
         const centerX = bounds.width / 2;
         const centerY = bounds.height / 2;
-
         const percentX = (mouseX - centerX) / centerX;
         const percentY = (mouseY - centerY) / centerY;
 
@@ -603,16 +585,23 @@ function initSocialsCard() {
             const depth = parseFloat(panel.getAttribute('data-depth')) || 25;
             const moveX = percentX * (depth * 0.35);
             const moveY = percentY * (depth * 0.35);
-            panel.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, ${depth}px)`;
+            // Only apply parallax if panels are fully animated in
+            if (card.classList.contains('ready')) {
+                panel.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, ${depth}px)`;
+            }
         });
-
-        if (title) {
-            title.style.transform = `translate3d(${percentX * 8}px, ${percentY * 8}px, 35px)`;
-        }
+        // Title position is CSS-driven (center → top-right via .is-animated class)
     }
 
     card.addEventListener('mouseenter', () => {
+        isHovered = true;
         bounds = card.getBoundingClientRect();
+        clearTimeout(revealTimeout);
+        card.classList.remove('ready');
+        card.classList.add('is-animated');
+        revealTimeout = setTimeout(() => {
+            card.classList.add('ready');
+        }, 900);
     });
 
     card.addEventListener('mousemove', (e) => {
@@ -621,14 +610,15 @@ function initSocialsCard() {
     });
 
     card.addEventListener('mouseleave', () => {
+        isHovered = false;
+        clearTimeout(revealTimeout);
         if (rafId) cancelAnimationFrame(rafId);
+
+        // Slide panels back out
+        card.classList.remove('is-animated', 'ready');
+
+        // Reset card tilt
         card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-        panels.forEach(panel => {
-            panel.style.transform = 'translate3d(0, 0, 0)';
-        });
-        if (title) {
-            title.style.transform = 'translate3d(0, 0, 30px)';
-        }
     });
 
     window.addEventListener('resize', () => {
