@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonials();
     initSocialsCard();
     initSmartHeader();
+    initStackGallery();
 
     setupPhoneLinks();
     
@@ -670,4 +671,37 @@ function initSocialsCard() {
     window.addEventListener('resize', () => {
         bounds = card.getBoundingClientRect();
     });
+}
+
+// ============================================
+// Sticky Image Stacking About — Scroll Reveal
+// ============================================
+function initStackGallery() {
+    const stackCards = document.querySelectorAll('.about-stack-card');
+    if (!stackCards.length) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        stackCards.forEach(card => card.classList.add('is-visible'));
+        return;
+    }
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Once visible, stop observing to prevent re-triggering
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    stackCards.forEach(card => observer.observe(card));
 }

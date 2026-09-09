@@ -802,7 +802,7 @@ p {
 .why-overlap-card {
     margin-top: -180px;
     background: #ffffff;
-    border-radius: 26px;
+    border-radius: 0;
     padding: 68px 84px 58px;
     box-shadow: 0 28px 60px -15px rgba(0, 0, 0, 0.13), 0 0 1px 1px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(226, 232, 240, 0.85);
@@ -954,7 +954,7 @@ p {
     .why-overlap-card {
         margin-top: -90px;
         padding: 36px 24px 32px;
-        border-radius: 20px;
+        border-radius: 0;
     }
     .why-card-title {
         font-size: 24px;
@@ -4524,3 +4524,319 @@ p {
     }
     .icon-discord svg { width: 15px; height: 15px; }
 }
+
+/* ============================================
+   FULL-WIDTH STICKY STACKING ABOUT SECTION
+   ============================================ */
+
+.about-stack-section {
+    position: relative;
+    overflow: visible;
+    background: var(--surface);
+}
+
+.about-stack-track {
+    position: relative;
+}
+
+/* ---- Individual Sticky Card ---- */
+.about-stack-card {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 600px;
+    width: 100%;
+    z-index: calc(var(--card-index) + 1);
+    margin-bottom: 0;
+    will-change: transform;
+    /* Scroll reveal */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-stack-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternating background colors for each card */
+.about-stack-card:nth-child(odd) {
+    background: #ffffff;
+}
+.about-stack-card:nth-child(even) {
+    background: var(--background);
+}
+
+/* ---- Inner Grid: Text + Image side by side ---- */
+.about-stack-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+/* ---- Text Side ---- */
+.about-stack-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 80px;
+}
+
+.about-stack-text-content {
+    max-width: 520px;
+}
+
+.about-stack-eyebrow {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 36px;
+}
+
+.about-stack-eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.about-stack-heading {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.about-stack-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.about-stack-desc:last-of-type {
+    margin-bottom: 28px;
+}
+
+.about-stack-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+/* Checklist grid */
+.about-stack-checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.about-stack-check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.about-stack-check-item svg {
+    flex-shrink: 0;
+}
+
+/* ---- Image Side ---- */
+.about-stack-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-stack-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-stack-card.is-visible .about-stack-image img {
+    transform: scale(1);
+}
+
+.about-stack-card:hover .about-stack-image img {
+    transform: scale(1.03);
+}
+
+/* ---- Reversed card: image on left, text on right ---- */
+.about-stack-card--reversed .about-stack-inner {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+}
+
+.about-stack-card--reversed .about-stack-text,
+.about-stack-card--reversed .about-stack-image {
+    direction: ltr;
+}
+
+/* ---- Subtle top shadow on each card for depth ---- */
+.about-stack-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.06), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.about-stack-card:first-child::before {
+    display: none;
+}
+
+/* ============================================
+   RESPONSIVE: TABLET (1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+    .about-stack-text {
+        padding: 48px 48px;
+    }
+
+    .about-stack-heading {
+        font-size: 36px;
+    }
+
+    .about-stack-card {
+        min-height: 520px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE (768px)
+   ============================================ */
+@media (max-width: 768px) {
+    .about-stack-card {
+        height: auto;
+        min-height: auto;
+        position: relative;
+        top: auto;
+    }
+
+    .about-stack-inner {
+        grid-template-columns: 1fr;
+    }
+
+    /* On mobile, image always comes first visually */
+    .about-stack-image {
+        height: 50vw;
+        min-height: 240px;
+        max-height: 360px;
+        order: -1;
+    }
+
+    .about-stack-card--reversed .about-stack-inner {
+        direction: ltr;
+    }
+
+    .about-stack-card--reversed .about-stack-image {
+        order: -1;
+    }
+
+    .about-stack-text {
+        padding: 36px 24px 48px 24px;
+    }
+
+    .about-stack-heading {
+        font-size: 28px;
+    }
+
+    .about-stack-eyebrow {
+        font-size: 11px;
+        padding-left: 28px;
+    }
+
+    .about-stack-eyebrow::before {
+        width: 18px;
+    }
+
+    .about-stack-desc {
+        font-size: 14px;
+    }
+
+    .about-stack-checklist {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .about-stack-check-item {
+        font-size: 13px;
+    }
+
+    /* No stacking effect on mobile — just normal flow */
+    .about-stack-card {
+        opacity: 1;
+        transform: none;
+    }
+
+    .about-stack-card::before {
+        display: none;
+    }
+}
+
+/* ============================================
+   RESPONSIVE: SMALL MOBILE (480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .about-stack-heading {
+        font-size: 24px;
+    }
+
+    .about-stack-text {
+        padding: 28px 16px 36px 16px;
+    }
+
+    .about-stack-image {
+        height: 55vw;
+        min-height: 200px;
+    }
+
+    .about-stack-desc {
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY: REDUCE MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .about-stack-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .about-stack-image img {
+        transition: none;
+    }
+
+    .about-stack-card:hover .about-stack-image img {
+        transform: none;
+    }
+}
+
