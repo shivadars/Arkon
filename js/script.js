@@ -529,6 +529,9 @@ function updateTestimonialContent(index) {
     if(name) name.textContent = t.name;
     if(role) role.textContent = t.role;
     if(image) {
+        image.onerror = () => {
+            image.src = 'assets/testimonials/sarah-fernandez.jpg';
+        };
         image.src = t.image;
         image.alt = t.name;
     }

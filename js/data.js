@@ -611,7 +611,7 @@ const testimonials = [
     name: "Dr. Rajesh Kumar",
     role: "Medical Superintendent",
     company: "City Hospital",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9jdG9yfGVufDB8fDB8fHww"
+    image: "assets/testimonials/rajesh-kumar.jpg"
   },
   {
     id: 2,
@@ -619,7 +619,7 @@ const testimonials = [
     name: "Sarah Fernandez",
     role: "Head of Procurement",
     company: "St. Mary's Clinic",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
+    image: "assets/testimonials/sarah-fernandez.jpg"
   },
   {
     id: 3,
@@ -627,6 +627,6 @@ const testimonials = [
     name: "Dr. Arvind Patel",
     role: "Chief Surgeon",
     company: "Metro Health",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D"
+    image: "assets/testimonials/arvind-patel.jpg"
   }
 ];
