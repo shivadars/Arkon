@@ -289,21 +289,17 @@ function viewProductDetails(productName) {
 
 // Modal Logic
 function openQuoteModal(productName = '') {
-    const modal = document.getElementById('quoteModal');
-    const productInput = document.getElementById('quoteProduct');
-    const formSuccess = document.getElementById('formSuccess');
-    const form = document.getElementById('quoteForm');
-    
-    if (productInput) {
-        productInput.value = productName;
+    const contactSection = document.querySelector('.popout-contact-section');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        
+        if (productName) {
+            const subjectInput = contactSection.querySelector('input[placeholder="Subject"]');
+            if (subjectInput) {
+                subjectInput.value = 'Inquiry about ' + productName;
+            }
+        }
     }
-    
-    if (formSuccess) formSuccess.style.display = 'none';
-    if (form) form.reset();
-    if (productName && productInput) productInput.value = productName; // set again after reset
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
 function closeQuoteModal() {

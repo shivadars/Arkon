@@ -788,7 +788,7 @@ p {
 .why-banner-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.3) 100%);
+    /* Removed background gradient to keep image bright and clear */
 }
 
 /* Overlapping Card Container (Clean, Balanced Overlap) */
@@ -1180,8 +1180,8 @@ p {
     position: relative;
     width: 82%;
     background: linear-gradient(135deg, var(--primary, #313B82) 0%, #1e2555 100%);
-    border-radius: 24px;
-    padding: 56px 140px 56px 56px;
+    border-radius: 0;
+    padding: 100px 140px 100px 60px;
     box-shadow: 0 20px 45px rgba(49, 59, 130, 0.16);
     overflow: hidden;
     z-index: 1;
@@ -1237,23 +1237,21 @@ p {
 }
 
 .about-feature-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    border: none;
     transition: all 0.25s ease;
 }
 
+.about-feature-icon svg {
+    width: 44px;
+    height: 44px;
+}
+
 .about-feature-item:hover .about-feature-icon {
-    background: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    /* Optional: add some effect on hover if needed, or leave empty/remove */
+    color: #fbc02d; /* matching a highlight color if any, or just leave it */
 }
 
 .about-feature-label {
@@ -1297,7 +1295,7 @@ p {
     width: 380px;
     height: 380px;
     background: #ffffff;
-    border-radius: 24px;
+    border-radius: 0;
     padding: 44px 36px;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(0, 0, 0, 0.04);
@@ -1479,6 +1477,7 @@ p {
 /* Testimonials Split */
 .testimonials-split {
     padding: 120px 0;
+    margin-top: 80px;
     background-color: var(--surface);
     overflow: hidden;
 }
@@ -1859,13 +1858,13 @@ p {
 .footer {
     background-color: var(--primary);
     color: white;
-    padding: 20px 0 10px;
+    padding: 80px 0 10px;
     font-size: 14px;
 }
 
 .footer-grid-compact {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     margin-bottom: 16px;
 }
 
@@ -3998,7 +3997,7 @@ p {
     position: relative;
     padding: 40px 0 60px 0;
     margin-top: 120px;
-    margin-bottom: 60px;
+    margin-bottom: 0;
 }
 
 .popout-contact-container {
