@@ -127,51 +127,7 @@ function initProductsGrid() {
             <span class="product-brand-tag">${prod.brand}</span>
         `;
 
-        // 3D Tilt & Multi-Layer Parallax
-        let bounds;
-        let rafId = null;
 
-        item.addEventListener('mouseenter', () => {
-            bounds = item.getBoundingClientRect();
-        });
-
-        item.addEventListener('mousemove', (e) => {
-            if (!bounds) bounds = item.getBoundingClientRect();
-            if (rafId) cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-                const mouseX = e.clientX - bounds.left;
-                const mouseY = e.clientY - bounds.top;
-                const centerX = bounds.width / 2;
-                const centerY = bounds.height / 2;
-                const percentX = (mouseX - centerX) / centerX;
-                const percentY = (mouseY - centerY) / centerY;
-
-                const maxTilt = 12;
-                const tiltX = -percentY * maxTilt;
-                const tiltY = percentX * maxTilt;
-
-                item.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateY(-4px)`;
-
-                const imgWrap = item.querySelector('.product-image-wrapper');
-                const title = item.querySelector('.product-name');
-                const tag = item.querySelector('.product-brand-tag');
-
-                if (imgWrap) imgWrap.style.transform = `translate3d(${percentX * 6}px, ${percentY * 6}px, 24px)`;
-                if (title) title.style.transform = `translate3d(${percentX * 3}px, ${percentY * 3}px, 16px)`;
-                if (tag) tag.style.transform = `translate3d(${percentX * 2}px, ${percentY * 2}px, 10px)`;
-            });
-        });
-
-        item.addEventListener('mouseleave', () => {
-            if (rafId) cancelAnimationFrame(rafId);
-            item.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0)';
-            const imgWrap = item.querySelector('.product-image-wrapper');
-            const title = item.querySelector('.product-name');
-            const tag = item.querySelector('.product-brand-tag');
-            if (imgWrap) imgWrap.style.transform = 'translate3d(0, 0, 0)';
-            if (title) title.style.transform = 'translate3d(0, 0, 0)';
-            if (tag) tag.style.transform = 'translate3d(0, 0, 0)';
-        });
 
         grid.appendChild(item);
     });

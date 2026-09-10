@@ -31,10 +31,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="index.html#categories">Categories</a></li>
-
-
-                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -78,7 +75,7 @@
     <main class="page-main bg-light">
 
 
-        <section class="page-content section-spacing" style="padding-top: 30px;">
+        <section class="page-content section-spacing" style="padding-top: 0;">
 
             <div class="container products-layout" data-aos="fade-up">
                 <button class="mobile-filter-toggle" onclick="document.querySelector('.products-sidebar').classList.toggle('show-mobile'); this.textContent = document.querySelector('.products-sidebar').classList.contains('show-mobile') ? '✕ Hide Categories' : '☰ Show Categories';">
@@ -86,9 +83,9 @@
                 </button>
                 <aside class="products-sidebar">
                     <div class="sidebar-section category-section">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
-                            <h4 style="margin-bottom: 0;">All Categories</h4>
-                            <button class="btn btn-link clear-btn" id="clear-filters-btn" style="display: none; font-size: 13px; padding: 0; color: var(--primary);">Clear</button>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <h4 style="margin-bottom: 0; color: white;">All Categories</h4>
+                            <button class="btn btn-link clear-btn" id="clear-filters-btn" style="display: none; font-size: 13px; padding: 0; color: rgba(255,255,255,0.8);">Clear</button>
                         </div>
                         <div id="category-filters" class="category-list">
                             <!-- Populated by JS -->
@@ -523,57 +520,7 @@
                     });
                 }
 
-                // Attach 3D Tilt & Parallax to product cards (unchanged)
-                grid.querySelectorAll('.product-card').forEach(card => {
-                    let bounds;
-                    let rafId = null;
 
-                    card.addEventListener('mouseenter', () => {
-                        bounds = card.getBoundingClientRect();
-                    });
-
-                    card.addEventListener('mousemove', (e) => {
-                        if (!bounds) bounds = card.getBoundingClientRect();
-                        if (rafId) cancelAnimationFrame(rafId);
-                        rafId = requestAnimationFrame(() => {
-                            const mouseX = e.clientX - bounds.left;
-                            const mouseY = e.clientY - bounds.top;
-                            const centerX = bounds.width / 2;
-                            const centerY = bounds.height / 2;
-                            const percentX = (mouseX - centerX) / centerX;
-                            const percentY = (mouseY - centerY) / centerY;
-
-                            const maxTilt = 10;
-                            const tiltX = -percentY * maxTilt;
-                            const tiltY = percentX * maxTilt;
-
-                            card.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateY(-4px)`;
-
-                            const img = card.querySelector('.img-wrapper');
-                            const title = card.querySelector('h3');
-                            const price = card.querySelector('.price');
-                            const btn = card.querySelector('.btn');
-
-                            if (img) img.style.transform = `translate3d(${percentX * 5}px, ${percentY * 5}px, 20px)`;
-                            if (title) title.style.transform = `translate3d(${percentX * 3}px, ${percentY * 3}px, 14px)`;
-                            if (price) price.style.transform = `translate3d(${percentX * 2}px, ${percentY * 2}px, 10px)`;
-                            if (btn) btn.style.transform = `translate3d(${percentX * 2}px, ${percentY * 2}px, 12px)`;
-                        });
-                    });
-
-                    card.addEventListener('mouseleave', () => {
-                        if (rafId) cancelAnimationFrame(rafId);
-                        card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0)';
-                        const img = card.querySelector('.img-wrapper');
-                        const title = card.querySelector('h3');
-                        const price = card.querySelector('.price');
-                        const btn = card.querySelector('.btn');
-                        if (img) img.style.transform = 'translate3d(0, 0, 0)';
-                        if (title) title.style.transform = 'translate3d(0, 0, 0)';
-                        if (price) price.style.transform = 'translate3d(0, 0, 0)';
-                        if (btn) btn.style.transform = 'translate3d(0, 0, 0)';
-                    });
-                });
                 
                 // Render Pagination
                 let pageHtml = '';
