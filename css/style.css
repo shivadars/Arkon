@@ -5017,9 +5017,12 @@ html {
 
 .mega-menu-level-2-wrapper {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .mega-menu-level-2-wrapper .mega-menu-level-2 {
+    flex: 1;
     height: 100%;
 }
 

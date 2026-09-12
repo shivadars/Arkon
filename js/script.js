@@ -827,12 +827,8 @@ function getSolutionProducts(solutionId) {
     const solution = typeof solutions !== 'undefined' ? solutions.find(s => s.id === solutionId) : null;
     let solutionProducts = [];
     
-    if (solution) {
-        if (solutionId === 'neonatal-care') {
-            solutionProducts = products.filter(p => p.brand === 'FANEM' && p.category === 'Neonatal Care');
-        } else {
-            solutionProducts = products.filter(p => solution.categories.includes(p.category));
-        }
+    if (solution && solution.products) {
+        solutionProducts = products.filter(p => solution.products.includes(p.name));
     }
     return solutionProducts;
 }
