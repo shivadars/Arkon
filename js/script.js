@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSocialsCard();
     initSmartHeader();
     initStackGallery();
+    initMegaMenu();
 
     setupPhoneLinks();
     
@@ -656,4 +657,248 @@ function initStackGallery() {
     }, observerOptions);
 
     stackCards.forEach(card => observer.observe(card));
+}
+
+// ============================================
+// Mega Menu Logic (3-Level Refined)
+// ============================================
+let megaMenuTimeout = null;
+
+function initMegaMenu() {
+    const desktopContainers = document.querySelectorAll('#mega-menu-content');
+    const mobileContainers = document.querySelectorAll('#mobile-mega-menu-content');
+
+    if (desktopContainers.length === 0 && mobileContainers.length === 0) return;
+
+    // Use exact COMEN product categories for the menu
+    const productCategories = [
+        "Ventilator",
+        "High Flow Oxygen Therapy Humidifier",
+        "Anesthesia Machine",
+        "Patient Monitoring",
+        "Defibrillator Monitor",
+        "AED",
+        "Surgical Light",
+        "Operating Table",
+        "Warmer",
+        "Incubator",
+        "Hypothermia Treatment",
+        "Jaundice Treatment",
+        "Infusion System",
+        "Endoscopy",
+        "Ultrasound",
+        "In Vitro Diagnostic",
+        "Veterinary Product"
+    ];
+    
+    // 1. Build Desktop Mega Menu
+    const desktopHTML = `
+        <div class="mega-menu-level-1">
+            <div class="mega-menu-group-item active" onmouseenter="showMegaMenuGroup('products', this)">PRODUCTS</div>
+            <div class="mega-menu-group-item" onmouseenter="showMegaMenuGroup('solutions', this)">SOLUTIONS</div>
+        </div>
+        
+        <div class="mega-menu-level-2-wrapper">
+            <!-- Products Categories -->
+            <div class="mega-menu-level-2" id="mega-lvl2-products">
+                ${productCategories.map((cat, idx) => `
+                    <a href="products.html?category=${encodeURIComponent(cat)}" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="showMegaMenuCategoryProducts('${encodeURIComponent(cat)}', this)">
+                        ${cat}
+                    </a>
+                `).join('')}
+            </div>
+            
+            <!-- Solutions Categories -->
+            <div class="mega-menu-level-2" id="mega-lvl2-solutions" style="display: none;">
+                ${typeof solutions !== 'undefined' ? solutions.map((sol, idx) => `
+                    <a href="#" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="showMegaMenuSolutionProducts('${sol.id}', this)">
+                        ${sol.name}
+                    </a>
+                `).join('') : ''}
+            </div>
+        </div>
+        
+        <!-- Level 3 Content Area -->
+        <div class="mega-menu-level-3" id="mega-lvl3-content">
+            <!-- Injected via JS -->
+        </div>
+    `;
+
+    desktopContainers.forEach(container => {
+        container.innerHTML = desktopHTML;
+        
+        // Prevent flickering by managing class on the container itself
+        const parentLi = container.closest('.nav-item-dropdown');
+        if (parentLi) {
+            parentLi.addEventListener('mouseenter', () => {
+                clearTimeout(megaMenuTimeout);
+                container.classList.add('is-active');
+            });
+            parentLi.addEventListener('mouseleave', () => {
+                megaMenuTimeout = setTimeout(() => {
+                    container.classList.remove('is-active');
+                }, 300); // slight delay to prevent flicker
+            });
+        }
+    });
+    
+    // Global close handlers
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-item-dropdown')) {
+            desktopContainers.forEach(c => c.classList.remove('is-active'));
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            desktopContainers.forEach(c => c.classList.remove('is-active'));
+        }
+    });
+
+    // 2. Build Mobile Mega Menu
+    let mobileHTML = `
+        <div class="mobile-accordion-item">
+            <a href="products.html" class="mobile-accordion-link">Products</a>
+            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)">▼</button>
+        </div>
+        <div class="mobile-accordion-level" id="mobile-products-group">
+            ${productCategories.map((cat, idx) => `
+                <div class="mobile-accordion-item">
+                    <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
+                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)">▼</button>
+                </div>
+                <div class="mobile-accordion-level" id="mobile-cat-${idx}">
+                    ${products.filter(p => p.category === cat).map(p => `
+                        <a href="product-detail.html?id=${p.id}" class="mobile-product-item">${p.name}</a>
+                    `).join('')}
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+    if (typeof solutions !== 'undefined') {
+        mobileHTML += `
+            <div class="mobile-accordion-item">
+                <a href="products.html" class="mobile-accordion-link">Solutions</a>
+                <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)">▼</button>
+            </div>
+            <div class="mobile-accordion-level" id="mobile-solutions-group">
+                ${solutions.map((sol, idx) => `
+                    <div class="mobile-accordion-item">
+                        <a href="#" class="mobile-accordion-link">${sol.name}</a>
+                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)">▼</button>
+                    </div>
+                    <div class="mobile-accordion-level" id="mobile-sol-${idx}">
+                        ${getSolutionProducts(sol.id).map(p => `
+                            <a href="product-detail.html?id=${p.id}" class="mobile-product-item">${p.name}</a>
+                        `).join('')}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    mobileContainers.forEach(container => {
+        container.innerHTML = mobileHTML;
+    });
+
+    // Initialize first category content
+    if (productCategories.length > 0) {
+        showMegaMenuCategoryProducts(encodeURIComponent(productCategories[0]), null, true);
+    }
+}
+
+function showMegaMenuGroup(group, element) {
+    document.querySelectorAll('.mega-menu-group-item').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+    
+    document.querySelectorAll('.mega-menu-level-2').forEach(el => el.style.display = 'none');
+    document.getElementById(`mega-lvl2-${group}`).style.display = 'block';
+    
+    // Auto-select first item in that group
+    const firstCat = document.querySelector(`#mega-lvl2-${group} .mega-menu-category`);
+    if (firstCat) {
+        const event = new MouseEvent('mouseenter', { view: window, bubbles: true, cancelable: true });
+        firstCat.dispatchEvent(event);
+    }
+}
+
+function getSolutionProducts(solutionId) {
+    const solution = typeof solutions !== 'undefined' ? solutions.find(s => s.id === solutionId) : null;
+    let solutionProducts = [];
+    
+    if (solution) {
+        if (solutionId === 'neonatal-care') {
+            solutionProducts = products.filter(p => p.brand === 'FANEM' && p.category === 'Neonatal Care');
+        } else {
+            solutionProducts = products.filter(p => solution.categories.includes(p.category));
+        }
+    }
+    return solutionProducts;
+}
+
+function showMegaMenuCategoryProducts(encodedCategory, element, isInit = false) {
+    const category = decodeURIComponent(encodedCategory);
+    
+    if (element) {
+        const sidebar = element.closest('.mega-menu-level-2');
+        sidebar.querySelectorAll('.mega-menu-category').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+    }
+    
+    const categoryProducts = products.filter(p => p.category === category);
+    renderLvl3(categoryProducts);
+}
+
+function showMegaMenuSolutionProducts(solutionId, element, isInit = false) {
+    if (element) {
+        const sidebar = element.closest('.mega-menu-level-2');
+        sidebar.querySelectorAll('.mega-menu-category').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+    }
+    
+    const solutionProducts = getSolutionProducts(solutionId);
+    renderLvl3(solutionProducts);
+}
+
+function renderLvl3(productsToRender) {
+    let html = '';
+    if (productsToRender.length === 0) {
+        html = `<p style="padding: 20px; color: var(--text-muted);">No products found.</p>`;
+    } else {
+        html = `
+            <div class="mega-menu-products-grid">
+                ${productsToRender.slice(0, 15).map(p => `
+                    <a href="product-detail.html?id=${p.id}" class="mega-menu-product-item">
+                        <span class="mega-menu-product-name">${p.name}</span>
+                        <span class="mega-menu-product-brand">${p.brand}</span>
+                    </a>
+                `).join('')}
+            </div>
+            ${productsToRender.length > 15 ? `<div style="text-align: right; margin-top: 16px;"><a href="products.html" class="link-action" style="font-weight:600; color:var(--primary);">View All &rarr;</a></div>` : ''}
+        `;
+    }
+    
+    document.querySelectorAll('#mega-lvl3-content').forEach(contentArea => {
+        contentArea.innerHTML = html;
+    });
+}
+
+function toggleMobileMegaMenu() {
+    const mobileMenu = document.getElementById('mobile-mega-menu-content');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('active');
+        const icon = mobileMenu.previousElementSibling.querySelector('.dropdown-icon');
+        if (icon) {
+            icon.style.transform = mobileMenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    }
+}
+
+function toggleMobileAccordion(targetId, btnElement) {
+    const target = document.getElementById(targetId);
+    if (target) {
+        target.classList.toggle('active');
+        btnElement.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
 }

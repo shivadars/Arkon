@@ -630,3 +630,29 @@ const testimonials = [
     image: "assets/testimonials/arvind-patel.jpg"
   }
 ];
+const solutions = [
+    {
+        "id": "critical-care",
+        "name": "Critical Care"
+    },
+    {
+        "id": "peri-operative-care",
+        "name": "Peri-operative Care"
+    },
+    {
+        "id": "emergency-care",
+        "name": "Emergency Care"
+    },
+    {
+        "id": "obstetrics",
+        "name": "Obstetrics"
+    },
+    {
+        "id": "neonatal-care",
+        "name": "Neonatal Care"
+    },
+    {
+        "id": "general-ward",
+        "name": "General Ward"
+    }
+];
