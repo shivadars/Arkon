@@ -9,12 +9,8 @@ const products = [
         "name": "V6/V8",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": [
-            "The COMEN V8 is a highly advanced modular patient monitor designed for high-acuity environments like Intensive Care Units and Emergency Departments.",
-            "It features a massive, high-definition touchscreen interface that allows clinicians to easily track 12-lead ECG, SpO2, NIBP, and advanced hemodynamic parameters in real-time.",
-            "Built with a plug-and-play module rack, the V8 provides ultimate flexibility, allowing hospitals to customize the monitor exactly to their specific clinical needs without purchasing entirely new systems."
-        ],
-        "image": "assets/products/comen-v8.jpg",
+        "description": "The V6/V8 series ICU patient ventilator is a life-support medical device designed to assist or replace spontaneous breathing in critically ill patients. This ventilator delivers precise oxygen and airflow control to ensure safe, stable, and effective respiratory therapy in intensive care environment...",
+        "image": "assets/images/products/v6-v8.png",
         "price": 137000
     },
     {
@@ -22,8 +18,8 @@ const products = [
         "name": "V2/V5",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced V2/V5 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=V2%2FV5",
+        "description": "To cope with present and potential clinical challenges, V5 is equipped with a turbine-driven system. Advanced ventilation modes and comprehensively monitored parameters allow medical providers to step closer to the complete clinical picture of patients. A 15.6-inch TFT touchscreen with an intuitive ...",
+        "image": "assets/images/products/v2-v5.png",
         "price": 44957
     },
     {
@@ -31,12 +27,8 @@ const products = [
         "name": "V3/V3 Pro",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": [
-            "The V3 and V3 Pro are versatile, compact patient monitors perfectly suited for general wards, outpatient clinics, and continuous transport monitoring.",
-            "Equipped with a long-lasting internal battery and a rugged, drop-resistant casing, these monitors ensure continuous patient surveillance even while in transit.",
-            "The Pro version adds specialized modules for End-tidal CO2 monitoring, making it an indispensable tool for post-operative care and procedural sedation."
-        ],
-        "image": "assets/products/comen-v3-v3-pro.jpg",
+        "description": "The V3 Pro is a powerful yet portable ICU ventilator, featuring turbine-driven technology, a hidden carry handle, and extended battery life for true mobility. It supports a full range of patients from neonates to adults, offers advanced ventilation modes, and comes equipped with comprehensive clinic...",
+        "image": "assets/images/products/v3-v3-pro.png",
         "price": 155000
     },
     {
@@ -44,8 +36,8 @@ const products = [
         "name": "V1/V1 Pro",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced V1/V1 Pro medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=V1%2FV1%20Pro",
+        "description": "Engineered for reliability in the most challenging environments, V1 Pro ensures stable ventilation during patient transport, even under extreme conditions. With advanced features and intelligent control, it delivers ICU-level ventilation performance on the move—bringing critical care standards where...",
+        "image": "assets/images/products/v1-v1-pro.png",
         "price": 68006
     },
     {
@@ -53,8 +45,8 @@ const products = [
         "name": "NV50/60/70",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced NV50/60/70 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=NV50%2F60%2F70",
+        "description": "An 18-inch touchscreen with rotating display for easier operation and observation.",
+        "image": "assets/images/products/nv50-60-70.png",
         "price": 149126
     },
     {
@@ -62,12 +54,8 @@ const products = [
         "name": "NV10",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": [
-            "The COMEN NV10 is a dedicated non-invasive ventilation (NIV) solution engineered to provide exceptional respiratory support without the need for intubation.",
-            "It utilizes advanced leak-compensation algorithms and highly responsive triggers to ensure perfect patient-ventilator synchrony and maximize patient comfort.",
-            "With its intuitive touchscreen interface and comprehensive monitoring capabilities, the NV10 allows respiratory therapists to quickly adjust therapy and respond to changing patient needs."
-        ],
-        "image": "assets/products/comen-nv10.jpg",
+        "description": "The NV10 neonatal ventilator is a critical medical device designed to provide respiratory support for newborns and young infants who cannot breathe adequately on their own. It delivers precise airflow and pressure to maintain stable oxygenation. This infant ventilator provides stable, lung-protectiv...",
+        "image": "assets/images/products/nv10.png",
         "price": 66000
     },
     {
@@ -75,8 +63,8 @@ const products = [
         "name": "VN Series",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "Advanced N Series from COMEN.",
-        "image": "assets/products/medical_hero_banner.png",
+        "description": "Designed for neonates, premature infants, and pediatric patients with birth weight ≥200 g. Delivering full-cycle precision ventilation protection - from lung recruitment preparation through ventilator weaning assessment.",
+        "image": "assets/images/products/vn-series.png",
         "price": 88000
     },
     {
@@ -84,12 +72,8 @@ const products = [
         "name": "NV8",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": [
-            "The COMEN V8 is a highly advanced modular patient monitor designed for high-acuity environments like Intensive Care Units and Emergency Departments.",
-            "It features a massive, high-definition touchscreen interface that allows clinicians to easily track 12-lead ECG, SpO2, NIBP, and advanced hemodynamic parameters in real-time.",
-            "Built with a plug-and-play module rack, the V8 provides ultimate flexibility, allowing hospitals to customize the monitor exactly to their specific clinical needs without purchasing entirely new systems."
-        ],
-        "image": "assets/products/comen-v8.jpg",
+        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
+        "image": "assets/images/products/nv8.png",
         "price": 137000
     },
     {
@@ -97,8 +81,8 @@ const products = [
         "name": "NF5",
         "brand": "COMEN",
         "category": "High Flow Oxygen Therapy Humidifier",
-        "description": "Advanced NF5 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=NF5",
+        "description": "Rapidly increase the O₂ concentration, increase the patient's O₂ reserve, and facilitate sputum suction, bronchoscopy, intubation and other nursing cares.",
+        "image": "assets/images/products/nf5.png",
         "price": 92161
     },
     {
@@ -106,8 +90,8 @@ const products = [
         "name": "HT30",
         "brand": "COMEN",
         "category": "High Flow Oxygen Therapy Humidifier",
-        "description": "Advanced HT30 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=HT30",
+        "description": "Intelligent Humidification for Advanced Respiratory Care",
+        "image": "assets/images/products/ht30.png",
         "price": 157577
     },
     {
@@ -115,8 +99,8 @@ const products = [
         "name": "HT50",
         "brand": "COMEN",
         "category": "High Flow Oxygen Therapy Humidifier",
-        "description": "Advanced HT50 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=HT50",
+        "description": "Intelligent Humidification for Advanced Respiratory Care",
+        "image": "assets/images/products/ht50.png",
         "price": 47694
     },
     {
@@ -124,8 +108,8 @@ const products = [
         "name": "X8",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced X8 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=X8",
+        "description": "The X8 is an integrated anesthesia machine designed to support accurate control, stable delivery, ICU-level ventilation support, perioperative lung protection, and smart anesthesia management in one advanced workstation.",
+        "image": "assets/images/products/x8.png",
         "price": 40676
     },
     {
@@ -133,8 +117,8 @@ const products = [
         "name": "AX900",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced AX900 from COMEN.",
-        "image": "assets/products/comen-ax900.jpg",
+        "description": "The AX-900 is a modern anesthesia machine ventilator designed to provide safe and precise anesthesia delivery during surgical procedures. Combining precision ventilation with intuitive controls, this anesthesia workstation ensures patient safety and surgical efficiency. It ensures accurate ventilati...",
+        "image": "assets/images/products/ax900.png",
         "price": 232000
     },
     {
@@ -142,8 +126,8 @@ const products = [
         "name": "AX-800/AX-700",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced AX-800/AX-700 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=AX-800%2FAX-700",
+        "description": "AX-800 features 15” four-way rotating touch screen, more comfortable for doctors of different heights in different positions to observe and operate, reducing work fatigue",
+        "image": "assets/images/products/ax-800-ax-700.png",
         "price": 85336
     },
     {
@@ -151,8 +135,8 @@ const products = [
         "name": "AX600",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced AX600 from COMEN.",
-        "image": "assets/products/comen-ax600.jpg",
+        "description": "AX-600 Features 12.1” four-way rotating touch screen, more comfortable for doctors of different heights in different positions to observe and operate, reducing work fatigue",
+        "image": "assets/images/products/ax600.png",
         "price": 131000
     },
     {
@@ -160,8 +144,8 @@ const products = [
         "name": "AX400/AX500",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced AX400/AX500 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=AX400%2FAX500",
+        "description": "The AX-500 features a 12-inch high-resolution screen that provides a clear and comfortable viewing experience for clinicians. Its user-friendly interface is intuitively designed, presenting vital information in a clean, organized layout. With simplified controls and clear display, the AX-500 makes m...",
+        "image": "assets/images/products/ax400-ax500.png",
         "price": 99344
     },
     {
@@ -169,8 +153,8 @@ const products = [
         "name": "A5/A7",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced A5 / A7 from COMEN.",
-        "image": "assets/products/comen-a5-a7.jpg",
+        "description": "A7, with the most comprehensive ventilation and intelligent and ergonomic operating design, is your best assistant during perioperative procedure!",
+        "image": "assets/images/products/a5-a7.png",
         "price": 80000
     },
     {
@@ -178,8 +162,8 @@ const products = [
         "name": "AGSS-H/AGSS-L",
         "brand": "COMEN",
         "category": "Anesthesia Machine",
-        "description": "Advanced AGSS-H/AGSS-L medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=AGSS-H%2FAGSS-L",
+        "description": "AGSS _ H is suitable for exhaust gas pipes with a flow rate of> 75 L/min",
+        "image": "assets/images/products/agss-h-agss-l.png",
         "price": 76517
     },
     {
@@ -187,8 +171,8 @@ const products = [
         "name": "MR-M80T/MR-M60T",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced MR-M80T/MR-M60T medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=MR-M80T%2FMR-M60T",
+        "description": "Purpose-built for 1.5T/3.0T high-field MRI environments, the MR series monitor main unit operates stably within a static magnetic field of ≤60 mT, while the acquisition boxes can function within a 3.0T magnetic field without affecting MRI image quality.",
+        "image": "assets/images/products/mr-m80t-mr-m60t.png",
         "price": 175251
     },
     {
@@ -196,8 +180,8 @@ const products = [
         "name": "K Pro Series",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced K Pro Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=K%20Pro%20Series",
+        "description": "In critical care, accuracy and efficiency make all the difference. The K Pro Series intensive care unit monitor is designed with advanced technology, intelligent data integration, and an intuitive user experience to empower healthcare professionals and enhance patient safety.",
+        "image": "assets/images/products/k-pro-series.png",
         "price": 152096
     },
     {
@@ -205,8 +189,8 @@ const products = [
         "name": "K22 Pro",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced K22 Pro from COMEN.",
-        "image": "assets/products/comen-k22-pro.jpg",
+        "description": "21.5″ Capacitive Touchscreen: Intuitive UI design for viewing at one glance and ergonomic operation design for a good clinical experience. Portrait & Landscape Modes: Effortlessly switch views to focus on detailed trends or display up to 16 channels at once—adapt the screen to your workflow.",
+        "image": "assets/images/products/k22-pro.png",
         "price": 41000
     },
     {
@@ -214,8 +198,8 @@ const products = [
         "name": "K1",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced K1 from COMEN.",
-        "image": "assets/products/comen-k1.jpg",
+        "description": "Stay Connected Anytime, Anywhere with K1: The Next-Generation Transport Monitor",
+        "image": "assets/images/products/k1.png",
         "price": 37000
     },
     {
@@ -223,8 +207,8 @@ const products = [
         "name": "NMPro Series",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced NMPro Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=NMPro%20Series",
+        "description": "Experience enhanced sensitivity and clarity with a high-resolution display. This ensures effortless control and provides an immersive viewing experience for critical patient data, optimizing user interaction and efficiency.",
+        "image": "assets/images/products/nmpro-series.png",
         "price": 148492
     },
     {
@@ -232,8 +216,8 @@ const products = [
         "name": "N Series",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced N Series from COMEN.",
-        "image": "assets/products/medical_hero_banner.png",
+        "description": "High-Resolution Touchscreen: Choose from three screen dimensions—simultaneously view up to 12 traces for complete insight.",
+        "image": "assets/images/products/n-series.png",
         "price": 88000
     },
     {
@@ -241,8 +225,8 @@ const products = [
         "name": "ND Series",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced ND Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=ND%20Series",
+        "description": "3-tap Workflow: Complete any task within three taps—no training overload. (UI inherited from KProSeries)",
+        "image": "assets/images/products/nd-series.png",
         "price": 130276
     },
     {
@@ -250,8 +234,8 @@ const products = [
         "name": "eCenter-CMS",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced eCenter-CMS medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=eCenter-CMS",
+        "description": "eCenter-CMS offers unparalleled functionality to healthcare professionals for efficient workflow and centralize monitor, achieving patients information at their fingertips enhancing their responsiveness, while simultaneously ensuring that patients receive timely and accurate medical attention, signi...",
+        "image": "assets/images/products/ecenter-cms.png",
         "price": 92380
     },
     {
@@ -259,8 +243,8 @@ const products = [
         "name": "NC6 &amp; NC7",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced NC6 &amp; NC7 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=NC6%20%26amp%3B%20NC7",
+        "description": "The COMEN NC6 & NC7 Patient Monitors set a new benchmark in clinical monitoring, offering speed, accuracy, and intelligent support to enhance ward rounds and optimize patient outcomes.",
+        "image": "assets/images/products/nc6--amp--nc7.png",
         "price": 101126
     },
     {
@@ -268,8 +252,8 @@ const products = [
         "name": "NC5",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced NC5 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=NC5",
+        "description": "The NC5 is a portable vital signs monitor designed for efficient patient rounding across medical/surgical wards, clinics, and emergency triage. It delivers comprehensive patient surveillance with enhanced connectivity and clinical intelligence, designed for dynamic hospital environments.",
+        "image": "assets/images/products/nc5.png",
         "price": 87628
     },
     {
@@ -277,8 +261,8 @@ const products = [
         "name": "NC3",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced NC3 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=NC3",
+        "description": "The NC3 is a portable vital signs monitor designed for efficient patient rounding across medical/surgical wards, clinics, and emergency triage. Its compact design and intuitive operation streamline clinical workflows while ensuring reliable physiological parameter tracking.",
+        "image": "assets/images/products/nc3.png",
         "price": 54392
     },
     {
@@ -286,8 +270,8 @@ const products = [
         "name": "CF5&amp;CF8",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced CF5&amp;CF8 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CF5%26amp%3BCF8",
+        "description": "The Comen CF Series fetal monitor and Maternal Monitors are designed to deliver high-quality, continuous monitoring with precision and reliability for both maternal and fetal well-being. With advanced technology and user-friendly features, these fetal heart rate monitors ensure optimal care for expe...",
+        "image": "assets/images/products/cf5-amp-cf8.png",
         "price": 129445
     },
     {
@@ -295,8 +279,8 @@ const products = [
         "name": "H300 &amp; H301",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced H300 &amp; H301 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=H300%20%26amp%3B%20H301",
+        "description": "Weighs less than 1.3kg, easily held in hand, and under 6cm thick for effortless portability.",
+        "image": "assets/images/products/h300--amp--h301.png",
         "price": 129692
     },
     {
@@ -304,8 +288,8 @@ const products = [
         "name": "H1200",
         "brand": "COMEN",
         "category": "Patient Monitoring",
-        "description": "Advanced H1200 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=H1200",
+        "description": "Convenient input and more shortcut controls with an alphanumeric keyboard, plus IPX1 waterproof protection.",
+        "image": "assets/images/products/h1200.png",
         "price": 183452
     },
     {
@@ -313,8 +297,8 @@ const products = [
         "name": "S80",
         "brand": "COMEN",
         "category": "Defibrillator Monitor",
-        "description": "Advanced S80 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=S80",
+        "description": "An all-in-one advanced resuscitation platform that integrates defibrillation, pacing and comprehensive monitoring-empowering clinicians to make faster decisions and save more lives.",
+        "image": "assets/images/products/s80.png",
         "price": 55890
     },
     {
@@ -322,8 +306,8 @@ const products = [
         "name": "S50",
         "brand": "COMEN",
         "category": "Defibrillator Monitor",
-        "description": "Advanced S50 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=S50",
+        "description": "Provide a full range of functions to meet various life support needs",
+        "image": "assets/images/products/s50.png",
         "price": 190763
     },
     {
@@ -331,8 +315,8 @@ const products = [
         "name": "S8",
         "brand": "COMEN",
         "category": "Defibrillator Monitor",
-        "description": "Advanced S8 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=S8",
+        "description": "The COMEN S8 integrates defibrillation, pacing, monitoring, and AED functions in a single portable device. Suitable for pre-hospital emergencies and hospital use, it supports synchronous/asynchronous defibrillation, pacing modes, and extensive vital-sign monitoring (5/12-lead ECG, SpO₂, TEMP, EtCO₂,...",
+        "image": "assets/images/products/s8.png",
         "price": 124264
     },
     {
@@ -340,8 +324,8 @@ const products = [
         "name": "S5",
         "brand": "COMEN",
         "category": "Defibrillator Monitor",
-        "description": "Advanced S5 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=S5",
+        "description": "The 4-in-1 design of the S5 Defibrillator Monitor brings multiple functions into one compact unit, offering significant space and cost savings while improving portability.",
+        "image": "assets/images/products/s5.png",
         "price": 103928
     },
     {
@@ -349,8 +333,8 @@ const products = [
         "name": "S1",
         "brand": "COMEN",
         "category": "Defibrillator Monitor",
-        "description": "Advanced S1 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=S1",
+        "description": "The 4-in-1 design of the S1 Defibrillator Monitor brings multiple functions into one compact unit, offering significant space and cost savings while improving portability.",
+        "image": "assets/images/products/s1.png",
         "price": 66900
     },
     {
@@ -358,8 +342,8 @@ const products = [
         "name": "F3/F5",
         "brand": "COMEN",
         "category": "AED",
-        "description": "Advanced F3/F5 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=F3%2FF5",
+        "description": "F3/F5, a user-friendly AED that allows fast operation. It is compact, light-weighted and has integrated AED mode and 3-lead ECG monitoring function. The 7-inch large HD screen provides vivid interactive guidance, making rescue process an easy job.",
+        "image": "assets/images/products/f3-f5.png",
         "price": 103017
     },
     {
@@ -367,8 +351,8 @@ const products = [
         "name": "G Series",
         "brand": "COMEN",
         "category": "AED",
-        "description": "Advanced G Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=G%20Series",
+        "description": "Designed for life-saving speed, the G-Series AED features an intuitive, responder-focused workflow that enables rapid defibrillation even in high-stress emergencies. With advanced cardiac rhythm analysis and clear, automated step-by-step guidance, it minimizes required actions and removes uncertaint...",
+        "image": "assets/images/products/g-series.png",
         "price": 56179
     },
     {
@@ -376,8 +360,8 @@ const products = [
         "name": "F Series",
         "brand": "COMEN",
         "category": "AED",
-        "description": "Advanced F Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=F%20Series",
+        "description": "Comen F Series AED is designed for rapid response, empowering anyone to deliver swift, effective treatment when it matters most.",
+        "image": "assets/images/products/f-series.png",
         "price": 93366
     },
     {
@@ -385,8 +369,8 @@ const products = [
         "name": "ES-Series",
         "brand": "COMEN",
         "category": "AED",
-        "description": "Advanced ES-Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=ES-Series",
+        "description": "Weighing just 7.9 kg, making it exceptionally easy to carry and deploy in critical moments. The back plate is crafted from PPA + 50% glass fiber with a density of 1.6 g/cm³, while the support arm uses PA + 30% glass fiber at only 1.3 g/cm³—offering excellent strength without extra bulk.",
+        "image": "assets/images/products/es-series.png",
         "price": 57961
     },
     {
@@ -394,8 +378,8 @@ const products = [
         "name": "L9",
         "brand": "COMEN",
         "category": "Surgical Light",
-        "description": "Advanced L9 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=L9",
+        "description": "L9 features advanced DC dimming technology, controlling illuminance without the high-frequency flash of light. This prevents eye damage and reduces fatigue in patients, at the same time, ensuring a smooth surgical recording without flicker.",
+        "image": "assets/images/products/l9.png",
         "price": 42373
     },
     {
@@ -403,8 +387,8 @@ const products = [
         "name": "L5",
         "brand": "COMEN",
         "category": "Surgical Light",
-        "description": "Advanced L5 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=L5",
+        "description": "During the surgery, the medical staff will change the height of the surgical light according to the doctor's position change, which means the surgical light doesn’t keep 1 meter from the wound and cause the focus change. L5 adopts adaptive lighting technology, the surgical light will automatically a...",
+        "image": "assets/images/products/l5.png",
         "price": 150688
     },
     {
@@ -421,8 +405,8 @@ const products = [
         "name": "WE1/WE2",
         "brand": "COMEN",
         "category": "Operating Table",
-        "description": "Advanced WE1/WE2 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=WE1%2FWE2",
+        "description": "The WE1/WE2 operating table features a modular design, allowing for flexible configuration to meet diverse surgical requirements.",
+        "image": "assets/images/products/we1-we2.png",
         "price": 92255
     },
     {
@@ -430,8 +414,8 @@ const products = [
         "name": "WH1/WH2",
         "brand": "COMEN",
         "category": "Operating Table",
-        "description": "Advanced WH1/WH2 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=WH1%2FWH2",
+        "description": "As surgery advances, hybrid operating rooms must fulfill a wide range of surgical needs. WH1/WH2 is an electrohydraulic operating table with a variety of accessories. It features a stable load-bearing capacity and allows for flexible operation. It can efficiently provide a safe, comfortable, and con...",
+        "image": "assets/images/products/wh1-wh2.png",
         "price": 116372
     },
     {
@@ -439,8 +423,8 @@ const products = [
         "name": "W5/W3",
         "brand": "COMEN",
         "category": "Operating Table",
-        "description": "Advanced W5/W3 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=W5%2FW3",
+        "description": "The modular design of the W5 is a major feature, with an emphasis on the expandability of the operating table in order to meet a variety of clinical needs and solve the problem of special posture requirements under different surgical settings.",
+        "image": "assets/images/products/w5-w3.png",
         "price": 195783
     },
     {
@@ -448,8 +432,8 @@ const products = [
         "name": "BQ80",
         "brand": "COMEN",
         "category": "Warmer",
-        "description": "Advanced BQ80 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=BQ80",
+        "description": "This is by far the most powerful 4-in-1 neonatal nursing platform. The BQ80 integrates four key rescue and nursing systems to achieve one-stop operation and management. At the same time, it scientifically optimizes the workflow, helps medical staff to easily respond to urgent medical needs, effectiv...",
+        "image": "assets/images/products/bq80.png",
         "price": 54599
     },
     {
@@ -457,8 +441,8 @@ const products = [
         "name": "B10",
         "brand": "COMEN",
         "category": "Incubator",
-        "description": "Advanced B10 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=B10",
+        "description": "Preterm infants in the NICU face many challenges, including heat loss, excessive noise and light, infection risk, limited parental contact, complex medical conditions, and the possibility of delayed nursing care.",
+        "image": "assets/images/products/b10.png",
         "price": 46808
     },
     {
@@ -466,8 +450,8 @@ const products = [
         "name": "B3",
         "brand": "COMEN",
         "category": "Incubator",
-        "description": "Advanced B3 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=B3",
+        "description": "The water tank is made of transparent material. The water condition inside can be viewed at a glance. This greatly reduces the risk of dry burning.",
+        "image": "assets/images/products/b3.png",
         "price": 125293
     },
     {
@@ -475,8 +459,8 @@ const products = [
         "name": "B6/B8",
         "brand": "COMEN",
         "category": "Incubator",
-        "description": "Advanced B6/B8 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=B6%2FB8",
+        "description": "Neonatal incubator is warming equipment used for providing constant temperature and humidity for treatment of premature infants and critically ill neonates which fit well with their physiological characteristics and needs.",
+        "image": "assets/images/products/b6-b8.png",
         "price": 106398
     },
     {
@@ -484,8 +468,8 @@ const products = [
         "name": "BT800",
         "brand": "COMEN",
         "category": "Incubator",
-        "description": "Advanced BT800 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=BT800",
+        "description": "Accurate, efficient, long-endurance environment control",
+        "image": "assets/images/products/bt800.png",
         "price": 61556
     },
     {
@@ -493,8 +477,8 @@ const products = [
         "name": "P3/P6",
         "brand": "COMEN",
         "category": "Hypothermia Treatment",
-        "description": "Advanced P3/P6 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=P3%2FP6",
+        "description": "Neonatal hypoxic-ischemic encephalopathy (HIE) is a brain injury disease with a high mortality rate. Therapeutic Hypothermia is regarded as a core treatment for HIE as it helps by maintaining a lower core temperature in newborns for up to 72 hours, effectively lowering mortality by slowing down apop...",
+        "image": "assets/images/products/p3-p6.png",
         "price": 170304
     },
     {
@@ -502,8 +486,8 @@ const products = [
         "name": "BL20",
         "brand": "COMEN",
         "category": "Jaundice Treatment",
-        "description": "Advanced BL20 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=BL20",
+        "description": "Greatly increase effective treatment area together with overhead phototherapy devices (BL60/BL70)",
+        "image": "assets/images/products/bl20.png",
         "price": 193908
     },
     {
@@ -511,8 +495,8 @@ const products = [
         "name": "BL60",
         "brand": "COMEN",
         "category": "Jaundice Treatment",
-        "description": "Advanced BL60 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=BL60",
+        "description": "Maximum irradiance at a wave length of 475nm which is at the perfect peak according to the latest clinical guidelines*",
+        "image": "assets/images/products/bl60.png",
         "price": 75899
     },
     {
@@ -520,8 +504,8 @@ const products = [
         "name": "MX8900/M800/ME900",
         "brand": "COMEN",
         "category": "Infusion System",
-        "description": "Advanced MX8900/M800/ME900 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=MX8900%2FM800%2FME900",
+        "description": "Comen M800 and ME900 are able to provide tailor-made treatment plans of specific drugs for patients. By pre-setting and save the infusion parameters in pumps, allowing caregiver to easily apply, modify frequently used infusion parameters and drugs.",
+        "image": "assets/images/products/mx8900-m800-me900.png",
         "price": 64561
     },
     {
@@ -529,8 +513,8 @@ const products = [
         "name": "ME660/M260",
         "brand": "COMEN",
         "category": "Infusion System",
-        "description": "Advanced ME660/M260 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=ME660%2FM260",
+        "description": "EN1789 certified for use during transport and E&R scenarios.Shielded from harsh environments with a validated IP44 rating.",
+        "image": "assets/images/products/me660-m260.png",
         "price": 146854
     },
     {
@@ -538,8 +522,8 @@ const products = [
         "name": "EIS-2000",
         "brand": "COMEN",
         "category": "Endoscopy",
-        "description": "Advanced EIS-2000 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=EIS-2000",
+        "description": "The EIS-2000 gastrointestinal endoscope is a specialized medical device, allowing doctors to conduct a precise examination of the stomach, intestines, and abdominal organs. This advanced endoscopy system supports both UGI scope and LGI endoscopy, providing high-definition imaging through its endosco...",
+        "image": "assets/images/products/eis-2000.png",
         "price": 57969
     },
     {
@@ -547,8 +531,8 @@ const products = [
         "name": "CVL Series",
         "brand": "COMEN",
         "category": "Endoscopy",
-        "description": "Advanced CVL Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CVL%20Series",
+        "description": "The 3\" screen supports high resolution up to 640*48",
+        "image": "assets/images/products/cvl-series.png",
         "price": 132039
     },
     {
@@ -556,8 +540,8 @@ const products = [
         "name": "EP50",
         "brand": "COMEN",
         "category": "Ultrasound",
-        "description": "Advanced EP50 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=EP50",
+        "description": "Powered by the Comen E-Sonore Ultrasound Platform, EP50 integrates cutting-edge algorithms and AI technology. Its advanced image processing ensures accurate diagnosis.",
+        "image": "assets/images/products/ep50.png",
         "price": 167989
     },
     {
@@ -565,8 +549,8 @@ const products = [
         "name": "CF9600",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CF9600 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CF9600",
+        "description": "Eight channels: DIFF, WNB, RET, PLT-F, WPC, CRP, SAA, ESR",
+        "image": "assets/images/products/cf9600.png",
         "price": 197949
     },
     {
@@ -574,8 +558,8 @@ const products = [
         "name": "CH8600",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8600 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8600",
+        "description": "Semiconductor laser flow cytometry (FCM), tri-angle laser scatter, chemical dye, and impedance capabilities, enabling accurate WBC 5-part differential analysis and CBC counting.",
+        "image": "assets/images/products/ch8600.png",
         "price": 147414
     },
     {
@@ -583,8 +567,8 @@ const products = [
         "name": "CH8600CRP",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8600CRP medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8600CRP",
+        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
+        "image": "assets/images/products/ch8600crp.jpeg",
         "price": 186460
     },
     {
@@ -592,8 +576,8 @@ const products = [
         "name": "CH8500",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8500 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8500",
+        "description": "10.4-inch capacitive TFT touch screen with high resolution",
+        "image": "assets/images/products/ch8500.png",
         "price": 176154
     },
     {
@@ -601,8 +585,8 @@ const products = [
         "name": "CH8500-V Series",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8500-V Series medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8500-V%20Series",
+        "description": "Explore the advanced capabilities of the CoooSeee CH8500-V series hematology analyzer. With a throughput of 60 samples per hour and a compact design, this innovation represents the latest advancement from CoooSeee for diagnostic excellence in WBC 5-part differentiation.",
+        "image": "assets/images/products/ch8500-v-series.png",
         "price": 144551
     },
     {
@@ -610,8 +594,8 @@ const products = [
         "name": "CH8500CRP",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8500CRP medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8500CRP",
+        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
+        "image": "assets/images/products/ch8500crp.webp",
         "price": 140707
     },
     {
@@ -619,8 +603,8 @@ const products = [
         "name": "CH8300",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8300 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8300",
+        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
+        "image": "assets/images/products/ch8300.png",
         "price": 179542
     },
     {
@@ -628,8 +612,8 @@ const products = [
         "name": "CH8300CRP",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8300CRP medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8300CRP",
+        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
+        "image": "assets/images/products/ch8300crp.png",
         "price": 32408
     },
     {
@@ -637,8 +621,8 @@ const products = [
         "name": "CH8310",
         "brand": "COMEN",
         "category": "In Vitro Diagnostic",
-        "description": "Advanced CH8310 medical equipment from COMEN, designed for modern clinical applications.",
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=CH8310",
+        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
+        "image": "assets/images/products/ch8310.png",
         "price": 107705
     },
     {
@@ -731,21 +715,141 @@ const products = [
         "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Transport+Incubators",
         "description": "Safe transport incubators."
     },
-    { "id": 110, "name": "Single-use Rhinolaryngoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 5000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Rhinolaryngoscope", "description": "Single-use Rhinolaryngoscope." },
-    { "id": 111, "name": "Single-use Choledochoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Choledochoscope", "description": "Single-use Choledochoscope." },
-    { "id": 112, "name": "Single-use Duodenoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Duodenoscope", "description": "Single-use Duodenoscope." },
-    { "id": 113, "name": "Single-use Bronchoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 5500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Bronchoscope", "description": "Single-use Bronchoscope." },
-    { "id": 114, "name": "Single-use Collector", "brand": "HUGEMED", "category": "Endoscopy", "price": 1000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Collector", "description": "Single-use Collector." },
-    { "id": 115, "name": "Broncho Sampler", "brand": "HUGEMED", "category": "Endoscopy", "price": 1200, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Broncho+Sampler", "description": "Broncho Sampler." },
-    { "id": 116, "name": "Single-use Ureterorenoscope HU30M", "brand": "HUGEMED", "category": "Endoscopy", "price": 7000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=HU30M", "description": "Single-use Ureterorenoscope HU30M (6.3/3.6Fr)." },
-    { "id": 117, "name": "Single-use Ureterorenoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6800, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Ureterorenoscope", "description": "Single-use Ureterorenoscope." },
-    { "id": 118, "name": "Single-use Cystoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cystoscope", "description": "Single-use Cystoscope." },
-    { "id": 119, "name": "Single-Use Cysto-Nephroscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 7200, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cysto-Nephroscope", "description": "Single-Use Cysto-Nephroscope." },
-    { "id": 120, "name": "Single-use Ureteral Access Sheath", "brand": "HUGEMED", "category": "Endoscopy", "price": 800, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Access+Sheath", "description": "Single-use Ureteral Access Sheath." },
-    { "id": 121, "name": "Single-use Stent Removal Cystoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Stent+Removal", "description": "Single-use Stent Removal Cystoscope." },
-    { "id": 122, "name": "Suction Pump", "brand": "HUGEMED", "category": "Endoscopy", "price": 2500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Suction+Pump", "description": "Suction Pump." },
-    { "id": 123, "name": "Video Laryngoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 15000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Video+Laryngoscope", "description": "Reusable Video Laryngoscope." },
-    { "id": 124, "name": "Reusable Ureterorenoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 25000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Reusable+Ureterorenoscope", "description": "Reusable Ureterorenoscope." }
+    {
+        "id": 110,
+        "name": "Single-use Rhinolaryngoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 5000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Rhinolaryngoscope",
+        "description": "Single-use Rhinolaryngoscope."
+    },
+    {
+        "id": 111,
+        "name": "Single-use Choledochoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 6000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Choledochoscope",
+        "description": "Single-use Choledochoscope."
+    },
+    {
+        "id": 112,
+        "name": "Single-use Duodenoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 6500,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Duodenoscope",
+        "description": "Single-use Duodenoscope."
+    },
+    {
+        "id": 113,
+        "name": "Single-use Bronchoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 5500,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Bronchoscope",
+        "description": "Single-use Bronchoscope."
+    },
+    {
+        "id": 114,
+        "name": "Single-use Collector",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 1000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Collector",
+        "description": "Single-use Collector."
+    },
+    {
+        "id": 115,
+        "name": "Broncho Sampler",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 1200,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Broncho+Sampler",
+        "description": "Broncho Sampler."
+    },
+    {
+        "id": 116,
+        "name": "Single-use Ureterorenoscope HU30M",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 7000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=HU30M",
+        "description": "Single-use Ureterorenoscope HU30M (6.3/3.6Fr)."
+    },
+    {
+        "id": 117,
+        "name": "Single-use Ureterorenoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 6800,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Ureterorenoscope",
+        "description": "Single-use Ureterorenoscope."
+    },
+    {
+        "id": 118,
+        "name": "Single-use Cystoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 6000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cystoscope",
+        "description": "Single-use Cystoscope."
+    },
+    {
+        "id": 119,
+        "name": "Single-Use Cysto-Nephroscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 7200,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cysto-Nephroscope",
+        "description": "Single-Use Cysto-Nephroscope."
+    },
+    {
+        "id": 120,
+        "name": "Single-use Ureteral Access Sheath",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 800,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Access+Sheath",
+        "description": "Single-use Ureteral Access Sheath."
+    },
+    {
+        "id": 121,
+        "name": "Single-use Stent Removal Cystoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 6500,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Stent+Removal",
+        "description": "Single-use Stent Removal Cystoscope."
+    },
+    {
+        "id": 122,
+        "name": "Suction Pump",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 2500,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Suction+Pump",
+        "description": "Suction Pump."
+    },
+    {
+        "id": 123,
+        "name": "Video Laryngoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 15000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Video+Laryngoscope",
+        "description": "Reusable Video Laryngoscope."
+    },
+    {
+        "id": 124,
+        "name": "Reusable Ureterorenoscope",
+        "brand": "HUGEMED",
+        "category": "Endoscopy",
+        "price": 25000,
+        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Reusable+Ureterorenoscope",
+        "description": "Reusable Ureterorenoscope."
+    }
 ];
 
 const categories = [
