@@ -687,8 +687,7 @@ function initMegaMenu() {
         "Infusion System",
         "Endoscopy",
         "Ultrasound",
-        "In Vitro Diagnostic",
-        "Veterinary Product"
+        "In Vitro Diagnostic"
     ];
     
     // 1. Build Desktop Mega Menu

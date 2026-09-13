@@ -730,7 +730,22 @@ const products = [
         "price": 180000,
         "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Transport+Incubators",
         "description": "Safe transport incubators."
-    }
+    },
+    { "id": 110, "name": "Single-use Rhinolaryngoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 5000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Rhinolaryngoscope", "description": "Single-use Rhinolaryngoscope." },
+    { "id": 111, "name": "Single-use Choledochoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Choledochoscope", "description": "Single-use Choledochoscope." },
+    { "id": 112, "name": "Single-use Duodenoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Duodenoscope", "description": "Single-use Duodenoscope." },
+    { "id": 113, "name": "Single-use Bronchoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 5500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Bronchoscope", "description": "Single-use Bronchoscope." },
+    { "id": 114, "name": "Single-use Collector", "brand": "HUGEMED", "category": "Endoscopy", "price": 1000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Collector", "description": "Single-use Collector." },
+    { "id": 115, "name": "Broncho Sampler", "brand": "HUGEMED", "category": "Endoscopy", "price": 1200, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Broncho+Sampler", "description": "Broncho Sampler." },
+    { "id": 116, "name": "Single-use Ureterorenoscope HU30M", "brand": "HUGEMED", "category": "Endoscopy", "price": 7000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=HU30M", "description": "Single-use Ureterorenoscope HU30M (6.3/3.6Fr)." },
+    { "id": 117, "name": "Single-use Ureterorenoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6800, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Ureterorenoscope", "description": "Single-use Ureterorenoscope." },
+    { "id": 118, "name": "Single-use Cystoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cystoscope", "description": "Single-use Cystoscope." },
+    { "id": 119, "name": "Single-Use Cysto-Nephroscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 7200, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cysto-Nephroscope", "description": "Single-Use Cysto-Nephroscope." },
+    { "id": 120, "name": "Single-use Ureteral Access Sheath", "brand": "HUGEMED", "category": "Endoscopy", "price": 800, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Access+Sheath", "description": "Single-use Ureteral Access Sheath." },
+    { "id": 121, "name": "Single-use Stent Removal Cystoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 6500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Stent+Removal", "description": "Single-use Stent Removal Cystoscope." },
+    { "id": 122, "name": "Suction Pump", "brand": "HUGEMED", "category": "Endoscopy", "price": 2500, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Suction+Pump", "description": "Suction Pump." },
+    { "id": 123, "name": "Video Laryngoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 15000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Video+Laryngoscope", "description": "Reusable Video Laryngoscope." },
+    { "id": 124, "name": "Reusable Ureterorenoscope", "brand": "HUGEMED", "category": "Endoscopy", "price": 25000, "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Reusable+Ureterorenoscope", "description": "Reusable Ureterorenoscope." }
 ];
 
 const categories = [
@@ -1014,6 +1029,26 @@ const solutions = [
             "ME660",
             "eCenter-CMS"
         ]
+    },
+    {
+        "id": "endoscopy",
+        "name": "Endoscopy",
+        "products": [
+            "Single-use Rhinolaryngoscope",
+            "Single-use Choledochoscope",
+            "Single-use Duodenoscope",
+            "Single-use Bronchoscope",
+            "Single-use Collector",
+            "Broncho Sampler",
+            "Single-use Ureterorenoscope HU30M",
+            "Single-use Ureterorenoscope",
+            "Single-use Cystoscope",
+            "Single-Use Cysto-Nephroscope",
+            "Single-use Ureteral Access Sheath",
+            "Single-use Stent Removal Cystoscope",
+            "Suction Pump",
+            "Video Laryngoscope",
+            "Reusable Ureterorenoscope"
+        ]
     }
 ];
-
