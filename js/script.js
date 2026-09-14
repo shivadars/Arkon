@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initLogoCarousel();
     initTestimonials();
     initSocialsCard();
-    initSmartHeader();
     initStackGallery();
     initMegaMenu();
 
@@ -710,7 +709,7 @@ function initMegaMenu() {
             <!-- Solutions Categories -->
             <div class="mega-menu-level-2" id="mega-lvl2-solutions" style="display: none;">
                 ${typeof solutions !== 'undefined' ? solutions.map((sol, idx) => `
-                    <a href="#" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="showMegaMenuSolutionProducts('${sol.id}', this)">
+                    <a href="products.html?solution=${sol.id}" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="showMegaMenuSolutionProducts('${sol.id}', this)">
                         ${sol.name}
                     </a>
                 `).join('') : ''}
@@ -784,7 +783,7 @@ function initMegaMenu() {
             <div class="mobile-accordion-level" id="mobile-solutions-group">
                 ${solutions.map((sol, idx) => `
                     <div class="mobile-accordion-item">
-                        <a href="#" class="mobile-accordion-link">${sol.name}</a>
+                        <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
                         <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)">▼</button>
                     </div>
                     <div class="mobile-accordion-level" id="mobile-sol-${idx}">

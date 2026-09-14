@@ -37,6 +37,13 @@ body {
     background-color: var(--surface);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 img {
@@ -272,8 +279,9 @@ p {
     height: 90px;
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -2117,6 +2125,10 @@ p {
     top: 90px;
     height: calc(100vh - 90px);
     overflow-y: auto;
+}
+
+.products-content {
+    padding-bottom: 60px;
 }
 
 .filter-group {

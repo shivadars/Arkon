@@ -854,54 +854,89 @@ const products = [
 
 const categories = [
     {
+        "id": "ventilator",
         "name": "Ventilator",
-        "desc": "High quality Ventilator by COMEN.",
-        "img": "assets/products/comen-v8.jpg"
+        "image": ""
     },
     {
-        "name": "Anesthesia Machines",
-        "desc": "High quality Anesthesia Machines by COMEN.",
-        "img": "assets/products/comen-ax900.jpg"
+        "id": "high-flow-oxygen-therapy-humidifier",
+        "name": "High Flow Oxygen Therapy Humidifier",
+        "image": ""
     },
     {
+        "id": "anesthesia-machine",
+        "name": "Anesthesia Machine",
+        "image": ""
+    },
+    {
+        "id": "patient-monitoring",
         "name": "Patient Monitoring",
-        "desc": "High quality Patient Monitoring by COMEN.",
-        "img": "assets/products/comen-k1.jpg"
+        "image": ""
     },
     {
-        "name": "Defibrillator & AED",
-        "desc": "High quality Defibrillator & AED by COMEN.",
-        "img": "assets/products/comen-defibrillator-monitor.jpg"
+        "id": "defibrillator-monitor",
+        "name": "Defibrillator Monitor",
+        "image": ""
     },
     {
-        "name": "Ultrasound & Imaging",
-        "desc": "High quality Ultrasound & Imaging by COMEN.",
-        "img": "assets/products/comen-ultrasound.jpg"
+        "id": "aed",
+        "name": "AED",
+        "image": ""
     },
     {
-        "name": "Infusion Systems",
-        "desc": "High quality Infusion Systems by COMEN.",
-        "img": "assets/products/medical_hero_banner.png"
+        "id": "surgical-light",
+        "name": "Surgical Light",
+        "image": ""
     },
     {
-        "name": "Airway Management",
-        "desc": "High quality Airway Management by HugeMed.",
-        "img": "assets/products/hugemed-vl3h-video-laryngoscope.jpg"
+        "id": "operating-table",
+        "name": "Operating Table",
+        "image": ""
     },
     {
-        "name": "Single-use Endoscope",
-        "desc": "High quality Single-use Endoscope by HugeMed.",
-        "img": "assets/products/hugemed-single-use-bronchoscope.jpg"
+        "id": "warmer",
+        "name": "Warmer",
+        "image": ""
     },
     {
-        "name": "Reusable Endoscope",
-        "desc": "High quality Reusable Endoscope by HugeMed.",
-        "img": "assets/products/hugemed-reusable-ureterorenoscope.jpg"
+        "id": "incubator",
+        "name": "Incubator",
+        "image": ""
     },
     {
-        "name": "Medical Image Processor",
-        "desc": "High quality Medical Image Processor by HugeMed.",
-        "img": "assets/products/hugemed-ms-8.jpg"
+        "id": "hypothermia-treatment",
+        "name": "Hypothermia Treatment",
+        "image": ""
+    },
+    {
+        "id": "jaundice-treatment",
+        "name": "Jaundice Treatment",
+        "image": ""
+    },
+    {
+        "id": "infusion-system",
+        "name": "Infusion System",
+        "image": ""
+    },
+    {
+        "id": "endoscopy",
+        "name": "Endoscopy",
+        "image": ""
+    },
+    {
+        "id": "ultrasound",
+        "name": "Ultrasound",
+        "image": ""
+    },
+    {
+        "id": "in-vitro-diagnostic",
+        "name": "In Vitro Diagnostic",
+        "image": ""
+    },
+    {
+        "id": "neonatal-care",
+        "name": "Neonatal Care",
+        "image": ""
     }
 ];
 

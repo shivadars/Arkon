@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
     <!-- Page Loader -->
@@ -81,7 +81,7 @@
     <main class="page-main bg-light">
 
 
-        <section class="page-content section-spacing" style="padding-top: 0;">
+        <section class="page-content section-spacing" style="padding-top: 0; padding-bottom: 0;">
 
             <div class="container products-layout" data-aos="fade-up">
                 <button class="mobile-filter-toggle" onclick="document.querySelector('.products-sidebar').classList.toggle('show-mobile'); this.textContent = document.querySelector('.products-sidebar').classList.contains('show-mobile') ? '✕ Hide Categories' : '☰ Show Categories';">
@@ -90,8 +90,7 @@
                 <aside class="products-sidebar">
                     <div class="sidebar-section category-section">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.2);">
-                            <h4 style="margin-bottom: 0; color: white;">All Categories</h4>
-                            <button class="btn btn-link clear-btn" id="clear-filters-btn" style="display: none; font-size: 13px; padding: 0; color: rgba(255,255,255,0.8);">Clear</button>
+                            <h4 style="margin-bottom: 0; color: white;">All Products</h4>
                         </div>
                         <div id="category-filters" class="category-list">
                             <!-- Populated by JS -->
@@ -274,22 +273,20 @@
             const paginationContainer = document.getElementById('pagination');
 
 
-            // Parse URL parameters for initial category filter
+            // Parse URL parameters for initial category/solution filter
             const urlParams = new URLSearchParams(window.location.search);
             const initialCategory = urlParams.get('category');
-
-
+            const initialSolution = urlParams.get('solution');
 
             let activeCategories = initialCategory ? [initialCategory] : [];
+            let activeSolution = initialSolution || null;
 
             let searchQuery = '';
             
             let currentPage = 1;
             const itemsPerPage = 12;
 
-
             const searchInput = document.getElementById('product-search');
-            const clearBtn = document.getElementById('clear-filters-btn');
 
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => {
@@ -299,22 +296,7 @@
                 });
             }
 
-            if (clearBtn) {
-                clearBtn.addEventListener('click', () => {
-                    activeCategories = [];
 
-                    searchQuery = '';
-                    currentPage = 1;
-                    if (searchInput) searchInput.value = '';
-                    
-
-                    
-                    window.history.replaceState({}, '', window.location.pathname);
-                    renderFilters();
-                    renderProductGrid();
-                });
-            }
-            
 
 
             // SVG icons for categories
@@ -334,42 +316,63 @@
             };
 
             function renderFilters() {
-                // Render Categories as a list
                 let catHtml = '';
-                categories.forEach(cat => {
-                    const isActive = activeCategories.includes(cat.name) ? 'active' : '';
-                    const count = products.filter(p => p.category === cat.name).length;
-                    const icon = catIcons[cat.name] || '📦';
+                
+                if (activeSolution) {
+                    const sidebarHeader = document.querySelector('.sidebar-section h4');
+                    if (sidebarHeader) sidebarHeader.innerText = 'All Solutions';
                     
-                    catHtml += `
-                        <div class="category-item ${isActive}" data-cat="${cat.name}">
-                            <div class="cat-left">
-                                <span class="cat-icon">${icon}</span>
-                                <span>${cat.name}</span>
+                    solutions.forEach(sol => {
+                        const isActive = (activeSolution === sol.id) ? 'active' : '';
+                        const count = sol.products.length;
+                        const icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>';
+                        
+                        catHtml += `
+                            <div class="category-item ${isActive}" data-sol="${sol.id}">
+                                <div class="cat-left">
+                                    <span>${sol.name}</span>
+                                </div>
+                                <span class="cat-count">${count}</span>
                             </div>
-                            <span class="cat-count">${count}</span>
-                        </div>
-                    `;
-                });
+                        `;
+                    });
+                } else {
+                    const sidebarHeader = document.querySelector('.sidebar-section h4');
+                    if (sidebarHeader) sidebarHeader.innerText = 'All Products';
+                    
+                    categories.forEach(cat => {
+                        const isActive = activeCategories.includes(cat.name) ? 'active' : '';
+                        const count = products.filter(p => p.category === cat.name).length;
+                        const icon = catIcons[cat.name] || '📦';
+                        
+                        catHtml += `
+                            <div class="category-item ${isActive}" data-cat="${cat.name}">
+                                <div class="cat-left">
+                                    <span>${cat.name}</span>
+                                </div>
+                                <span class="cat-count">${count}</span>
+                            </div>
+                        `;
+                    });
+                }
+                
                 categoryFiltersContainer.innerHTML = catHtml;
 
-
-                // Attach listeners
                 document.querySelectorAll('.category-item').forEach(item => {
                     item.addEventListener('click', (e) => {
                         const cat = e.currentTarget.getAttribute('data-cat');
-                        // Toggle category (single select)
-                        if (activeCategories.includes(cat)) {
-                            activeCategories = [];
-                        } else {
-                            activeCategories = [cat];
+                        const sol = e.currentTarget.getAttribute('data-sol');
+                        
+                        if (sol) {
+                            activeSolution = sol; // Always keep a solution active when in solution mode
+                        } else if (cat) {
+                            activeCategories = activeCategories.includes(cat) ? [] : [cat];
                         }
+                        
                         currentPage = 1;
                         updateUrlAndRender();
                     });
                 });
-                
-
             }
 
             function updateUrlAndRender() {
@@ -377,10 +380,13 @@
                 if(activeCategories.length === 1) {
                     params.set('category', activeCategories[0]);
                 }
+                if(activeSolution) {
+                    params.set('solution', activeSolution);
+                }
                 const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
                 window.history.replaceState({}, '', newUrl);
                 
-                renderFilters(); // Re-render to update active classes
+                renderFilters();
                 renderProductGrid();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -407,13 +413,35 @@
                 if (activeCategories.length > 0) {
                     filtered = filtered.filter(p => activeCategories.includes(p.category));
                 }
+                if (activeSolution) {
+                    const solData = solutions.find(s => s.id === activeSolution);
+                    if (solData && solData.products) {
+                        filtered = filtered.filter(p => {
+                            const safePName = p.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+                            return solData.products.some(solPName => {
+                                return solPName.replace(/[^a-z0-9]/gi, '').toLowerCase() === safePName;
+                            });
+                        });
+                    }
+                }
 
                 const totalItems = filtered.length;
 
                 // Update Category Header
                 const headerBlock = document.getElementById('category-header-block');
                 if (headerBlock) {
-                    if (activeCategories.length === 1) {
+                    if (activeSolution) {
+                        const solData = solutions.find(s => s.id === activeSolution);
+                        if (solData) {
+                            headerBlock.innerHTML = `
+                                <div class="breadcrumbs"><a href="index.html">Home</a> &gt; <a href="products.html">Solutions</a> &gt; ${solData.name}</div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                                    <h1 style="margin-bottom: 0;">${solData.name}</h1>
+                                    <div class="meta">${totalItems} Products</div>
+                                </div>
+                            `;
+                        }
+                    } else if (activeCategories.length === 1) {
                         const catData = categories.find(c => c.name === activeCategories[0]);
                         if (catData) {
                             headerBlock.innerHTML = `
@@ -441,7 +469,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-light); margin-bottom: 16px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                             <h3>No products found</h3>
                             <p>We couldn't find anything matching your current filters.</p>
-                            <button class="btn btn-outline" onclick="document.getElementById('clear-filters-btn').click()" style="margin-top: 16px;">Clear Filters</button>
+                            <button class="btn btn-outline" onclick="window.location.href='products.html'" style="margin-top: 16px;">Clear Filters</button>
                         </div>
                     `;
                     paginationContainer.innerHTML = '';
@@ -454,12 +482,6 @@
                 const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
                 
                 const currentItems = filtered.slice(startIndex, endIndex);
-
-                // Toggle clear button visibility
-                const clearBtn = document.getElementById('clear-filters-btn');
-                if (clearBtn) {
-                    clearBtn.style.display = (activeCategories.length > 0 || searchQuery) ? 'block' : 'none';
-                }
 
                 // --- FLIP ANIMATION ---
 
@@ -480,8 +502,7 @@
                                 <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
                             <h3>${prod.name}</h3>
-                            <div class="price">${formatPrice(prod.price)}</div>
-                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary);" onclick="window.location.href='product-detail.html?id=${prod.id}'">View Details</button>
+                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="window.location.href='product-detail.html?id=${prod.id}'">View Details</button>
                         </div>
                     `;
                 });
