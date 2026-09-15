@@ -342,14 +342,6 @@
                     <div class="pd-info-col pd-sticky-info">
                         <h1 class="pd-title-nike"><span class="light">${product.brand}</span><br><span class="bold">${product.name}</span></h1>
 
-                        <div class="pd-nike-sizes-label">Select Options</div>
-                        <div class="pd-tags-nike">
-                            <span class="pd-tag-square">${product.category}</span>
-                            <span class="pd-tag-square">${product.name.replace(/[^a-zA-Z0-9]/g, '').substring(0,6).toUpperCase()}-X</span>
-                            <span class="pd-tag-square">New</span>
-                            <span class="pd-tag-square">1Yr WTY</span>
-                        </div>
-                        
                         <div class="pd-action-row-nike">
                             <button class="btn btn-primary btn-large btn-nike" onclick="openQuoteModal('${product.name}')">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
@@ -363,8 +355,6 @@
                         <div class="pd-quick-links">
                             <a href="#" onclick="document.getElementById('tab-features').scrollIntoView({behavior:'smooth'}); return false;">Description <span>&rarr;</span></a>
                             <a href="#" onclick="switchTab('specs'); document.getElementById('tab-specs').scrollIntoView({behavior:'smooth'}); return false;">Specifications <span>&rarr;</span></a>
-                            <a href="#">Warranty & Support <span>&rarr;</span></a>
-                            <a href="#">Shipping Information <span>&rarr;</span></a>
                         </div>
                     </div>
                 </div>
@@ -375,8 +365,6 @@
                 <div class="pd-tabs-header-nike">
                     <button class="pd-tab-btn-nike active" onclick="switchTab('features')">Description</button>
                     <button class="pd-tab-btn-nike" onclick="switchTab('specs')">Specifications</button>
-                    <button class="pd-tab-btn-nike">Downloads</button>
-                    <button class="pd-tab-btn-nike">Reviews (0)</button>
                 </div>
                 
                 <div class="pd-tab-content-nike active" id="tab-features">

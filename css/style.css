@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #313B82;
     --primary-light: #E8EAF6;
     --primary-hover: #262D66;
@@ -3242,7 +3242,7 @@ p {
 }
 
 /* ============================================
-   RESPONSIVE: TABLET LANDSCAPE (≤ 1024px)
+   RESPONSIVE: TABLET LANDSCAPE (â‰¤ 1024px)
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -3390,7 +3390,7 @@ p {
 }
 
 /* ============================================
-   RESPONSIVE: TABLET PORTRAIT (≤ 768px)
+   RESPONSIVE: TABLET PORTRAIT (â‰¤ 768px)
    ============================================ */
 
 @media (max-width: 768px) {
@@ -3634,7 +3634,7 @@ p {
 
     /* Minus icon when active */
     .footer-col-compact.active h4::after {
-        content: '−';
+        content: 'âˆ’';
     }
 
     /* Hide lists by default */
@@ -3787,7 +3787,7 @@ p {
 }
 
 /* ============================================
-   RESPONSIVE: MOBILE (≤ 480px)
+   RESPONSIVE: MOBILE (â‰¤ 480px)
    ============================================ */
 
 @media (max-width: 480px) {
@@ -4134,7 +4134,7 @@ p {
     white-space: nowrap;
 }
 
-/* On hover: slide to top-right — use left calc to stay on same axis */
+/* On hover: slide to top-right â€” use left calc to stay on same axis */
 .socials-card.is-animated .socials-title {
     top: 28px;
     left: calc(100% - 32px);
@@ -4932,7 +4932,7 @@ html {
         font-size: 13px;
     }
 
-    /* No stacking effect on mobile — just normal flow */
+    /* No stacking effect on mobile â€” just normal flow */
     .about-stack-card {
         opacity: 1;
         transform: none;
@@ -5079,7 +5079,7 @@ html {
 }
 
 .mega-menu-group-item::after {
-    content: "›";
+    content: "";
     font-size: 20px;
     opacity: 0;
     transform: translateX(-10px);
@@ -5111,7 +5111,7 @@ html {
 }
 
 .mega-menu-category::after {
-    content: "›";
+    content: "";
     font-size: 18px;
     opacity: 0;
     transform: translateX(-5px);
@@ -5286,7 +5286,7 @@ html {
 }
 
 .mobile-product-item::before {
-    content: "•";
+    content: "";
     margin-right: 8px;
     color: var(--primary);
     font-size: 18px;
@@ -5294,4 +5294,324 @@ html {
 
 .mobile-product-item:hover {
     color: white;
+}
+/* ============================================
+   Product Detail Page (Modern / Premium Look)
+   ============================================ */
+
+.pd-nike-layout {
+    background-color: var(--surface);
+}
+
+.pd-hero-wrapper {
+    background: linear-gradient(180deg, #F0F4F2 0%, var(--surface) 100%);
+    padding-bottom: 60px;
+}
+
+.pd-top-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .pd-top-section {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+}
+
+/* Image Gallery */
+.pd-image-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pd-main-image-nike {
+    background-color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.pd-main-image-nike:hover {
+    transform: translateY(-5px);
+}
+
+.pd-main-image-nike img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.pd-thumbnails {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.pd-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    padding: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.pd-thumb:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.pd-thumb.active {
+    border-color: var(--primary);
+}
+
+.pd-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Product Info */
+.pd-sticky-info {
+    position: sticky;
+    top: 120px;
+}
+
+.pd-title-nike {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
+.pd-title-nike .light {
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.pd-title-nike .bold {
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Actions */
+.pd-action-row-nike {
+    display: flex;
+    gap: 16px;
+    margin: 40px 0;
+}
+
+.btn-nike {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-nike-whatsapp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #25D366;
+    border-color: #25D366;
+}
+
+.btn-nike-whatsapp:hover {
+    background-color: #25D366;
+    color: #FFF;
+}
+
+/* Quick Links */
+.pd-quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.pd-quick-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: color 0.3s ease;
+}
+
+.pd-quick-links a:hover {
+    color: var(--primary);
+}
+
+.pd-quick-links a span {
+    transition: transform 0.3s ease;
+}
+
+.pd-quick-links a:hover span {
+    transform: translateX(5px);
+}
+
+/* Bottom Wrapper (Tabs) */
+.pd-bottom-wrapper {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.pd-tabs-header-nike {
+    display: flex;
+    gap: 40px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.pd-tab-btn-nike {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0 0 16px 0;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pd-tab-btn-nike:hover {
+    color: var(--primary);
+}
+
+.pd-tab-btn-nike.active {
+    color: var(--primary);
+}
+
+.pd-tab-btn-nike.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px 3px 0 0;
+}
+
+.pd-tab-content-nike {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.pd-tab-content-nike.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Split Description */
+.pd-split-desc {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .pd-split-desc {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
+.pd-desc-left p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.feature-list-nike {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list-nike li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--text);
+    background: var(--background);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary);
+}
+
+/* Specs Table */
+.modern-specs-table {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--background);
+    border-radius: var(--radius-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.spec-row:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+}
+
+.spec-label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.spec-value {
+    color: var(--text-muted);
+    text-align: right;
+    max-width: 60%;
 }

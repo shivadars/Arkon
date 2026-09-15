@@ -1789,3 +1789,19 @@ const solutions = [
         ]
     }
 ];
+const categories = [];
+const _catNames = [
+    "Ventilator", "High Flow Oxygen Therapy Humidifier", "Anesthesia Machine", "Patient Monitoring", 
+    "Defibrillator Monitor", "AED", "Surgical Light", "Operating Table", "Warmer", "Incubator", 
+    "Hypothermia Treatment", "Jaundice Treatment", "Infusion System", "Endoscopy", "Ultrasound", 
+    "In Vitro Diagnostic", "Neonatal Care"
+];
+
+_catNames.forEach(catName => {
+    const prod = products.find(p => p.category === catName);
+    categories.push({
+        id: catName.toLowerCase().replace(/ /g, '-'),
+        name: catName,
+        img: prod && prod.image ? prod.image : "https://placehold.co/800x800/E8F3EC/075C3A?text=" + encodeURIComponent(catName)
+    });
+});
