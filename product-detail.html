@@ -331,7 +331,7 @@
             // Render Product Top
             topContainer.innerHTML = `
                 <div class="pd-top-section">
-                    <div class="pd-image-col">
+                    <div class="pd-image-col pd-sticky-info">
                         <div class="pd-main-image-nike">
                             <img id="main-product-image" src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/800x800/E8F3EC/075C3A?text=Product'">
                         </div>
@@ -339,7 +339,7 @@
                             ${thumbnailsHtml}
                         </div>
                     </div>
-                    <div class="pd-info-col pd-sticky-info">
+                    <div class="pd-info-col">
                         <h1 class="pd-title-nike"><span class="light">${product.brand}</span><br><span class="bold">${product.name}</span></h1>
 
                         <div class="pd-action-row-nike">

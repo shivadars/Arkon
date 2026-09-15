@@ -124,11 +124,22 @@ const products = [
         "name": "NV8",
         "brand": "COMEN",
         "category": "Ventilator",
-        "description": "NV8\nNeonatal Ventilator",
+        "description": "NV8 Neonatal Ventilator",
         "image": "assets/images/products/nv8-1.png",
         "price": 137000,
+        "rich_description": "<p>The NV8 Neonatal Ventilator provides comprehensive and dedicated neonatal respiratory care with advanced non-invasive ventilation modes.</p>",
+        "features_extended": [
+            "Synchronized Non-Invasive Ventilation (SNIPPV/NIPPV)",
+            "NCPAP mode with apnea wake-up function",
+            "High Flow Nasal Cannula (HFNC) therapy",
+            "Comprehensive monitoring including SpO2 and EtCO2",
+            "8-inch color touchscreen display"
+        ],
         "images": [
-            "assets/images/products/nv8-1.png"
+            "assets/images/products/nv8-1.png",
+            "https://en.comen.com/assets/NV8/P03.png",
+            "https://en.comen.com/assets/NV8/P04.png",
+            "https://en.comen.com/assets/NV8/P05.png"
         ]
     },
     {
