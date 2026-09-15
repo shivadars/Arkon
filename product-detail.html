@@ -315,18 +315,28 @@
                 });
             }
 
+            // Generate Thumbnails
+            let thumbnailsHtml = '';
+            if (product.images && product.images.length > 0) {
+                product.images.forEach((imgSrc, index) => {
+                    const activeClass = index === 0 ? 'active' : '';
+                    thumbnailsHtml += `<div class="pd-thumb ${activeClass}" onclick="changeMainImage('${imgSrc}', this)"><img src="${imgSrc}" onerror="this.src='https://placehold.co/100x100/E8F3EC/075C3A?text=${index+1}'"></div>`;
+                });
+            } else {
+                thumbnailsHtml = `
+                    <div class="pd-thumb active"><img src="${product.image}" onerror="this.src='https://placehold.co/100x100/E8F3EC/075C3A?text=1'"></div>
+                `;
+            }
+
             // Render Product Top
             topContainer.innerHTML = `
                 <div class="pd-top-section">
                     <div class="pd-image-col">
                         <div class="pd-main-image-nike">
-                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/800x800/E8F3EC/075C3A?text=Product'">
+                            <img id="main-product-image" src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/800x800/E8F3EC/075C3A?text=Product'">
                         </div>
                         <div class="pd-thumbnails">
-                            <div class="pd-thumb active"><img src="${product.image}" onerror="this.src='https://placehold.co/100x100/E8F3EC/075C3A?text=1'"></div>
-                            <div class="pd-thumb"><img src="${product.image}" onerror="this.src='https://placehold.co/100x100/E8F3EC/075C3A?text=2'"></div>
-                            <div class="pd-thumb"><img src="${product.image}" onerror="this.src='https://placehold.co/100x100/E8F3EC/075C3A?text=3'"></div>
-                            <div class="pd-thumb"><img src="${product.image}" onerror="this.src='https://placehold.co/100x100/E8F3EC/075C3A?text=4'"></div>
+                            ${thumbnailsHtml}
                         </div>
                     </div>
                     <div class="pd-info-col pd-sticky-info">
@@ -398,6 +408,15 @@
             
             event.target.classList.add('active');
             document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        // Image Swap Logic
+        function changeMainImage(src, element) {
+            document.getElementById('main-product-image').src = src;
+            document.querySelectorAll('.pd-thumb').forEach(thumb => thumb.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            }
         }
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
