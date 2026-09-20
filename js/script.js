@@ -1092,3 +1092,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevBtn) prevBtn.onclick = prevRzSlide;
     if (nextBtn) nextBtn.onclick = nextRzSlide;
 });
+
+
+// IntersectionObserver-driven Accordion
+document.addEventListener('DOMContentLoaded', () => {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    if (accordionItems.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            // Trigger when element enters the middle 60% of the viewport
+            rootMargin: "-20% 0px -20% 0px", 
+            threshold: 0
+        });
+
+        accordionItems.forEach(item => observer.observe(item));
+    }
+});

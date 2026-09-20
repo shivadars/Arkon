@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import json
+
+content = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +33,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="nav-item-dropdown" id="products-solutions-nav">
-                        <a href="products.html">Products & Solutions <span class="dropdown-icon">▼</span></a>
+                        <a href="products.html">Products & Solutions <span class="dropdown-icon">?</span></a>
                         <div class="mega-menu" id="mega-menu-content"></div>
                     </li>
                     <li><a href="about.html">About Us</a></li>
@@ -62,7 +64,7 @@
         <nav class="mobile-nav-links">
             <a href="index.html">Home</a>
             <div class="mobile-nav-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileMegaMenu()">Products & Solutions <span class="dropdown-icon">▼</span></button>
+                <button class="mobile-dropdown-toggle" onclick="toggleMobileMegaMenu()">Products & Solutions <span class="dropdown-icon">?</span></button>
                 <div class="mobile-mega-menu" id="mobile-mega-menu-content"></div>
             </div>
             <a href="about.html">About Us</a>
@@ -192,7 +194,7 @@
                             <div class="about-stack-text-content">
                                 <span class="about-stack-eyebrow">CRITICAL CARE</span>
                                 <h2 class="about-stack-heading">Complete ICU &<br><span class="text-primary">Critical Care Solutions</span></h2>
-                                <p class="about-stack-desc">We provide end-to-end ICU setup including ventilators, patient monitors, infusion pumps, and life support systems — everything needed for critical care units.</p>
+                                <p class="about-stack-desc">We provide end-to-end ICU setup including ventilators, patient monitors, infusion pumps, and life support systems � everything needed for critical care units.</p>
                                 <p class="about-stack-desc">Our team ensures seamless installation, staff training, and round-the-clock technical support.</p>
                             </div>
                         </div>
@@ -210,7 +212,7 @@
                                 <span class="about-stack-eyebrow">OUR PROMISE</span>
                                 <h2 class="about-stack-heading">Reliable Delivery &<br><span class="text-primary">Expert Support</span></h2>
                                 <p class="about-stack-desc">Seamless supply chain management ensuring timely delivery across India. Our certified engineers handle installation, calibration, training, and ongoing maintenance.</p>
-                                <p class="about-stack-desc">When you partner with Arkon, you get more than equipment — you get a long-term commitment to your healthcare success.</p>
+                                <p class="about-stack-desc">When you partner with Arkon, you get more than equipment � you get a long-term commitment to your healthcare success.</p>
                                 <div class="about-stack-buttons">
                                     <button class="btn btn-primary" onclick="openQuoteModal()">Get In Touch &rarr;</button>
                                 </div>
@@ -314,4 +316,8 @@
         });
     </script>
 </body>
-</html>
+</html>'''
+
+with open('c:/medical-equipment-website/about.html', 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Restored about.html")
