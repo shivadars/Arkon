@@ -12,7 +12,7 @@ function toggleMobileNav() {
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
-    initProductsGrid();
+    initSolutionsCarousel();
     initLogoCarousel();
     initTestimonials();
     initSocialsCard();
@@ -102,53 +102,132 @@ function renderCategories() {
     grid.innerHTML = html;
 }
 
-function initProductsGrid() {
-    const grid = document.getElementById('products-grid');
-    if (!grid) return;
+function initSolutionsCarousel() {
+    const track = document.getElementById('solutions-track');
+    const prevBtn = document.getElementById('solutions-prev');
+    const nextBtn = document.getElementById('solutions-next');
+    if (!track) return;
 
-    const displayProducts = products.slice(0, 10);
+    // Use custom solutions instead of products
+    const solutionsData = [
+        {
+            title: "Critical Care",
+            description: "Advanced life-support and continuous monitoring for intensive care environments.",
+            image: "assets/images/solutions/real_critical_care.jpg",
+            link: "#"
+        },
+        {
+            title: "Peri-operative Care",
+            description: "Comprehensive equipment for pre, intra, and post-operative phases.",
+            image: "assets/images/solutions/real_peri_operative.jpg",
+            link: "#"
+        },
+        {
+            title: "Emergency Care",
+            description: "Rapid response medical equipment for critical and immediate situations.",
+            image: "assets/images/solutions/real_emergency_care.jpg",
+            link: "#"
+        },
+        {
+            title: "Obstetrics",
+            description: "Specialized maternal and fetal monitoring systems for safe deliveries.",
+            image: "assets/images/solutions/real_obstetrics.jpg",
+            link: "#"
+        },
+        {
+            title: "Neonatal Care",
+            description: "Gentle incubators and precise monitoring designed for newborns.",
+            image: "assets/images/solutions/real_neonatal.jpg",
+            link: "#"
+        },
+        {
+            title: "General Ward",
+            description: "Reliable, everyday equipment to support routine patient care.",
+            image: "assets/images/solutions/real_general_ward.jpg",
+            link: "#"
+        },
+        {
+            title: "Endoscopy",
+            description: "High-resolution visualization systems for minimally invasive procedures.",
+            image: "assets/images/solutions/real_endoscopy.jpg",
+            link: "#"
+        }
+    ];
 
-    displayProducts.forEach((prod) => {
+    solutionsData.forEach((sol) => {
         const item = document.createElement('a');
-        item.className = 'product-item';
-        item.href = `product-detail.html?id=${prod.id}`;
-        item.setAttribute('aria-label', prod.name);
+        item.className = 'solution-card';
+        item.href = sol.link;
+        item.setAttribute('aria-label', sol.title);
 
         item.innerHTML = `
-            <div class="product-image-wrapper">
+            <div class="solution-image-area">
                 <img
-                    src="${prod.image}"
-                    alt="${prod.name}"
+                    src="${sol.image}"
+                    alt="${sol.title}"
                     loading="lazy"
-                    onerror="this.onerror=null;this.src='https://placehold.co/120x120/F7F8F5/607D8B?text=${encodeURIComponent(prod.name)}';"
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x120/F7F8F5/607D8B?text=${encodeURIComponent(sol.title)}';"
                 >
             </div>
-            <span class="product-name">${prod.name}</span>
-            <span class="product-brand-tag">${prod.brand}</span>
+            <div class="solution-content">
+                <h3>${sol.title}</h3>
+                <p>${sol.description}</p>
+                <div class="solution-actions">
+                    <button class="solution-btn-primary">Sign Up &rarr;</button>
+                    <button class="solution-btn-secondary">Know More</button>
+                </div>
+            </div>
         `;
+        
+        // Ensure modal works if enquire clicked directly
+        const enquireBtn = item.querySelector('.solution-btn-primary');
+        if(enquireBtn) {
+            enquireBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openQuoteModal();
+            });
+        }
 
-
-
-        grid.appendChild(item);
+        track.appendChild(item);
     });
 
-    function triggerAnimation() {
-        const rect = grid.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-            const items = grid.querySelectorAll('.product-item:not(.is-visible)');
-            if (items.length === 0) return; // already animated
-            items.forEach((item, i) => {
-                setTimeout(() => item.classList.add('is-visible'), i * 130);
-            });
-            window.removeEventListener('scroll', triggerAnimation);
-        }
+    // Carousel scrolling logic
+    if (prevBtn && nextBtn) {
+        const scrollAmount = 320; // Approx card width + gap
+        
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+        
+        // Hide/show arrows based on scroll position
+        const updateArrows = () => {
+            if (track.scrollLeft <= 0) {
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
+            } else {
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
+            }
+            
+            if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 1) {
+                nextBtn.style.opacity = '0.5';
+                nextBtn.style.cursor = 'not-allowed';
+            } else {
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            }
+        };
+        
+        track.addEventListener('scroll', updateArrows);
+        window.addEventListener('resize', updateArrows);
+        // Initial check
+        setTimeout(updateArrows, 100);
     }
-
-    // Check on scroll
-    window.addEventListener('scroll', triggerAnimation, { passive: true });
-
-    // Also check after a brief delay on load (covers sections already in viewport)
-    setTimeout(triggerAnimation, 300);
 }
 
 
@@ -896,3 +975,120 @@ function toggleMobileAccordion(targetId, btnElement) {
         btnElement.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
     }
 }
+
+// Razorpay-style Hero Carousel Logic
+const rzSlides = [
+    {
+        title: "Advanced Life Support",
+        subtext: "Comprehensive ICU ventilators offering invasive and non-invasive ventilation for critical care.",
+        image: "assets/products/comen-v8-ai-transparent.png",
+        name: "Comen V8",
+        cat: "ICU Ventilator"
+    },
+    {
+        title: "Precision Anesthesia",
+        subtext: "High-end anesthesia workstation built for complex surgeries and ensuring patient safety.",
+        image: "assets/products/comen-ax900-ai-transparent.png",
+        name: "Comen AX-900",
+        cat: "Anesthesia Machine"
+    },
+    {
+        title: "Clear Airway Vision",
+        subtext: "Reliable airway management solution for intubation confidence in any situation.",
+        image: "assets/products/hugemed-vl3d-ai-transparent.png",
+        name: "HugeMed VL3D",
+        cat: "Video Laryngoscope"
+    }
+];
+
+let currentRzSlide = 0;
+let rzInterval;
+
+function initRzCarousel() {
+    const track = document.getElementById('rz-carousel-track');
+    if (!track) return;
+    
+    rzSlides.forEach((slide, index) => {
+        const slideDiv = document.createElement('div');
+        slideDiv.className = `rz-slide ${index === 0 ? 'active' : ''}`;
+        slideDiv.id = `rz-slide-${index}`;
+        
+        slideDiv.innerHTML = `
+            <div class="rz-image-wrapper">
+                <img src="${slide.image}" alt="${slide.name}">
+            </div>
+        `;
+        track.appendChild(slideDiv);
+    });
+    
+    updateRzText(0);
+    startRzInterval();
+}
+
+function updateRzText(index) {
+    const titleEl = document.getElementById('rz-rotating-text');
+    const subtextEl = document.getElementById('rz-subtext');
+    
+    if (titleEl && subtextEl) {
+        // Animate out
+        titleEl.classList.remove('slide-up-in');
+        titleEl.classList.add('slide-up-out');
+        subtextEl.style.opacity = '0';
+        
+        setTimeout(() => {
+            titleEl.textContent = rzSlides[index].title;
+            subtextEl.textContent = rzSlides[index].subtext;
+            
+            // Prepare to animate in
+            titleEl.classList.remove('slide-up-out');
+            titleEl.classList.add('slide-up-in');
+            
+            // Force reflow
+            void titleEl.offsetWidth;
+            
+            // Animate in
+            titleEl.classList.remove('slide-up-in');
+            subtextEl.style.opacity = '1';
+        }, 600); // Wait for out animation to finish
+    }
+}
+
+function goToRzSlide(index) {
+    if (index === currentRzSlide) return;
+    
+    document.getElementById(`rz-slide-${currentRzSlide}`).classList.remove('active');
+    currentRzSlide = index;
+    document.getElementById(`rz-slide-${currentRzSlide}`).classList.add('active');
+    
+    updateRzText(currentRzSlide);
+    resetRzInterval();
+}
+
+function nextRzSlide() {
+    let next = (currentRzSlide + 1) % rzSlides.length;
+    goToRzSlide(next);
+}
+
+function prevRzSlide() {
+    let prev = (currentRzSlide - 1 + rzSlides.length) % rzSlides.length;
+    goToRzSlide(prev);
+}
+
+function startRzInterval() {
+    rzInterval = setInterval(nextRzSlide, 6000);
+}
+
+function resetRzInterval() {
+    clearInterval(rzInterval);
+    startRzInterval();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initRzCarousel();
+    
+    const prevBtn = document.getElementById('rz-nav-prev');
+    const nextBtn = document.getElementById('rz-nav-next');
+    
+    if (prevBtn) prevBtn.onclick = prevRzSlide;
+    if (nextBtn) nextBtn.onclick = nextRzSlide;
+});

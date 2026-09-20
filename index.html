@@ -9,7 +9,7 @@
         content="Reliable medical equipment and healthcare solutions for hospitals, clinics, laboratories and healthcare institutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -87,40 +87,161 @@
     </div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero hero-banner">
-            <div class="container hero-inner">
-                <div class="hero-content" data-aos="fade-up">
-                    <h1 class="hero-dark-text">Reliable Medical Equipment<br>for <span class="text-secondary">Better Healthcare</span></h1>
-                    <p class="hero-dark-text">We provide high-quality medical equipment and healthcare solutions for hospitals, clinics,
-                        laboratories and healthcare professionals.</p>
-                    <div class="hero-buttons">
-                        <a href="products.html" class="btn btn-primary">Explore Products &rarr;</a>
-                        <button class="btn btn-outline" onclick="openQuoteModal()">Enquire Now &rarr;</button>
+        <!-- Razorpay-style B2B Hero Section -->
+        <section class="rz-hero">
+            <!-- Background Slant and Blue Beams -->
+            <div class="rz-blue-bg">
+                <div class="rz-blue-beam rz-blue-beam-1"></div>
+                <div class="rz-blue-beam rz-blue-beam-2"></div>
+                <div class="rz-blue-beam rz-blue-beam-3"></div>
+                <div class="rz-blue-beam rz-blue-beam-4"></div>
+            </div>
+
+            <!-- Global Navigation Arrows -->
+            <button class="rz-nav-arrow rz-nav-prev" id="rz-nav-prev" aria-label="Previous Slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="rz-nav-arrow rz-nav-next" id="rz-nav-next" aria-label="Next Slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <div class="container rz-container">
+                <!-- Left Content -->
+                <div class="rz-left" data-aos="fade-up">
+                    <h1 class="rz-title">
+                        <div class="rz-title-rotating-wrapper">
+                            <span id="rz-rotating-text" class="text-primary rz-rotating-text">Advanced Life</span>
+                        </div>
+                        <span class="rz-title-static">for healthcare providers defying all odds</span>
+                    </h1>
+                    <p id="rz-subtext" class="rz-subtext">
+                        Reliable healthcare solutions built for hospitals, clinics, and critical care units.
+                    </p>
+                    <div class="rz-buttons">
+                        <a href="products.html" class="btn btn-primary" style="background-color: #2563eb; color: white; border-radius: 6px; padding: 14px 28px;">Sign Up Now</a>
+                        <button class="btn btn-text" onclick="openQuoteModal()" style="color: #2563eb; background: transparent; border: none; font-weight: 500; font-size: 16px; cursor: pointer; padding: 14px 16px;">Know More</button>
                     </div>
-                    <div class="trust-line">
-                        <span class="trust-item hero-dark-text"><span class="check-icon-green">✓</span> Trusted products</span>
-                        <span class="trust-item hero-dark-text"><span class="check-icon-green">✓</span> Reliable supply</span>
-                        <span class="trust-item hero-dark-text"><span class="check-icon-green">✓</span> Expert support</span>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="rz-right" data-aos="fade-left">
+                    <div class="rz-carousel-track" id="rz-carousel-track">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- Products Grid Section -->
-        <section class="products-section section-spacing" id="products">
+        <!-- Solutions Carousel Section -->
+        <section class="solutions-section" id="solutions" style="padding-top: 60px; padding-bottom: 80px;">
             <div class="container">
-                <div class="products-header section-header header-grid" data-aos="fade-up">
-                    <div></div>
+                <div class="solutions-header flex-between" data-aos="fade-up" style="margin-bottom: 32px; align-items: center;">
                     <div>
-                        <h2>Our Products</h2>
-                        <p>Explore our range of professional-grade medical equipment.</p>
+                        <h2 style="display:inline-block; margin-right: 12px; margin-bottom: 0; font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 700; color: #0f172a;">Our Solutions</h2>
+                        <span style="background-color: #1e293b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; vertical-align: middle;">NEW</span>
+                        <p style="margin-top: 8px; color: #64748b; font-size: 16px; margin-bottom: 0;">Explore our range of professional-grade medical equipment and setups.</p>
                     </div>
-                    <a href="products.html" class="link-action" style="align-self:start; padding-top: 6px;">View All Products &rarr;</a>
+                    <div class="carousel-controls" style="display: flex; gap: 12px;">
+                        <button class="carousel-arrow carousel-prev" id="solutions-prev" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="carousel-arrow carousel-next" id="solutions-next" aria-label="Next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
                 </div>
-                <div class="products-grid" id="products-grid">
-                    <!-- Populated by JS -->
+                <div class="solutions-carousel-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solutions-track" id="solutions-track">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Company / Brand Showcase -->
+        <section class="about-brand-section section-spacing" id="about">
+            <div class="container">
+                <div class="section-header header-centered" data-aos="fade-up">
+                    <h2>About Arkon Medical System</h2>
+                    <p class="about-section-desc">Delivering advanced medical technology and dependable healthcare infrastructure across India.</p>
+                </div>
+                
+                <div class="about-brand-wrap" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Main Brand Banner Card -->
+                    <div class="about-brand-card">
+                        <!-- Decorative ambient glow -->
+                        <div class="about-card-glow"></div>
+                        
+                        <div class="about-brand-content">
+                            <h3 class="about-brand-tagline">
+                                Empowering healthcare institutions with advanced medical technology, certified equipment, and dedicated nationwide support to elevate patient care.
+                            </h3>
+
+                            <!-- 4 Key Icon Features -->
+                            <div class="about-brand-features">
+                                <div class="about-feature-item">
+                                    <div class="about-feature-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                            <polyline points="9 12 11 14 15 10"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="about-feature-label">ISO Certified</span>
+                                </div>
+
+                                <div class="about-feature-item">
+                                    <div class="about-feature-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="about-feature-label">500+ Products</span>
+                                </div>
+
+                                <div class="about-feature-item">
+                                    <div class="about-feature-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="about-feature-label">24/7 Support</span>
+                                </div>
+
+                                <div class="about-feature-item">
+                                    <div class="about-feature-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="1" y="3" width="15" height="13"></rect>
+                                            <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                        </svg>
+                                    </div>
+                                    <span class="about-feature-label">Pan India</span>
+                                </div>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <div class="about-brand-actions">
+                                <a href="about.html" class="about-brand-btn">
+                                    EXPLORE ARKON &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overlapping Floating Brand Card (Right Side) -->
+                    <div class="about-brand-float-card">
+                        <div class="float-card-inner">
+                            <div class="float-card-logo">
+                                <img src="assets/logo/Arkon.png" alt="Arkon Medical Systems Logo">
+                            </div>
+                            <h4 class="float-card-tagline">
+                                Your Life's Work, Powered By Our Precision Care.
+                            </h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -221,92 +342,6 @@
             </div>
         </section>
 
-        <!-- About Company / Brand Showcase -->
-        <section class="about-brand-section section-spacing" id="about">
-            <div class="container">
-                <div class="section-header header-centered" data-aos="fade-up">
-                    <h2>About Arkon Medical System</h2>
-                    <p class="about-section-desc">Delivering advanced medical technology and dependable healthcare infrastructure across India.</p>
-                </div>
-                
-                <div class="about-brand-wrap" data-aos="fade-up" data-aos-delay="100">
-                    <!-- Main Brand Banner Card -->
-                    <div class="about-brand-card">
-                        <!-- Decorative ambient glow -->
-                        <div class="about-card-glow"></div>
-                        
-                        <div class="about-brand-content">
-                            <h3 class="about-brand-tagline">
-                                Empowering healthcare institutions with advanced medical technology, certified equipment, and dedicated nationwide support to elevate patient care.
-                            </h3>
-
-                            <!-- 4 Key Icon Features -->
-                            <div class="about-brand-features">
-                                <div class="about-feature-item">
-                                    <div class="about-feature-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                            <polyline points="9 12 11 14 15 10"></polyline>
-                                        </svg>
-                                    </div>
-                                    <span class="about-feature-label">ISO Certified</span>
-                                </div>
-
-                                <div class="about-feature-item">
-                                    <div class="about-feature-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                        </svg>
-                                    </div>
-                                    <span class="about-feature-label">500+ Products</span>
-                                </div>
-
-                                <div class="about-feature-item">
-                                    <div class="about-feature-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                        </svg>
-                                    </div>
-                                    <span class="about-feature-label">24/7 Support</span>
-                                </div>
-
-                                <div class="about-feature-item">
-                                    <div class="about-feature-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect x="1" y="3" width="15" height="13"></rect>
-                                            <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
-                                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                                        </svg>
-                                    </div>
-                                    <span class="about-feature-label">Pan India</span>
-                                </div>
-                            </div>
-
-                            <!-- CTA Button -->
-                            <div class="about-brand-actions">
-                                <a href="about.html" class="about-brand-btn">
-                                    EXPLORE ARKON &rarr;
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Overlapping Floating Brand Card (Right Side) -->
-                    <div class="about-brand-float-card">
-                        <div class="float-card-inner">
-                            <div class="float-card-logo">
-                                <img src="assets/logo/Arkon.png" alt="Arkon Medical Systems Logo">
-                            </div>
-                            <h4 class="float-card-tagline">
-                                Your Life's Work, Powered By Our Precision Care.
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
         <!-- Testimonials -->
