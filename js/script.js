@@ -13,8 +13,7 @@ function toggleMobileNav() {
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     initSolutionsCarousel();
-    initLogoCarousel();
-    initTestimonials();
+    initLogoGrid();
     initSocialsCard();
     initStackGallery();
     initMegaMenu();
@@ -231,82 +230,19 @@ function initSolutionsCarousel() {
 }
 
 
-function initLogoCarousel() {
-    const carousel = document.getElementById('logo-carousel');
-    if (!carousel) return;
+function initLogoGrid() {
+    const grid = document.getElementById('clients-grid');
+    if (!grid || typeof clients === 'undefined') return;
     
-    // Create 3 columns
-    const columnsCount = 3;
-    const columns = Array.from({ length: columnsCount }, () => []);
-    
-    // Shuffle logos and distribute into columns
-    const shuffledLogos = [...clients].sort(() => Math.random() - 0.5);
-    
-    shuffledLogos.forEach((logo, index) => {
-        columns[index % columnsCount].push(logo);
-    });
-
     let html = '';
-    columns.forEach((colLogos, colIndex) => {
-        html += `<div class="logo-column" id="logo-col-${colIndex}">`;
-        colLogos.forEach((logo, logoIndex) => {
-            // First logo is active, others are next
-            const stateClass = logoIndex === 0 ? 'active' : 'next';
-            html += `
-                <div class="logo-item ${stateClass}" data-index="${logoIndex}">
-                    <img src="${logo.img}" alt="${logo.name} logo" onerror="this.onerror=null;this.src='https://placehold.co/150x50/FFFFFF/607D8B?text=${encodeURIComponent(logo.name)}';">
-                </div>
-            `;
-        });
-        html += `</div>`;
+    // Use up to 12 clients for a 4x3 grid
+    const displayClients = clients.slice(0, 12);
+    
+    displayClients.forEach(client => {
+        html += `<img src="${client.img}" alt="${client.name}" class="client-logo" title="${client.name}">`;
     });
     
-    carousel.innerHTML = html;
-    
-    // Start animation loop
-    columns.forEach((_, colIndex) => {
-        // Offset timing for each column
-        setTimeout(() => {
-            setInterval(() => {
-                rotateColumn(colIndex);
-            }, 2000 + Math.random() * 500); // approx 2 seconds with slight variation
-        }, colIndex * 600); // 600ms stagger between columns
-    });
-}
-
-function rotateColumn(colIndex) {
-    const column = document.getElementById(`logo-col-${colIndex}`);
-    if (!column) return;
-    
-    const items = column.querySelectorAll('.logo-item');
-    if (items.length <= 1) return;
-    
-    let activeIndex = -1;
-    items.forEach((item, index) => {
-        if (item.classList.contains('active')) {
-            activeIndex = index;
-        }
-    });
-    
-    if (activeIndex === -1) activeIndex = 0;
-    
-    const nextIndex = (activeIndex + 1) % items.length;
-    
-    // Reset all to 'next' state without transition if they were 'prev'
-    items.forEach((item, index) => {
-        if (index !== activeIndex && index !== nextIndex) {
-            item.className = 'logo-item next'; // fast reset
-        }
-    });
-    
-    // Animate current to prev
-    items[activeIndex].className = 'logo-item prev';
-    
-    // Animate next to active
-    // Small timeout to ensure DOM update allows transition
-    setTimeout(() => {
-        items[nextIndex].className = 'logo-item active';
-    }, 50);
+    grid.innerHTML = html;
 }
 
 function renderProviders() {
@@ -457,47 +393,6 @@ function scrollSlider(containerId, direction) {
 let currentTestimonialIndex = 0;
 let isAnimatingTestimonial = false;
 let testimonialInterval;
-
-function initTestimonials() {
-    const wrapper = document.getElementById('ts-wrapper');
-    const dotsContainer = document.getElementById('ts-progress-dots');
-    if (!wrapper || !dotsContainer) return;
-    
-    // Create dots
-    testimonials.forEach((_, index) => {
-        const btn = document.createElement('button');
-        btn.className = `ts-dot-btn ${index === 0 ? 'active' : ''}`;
-        btn.onclick = (e) => {
-            e.stopPropagation();
-            changeTestimonial(index);
-            resetTestimonialInterval();
-        };
-        
-        const dot = document.createElement('span');
-        dot.className = 'ts-dot';
-        
-        const outline = document.createElement('span');
-        outline.className = 'ts-dot-outline';
-        
-        btn.appendChild(dot);
-        btn.appendChild(outline);
-        dotsContainer.appendChild(btn);
-    });
-    
-    // Initial content
-    updateTestimonialContent(0);
-    
-    wrapper.onclick = () => {
-        changeTestimonial((currentTestimonialIndex + 1) % testimonials.length);
-        resetTestimonialInterval();
-    };
-
-    // Auto-rotate setup
-    startTestimonialInterval();
-
-    wrapper.onmouseenter = () => clearInterval(testimonialInterval);
-    wrapper.onmouseleave = () => startTestimonialInterval();
-}
 
 function startTestimonialInterval() {
     clearInterval(testimonialInterval);
@@ -1094,40 +989,63 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// IntersectionObserver-driven Accordion
+// Fluid Scroll-Linked Accordion Animation
 document.addEventListener('DOMContentLoaded', () => {
-    const accordionItems = document.querySelectorAll('.accordion-item');
-    if (accordionItems.length > 0) {
-        let currentlyActive = accordionItems[0]; // default to first
+    const items = document.querySelectorAll('.accordion-item');
+    if (items.length > 0) {
+        const baseHeight = 90;
+        const peakHeight = 350;
 
-        const observer = new IntersectionObserver((entries) => {
-            let newlyIntersecting = null;
+        function onScroll() {
+            const windowHeight = window.innerHeight;
+            const startY = windowHeight * 0.65; // Starts expanding when top hits 65% of screen
+            const peakY = windowHeight * 0.35;  // Fully expanded at 35% of screen
 
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    newlyIntersecting = entry.target;
+            items.forEach((item) => {
+                const rect = item.getBoundingClientRect();
+                let height = baseHeight;
+                let progress = 0;
+                let isActive = false;
+                
+                if (rect.top > startY) {
+                    // Below active zone
+                    height = baseHeight;
+                    progress = 0;
+                    isActive = false;
+                } else if (rect.top <= startY && rect.top > peakY) {
+                    // Expanding phase (scrolling down)
+                    progress = (startY - rect.top) / (startY - peakY);
+                    height = baseHeight + (peakHeight - baseHeight) * progress;
+                    if (progress > 0.5) isActive = true;
+                } else if (rect.top <= peakY) {
+                    // Above the middle - STAY EXPANDED!
+                    height = peakHeight;
+                    progress = 1;
+                    isActive = true;
+                }
+
+                // Apply inline height
+                item.style.height = height + 'px';
+                
+                // Map opacity to progress directly
+                const bodyInner = item.querySelector('.accordion-body-inner');
+                if (bodyInner) {
+                    // fade in smoothly as it expands
+                    const opacity = Math.max(0, Math.min(1, (progress - 0.2) / 0.6));
+                    bodyInner.style.opacity = opacity;
+                }
+                
+                // Toggle active class for color and background effects
+                if (isActive) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
                 }
             });
-
-            if (newlyIntersecting && newlyIntersecting !== currentlyActive) {
-                // Remove active from all items to guarantee only one is active
-                accordionItems.forEach(item => item.classList.remove('active'));
-                
-                // Add active to the new one
-                newlyIntersecting.classList.add('active');
-                currentlyActive = newlyIntersecting;
-            }
-        }, {
-            // Trigger when element enters the middle of the viewport
-            rootMargin: "-30% 0px -30% 0px", 
-            threshold: 0
-        });
-
-        accordionItems.forEach(item => observer.observe(item));
-        
-        // Initial state
-        if (accordionItems.length > 0) {
-            accordionItems[0].classList.add('active');
         }
+        
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // Initial setup
+        setTimeout(onScroll, 50);
     }
 });
