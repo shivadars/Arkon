@@ -1098,20 +1098,36 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const accordionItems = document.querySelectorAll('.accordion-item');
     if (accordionItems.length > 0) {
+        let currentlyActive = accordionItems[0]; // default to first
+
         const observer = new IntersectionObserver((entries) => {
+            let newlyIntersecting = null;
+
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    entry.target.classList.remove('active');
+                    newlyIntersecting = entry.target;
                 }
             });
+
+            if (newlyIntersecting && newlyIntersecting !== currentlyActive) {
+                // Remove active from all items to guarantee only one is active
+                accordionItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active to the new one
+                newlyIntersecting.classList.add('active');
+                currentlyActive = newlyIntersecting;
+            }
         }, {
-            // Trigger when element enters the middle 60% of the viewport
-            rootMargin: "-20% 0px -20% 0px", 
+            // Trigger when element enters the middle of the viewport
+            rootMargin: "-30% 0px -30% 0px", 
             threshold: 0
         });
 
         accordionItems.forEach(item => observer.observe(item));
+        
+        // Initial state
+        if (accordionItems.length > 0) {
+            accordionItems[0].classList.add('active');
+        }
     }
 });
