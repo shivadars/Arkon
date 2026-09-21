@@ -741,7 +741,7 @@ function initMegaMenu() {
                 </div>
                 <div class="mobile-accordion-level" id="mobile-cat-${idx}">
                     ${products.filter(p => p.category === cat).map(p => `
-                        <a href="product-detail.html?id=${p.id}" class="mobile-product-item">${p.name}</a>
+                        <a href="${p.custom_url || 'product-detail.html?id=' + p.id}" class="mobile-product-item">${p.name}</a>
                     `).join('')}
                 </div>
             `).join('')}
@@ -762,7 +762,7 @@ function initMegaMenu() {
                     </div>
                     <div class="mobile-accordion-level" id="mobile-sol-${idx}">
                         ${getSolutionProducts(sol.id).map(p => `
-                            <a href="product-detail.html?id=${p.id}" class="mobile-product-item">${p.name}</a>
+                            <a href="${p.custom_url || 'product-detail.html?id=' + p.id}" class="mobile-product-item">${p.name}</a>
                         `).join('')}
                     </div>
                 `).join('')}
@@ -837,7 +837,7 @@ function renderLvl3(productsToRender) {
         html = `
             <div class="mega-menu-products-grid">
                 ${productsToRender.slice(0, 15).map(p => `
-                    <a href="product-detail.html?id=${p.id}" class="mega-menu-product-item">
+                    <a href="${p.custom_url || 'product-detail.html?id=' + p.id}" class="mega-menu-product-item">
                         <span class="mega-menu-product-name">${p.name}</span>
                         <span class="mega-menu-product-brand">${p.brand}</span>
                     </a>
@@ -874,25 +874,25 @@ function toggleMobileAccordion(targetId, btnElement) {
 // Razorpay-style Hero Carousel Logic
 const rzSlides = [
     {
-        title: "Advanced Life Support",
-        subtext: "Comprehensive ICU ventilators offering invasive and non-invasive ventilation for critical care.",
-        image: "assets/products/comen-v8-ai-transparent.png",
-        name: "Comen V8",
-        cat: "ICU Ventilator"
+        title: "Comprehensive Patient Monitoring",
+        subtext: "Real-time vitals and high-acuity telemetry with the K22 Pro multi-parameter monitor.",
+        image: "assets/products/ai-monitor.png",
+        name: "Comen K22 Pro",
+        cat: "Patient Monitor"
     },
     {
-        title: "Precision Anesthesia",
-        subtext: "High-end anesthesia workstation built for complex surgeries and ensuring patient safety.",
-        image: "assets/products/comen-ax900-ai-transparent.png",
-        name: "Comen AX-900",
-        cat: "Anesthesia Machine"
+        title: "Next-Gen Medical Imaging",
+        subtext: "Exceptional clarity and precision diagnostics with our premium clinical ultrasound systems.",
+        image: "assets/products/ai-ultrasound.png",
+        name: "Comen Ultrasound",
+        cat: "Medical Imaging"
     },
     {
-        title: "Clear Airway Vision",
-        subtext: "Reliable airway management solution for intubation confidence in any situation.",
-        image: "assets/products/hugemed-vl3d-ai-transparent.png",
-        name: "HugeMed VL3D",
-        cat: "Video Laryngoscope"
+        title: "Gentle Neonatal Care",
+        subtext: "Advanced respiratory support engineered specifically for the most delicate newborns.",
+        image: "assets/products/ai-neonatal.png",
+        name: "Comen NV10",
+        cat: "Neonatal Ventilator"
     }
 ];
 

@@ -502,7 +502,7 @@
                                 <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
                             <h3>${prod.name}</h3>
-                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="window.location.href='product-detail.html?id=${prod.id}'">View Details</button>
+                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="window.location.href='${prod.custom_url || 'product-detail.html?id=' + prod.id}'">View Details</button>
                         </div>
                     `;
                 });

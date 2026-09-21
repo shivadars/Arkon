@@ -4,1550 +4,2091 @@ const PHONE_NUMBER = "+919876543210";    // Replace with actual phone number
 
 // Data Structures
 const products = [
-    {
-        "id": 1,
-        "name": "V6/V8",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "The V6/V8 series ICU patient ventilator is a life-support medical device designed to assist or replace spontaneous breathing in critically ill patients. This ventilator delivers precise oxygen and airflow control to ensure safe, stable, and effective respiratory therapy in intensive care environments.",
-        "image": "assets/images/products/v6-v8-1.png",
-        "price": 137000,
-        "features": [
-            "Precisely monitor transpulmonary pressure by detecting both esophageal pressure and intrapulmonary pressure.",
-            "Can better improve the prognosis of patients and reduce the 28-day mortality rate of patients."
+            {
+            id: 1,
+            name: "V6/V8",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/229_75e9ba2348.png",
+            custom_url: "v6-v8-ventilator.html",
+            price: 137000,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/v6-v8-1.png",
-            "assets/images/products/v6-v8-2.png",
-            "assets/images/products/v6-v8-3.png",
-            "assets/images/products/v6-v8-4.png"
-        ]
-    },
-    {
-        "id": 2,
-        "name": "V2/V5",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "Technology Guides Greatness",
-        "image": "assets/images/products/v2-v5-1.png",
-        "price": 44957,
-        "features": [
-            "Ultra-sensitive response",
-            "Noise ≤ 45dB",
-            "Maximum flow rate ≥ 210 L/min",
-            "Minimum lifespan ≥ 20,000 hrs"
+            images: [
+            "https://alioss.comen.com/cms-v2/229_75e9ba2348.png",
+            "https://alioss.comen.com/cms-v2/1_1_a753392834.png",
+            "https://alioss.comen.com/cms-v2/2_1_1_b3a74827db.png",
+            "https://alioss.comen.com/cms-v2/3_1_1_a1dbaadbbb.png",
+            "https://alioss.comen.com/cms-v2/178_99c08a23ff.png"
         ],
-        "images": [
-            "assets/images/products/v2-v5-1.png",
-            "assets/images/products/v2-v5-2.png",
-            "assets/images/products/v2-v5-3.png",
-            "assets/images/products/v2-v5-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/image_1_4_46e461b028.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/conditions_stages_5d5a5e1f86.svg\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/181_389eef02f5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/311_4ff7d0fd04.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/193_6c45bba74e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 3,
-        "name": "V3/V3 Pro",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "The V3 Pro is a powerful yet portable ICU ventilator, featuring turbine-driven technology, a hidden carry handle, and extended battery life for true mobility. It supports a full range of patients from neonates to adults, offers advanced ventilation modes, and comes equipped with comprehensive clinical support tools.",
-        "image": "assets/images/products/v3-v3-pro-1.png",
-        "price": 155000,
-        "images": [
-            "assets/images/products/v3-v3-pro-1.png",
-            "assets/images/products/v3-v3-pro-2.png",
-            "assets/images/products/v3-v3-pro-3.png",
-            "assets/images/products/v3-v3-pro-4.png"
+        }
         ]
-    },
-    {
-        "id": 4,
-        "name": "V1/V1 Pro",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "Engineered for reliability in the most challenging environments, V1 Pro ensures stable ventilation during patient transport, even under extreme conditions. With advanced features and intelligent control, it delivers ICU-level ventilation performance on the move—bringing critical care standards wherever it’s needed most.",
-        "image": "assets/images/products/v1-v1-pro-1.png",
-        "price": 68006,
-        "images": [
-            "assets/images/products/v1-v1-pro-1.png",
-            "assets/images/products/v1-v1-pro-2.png",
-            "assets/images/products/v1-v1-pro-3.png",
-            "assets/images/products/v1-v1-pro-4.png"
+        },
+            {
+            id: 2,
+            name: "V2/V5",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/4_1d606e261b.png",
+            price: 44957,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/4_1d606e261b.png",
+            "https://alioss.comen.com/cms-v2/V2_V5_8_d59268ddf0.png",
+            "https://alioss.comen.com/cms-v2/5_750b6e970f.png",
+            "https://alioss.comen.com/cms-v2/207_9c721d6dc8.png",
+            "https://alioss.comen.com/cms-v2/208_444986d560.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/212_e49cd8895b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_2_1_774a3f1fd1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/V5_192bd82b5d.gif\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 5,
-        "name": "NV50/60/70",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "Technology Guides Greatness",
-        "image": "assets/images/products/nv50-60-70-1.png",
-        "price": 149126,
-        "images": [
-            "assets/images/products/nv50-60-70-1.png",
-            "assets/images/products/nv50-60-70-2.png",
-            "assets/images/products/nv50-60-70-3.png",
-            "assets/images/products/nv50-60-70-4.png"
+        }
         ]
-    },
-    {
-        "id": 6,
-        "name": "NV10",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "The NV10 neonatal ventilator is a critical medical device designed to provide respiratory support for newborns and young infants who cannot breathe adequately on their own. It delivers precise airflow and pressure to maintain stable oxygenation. This infant ventilator provides stable, lung-protective ventilation strategies.",
-        "image": "assets/images/products/nv10-1.png",
-        "price": 66000,
-        "images": [
-            "assets/images/products/nv10-1.png",
-            "assets/images/products/nv10-2.png",
-            "assets/images/products/nv10-3.png",
-            "assets/images/products/nv10-4.png"
+        },
+            {
+            id: 3,
+            name: "V3/V3 Pro",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/233_d59172c677.png",
+            price: 155000,
+            images: [
+            "https://alioss.comen.com/cms-v2/233_d59172c677.png",
+            "https://alioss.comen.com/cms-v2/234_8c54e0ba6a.png",
+            "https://alioss.comen.com/cms-v2/235_94496f96a9.png",
+            "https://alioss.comen.com/cms-v2/236_c82929e1f9.png",
+            "https://alioss.comen.com/cms-v2/237_848dc5d61e.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/238_5ded83a99c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/239_362265c172.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_1_3ded2a72cb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/5_1_203884eff5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/2_3_1291279b71.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 7,
-        "name": "VN Series",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "Neonatal and Pediatric Ventilator",
-        "image": "assets/images/products/vn-series-1.png",
-        "price": 88000,
-        "images": [
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 4,
+            name: "V1/V1 Pro",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/AI_psd_1_03444929d1.png",
+            price: 68006,
+            images: [
+            "https://alioss.comen.com/cms-v2/AI_psd_1_03444929d1.png",
+            "https://alioss.comen.com/cms-v2/404_d72eccda34.png",
+            "https://alioss.comen.com/cms-v2/405_9b847cafc0.png",
+            "https://alioss.comen.com/cms-v2/407_3881469fa3.png",
+            "https://alioss.comen.com/cms-v2/406_82c1d25191.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/408_93a0870912.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/16_3_fde9b15f17.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/15_2_9e2dd69a25.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/12_3_3af2a72e31.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/14_3_8aa2802019.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 5,
+            name: "NV50/60/70",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/231_dc439244a3.png",
+            price: 149126,
+            images: [
+            "https://alioss.comen.com/cms-v2/231_dc439244a3.png",
+            "https://alioss.comen.com/cms-v2/215_a1fae07d7d.png",
+            "https://alioss.comen.com/cms-v2/216_1b83be35b2.png",
+            "https://alioss.comen.com/cms-v2/pic3_112be4437a.png",
+            "https://alioss.comen.com/cms-v2/12_4_46f5eb7311.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/11_2_22f60cf986.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/13_3_08a5dc64f3.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic7_5146dc03e2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/efrh_1f6190a32b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/227_fe66e3e9ac.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 6,
+            name: "NV10",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/NV_10_af4a415e8e.png",
+            price: 66000,
+            images: [
+            "https://alioss.comen.com/cms-v2/NV_10_af4a415e8e.png",
+            "https://alioss.comen.com/cms-v2/sect1_item1_b5632f983c.png",
+            "https://alioss.comen.com/cms-v2/sect1_item2_de4596c176.png",
+            "https://alioss.comen.com/cms-v2/sect1_item3_e264134c71.png",
+            "https://alioss.comen.com/cms-v2/sect1_item4_0d8ea89b85.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/sect1_item5_f27426d00c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/sect1_item6_05d3267864.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/242_986c41c8b2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/243_e044bbbc44.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/244_161b8816eb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 7,
+            name: "VN Series",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "assets/images/products/vn-series-1.png",
+            price: 88000,
+            images: [
             "assets/images/products/vn-series-1.png",
             "assets/images/products/vn-series-2.png",
             "assets/images/products/vn-series-3.png",
             "assets/images/products/vn-series-4.png"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 8,
-        "name": "NV8",
-        "brand": "COMEN",
-        "category": "Ventilator",
-        "description": "NV8 Neonatal Ventilator",
-        "image": "assets/images/products/nv8-1.png",
-        "price": 137000,
-        "rich_description": "<p>The NV8 Neonatal Ventilator provides comprehensive and dedicated neonatal respiratory care with advanced non-invasive ventilation modes.</p>",
-        "features_extended": [
+        },
+            {
+            id: 8,
+            name: "NV8",
+            brand: "COMEN",
+            category: "Ventilator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            price: 137000,
+            rich_description: "<p>The NV8 Neonatal Ventilator provides comprehensive and dedicated neonatal respiratory care with advanced non-invasive ventilation modes.</p>",
+            features_extended: [
             "Synchronized Non-Invasive Ventilation (SNIPPV/NIPPV)",
             "NCPAP mode with apnea wake-up function",
             "High Flow Nasal Cannula (HFNC) therapy",
             "Comprehensive monitoring including SpO2 and EtCO2",
             "8-inch color touchscreen display"
         ],
-        "images": [
-            "assets/images/products/nv8-1.png",
-            "https://en.comen.com/assets/NV8/P03.png",
-            "https://en.comen.com/assets/NV8/P04.png",
-            "https://en.comen.com/assets/NV8/P05.png"
-        ]
-    },
-    {
-        "id": 9,
-        "name": "NF5",
-        "brand": "COMEN",
-        "category": "High Flow Oxygen Therapy Humidifier",
-        "description": "Rapidly increase the O₂ concentration, increase the patient's O₂ reserve, and facilitate sputum suction, bronchoscopy, intubation and other nursing cares.",
-        "image": "assets/images/products/nf5-1.png",
-        "price": 92161,
-        "features": [
-            "Ultra-large touch screen: NF5 is equipped with a 4.3-inch touch screen, which allows easy and quick operation by touch and navigation knob.",
-            "Electronic air-O2 mixer system: easy to set up flow rate and O2 concentration.",
-            "Intuitive UI design: large font, easy for caregiver to operate and observe.",
-            "High-performance nasal cannula: ergonomic design, soft and comfortable, free of constriction.",
-            "Ultra-quiet design: The ultra-quiet turbine significantly reduces noise, provides a quiet O2 therapy environment, and reduces irritability.",
-            "High performance turbine, no need for compressed air supply",
-            "Integrated battery for transportation",
-            "Light and compact medical trolley eases intra-hospital transport"
+            images: [
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
         ],
-        "images": [
-            "assets/images/products/nf5-1.png",
-            "assets/images/products/nf5-2.png",
-            "assets/images/products/nf5-3.png",
-            "assets/images/products/nf5-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 10,
-        "name": "HT30",
-        "brand": "COMEN",
-        "category": "High Flow Oxygen Therapy Humidifier",
-        "description": "Respiratory Humidifier",
-        "image": "assets/images/products/ht30-1.png",
-        "price": 157577,
-        "images": [
-            "assets/images/products/ht30-1.png",
-            "assets/images/products/ht30-2.png",
-            "assets/images/products/ht30-3.png",
-            "assets/images/products/ht30-4.png"
-        ]
-    },
-    {
-        "id": 11,
-        "name": "HT50",
-        "brand": "COMEN",
-        "category": "High Flow Oxygen Therapy Humidifier",
-        "description": "Respiratory Humidifier",
-        "image": "assets/images/products/ht50-1.png",
-        "price": 47694,
-        "images": [
-            "assets/images/products/ht50-1.png",
-            "assets/images/products/ht50-2.png",
-            "assets/images/products/ht50-3.png",
-            "assets/images/products/ht50-4.png"
-        ]
-    },
-    {
-        "id": 12,
-        "name": "X8",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "The X8 is an integrated anesthesia machine designed to support accurate control, stable delivery, ICU-level ventilation support, perioperative lung protection, and smart anesthesia management in one advanced workstation.",
-        "image": "assets/images/products/x8-1.png",
-        "price": 40676,
-        "images": [
-            "assets/images/products/x8-1.png",
-            "assets/images/products/x8-2.png",
-            "assets/images/products/x8-3.png",
-            "assets/images/products/x8-4.png"
-        ]
-    },
-    {
-        "id": 13,
-        "name": "AX900",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "The AX-900 is a modern anesthesia machine ventilator designed to provide safe and precise anesthesia delivery during surgical procedures. Combining precision ventilation with intuitive controls, this anesthesia workstation ensures patient safety and surgical efficiency. It ensures accurate ventilation, continuous patient monitoring, and efficient operation, offering a reliable solution for all anesthesia management needs.",
-        "image": "assets/images/products/ax900-1.png",
-        "price": 232000,
-        "features": [
-            "Provides more stable ventilation and sharper triggering under SIMV mode and PSV mode.",
-            "Provide higher compression capacity.",
-            "PEEP facilitates lung protection and recruitment maneuvers",
-            "7% Ventilation Accuracy.",
-            "65ml/min Low Leakage",
-            "Autoclavable"
+        },
+            {
+            id: 9,
+            name: "NF5",
+            brand: "COMEN",
+            category: "High Flow Oxygen Therapy Humidifier",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/378_af23b22158.png",
+            price: 92161,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/ax900-1.png",
-            "assets/images/products/ax900-2.png",
-            "assets/images/products/ax900-3.png",
-            "assets/images/products/ax900-4.png"
-        ]
-    },
-    {
-        "id": 14,
-        "name": "AX-800/AX-700",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "AX-800 features 15” four-way rotating touch screen, more comfortable for doctors of different heights in different positions to observe and operate, reducing work fatigue",
-        "image": "assets/images/products/ax-800-ax-700-1.png",
-        "price": 85336,
-        "features": [
-            "Instantly know the fresh gas flow to your patient.",
-            "Identifying key information quickly and easily is critical to your practice.",
-            "Providing a quick reference even in a darkened environment.",
-            "Provides more stable ventilation and sharper triggering under SIMV mode and PSV mode.",
-            "Provide higher compression capacity.",
-            "PEEP facilitates lung protection and recruitment maneuvers",
-            "7% Ventilation Accuracy.",
-            "65ml/min Low Leakage"
+            images: [
+            "https://alioss.comen.com/cms-v2/378_af23b22158.png",
+            "https://alioss.comen.com/cms-v2/379_49150abdc1.png",
+            "https://alioss.comen.com/cms-v2/2_5_bdbfc2153d.png",
+            "https://alioss.comen.com/cms-v2/3_4_1_a8a91c481f.png",
+            "https://alioss.comen.com/cms-v2/4_4_1_3d6438ab8a.png"
         ],
-        "images": [
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/384_89b6f8d2dc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/383_d493544512.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/386_ff18e049f5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8_56af5c1ead.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 10,
+            name: "HT30",
+            brand: "COMEN",
+            category: "High Flow Oxygen Therapy Humidifier",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_3821278824.png",
+            price: 157577,
+            images: [
+            "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_3821278824.png",
+            "https://alioss.comen.com/cms-v2/3_H1200_20x_8_1_95d004643a.png",
+            "https://alioss.comen.com/cms-v2/4_H1200_20x_8_1_cd852d42a2.png",
+            "https://alioss.comen.com/cms-v2/5_H1200_20x_8_3_a3e3050150.png",
+            "https://alioss.comen.com/cms-v2/5_H1200_20x_8_1_e12da1046f.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/5_H1200_20x_8_2_905c178e9c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_H1200_20x_8_1_e507e2cc30.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 11,
+            name: "HT50",
+            brand: "COMEN",
+            category: "High Flow Oxygen Therapy Humidifier",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_87c1ebe0cc.png",
+            price: 47694,
+            images: [
+            "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_87c1ebe0cc.png",
+            "https://alioss.comen.com/cms-v2/4_H1200_20x_8_2_f73839b010.png",
+            "https://alioss.comen.com/cms-v2/6_H1200_20x_8_1_44c3d5abe2.png",
+            "https://alioss.comen.com/cms-v2/5_H1200_20x_8_2_fdc944f88c.png",
+            "https://alioss.comen.com/cms-v2/8_H1200_20x_8_1_cebe990003.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/7_H1200_20x_8_1_99898b1a87.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_0ec81deb77.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/2_H1200_20x_8_1_912d5c354c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_H1200_20x_8_1_67588f9385.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 12,
+            name: "X8",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/1_7_1_bc7c890884.png",
+            price: 40676,
+            images: [
+            "https://alioss.comen.com/cms-v2/1_7_1_bc7c890884.png",
+            "https://alioss.comen.com/cms-v2/1_10_b6fba615d1.png",
+            "https://alioss.comen.com/cms-v2/4_8_bb218fe54a.png",
+            "https://alioss.comen.com/cms-v2/49_80cbebb0af.png",
+            "https://alioss.comen.com/cms-v2/46_7d51a1c3cb.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/47_c5b4109d0b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/48_2bed5241ce.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_9_eb776fe81f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_12_ac493a53cc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/5_20x_8_1_6850e7c2e3.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 13,
+            name: "AX900",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/262_950dcdd550.png",
+            price: 232000,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/262_950dcdd550.png",
+            "https://alioss.comen.com/cms-v2/261_1_7aa5699045.png",
+            "https://alioss.comen.com/cms-v2/299_7d92aa09c0.png",
+            "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
+            "https://alioss.comen.com/cms-v2/263_9a5aa85f18.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/264_2fd72f2276.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_06bb0d894f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/AX_900_AX_900_A_ed8a9cab6a.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 14,
+            name: "AX-800/AX-700",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "assets/images/products/ax-800-ax-700-1.png",
+            price: 85336,
+            features: [
+            
+        ],
+            images: [
             "assets/images/products/ax-800-ax-700-1.png",
             "assets/images/products/ax-800-ax-700-2.png",
             "assets/images/products/ax-800-ax-700-3.png",
             "assets/images/products/ax-800-ax-700-4.png"
         ]
-    },
-    {
-        "id": 15,
-        "name": "AX600",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "AX-600 Features 12.1” four-way rotating touch screen, more comfortable for doctors of different heights in different positions to observe and operate, reducing work fatigue",
-        "image": "assets/images/products/ax600-1.png",
-        "price": 131000,
-        "features": [
-            "Provides more stable ventilation and sharper triggering under SIMV mode and PSV mode.",
-            "Provide higher compression capacity.",
-            "PEEP facilitates lung protection and recruitment maneuvers",
-            "7% Ventilation Accuracy.",
-            "65ml/min Low Leakage",
-            "Autoclavable"
+        },
+            {
+            id: 15,
+            name: "AX600",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/253_9cbd8b1f8d.png",
+            price: 131000,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/ax600-1.png",
-            "assets/images/products/ax600-2.png",
-            "assets/images/products/ax600-3.png",
-            "assets/images/products/ax600-4.png"
-        ]
-    },
-    {
-        "id": 16,
-        "name": "AX400/AX500",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "The AX-500 features a 12-inch high-resolution screen that provides a clear and comfortable viewing experience for clinicians. Its user-friendly interface is intuitively designed, presenting vital information in a clean, organized layout. With simplified controls and clear display, the AX-500 makes monitoring and operation more efficient, helping medical staff stay focused on patient care",
-        "image": "assets/images/products/ax400-ax500-1.png",
-        "price": 99344,
-        "features": [
-            "BIS / AG / CO2 module optional",
-            "Automatically identify CO2, N2O and 5 Anesthetic Gases",
-            "Support CO2, N2O, anesthesia gas waveform display, support MAC value display",
-            "Monitoring modules can be shared with our modular monitor, cost effective",
-            "Support real-time O2 concentration monitoring",
-            "BIS value display and EEG waveform display once plug in the BIS module",
-            "Sample gas conncet with AGSS port design",
-            "Individual flow controls with dual flow tubes provide simple, precise control, facilitate easy and accurate minimal / low flow anesthesia"
+            images: [
+            "https://alioss.comen.com/cms-v2/253_9cbd8b1f8d.png",
+            "https://alioss.comen.com/cms-v2/258_61bb5065ad.png",
+            "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
+            "https://alioss.comen.com/cms-v2/300_ffc844aadd.png",
+            "https://alioss.comen.com/cms-v2/256_3ae8ac77c0.png"
         ],
-        "images": [
-            "assets/images/products/ax400-ax500-1.png",
-            "assets/images/products/ax400-ax500-2.png",
-            "assets/images/products/ax400-ax500-3.png",
-            "assets/images/products/ax400-ax500-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/299_7d92aa09c0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/257_cb384dad09.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_71e9428ca2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/AX_600_AX_700_A_AX_800_db082149ce.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 17,
-        "name": "A5/A7",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "A7, with the most comprehensive ventilation and intelligent and ergonomic operating design, is your best assistant during perioperative procedure!",
-        "image": "assets/images/products/a5-a7-1.png",
-        "price": 80000,
-        "features": [
-            "PSVPro: Innovative ventilation mode, is designed to give smarter and more efficient pressure support for the patient.",
-            "PSVPro: Innovative ventilation mode, is designed to give smarter and more efficient pressure support for the patient."
+        }
+        ]
+        },
+            {
+            id: 16,
+            name: "AX400/AX500",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/249_f7e3110f71.png",
+            price: 99344,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/a5-a7-1.png",
-            "assets/images/products/a5-a7-2.png",
-            "assets/images/products/a5-a7-3.png",
-            "assets/images/products/a5-a7-4.png"
-        ]
-    },
-    {
-        "id": 18,
-        "name": "AGSS-H/AGSS-L",
-        "brand": "COMEN",
-        "category": "Anesthesia Machine",
-        "description": "AGSS _ H is suitable for exhaust gas pipes with a flow rate of> 75 L/min",
-        "image": "assets/images/products/agss-h-agss-l-1.png",
-        "price": 76517,
-        "features": [
-            "Comen AGSS effectively reduces circuit ventilation abnormalities caused by negative pressure in the exhaust gas ducts.",
-            "Comen AGSS effectively removes anesthesia exhaust gases in conjunction with hospital anesthetic gas exhaust pipes.",
-            "Compatible with jet AGS ducts, negative-pressure AGS ducts, or negative-pressure ducts for high- and low-velocity exhaust gas ducts.",
-            "Corresponding connection solutions for all major brands of anesthesia machines, which are suitable for almost all anesthesia machines.",
-            "The system is ready for use with a simple commissioning process, and the exhaust discharge is thorough and stable.",
-            "Absorbs gas through physical means, no gas/power supply or chemical consumables required"
+            images: [
+            "https://alioss.comen.com/cms-v2/249_f7e3110f71.png",
+            "https://alioss.comen.com/cms-v2/248_79d9dd69ea.png",
+            "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
+            "https://alioss.comen.com/cms-v2/251_25403e9b52.png",
+            "https://alioss.comen.com/cms-v2/299_7d92aa09c0.png"
         ],
-        "images": [
-            "assets/images/products/agss-h-agss-l-1.png",
-            "assets/images/products/agss-h-agss-l-2.png",
-            "assets/images/products/agss-h-agss-l-3.png",
-            "assets/images/products/agss-h-agss-l-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/252_22bc06605f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_50615d2206.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/AX_400_A_AX_500_A_6a79ff8d1c.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 19,
-        "name": "MR-M80T/MR-M60T",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Purpose-built for 1.5T/3.0T high-field MRI environments, the MR series monitor main unit operates stably within a static magnetic field of ≤60 mT, while the acquisition boxes can function within a 3.0T magnetic field without affecting MRI image quality.",
-        "image": "assets/images/products/mr-m80t-mr-m60t-1.png",
-        "price": 175251,
-        "images": [
-            "assets/images/products/mr-m80t-mr-m60t-1.png",
-            "assets/images/products/mr-m80t-mr-m60t-2.png",
-            "assets/images/products/mr-m80t-mr-m60t-3.jpg",
-            "assets/images/products/mr-m80t-mr-m60t-4.png"
+        }
         ]
-    },
-    {
-        "id": 20,
-        "name": "K Pro Series",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Precision Monitoring, Protecting Lives",
-        "image": "assets/images/products/k-pro-series-1.png",
-        "price": 152096,
-        "features": [
-            "Auto-brightness adjustment adapts to different lighting conditions in ORs, ICUs, and emergency settings",
-            "7:1 contrast ratio, meeting WCAG 2.0 AAA standards for superior readability",
-            "Intelligent gesture controls allow effortless navigation through patient data",
-            "Neurology Monitoring: BIS , SedLine, EEG, aEEG, Masimo O3",
-            "Respiratory Monitoring: RM, EtCO2, O2, Anesthesia Gas",
-            "Circulatory Monitoring: C.O., ICG, PiCCO, ProAQT, Masimo Rainbow SET",
-            "HIS Connection: Direct integration with hospital information systems through HL7.",
-            "Central monitor: Supports central display on one screen through central monitor system."
+        },
+            {
+            id: 17,
+            name: "A5/A7",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/356_3c5159f081.png",
+            price: 80000,
+            features: [
+            
         ],
-        "images": [
+            images: [
+            "https://alioss.comen.com/cms-v2/356_3c5159f081.png",
+            "https://alioss.comen.com/cms-v2/357_a70c190e77.png",
+            "https://alioss.comen.com/cms-v2/358_1_c605bfb47c.png",
+            "https://alioss.comen.com/cms-v2/359_bc6e0aea32.png",
+            "https://alioss.comen.com/cms-v2/360_9b9b03c466.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/361_3e0b141cc1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/365_cfbf748455.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8_7bacfdfffe.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/370_cfcc4a4362.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/369_bf58ae0cdb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 18,
+            name: "AGSS-H/AGSS-L",
+            brand: "COMEN",
+            category: "Anesthesia Machine",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/image_png_8c609840ee.png",
+            price: 76517,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/image_png_8c609840ee.png",
+            "https://alioss.comen.com/cms-v2/image_png_1_14541d267b.png",
+            "https://alioss.comen.com/cms-v2/image_png_2_851c7fd3eb.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            "https://alioss.comen.com/cms-v2/8_1e470a31ae.png"
+        ]
+        },
+            {
+            id: 19,
+            name: "MR-M80T/MR-M60T",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/product_6afe6e94c3.png",
+            price: 175251,
+            images: [
+            "https://alioss.comen.com/cms-v2/product_6afe6e94c3.png",
+            "https://alioss.comen.com/cms-v2/mri_environment_b508bccf36.jpg",
+            "https://alioss.comen.com/cms-v2/magnetic_field_41ae876f02.png",
+            "https://alioss.comen.com/cms-v2/full_chain_0ef9130279.png",
+            "https://alioss.comen.com/cms-v2/fiber_optic_icon_a2dd491122.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/shielding_icon_7ed4a775c0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/filtering_icon_cd8e8cd1ca.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/monitor_detail_564cf0d772.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/screen_spec_99d29363ff.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/ecg_leadwire_1096524de4.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 20,
+            name: "K Pro Series",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "assets/images/products/k-pro-series-1.png",
+            price: 152096,
+            features: [
+            
+        ],
+            images: [
             "assets/images/products/k-pro-series-1.png",
             "assets/images/products/k-pro-series-2.png",
             "assets/images/products/k-pro-series-3.png",
             "assets/images/products/k-pro-series-4.png"
         ]
-    },
-    {
-        "id": 21,
-        "name": "K22 Pro",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Convenient and Efficient",
-        "image": "assets/images/products/k22-pro-1.png",
-        "price": 41000,
-        "features": [
-            "HL7-Compliant Connectivity: Smooth integration with HIS, LIS, EMR, and PACS for real-time data exchange.",
-            "K-Link Multi-Device Integration: Integration from anesthesia machines, ventilators, and infusion pumps—view all parameters on one screen.",
-            "Dual-OS Support: Linux & Windows, Run native Windows applications for advanced data processing and seamlessly join hospital networks.",
-            "Central Monitoring via eCenter-CMS: Remote, real-time patient oversight across your facility—streamline care and response."
+        },
+            {
+            id: 21,
+            name: "K22 Pro",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_f7d611d94a.png",
+            price: 41000,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/k22-pro-1.png",
-            "assets/images/products/k22-pro-2.png",
-            "assets/images/products/k22-pro-3.png",
-            "assets/images/products/k22-pro-4.png"
-        ]
-    },
-    {
-        "id": 22,
-        "name": "K1",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Stay Connected Anytime, Anywhere with K1: The Next-Generation Transport Monitor",
-        "image": "assets/images/products/k1-1.png",
-        "price": 37000,
-        "features": [
-            "Essential Measurements: 3/5-lead ECG, NIBP, SpO₂, IBP, Temperature, and Respiration.",
-            "1. Hemodynamic Monitoring: Masimo Rainbow SET, IBP, Cardiac Output",
-            "2. Respiratory Monitoring: Apnea Wake-Up Module, RM,",
-            "3. Neurology Monitoring: NMT, SedLine, BIS",
-            "4. Gas Analysis: Anesthetic Gas, EtCO₂",
-            "Seamless Data Transfer to K12Pro, K15Pro, K18Pro, K22Pro: Ensure uninterrupted monitoring and continuous information flow for enhanced patient care.",
-            "Wi-Fi and Wired Connectivity: Enable real-time data transmission to central monitoring systems, supporting remote oversight and decision-making."
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_f7d611d94a.png",
+            "https://alioss.comen.com/cms-v2/124_24e9de547f.png",
+            "https://alioss.comen.com/cms-v2/13_png_d192532fd6.png",
+            "https://alioss.comen.com/cms-v2/128_76fff78f85.png",
+            "https://alioss.comen.com/cms-v2/129_f5abe4cff1.png"
         ],
-        "images": [
-            "assets/images/products/k1-1.png",
-            "assets/images/products/k1-2.png",
-            "assets/images/products/k1-3.png",
-            "assets/images/products/k1-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/130_c3eebbb906.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/133_761cb6df58.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/134_2f60f0ab1c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/132_21eff566a1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/131_9ebe31e259.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 23,
-        "name": "NMPro Series",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Easy Flexibility Within Touch",
-        "image": "assets/images/products/nmpro-series-1.png",
-        "price": 148492,
-        "images": [
-            "assets/images/products/nmpro-series-1.png",
-            "assets/images/products/nmpro-series-2.png",
-            "assets/images/products/nmpro-series-3.png",
-            "assets/images/products/nmpro-series-4.png"
+        }
         ]
-    },
-    {
-        "id": 24,
-        "name": "N Series",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Inspire Simple and Intuitive Monitoring",
-        "image": "assets/images/products/n-series-1.png",
-        "price": 88000,
-        "features": [
-            "Built-in Parameters: Compact care with ECG, NIBP, SpO₂, EtCO₂, Dual-IBP, and Cardiac Output—no extra modules required.",
-            "SiQ™ Pulse Oximetry: Tracks SpO₂ accurately even in perfusion below 0.2%, with quantifiable reliability metrics.",
-            "Smart NBP™: Motion-resistant oscillometric blood pressure measurement, rigorously validated down to neonatal patients.",
-            "Rugged Reliability: EN 1789 certification and 0.75 m drop resistance ensure steadfast operation in ambulances and field environments.",
-            "Ready-to-Go Rescue Bag: Securely dock the monitor in its custom-fitted bag; access all controls without removal for truly grab-and-run response."
+        },
+            {
+            id: 22,
+            name: "K1",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_acf13457da.png",
+            price: 37000,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/n-series-1.png",
-            "assets/images/products/n-series-2.png",
-            "assets/images/products/n-series-3.png",
-            "assets/images/products/n-series-4.png"
-        ]
-    },
-    {
-        "id": 25,
-        "name": "ND Series",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Valuing Simplicity, Maximizing Care",
-        "image": "assets/images/products/nd-series-1.png",
-        "price": 130276,
-        "features": [
-            "Versatile Display Sizes: Three model choices (10″/12″/15″) ensure optimal visibility in every clinical setting.",
-            "Comfort-First Viewing: The 10° tilt feature delivers a clear, glare-free screen and alleviates caregiver fatigue.",
-            "Effortless Cable Management: Flip-out cabinet board ensures all accessories stay organized and fully accessible for cleaning.",
-            "Early Warning Scores (EWS): Predictive risk stratification",
-            "CCHD Screening: Critical Congenital Heart Disease detection for neonates",
-            "SepsisGuide™: Real-time sepsis risk analytics",
-            "24h ECG Summary: Provides the current patient's ECG activity statistics for the last 24 hours.",
-            "Basic plus Advanced Monitor: Predictive risk stratification"
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_acf13457da.png",
+            "https://alioss.comen.com/cms-v2/SYO_01763_5f5b5668f0.png",
+            "https://alioss.comen.com/cms-v2/A8_D_3852_4dbe465a79.png",
+            "https://alioss.comen.com/cms-v2/SYO_02440_8b9d3fa849.png",
+            "https://alioss.comen.com/cms-v2/SYO_02494_72504953c1.png"
         ],
-        "images": [
-            "assets/images/products/nd-series-1.png",
-            "assets/images/products/nd-series-2.png",
-            "assets/images/products/nd-series-3.png",
-            "assets/images/products/nd-series-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/107_f0826ffa14.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/120_da58fa75c6.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/123_c7b4304d1b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/121_ac12fb9a01.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/122_1ae2b88acc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 26,
-        "name": "eCenter-CMS",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "All-in-one Central Monitoring Solution",
-        "image": "assets/images/products/ecenter-cms-1.png",
-        "price": 92380,
-        "images": [
+        }
+        ]
+        },
+            {
+            id: 23,
+            name: "NMPro Series",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_54c73e66f6.png",
+            price: 148492,
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_54c73e66f6.png",
+            "https://alioss.comen.com/cms-v2/5_9efb843e52.png",
+            "https://alioss.comen.com/cms-v2/Screenshot_d00ae0e7_d42a_4a3d_9d28_22d4b9f7840b_476349183c.png",
+            "https://alioss.comen.com/cms-v2/12_png_0eff9f5fb8.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/4_89c4d1a43c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 24,
+            name: "N Series",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_1dd4ae416c.png",
+            price: 88000,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_1dd4ae416c.png",
+            "https://alioss.comen.com/cms-v2/5_68569a6fa9.png",
+            "https://alioss.comen.com/cms-v2/_30d1953c24.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            "https://alioss.comen.com/cms-v2/4_87296cd048.png"
+        ]
+        },
+            {
+            id: 25,
+            name: "ND Series",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_990b628e04.png",
+            price: 130276,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_990b628e04.png",
+            "https://alioss.comen.com/cms-v2/135_ab76dbf4ec.png",
+            "https://alioss.comen.com/cms-v2/136_7e9648a374.png",
+            "https://alioss.comen.com/cms-v2/5_f2b6acd1a3.png",
+            "https://alioss.comen.com/cms-v2/138_ae735326c0.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/139_b46058dc01.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/10_png_8f93cb7158.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/141_e2d246206d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_3984481abb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/143_66726e8723.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 26,
+            name: "eCenter-CMS",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "assets/images/products/ecenter-cms-1.png",
+            price: 92380,
+            images: [
             "assets/images/products/ecenter-cms-1.png",
             "assets/images/products/ecenter-cms-2.png",
             "assets/images/products/ecenter-cms-3.png",
             "assets/images/products/ecenter-cms-4.png"
-        ]
-    },
-    {
-        "id": 27,
-        "name": "NC6 &amp; NC7",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "The COMEN NC6 & NC7 Patient Monitors set a new benchmark in clinical monitoring, offering speed, accuracy, and intelligent support to enhance ward rounds and optimize patient outcomes.",
-        "image": "assets/images/products/nc6-amp-nc7-1.png",
-        "price": 101126,
-        "features": [
-            "Seamless Data Integration: Connect effortlessly with eCenter-CMS and hospital networks via HL7 for real-time data exchange and centralized access."
         ],
-        "images": [
-            "assets/images/products/nc6-amp-nc7-1.png",
-            "assets/images/products/nc6-amp-nc7-2.png",
-            "assets/images/products/nc6-amp-nc7-3.png",
-            "assets/images/products/nc6-amp-nc7-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 28,
-        "name": "NC5",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "The NC5 is a portable vital signs monitor designed for efficient patient rounding across medical/surgical wards, clinics, and emergency triage. It delivers comprehensive patient surveillance with enhanced connectivity and clinical intelligence, designed for dynamic hospital environments.",
-        "image": "assets/images/products/nc5-1.png",
-        "price": 87628,
-        "features": [
-            "Multi-Parameter Precision Monitoring: 3-lead ECG, NIBP, SpO₂(Masimo or Nellcor or Comen), PR, and Temp.",
-            "Display: 8-inch screen, TFT display, color LCD, 800 × 600 resolution; Up to 2 waveforms display simultaneously",
-            "Water ingress protection level (main unit) : IPX2",
-            "Portability: Compact size: 165 × 250 × 165 mm; Light weight: 2.5 kg",
-            "Operation time: ≥8 hours under full charge and normal use.",
-            "Data review: Graph/Table trend: 160h; alarm events review: 200 events; NIBP measurement data: 2000 sets; waveform review: 48h",
-            "Comprehensive Connectivity Solution: Central Monitoring Integration via Star8800, Hospital information system integration via HL7",
-            "Peripheral Connectivity Support: Dual USB ports (mouse/keyboard/printers"
+        },
+            {
+            id: 27,
+            name: "NC6 &amp; NC7",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_7431e37775.png",
+            price: 101126,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/nc5-1.png",
-            "assets/images/products/nc5-2.png",
-            "assets/images/products/nc5-3.png"
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_7431e37775.png",
+            "https://alioss.comen.com/cms-v2/6_png_0a0f0f6b08.png",
+            "https://alioss.comen.com/cms-v2/pic7_76f55aa900.png",
+            "https://alioss.comen.com/cms-v2/pic9_e259a715d6.png",
+            "https://alioss.comen.com/cms-v2/148_74525ce13f.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/150_c1f8154ebc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/149_c115c7c9c9.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic16_bf58eb7ff2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic15_638483948e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/145_b1599b3c3b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 29,
-        "name": "NC3",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "The NC3 is a portable vital signs monitor designed for efficient patient rounding across medical/surgical wards, clinics, and emergency triage. Its compact design and intuitive operation streamline clinical workflows while ensuring reliable physiological parameter tracking.",
-        "image": "assets/images/products/nc3-1.png",
-        "price": 54392,
-        "features": [
-            "Multi-Parameter Monitoring: NIBP, SpO₂ , Temp (infrared ear), and PR.",
-            "Tri-brand SpO₂ compatibility: Supports Masimo, Nellcor, and Comen.",
-            "Portability: compact size: 130*125*299mm & 1.25kg &Integrated portable handle for bedside-to-bedside transport",
-            "Single-button NIBP operation: Start/stop key with backlight",
-            "Data Review: 50 sets data can be storage in monitor.",
-            "Degree of ingress protection (w/o ear thermo): IPX1"
-        ],
-        "images": [
-            "assets/images/products/nc3-1.png",
-            "assets/images/products/nc3-2.png",
-            "assets/images/products/nc3-3.png"
+        }
         ]
-    },
-    {
-        "id": 30,
-        "name": "CF5&amp;CF8",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "The Perfect Blend of Compactness and Modularity",
-        "image": "assets/images/products/cf5-amp-cf8-1.png",
-        "price": 129445,
-        "features": [
-            "Maternal Parameters: Continuously monitor ECG, SpO₂, NIBP, RESP, and TEMP alongside fetal care, providing comprehensive patient assessment.",
-            "Comprehensive CTG scoring includes seven global standards (NRIES, Fischer, Oxford, etc.) for robust assessment."
+        },
+            {
+            id: 28,
+            name: "NC5",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_83d69e1747.png",
+            price: 87628,
+            features: [
+            
         ],
-        "images": [
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_83d69e1747.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            "https://alioss.comen.com/cms-v2/4_f5cbcd49b4.png"
+        ]
+        },
+            {
+            id: 29,
+            name: "NC3",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_abb856a601.png",
+            price: 54392,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_abb856a601.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            "https://alioss.comen.com/cms-v2/4_70c5b080fc.png"
+        ]
+        },
+            {
+            id: 30,
+            name: "CF5&amp;CF8",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "assets/images/products/cf5-amp-cf8-1.png",
+            price: 129445,
+            features: [
+            
+        ],
+            images: [
             "assets/images/products/cf5-amp-cf8-1.png",
             "assets/images/products/cf5-amp-cf8-2.png",
             "assets/images/products/cf5-amp-cf8-3.png",
             "assets/images/products/cf5-amp-cf8-4.png"
         ]
-    },
-    {
-        "id": 31,
-        "name": "H300 &amp; H301",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Weighs less than 1.3kg, easily held in hand, and under 6cm thick for effortless portability.",
-        "image": "assets/images/products/h300-amp-h301-1.png",
-        "price": 129692,
-        "images": [
+        },
+            {
+            id: 31,
+            name: "H300 &amp; H301",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "assets/images/products/h300-amp-h301-1.png",
+            price: 129692,
+            images: [
             "assets/images/products/h300-amp-h301-1.png",
             "assets/images/products/h300-amp-h301-2.png",
             "assets/images/products/h300-amp-h301-3.png",
             "assets/images/products/h300-amp-h301-4.png"
-        ]
-    },
-    {
-        "id": 32,
-        "name": "H1200",
-        "brand": "COMEN",
-        "category": "Patient Monitoring",
-        "description": "Convenient input and more shortcut controls with an alphanumeric keyboard, plus IPX1 waterproof protection.",
-        "image": "assets/images/products/h1200-1.png",
-        "price": 183452,
-        "images": [
-            "assets/images/products/h1200-1.png",
-            "assets/images/products/h1200-2.png",
-            "assets/images/products/h1200-3.png",
-            "assets/images/products/h1200-4.png"
-        ]
-    },
-    {
-        "id": 33,
-        "name": "S80",
-        "brand": "COMEN",
-        "category": "Defibrillator Monitor",
-        "description": "Defibrillator Monitor",
-        "image": "assets/images/products/s80-1.png",
-        "price": 55890,
-        "images": [
-            "assets/images/products/s80-1.png",
-            "assets/images/products/s80-2.png",
-            "assets/images/products/s80-3.png",
-            "assets/images/products/s80-4.png"
-        ]
-    },
-    {
-        "id": 34,
-        "name": "S50",
-        "brand": "COMEN",
-        "category": "Defibrillator Monitor",
-        "description": "Provide a full range of functions to meet various life support needs",
-        "image": "assets/images/products/s50-1.png",
-        "price": 190763,
-        "images": [
-            "assets/images/products/s50-1.png",
-            "assets/images/products/s50-2.png",
-            "assets/images/products/s50-3.png",
-            "assets/images/products/s50-4.png"
-        ]
-    },
-    {
-        "id": 35,
-        "name": "S8",
-        "brand": "COMEN",
-        "category": "Defibrillator Monitor",
-        "description": "The COMEN S8 integrates defibrillation, pacing, monitoring, and AED functions in a single portable device. Suitable for pre-hospital emergencies and hospital use, it supports synchronous/asynchronous defibrillation, pacing modes, and extensive vital-sign monitoring (5/12-lead ECG, SpO₂, TEMP, EtCO₂, IBP), ensuring comprehensive patient care.",
-        "image": "assets/images/products/s8-1.png",
-        "price": 124264,
-        "features": [
-            "Defibrillation in just 3 steps (Energy selection–Charging–Discharging).",
-            "One-knob mode switching (manual defibrillation, pacing, AED).",
-            "Instantaneous (<1s) energy setup, 25 energy levels, and easy one-button 12-lead ECG access."
         ],
-        "images": [
-            "assets/images/products/s8-1.png",
-            "assets/images/products/s8-2.png",
-            "assets/images/products/s8-3.png",
-            "assets/images/products/s8-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 36,
-        "name": "S5",
-        "brand": "COMEN",
-        "category": "Defibrillator Monitor",
-        "description": "Convenient and Efficient",
-        "image": "assets/images/products/s5-1.png",
-        "price": 103928,
-        "images": [
-            "assets/images/products/s5-1.png",
-            "assets/images/products/s5-2.png",
-            "assets/images/products/s5-3.png",
-            "assets/images/products/s5-4.png"
-        ]
-    },
-    {
-        "id": 37,
-        "name": "S1",
-        "brand": "COMEN",
-        "category": "Defibrillator Monitor",
-        "description": "Designed for Efficiency, Built for Mobility",
-        "image": "assets/images/products/s1-1.png",
-        "price": 66900,
-        "images": [
-            "assets/images/products/s1-1.png",
-            "assets/images/products/s1-2.png",
-            "assets/images/products/s1-3.png",
-            "assets/images/products/s1-4.png"
-        ]
-    },
-    {
-        "id": 38,
-        "name": "F3/F5",
-        "brand": "COMEN",
-        "category": "AED",
-        "description": "F3/F5, a user-friendly AED that allows fast operation. It is compact, light-weighted and has integrated AED mode and 3-lead ECG monitoring function. The 7-inch large HD screen provides vivid interactive guidance, making rescue process an easy job.",
-        "image": "assets/images/products/f3-f5-1.png",
-        "price": 103017,
-        "images": [
-            "assets/images/products/f3-f5-1.png",
-            "assets/images/products/f3-f5-2.png",
-            "assets/images/products/f3-f5-3.png",
-            "assets/images/products/f3-f5-4.png"
-        ]
-    },
-    {
-        "id": 39,
-        "name": "G Series",
-        "brand": "COMEN",
-        "category": "AED",
-        "description": "Designed for life-saving speed, the G-Series AED features an intuitive, responder-focused workflow that enables rapid defibrillation even in high-stress emergencies. With advanced cardiac rhythm analysis and clear, automated step-by-step guidance, it minimizes required actions and removes uncertainty for lay rescuers—helping ensure fast, confident intervention when every second counts.",
-        "image": "assets/images/products/g-series-1.png",
-        "price": 56179,
-        "images": [
-            "assets/images/products/g-series-1.png",
-            "assets/images/products/g-series-2.png",
-            "assets/images/products/g-series-3.png",
-            "assets/images/products/g-series-4.png"
-        ]
-    },
-    {
-        "id": 40,
-        "name": "F Series",
-        "brand": "COMEN",
-        "category": "AED",
-        "description": "Life-saving Speed at Your Fingertips",
-        "image": "assets/images/products/f-series-1.png",
-        "price": 93366,
-        "features": [
-            "7-inch HD Display (F2/F2A models only) with vivid animations illustrating each step.",
-            "Continuous Voice Instructions: Step-by-step audio guidance to reduce stress and uncertainty.",
-            "One-button Patient & Language Selection: (F2/F2A models only) with vivid animations illustrating each step.",
-            "Up to 360J Energy Output: Successfully treats challenging cases, including obese patients or those with underlying conditions.",
-            "Automatic Energy Adjustment: Energy levels automatically adapt when switching between adult and pediatric modes for maximum safety.",
-            "Synchronized Rhythm Analysis: No wasted time, device analyzes rhythm and charges simultaneously",
-            "Rapid Shock Delivery: First shock within 7 seconds, optimal rescue effectiveness.",
-            "IP55 Waterproof & Dustproof: Reliable performance in demanding settings"
+        },
+            {
+            id: 32,
+            name: "H1200",
+            brand: "COMEN",
+            category: "Patient Monitoring",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/H300_1_1_e003286035.png",
+            price: 183452,
+            images: [
+            "https://alioss.comen.com/cms-v2/H300_1_1_e003286035.png",
+            "https://alioss.comen.com/cms-v2/9_H1200_20x_8_1_8d556d25be.png",
+            "https://alioss.comen.com/cms-v2/10_H1200_20x_8_1_0360192e96.png",
+            "https://alioss.comen.com/cms-v2/11_H1200_20x_8_1_e7a0753ab6.png",
+            "https://alioss.comen.com/cms-v2/12_H1200_20x_8_1_37ed42cdfd.png"
         ],
-        "images": [
-            "assets/images/products/f-series-1.png",
-            "assets/images/products/f-series-2.png",
-            "assets/images/products/f-series-3.png",
-            "assets/images/products/f-series-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/14_H1200_20x_8_1_8e675550ae.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/13_H1200_20x_8_1_939c87e90b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_H1200_20x_8_1_6770c306e2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/18_H1200_20x_8_1_89f8acf8d0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/15_H1200_20x_8_1_ba0262082c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 41,
-        "name": "ES-Series",
-        "brand": "COMEN",
-        "category": "AED",
-        "description": "Chest compression system",
-        "image": "assets/images/products/es-series-1.png",
-        "price": 57961,
-        "images": [
-            "assets/images/products/es-series-1.png",
-            "assets/images/products/es-series-2.png",
-            "assets/images/products/es-series-3.png",
-            "assets/images/products/es-series-4.png"
-        ]
-    },
-    {
-        "id": 42,
-        "name": "L9",
-        "brand": "COMEN",
-        "category": "Surgical Light",
-        "description": "Illuminate Brilliance, Preserve Vision",
-        "image": "assets/images/products/l9-1.png",
-        "price": 42373,
-        "images": [
-            "assets/images/products/l9-1.png",
-            "assets/images/products/l9-2.png",
-            "assets/images/products/l9-3.png",
-            "assets/images/products/l9-4.png"
-        ]
-    },
-    {
-        "id": 43,
-        "name": "L5",
-        "brand": "COMEN",
-        "category": "Surgical Light",
-        "description": "During the surgery, the medical staff will change the height of the surgical light according to the doctor's position change, which means the surgical light doesn’t keep 1 meter from the wound and cause the focus change. L5 adopts adaptive lighting technology, the surgical light will automatically adapt to the distance of the wound and always keep the focus on the wound.",
-        "image": "assets/images/products/l5-1.png",
-        "price": 150688,
-        "images": [
-            "assets/images/products/l5-1.png",
-            "assets/images/products/l5-2.png",
-            "assets/images/products/l5-3.png",
-            "assets/images/products/l5-4.png"
-        ]
-    },
-    {
-        "id": 44,
-        "name": "L3",
-        "brand": "HugeMed",
-        "category": "Surgical Light",
-        "description": "Advanced VL3H Video Laryngoscope from HugeMed.",
-        "image": "assets/products/hugemed-vl3h-video-laryngoscope.jpg",
-        "price": 158000
-    },
-    {
-        "id": 45,
-        "name": "WE1/WE2",
-        "brand": "COMEN",
-        "category": "Operating Table",
-        "description": "The WE1/WE2 operating table features a modular design, allowing for flexible configuration to meet diverse surgical requirements.",
-        "image": "assets/images/products/we1-we2-1.png",
-        "price": 92255,
-        "features": [
-            "WE1/WE2 is the most economical solution for the construction of new hospitals and the upgrading of old ORs."
+        }
         ],
-        "images": [
-            "assets/images/products/we1-we2-1.png",
-            "assets/images/products/we1-we2-2.png",
-            "assets/images/products/we1-we2-3.png",
-            "assets/images/products/we1-we2-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 46,
-        "name": "WH1/WH2",
-        "brand": "COMEN",
-        "category": "Operating Table",
-        "description": "As surgery advances, hybrid operating rooms must fulfill a wide range of surgical needs. WH1/WH2 is an electrohydraulic operating table with a variety of accessories. It features a stable load-bearing capacity and allows for flexible operation. It can efficiently provide a safe, comfortable, and convenient operating environment for surgeries while also providing the most cost-effective alternative for the construction and upgrade of new hospitals.",
-        "image": "assets/images/products/wh1-wh2-1.png",
-        "price": 116372,
-        "images": [
-            "assets/images/products/wh1-wh2-1.png",
-            "assets/images/products/wh1-wh2-2.png",
-            "assets/images/products/wh1-wh2-3.png",
-            "assets/images/products/wh1-wh2-4.png"
-        ]
-    },
-    {
-        "id": 47,
-        "name": "W5/W3",
-        "brand": "COMEN",
-        "category": "Operating Table",
-        "description": "The modular design of the W5 is a major feature, with an emphasis on the expandability of the operating table in order to meet a variety of clinical needs and solve the problem of special posture requirements under different surgical settings.",
-        "image": "assets/images/products/w5-w3-1.png",
-        "price": 195783,
-        "features": [
-            "1,250 kg static load test；",
-            "550 kg dynamic load test；",
-            "18,000 times load motion test；",
-            "10-year life span test；",
-            "Manual upper backboard 10,000 times exercise test；",
-            "Head board 10,000 times movement test；",
-            "Leg board 5000 times exercise test;Circuit board stress test"
+        },
+            {
+            id: 33,
+            name: "S80",
+            brand: "COMEN",
+            category: "Defibrillator Monitor",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/S80_1_0b805d3727.png",
+            price: 55890,
+            images: [
+            "https://alioss.comen.com/cms-v2/S80_1_0b805d3727.png",
+            "https://alioss.comen.com/cms-v2/16_3_1_3ee94b8947.png",
+            "https://alioss.comen.com/cms-v2/15_1_1_93b4472e6e.png",
+            "https://alioss.comen.com/cms-v2/18_2_5682ccbfe0.png",
+            "https://alioss.comen.com/cms-v2/17_2_36a2d7a710.png"
         ],
-        "images": [
-            "assets/images/products/w5-w3-1.png",
-            "assets/images/products/w5-w3-2.png",
-            "assets/images/products/w5-w3-3.png",
-            "assets/images/products/w5-w3-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/11_1_6_3ac47918d4.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/12_2_1_6ea1c91420.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/22_1_1_bb5f8a602d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/18_1_2_d42faeb29d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/16_2_1_0eb59daafb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 48,
-        "name": "BQ80",
-        "brand": "COMEN",
-        "category": "Warmer",
-        "description": "This is by far the most powerful 4-in-1 neonatal nursing platform. The BQ80 integrates four key rescue and nursing systems to achieve one-stop operation and management. At the same time, it scientifically optimizes the workflow, helps medical staff to easily respond to urgent medical needs, effectively saves valuable rescue time, and provides comprehensive and meticulous care for newborns.",
-        "image": "assets/images/products/bq80-1.png",
-        "price": 54599,
-        "images": [
-            "assets/images/products/bq80-1.png",
-            "assets/images/products/bq80-2.png",
-            "assets/images/products/bq80-3.png",
-            "assets/images/products/bq80-4.png"
-        ]
-    },
-    {
-        "id": 49,
-        "name": "B10",
-        "brand": "COMEN",
-        "category": "Incubator",
-        "description": "Illuminate Brilliance, Preserve Vision",
-        "image": "assets/images/products/b10-1.png",
-        "price": 46808,
-        "images": [
-            "assets/images/products/b10-1.png",
-            "assets/images/products/b10-2.png",
-            "assets/images/products/b10-3.png",
-            "assets/images/products/b10-4.png"
-        ]
-    },
-    {
-        "id": 50,
-        "name": "B3",
-        "brand": "COMEN",
-        "category": "Incubator",
-        "description": "The water tank is made of transparent material. The water condition inside can be viewed at a glance. This greatly reduces the risk of dry burning.",
-        "image": "assets/images/products/b3-1.png",
-        "price": 125293,
-        "images": [
-            "assets/images/products/b3-1.png",
-            "assets/images/products/b3-2.png",
-            "assets/images/products/b3-3.png",
-            "assets/images/products/b3-4.png"
-        ]
-    },
-    {
-        "id": 51,
-        "name": "B6/B8",
-        "brand": "COMEN",
-        "category": "Incubator",
-        "description": "Neonatal incubator is warming equipment used for providing constant temperature and humidity for treatment of premature infants and critically ill neonates which fit well with their physiological characteristics and needs.",
-        "image": "assets/images/products/b6-b8-1.png",
-        "price": 106398,
-        "features": [
-            "Effective humidity of up to more than 95%:Suitable for premature infants with low weight",
-            "Titanium alloy material for evaporation:corrosion resistance and limescale reduction"
+        }
         ],
-        "images": [
-            "assets/images/products/b6-b8-1.png",
-            "assets/images/products/b6-b8-2.png",
-            "assets/images/products/b6-b8-3.png",
-            "assets/images/products/b6-b8-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 52,
-        "name": "BT800",
-        "brand": "COMEN",
-        "category": "Incubator",
-        "description": "Accurate, efficient, long-endurance environment control",
-        "image": "assets/images/products/bt800-1.png",
-        "price": 61556,
-        "images": [
-            "assets/images/products/bt800-1.png",
-            "assets/images/products/bt800-2.png",
-            "assets/images/products/bt800-3.png",
-            "assets/images/products/bt800-4.png"
-        ]
-    },
-    {
-        "id": 53,
-        "name": "P3/P6",
-        "brand": "COMEN",
-        "category": "Hypothermia Treatment",
-        "description": "Neonatal hypoxic-ischemic encephalopathy (HIE) is a brain injury disease with a high mortality rate. Therapeutic Hypothermia is regarded as a core treatment for HIE as it helps by maintaining a lower core temperature in newborns for up to 72 hours, effectively lowering mortality by slowing down apoptotic processes and reducing oxygen dependence in the brain.",
-        "image": "assets/images/products/p3-p6-1.png",
-        "price": 170304,
-        "images": [
-            "assets/images/products/p3-p6-1.png",
-            "assets/images/products/p3-p6-2.png",
-            "assets/images/products/p3-p6-3.png",
-            "assets/images/products/p3-p6-4.png"
-        ]
-    },
-    {
-        "id": 54,
-        "name": "BL20",
-        "brand": "COMEN",
-        "category": "Jaundice Treatment",
-        "description": "Greatly increase effective treatment area together with overhead phototherapy devices (BL60/BL70)",
-        "image": "assets/images/products/bl20-1.png",
-        "price": 193908,
-        "features": [
-            "3 selectable levels up to 63μW/cm²/nm",
-            "Timer: Count up or down",
-            "Air gap to reduce temperature rising rate, significantly improve treatment effectiveness",
-            "Compartment available for X-ray detector"
+        },
+            {
+            id: 34,
+            name: "S50",
+            brand: "COMEN",
+            category: "Defibrillator Monitor",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/DSC_07626_1_1_35fad92ca4.png",
+            price: 190763,
+            images: [
+            "https://alioss.comen.com/cms-v2/DSC_07626_1_1_35fad92ca4.png",
+            "https://alioss.comen.com/cms-v2/DSC_03750_1_86a0954bad.png",
+            "https://alioss.comen.com/cms-v2/11_1_5_6519c1d681.png",
+            "https://alioss.comen.com/cms-v2/12_1_5_3509558bf3.png",
+            "https://alioss.comen.com/cms-v2/13_1_2_40dd4ec77f.png"
         ],
-        "images": [
-            "assets/images/products/bl20-1.png",
-            "assets/images/products/bl20-2.png",
-            "assets/images/products/bl20-3.png",
-            "assets/images/products/bl20-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/17_1_2_2e72366d09.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/16_1_2_7f9926e6aa.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/18_1_1_1600ea6a7a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/16_2_7fa5552762.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 55,
-        "name": "BL60",
-        "brand": "COMEN",
-        "category": "Jaundice Treatment",
-        "description": "Maximum irradiance at a wave length of 475nm which is at the perfect peak according to the latest clinical guidelines*",
-        "image": "assets/images/products/bl60-1.png",
-        "price": 75899,
-        "images": [
-            "assets/images/products/bl60-1.png",
-            "assets/images/products/bl60-2.png",
-            "assets/images/products/bl60-3.png",
-            "assets/images/products/bl60-4.png"
-        ]
-    },
-    {
-        "id": 56,
-        "name": "MX8900/M800/ME900",
-        "brand": "COMEN",
-        "category": "Infusion System",
-        "description": "Syringe Pump / Infusion Pump",
-        "image": "assets/images/products/mx8900-m800-me900-1.png",
-        "price": 64561,
-        "features": [
-            "Its color-code, graphical and numerical pressure indicators, help predict occlusion alarm in advance.",
-            "Its color-code, graphical and numerical pressure indicators, help predict occlusion alarm in advance."
+        }
         ],
-        "images": [
-            "assets/images/products/mx8900-m800-me900-1.png",
-            "assets/images/products/mx8900-m800-me900-2.png",
-            "assets/images/products/mx8900-m800-me900-3.png",
-            "assets/images/products/mx8900-m800-me900-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 57,
-        "name": "ME660/M260",
-        "brand": "COMEN",
-        "category": "Infusion System",
-        "description": "EN1789 certified for use during transport and E&R scenarios.Shielded from harsh environments with a validated IP44 rating.",
-        "image": "assets/images/products/me660-m260-1.png",
-        "price": 146854,
-        "features": [
-            "Safer for pediatric/neonatal use",
-            "Smooth & flexible workflow - up to 9 phases of ramp up/down and up to 10 sequential setups available",
-            "Rates of up to 2200ml/h, applicable for large-volume fluids administration",
-            "Infusion Time up to ~100hrs[2]"
+        },
+            {
+            id: 35,
+            name: "S8",
+            brand: "COMEN",
+            category: "Defibrillator Monitor",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_4a0d97d5ab.png",
+            price: 124264,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/me660-m260-1.png",
-            "assets/images/products/me660-m260-2.png",
-            "assets/images/products/me660-m260-3.png",
-            "assets/images/products/me660-m260-4.png"
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_4a0d97d5ab.png",
+            "https://alioss.comen.com/cms-v2/113_320662e3ea.png",
+            "https://alioss.comen.com/cms-v2/13_3x_081c8850ca.png",
+            "https://alioss.comen.com/cms-v2/108_5821d2ff7a.png",
+            "https://alioss.comen.com/cms-v2/114_09183ac2f0.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/115_020557f16d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/4_2622c4efc8.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 58,
-        "name": "EIS-2000",
-        "brand": "COMEN",
-        "category": "Endoscopy",
-        "description": "Expanding Horizons，Elevating Precision",
-        "image": "assets/images/products/eis-2000-1.png",
-        "price": 57969,
-        "images": [
+        }
+        ]
+        },
+            {
+            id: 36,
+            name: "S5",
+            brand: "COMEN",
+            category: "Defibrillator Monitor",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_83ce2adb8c.png",
+            price: 103928,
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_83ce2adb8c.png",
+            "https://alioss.comen.com/cms-v2/A8_D_3550_1_d9952c6a28.png",
+            "https://alioss.comen.com/cms-v2/A8_D_3483_b1e4f5a1bf.png",
+            "https://alioss.comen.com/cms-v2/_aeaf42bf4b.png",
+            "https://alioss.comen.com/cms-v2/image_png_a27715a6ad.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/4_ae5663e9fb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 37,
+            name: "S1",
+            brand: "COMEN",
+            category: "Defibrillator Monitor",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_9da36277fa.png",
+            price: 66900,
+            images: [
+            "https://alioss.comen.com/cms-v2/K_pro3_1_9da36277fa.png",
+            "https://alioss.comen.com/cms-v2/A8_D_3550_f0a6f708bb.png",
+            "https://alioss.comen.com/cms-v2/A8_D_3550_1_502414c275.png",
+            "https://alioss.comen.com/cms-v2/_3601d8fc5b.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/4_c65862004d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 38,
+            name: "F3/F5",
+            brand: "COMEN",
+            category: "AED",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/3_1_3_1cdf80fab2.png",
+            price: 103017,
+            images: [
+            "https://alioss.comen.com/cms-v2/3_1_3_1cdf80fab2.png",
+            "https://alioss.comen.com/cms-v2/1_1_6_d4a8989f23.png",
+            "https://alioss.comen.com/cms-v2/3_2_6_a5089afada.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            "https://alioss.comen.com/cms-v2/4_1_2_6b93cf10c2.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/DSC_03294_1_8eb702b0bb.png&#x27;) no-repeat center center / cover\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/F3_F5_5d78da38c6.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/DSC_03294_1_8eb702b0bb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 39,
+            name: "G Series",
+            brand: "COMEN",
+            category: "AED",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/18_10x_1_d2bf247a05.png",
+            price: 56179,
+            images: [
+            "https://alioss.comen.com/cms-v2/18_10x_1_d2bf247a05.png",
+            "https://alioss.comen.com/cms-v2/22_10x_1_bd7b3a69bc.png",
+            "https://alioss.comen.com/cms-v2/21_10x_1_cd5362a59d.png",
+            "https://alioss.comen.com/cms-v2/329_70c4f25e7e.png",
+            "https://alioss.comen.com/cms-v2/25_1fa39309a7.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/20_a96c6a9316.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/16_ffa710e7a1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/21_5c9a8ef625.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/22_1a25658570.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/333_e31be6ef6a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 40,
+            name: "F Series",
+            brand: "COMEN",
+            category: "AED",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/233_b9a9bfefeb.png",
+            price: 93366,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/233_b9a9bfefeb.png",
+            "https://alioss.comen.com/cms-v2/107_806208f27c.png",
+            "https://alioss.comen.com/cms-v2/105_3fde470632.png",
+            "https://alioss.comen.com/cms-v2/106_1_320bf0e6df.png",
+            "https://alioss.comen.com/cms-v2/234_ab3300c26a.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/108_dcefc28fbb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/112_96e49d2f8f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/4_2eda76e8c5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 41,
+            name: "ES-Series",
+            brand: "COMEN",
+            category: "AED",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/17_3_3ae09fde9b.png",
+            price: 57961,
+            images: [
+            "https://alioss.comen.com/cms-v2/17_3_3ae09fde9b.png",
+            "https://alioss.comen.com/cms-v2/12_NV_10_20x_8_1_7fe91e2b30.png",
+            "https://alioss.comen.com/cms-v2/13_NV_10_20x_8_1_5d4c7a81f5.png",
+            "https://alioss.comen.com/cms-v2/AI_t_psd_NV_10_20x_8_1_a5109f8bce.png",
+            "https://alioss.comen.com/cms-v2/352_1_bfadbc23c8.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/1_2a2b6fe93d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/104_2_c0a0f8949b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_psd_1_ee1f8d5e74.png)\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/401_c58fcf905a.png)\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 42,
+            name: "L9",
+            brand: "COMEN",
+            category: "Surgical Light",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/l9_261ad57c0c.png",
+            price: 42373,
+            images: [
+            "https://alioss.comen.com/cms-v2/l9_261ad57c0c.png",
+            "https://alioss.comen.com/cms-v2/419_8db3a74b9f.png",
+            "https://alioss.comen.com/cms-v2/420_53478c1d1a.png",
+            "https://alioss.comen.com/cms-v2/protection_Mode_1_6a19cfdd65.png",
+            "https://alioss.comen.com/cms-v2/421_df7489ef41.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/green_b9a7aa1082.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/white_366b0aaedd.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/blue_3a1c9ef621.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/surgical_Light_a2d56a3ae7.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/spot_fc8c538892.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 43,
+            name: "L5",
+            brand: "COMEN",
+            category: "Surgical Light",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/3_f2f88bfe56.png",
+            price: 150688,
+            images: [
+            "https://alioss.comen.com/cms-v2/3_f2f88bfe56.png",
+            "https://alioss.comen.com/cms-v2/7_7e48633792.png",
+            "https://alioss.comen.com/cms-v2/275_9e2f01b042.png",
+            "https://alioss.comen.com/cms-v2/279_e74d31d3df.png",
+            "https://alioss.comen.com/cms-v2/339_e9fd48b8cd.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/338_efd3789783.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/282_3c8631c95c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/285_54f27a2e9d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/284_116a85c070.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/283_7cedfab773.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 44,
+            name: "L3",
+            brand: "HugeMed",
+            category: "Surgical Light",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/265_7c855b7d8b.png",
+            price: 158000,
+            images: [
+            "https://alioss.comen.com/cms-v2/265_7c855b7d8b.png",
+            "https://alioss.comen.com/cms-v2/266_6d6fa00b32.png",
+            "https://alioss.comen.com/cms-v2/302_417c8acc1c.png",
+            "https://alioss.comen.com/cms-v2/268_ceb1a93dd2.png",
+            "https://alioss.comen.com/cms-v2/339_e9fd48b8cd.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/338_efd3789783.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/274_6bc3f95cb6.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/273_ce502d3567.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/272_3e3901a7b0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/271_f54ddf869e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 45,
+            name: "WE1/WE2",
+            brand: "COMEN",
+            category: "Operating Table",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/pic1_f5334ad7a4.png",
+            price: 92255,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/pic1_f5334ad7a4.png",
+            "https://alioss.comen.com/cms-v2/300_abf0f2d418.png",
+            "https://alioss.comen.com/cms-v2/pic4_28e257828a.png",
+            "https://alioss.comen.com/cms-v2/pic5_d367f7b622.png",
+            "https://alioss.comen.com/cms-v2/pic6_d26b465e35.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/pic7_d99d1dec7a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/309_5242ad91a1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/307_c01bbe9f0e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/308_ddf0a11268.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/306_4b3271bbe6.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 46,
+            name: "WH1/WH2",
+            brand: "COMEN",
+            category: "Operating Table",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/pic1_f5334ad7a4.png",
+            price: 116372,
+            images: [
+            "https://alioss.comen.com/cms-v2/pic1_f5334ad7a4.png",
+            "https://alioss.comen.com/cms-v2/320_2817f6d824.png",
+            "https://alioss.comen.com/cms-v2/300_abf0f2d418.png",
+            "https://alioss.comen.com/cms-v2/pic4_28e257828a.png",
+            "https://alioss.comen.com/cms-v2/pic5_d367f7b622.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/pic6_d26b465e35.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic7_d99d1dec7a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/309_5242ad91a1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/307_c01bbe9f0e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/308_ddf0a11268.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 47,
+            name: "W5/W3",
+            brand: "COMEN",
+            category: "Operating Table",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/387_da4300cb01.png",
+            price: 195783,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/387_da4300cb01.png",
+            "https://alioss.comen.com/cms-v2/389_6bc9414e75.png",
+            "https://alioss.comen.com/cms-v2/392_d80fa71372.png",
+            "https://alioss.comen.com/cms-v2/393_d63da35da7.png",
+            "https://alioss.comen.com/cms-v2/391_cd322149da.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/390_ebdbb4f722.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/395_3034a15e1d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/397_fb365abd8a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/398_0981b40981.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 48,
+            name: "BQ80",
+            brand: "COMEN",
+            category: "Warmer",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/Image0004_1_6b56039ff1.png",
+            price: 54599,
+            images: [
+            "https://alioss.comen.com/cms-v2/Image0004_1_6b56039ff1.png",
+            "https://alioss.comen.com/cms-v2/237_1_a769d648bf.png",
+            "https://alioss.comen.com/cms-v2/57cbadffa0fc60bc647f6203080efa88_1_f1b63bdaa1.png",
+            "https://alioss.comen.com/cms-v2/1_10x_1_e22f0d19df.png",
+            "https://alioss.comen.com/cms-v2/31_ff5da9ead4.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/32_668d15004f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_10x_8_1_ab72debe63.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/33_f44b537688.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/34_bdc5a9e87a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/35_1c7f98f905.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 49,
+            name: "B10",
+            brand: "COMEN",
+            category: "Incubator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/B10_1_455907b364.png",
+            price: 46808,
+            images: [
+            "https://alioss.comen.com/cms-v2/B10_1_455907b364.png",
+            "https://alioss.comen.com/cms-v2/1_1_88b323ef16.png",
+            "https://alioss.comen.com/cms-v2/312_51a5079a5d.png",
+            "https://alioss.comen.com/cms-v2/13_10x_8_2_cd10d2ee58.png",
+            "https://alioss.comen.com/cms-v2/14_10x_8_2_00533b38f2.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/310_1_f19f2c1b21.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/311_1febe92819.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/13_2x_8_1_ae0b00cd8a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/43_3_131f480ec8.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/43_9a38d3076d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 50,
+            name: "B3",
+            brand: "COMEN",
+            category: "Incubator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/b3_product_d088428062.png",
+            price: 125293,
+            images: [
+            "https://alioss.comen.com/cms-v2/b3_product_d088428062.png",
+            "https://alioss.comen.com/cms-v2/b3_temperature_chart_5c5cb7c08b.png",
+            "https://alioss.comen.com/cms-v2/b3_sensor_collector_b4a2e826db.png",
+            "https://alioss.comen.com/cms-v2/b3_thermal_airflow_d85a6f8fa7.png",
+            "https://alioss.comen.com/cms-v2/b3_water_tank_e99a6cf5a8.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/b3_apnea_rescue_b179a63929.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/b3_electric_bed_e37ed7f193.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/b3_electric_bed_control_544c05357f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/b3_damper_door_8702882429.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 51,
+            name: "B6/B8",
+            brand: "COMEN",
+            category: "Incubator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/c3dc99bf5afbede4058b5a2716b4c03c_1_bb18845887.png",
+            price: 106398,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/c3dc99bf5afbede4058b5a2716b4c03c_1_bb18845887.png",
+            "https://alioss.comen.com/cms-v2/222_04053fd357.png",
+            "https://alioss.comen.com/cms-v2/226_6bad189582.png",
+            "https://alioss.comen.com/cms-v2/224_172dcf7e4b.png",
+            "https://alioss.comen.com/cms-v2/225_6abdf357fb.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/eed34d55224f05c25a0723f4d3ded7aa_1_137c488275.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/227_50f0f72da3.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_10x_8_1_beabb3f5b8.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/231_73763468b6.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/230_bdb491bdf9.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 52,
+            name: "BT800",
+            brand: "COMEN",
+            category: "Incubator",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/218_17814f6b30.png",
+            price: 61556,
+            images: [
+            "https://alioss.comen.com/cms-v2/218_17814f6b30.png",
+            "https://alioss.comen.com/cms-v2/219_802d0a6675.png",
+            "https://alioss.comen.com/cms-v2/220_707f9c7256.png",
+            "https://alioss.comen.com/cms-v2/216_852794265a.png",
+            "https://alioss.comen.com/cms-v2/217_c9d8e796c3.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_d28cc8165b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 53,
+            name: "P3/P6",
+            brand: "COMEN",
+            category: "Hypothermia Treatment",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/113_7c7d205f5b.png",
+            price: 170304,
+            images: [
+            "https://alioss.comen.com/cms-v2/113_7c7d205f5b.png",
+            "https://alioss.comen.com/cms-v2/105_fcd0cff784.png",
+            "https://alioss.comen.com/cms-v2/1061_f7fbc15019.png",
+            "https://alioss.comen.com/cms-v2/108_f0aeca4bcc.png",
+            "https://alioss.comen.com/cms-v2/276_3_368ebc82b8.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/2_92edc7aced.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/276_9b0fc8012e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/214_22aebbcd00.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/215_6d9784abc3.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 54,
+            name: "BL20",
+            brand: "COMEN",
+            category: "Jaundice Treatment",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/3dbbd414891ce5e2133681640627980_4b56d0e483.png",
+            price: 193908,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/3dbbd414891ce5e2133681640627980_4b56d0e483.png",
+            "https://alioss.comen.com/cms-v2/2_aa51f7a9dd.png",
+            "https://alioss.comen.com/cms-v2/1_1_b91388ce64.png",
+            "https://alioss.comen.com/cms-v2/3_c7f8c43655.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/2_37af1c74fc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 55,
+            name: "BL60",
+            brand: "COMEN",
+            category: "Jaundice Treatment",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/250_e403852a09.png",
+            price: 75899,
+            images: [
+            "https://alioss.comen.com/cms-v2/250_e403852a09.png",
+            "https://alioss.comen.com/cms-v2/252_84297727f5.png",
+            "https://alioss.comen.com/cms-v2/253_48eef2ba7f.png",
+            "https://alioss.comen.com/cms-v2/254_8b7b2de845.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/BL_60_1_359024f14b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 56,
+            name: "MX8900/M800/ME900",
+            brand: "COMEN",
+            category: "Infusion System",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/198_f8b4e17cb0.png",
+            price: 64561,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/198_f8b4e17cb0.png",
+            "https://alioss.comen.com/cms-v2/203_5940b3a709.png",
+            "https://alioss.comen.com/cms-v2/267_478ff9f283.png",
+            "https://alioss.comen.com/cms-v2/268_6d7727c4d7.png",
+            "https://alioss.comen.com/cms-v2/201_55a2b71359.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/202_a2e1a9c86c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/204_e8acbb10af.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/283_f86f094a09.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/208_fe36681684.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/212_4ce03993da.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 57,
+            name: "ME660/M260",
+            brand: "COMEN",
+            category: "Infusion System",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/255_306c2de584.png",
+            price: 146854,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/255_306c2de584.png",
+            "https://alioss.comen.com/cms-v2/3_6b73c6332d.png",
+            "https://alioss.comen.com/cms-v2/269_9701380706.png",
+            "https://alioss.comen.com/cms-v2/270_3a583db742.png",
+            "https://alioss.comen.com/cms-v2/259_ba357e2fac.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/263_3a07ebe6f8.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/262_b38c1add11.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/264_35d1996dec.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/261_462a578d57.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/260_3db4280b5a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 58,
+            name: "EIS-2000",
+            brand: "COMEN",
+            category: "Endoscopy",
+            description: "",
+            image: "assets/images/products/eis-2000-1.png",
+            price: 57969,
+            images: [
             "assets/images/products/eis-2000-1.png",
             "assets/images/products/eis-2000-2.png",
             "assets/images/products/eis-2000-3.png",
             "assets/images/products/eis-2000-4.png"
-        ]
-    },
-    {
-        "id": 59,
-        "name": "CVL Series",
-        "brand": "COMEN",
-        "category": "Endoscopy",
-        "description": "The 3\" screen supports high resolution up to 640*48",
-        "image": "assets/images/products/cvl-series-1.png",
-        "price": 132039,
-        "images": [
-            "assets/images/products/cvl-series-1.png",
-            "assets/images/products/cvl-series-2.png",
-            "assets/images/products/cvl-series-3.png",
-            "assets/images/products/cvl-series-4.png"
-        ]
-    },
-    {
-        "id": 60,
-        "name": "EP50",
-        "brand": "COMEN",
-        "category": "Ultrasound",
-        "description": "Everywhere   Easy   Efficiency",
-        "image": "assets/images/products/ep50-1.png",
-        "price": 167989,
-        "images": [
-            "assets/images/products/ep50-1.png",
-            "assets/images/products/ep50-2.png",
-            "assets/images/products/ep50-3.png",
-            "assets/images/products/ep50-4.png"
-        ]
-    },
-    {
-        "id": 61,
-        "name": "CF9600",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Automatic Hematology Analyzer",
-        "image": "assets/images/products/cf9600-1.png",
-        "price": 197949,
-        "features": [
-            "Automatic retesting of low concentration samples: Ensuring the accuracy of classification of low value samples by automatic multiplication counting."
         ],
-        "images": [
-            "assets/images/products/cf9600-1.png",
-            "assets/images/products/cf9600-2.png",
-            "assets/images/products/cf9600-3.png",
-            "assets/images/products/cf9600-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 62,
-        "name": "CH8600",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Automatic Hematology Analyzer",
-        "image": "assets/images/products/ch8600-1.png",
-        "price": 147414,
-        "features": [
-            "Up to 90 tests/ hour and STAT function. \n     25 reportable parameters + 6 research parameters.",
-            "Large data storage capacity: 200,000 results.",
-            "Real-time monitoring of reagent residue.",
-            "One-button switching of detection mode, flexible and convenient.",
-            "Wider linear: WBC (0.00-520) * 10⁹ / L.\nRBC (0.00-8.70) * 10¹² / L.",
-            "WBC 5-Part differential analysis in less than one minute.",
-            "Automatic mixing of sample tubes with autoloader that allows fully automatic loading of samples.",
-            "Open-tube mode available for STAT samples."
+        },
+            {
+            id: 59,
+            name: "CVL Series",
+            brand: "COMEN",
+            category: "Endoscopy",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/399_a79ccc8cc8.png",
+            price: 132039,
+            images: [
+            "https://alioss.comen.com/cms-v2/399_a79ccc8cc8.png",
+            "https://alioss.comen.com/cms-v2/400_fac6d76e59.png",
+            "https://alioss.comen.com/cms-v2/image_png_ec295d2041.png",
+            "https://alioss.comen.com/cms-v2/317_941da8d797.png",
+            "https://alioss.comen.com/cms-v2/2_4_af61c8c1ce.png"
         ],
-        "images": [
-            "assets/images/products/ch8600-1.png",
-            "assets/images/products/ch8600-2.png",
-            "assets/images/products/ch8600-3.png",
-            "assets/images/products/ch8600-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/3_3_1_fac8bba1bc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8_f3d48827af.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 63,
-        "name": "CH8600CRP",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
-        "image": "assets/images/products/ch8600crp-1.jpg",
-        "price": 186460,
-        "images": [
-            "assets/images/products/ch8600crp-1.jpg",
-            "assets/images/products/ch8600crp-2.jpg",
-            "assets/images/products/ch8600crp-3.png"
-        ]
-    },
-    {
-        "id": 64,
-        "name": "CH8500",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Automatic Hematology Analyzer",
-        "image": "assets/images/products/ch8500-1.png",
-        "price": 176154,
-        "features": [
-            "Throughput: 70T/H",
-            "25 reportable parameters + 23 research parameters",
-            "High temperature resistance: 10-35℃",
-            "Compact size with built in Lyse position",
-            "Achieve precise cells measurement by microfluidics flow + specific staining  technology"
+        }
         ],
-        "images": [
-            "assets/images/products/ch8500-1.png",
-            "assets/images/products/ch8500-2.png",
-            "assets/images/products/ch8500-3.png",
-            "assets/images/products/ch8500-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 65,
-        "name": "CH8500-V Series",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Explore the advanced capabilities of the CoooSeee CH8500-V series hematology analyzer. With a throughput of 60 samples per hour and a compact design, this innovation represents the latest advancement from CoooSeee for diagnostic excellence in WBC 5-part differentiation.",
-        "image": "assets/images/products/ch8500-v-series-1.png",
-        "price": 144551,
-        "features": [
-            "3 histograms for WBC, RBC and PLT",
-            "1 BASO scattergram, 3 2D scattergrams and 1 3D scattergram for WBC differential",
-            "Impedance method for RBC and PLT counting Cyanide free reagent for hemoglobin test by colorim etry method",
-            "3 histograms for WBC, RBC and PLT",
-            "Whole Blood Mode: 17.5μL",
-            "3 histograms for WBC, RBC and PLT",
-            "Up to 60 samples per hour",
-            "≥200 tests/kit, validity: 100 days"
+        },
+            {
+            id: 60,
+            name: "EP50",
+            brand: "COMEN",
+            category: "Ultrasound",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/11_10x_1_82a3a94f75.png",
+            price: 167989,
+            images: [
+            "https://alioss.comen.com/cms-v2/11_10x_1_82a3a94f75.png",
+            "https://alioss.comen.com/cms-v2/342_1_7cdee36ce2.png",
+            "https://alioss.comen.com/cms-v2/EP_50_1_d36118899b.png",
+            "https://alioss.comen.com/cms-v2/343_1_c1c765fe61.png",
+            "https://alioss.comen.com/cms-v2/30_10x_1_a3dd92c589.png"
         ],
-        "images": [
-            "assets/images/products/ch8500-v-series-1.png",
-            "assets/images/products/ch8500-v-series-2.png",
-            "assets/images/products/ch8500-v-series-3.png",
-            "assets/images/products/ch8500-v-series-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/32_10x_1_62d9435de5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/319_ea31308cfa.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/12_3_1_712e4d19db.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/15_2_2_6492d88c0a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/13_2_8b79e47534.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 66,
-        "name": "CH8500CRP",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "No.2 FIYTA Timepiece Building, Nanhuan Avenue, Gongming Sub-district, Guangming District, Shenzhen, 518106, Guangdong, China",
-        "image": "assets/images/products/ch8500crp-1.webp",
-        "price": 140707,
-        "images": [
-            "assets/images/products/ch8500crp-1.webp",
-            "assets/images/products/ch8500crp-2.jpg",
-            "assets/images/products/ch8500crp-3.png"
-        ]
-    },
-    {
-        "id": 67,
-        "name": "CH8300",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Automatic Hematology Analyzer",
-        "image": "assets/images/products/ch8300-1.png",
-        "price": 179542,
-        "features": [
-            "Throughput: 70T/H",
-            "2 reportable parameters+ 6 research parameters",
-            "Only 9μL blood sample is required",
-            "Specially developed for users with small sample volumes",
-            "10.4-inch capacitive touch screen, intuitive guided interface",
-            "70 tests/hour throughput to quantify efficiency",
-            "Cyanide-free method + multiple histograms prevent error analysis",
-            "Streamlined Workflow from sample preparation to result interpretation"
+        }
         ],
-        "images": [
-            "assets/images/products/ch8300-1.png",
-            "assets/images/products/ch8300-2.png",
-            "assets/images/products/ch8300-3.png",
-            "assets/images/products/ch8300-4.png"
+            features: [
+            
         ]
-    },
-    {
-        "id": 68,
-        "name": "CH8300CRP",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Automatic Hematology Analyzer",
-        "image": "assets/images/products/ch8300crp-1.png",
-        "price": 32408,
-        "features": [
-            "Throughput: 40T/H",
-            "24 reportable parameters + 2 research parameters",
-            "Only 9μL blood sample is required",
-            "Specially developed for users with small sample volumes",
-            "10.4-inch capacitive touch screen, intuitive guided interface",
-            "40 tests/hour throughput for CRP detection",
-            "Cyanide-free method + multiple histograms prevent error analysis",
-            "Streamlined workflow from sample preparation to result interpretation"
+        },
+            {
+            id: 61,
+            name: "CF9600",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/1_1_0f5e290955.png",
+            price: 197949,
+            features: [
+            
         ],
-        "images": [
-            "assets/images/products/ch8300crp-1.png",
-            "assets/images/products/ch8300crp-2.png",
-            "assets/images/products/ch8300crp-3.png",
-            "assets/images/products/ch8300crp-4.png"
-        ]
-    },
-    {
-        "id": 69,
-        "name": "CH8310",
-        "brand": "COMEN",
-        "category": "In Vitro Diagnostic",
-        "description": "Automatic Hematology Analyzer",
-        "image": "assets/images/products/ch8310-1.png",
-        "price": 107705,
-        "features": [
-            "Throughput: 45T/H",
-            "20 reportable parameters + 2 research parameters",
-            "Only 9μL blood sample for CBC counting",
-            "10.4-inch capacitive touch screen, modern & intuitive interface",
-            "One-click troubleshooting and unclogging functions",
-            "Built-in lyse storage, saving space for more flexible operation",
-            "Compact & space-saving design",
-            "Various printer connectivity options tailored to your lab's needs"
+            images: [
+            "https://alioss.comen.com/cms-v2/1_1_0f5e290955.png",
+            "https://alioss.comen.com/cms-v2/2_1_07f9ef282b.png",
+            "https://alioss.comen.com/cms-v2/5_1_1_e1d008b584.png",
+            "https://alioss.comen.com/cms-v2/EN_1_1_c5a4d9ecde.png",
+            "https://alioss.comen.com/cms-v2/3_2_1_9d4de6ff2c.png"
         ],
-        "images": [
-            "assets/images/products/ch8310-1.png",
-            "assets/images/products/ch8310-2.png",
-            "assets/images/products/ch8310-3.png",
-            "assets/images/products/ch8310-4.png"
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/changjing1_EN_1_dfde00e5db.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
         ]
-    },
-    {
-        "id": 100,
-        "name": "Bassinets",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 10000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Bassinets",
-        "description": "High-quality neonatal bassinets."
-    },
-    {
-        "id": 101,
-        "name": "Hybrid Intensive Care Unit",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 250000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Hybrid+Intensive+Care+Unit",
-        "description": "Advanced Hybrid Intensive Care Unit."
-    },
-    {
-        "id": 102,
-        "name": "Infant Incubators",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 120000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Infant+Incubators",
-        "description": "Optimal microclimate infant incubators."
-    },
-    {
-        "id": 103,
-        "name": "Infant Warmer and Total Care",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 150000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Infant+Warmer",
-        "description": "Infant warmer and total care systems."
-    },
-    {
-        "id": 104,
-        "name": "Neonatal Bubble CPAP",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 80000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Bubble+CPAP",
-        "description": "Neonatal Bubble CPAP systems."
-    },
-    {
-        "id": 105,
-        "name": "Neonatal Humidifier",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 40000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Humidifier",
-        "description": "Advanced neonatal humidifiers."
-    },
-    {
-        "id": 106,
-        "name": "Neonatal Resuscitator",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 45000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Resuscitator",
-        "description": "Safe and controlled neonatal resuscitation."
-    },
-    {
-        "id": 107,
-        "name": "Oxygen Therapy",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 30000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Oxygen+Therapy",
-        "description": "Oxygen therapy solutions."
-    },
-    {
-        "id": 108,
-        "name": "Phototherapy",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 150000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Phototherapy",
-        "description": "Effective LED phototherapy systems."
-    },
-    {
-        "id": 109,
-        "name": "Transport Incubators",
-        "brand": "FANEM",
-        "category": "Neonatal Care",
-        "price": 180000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Transport+Incubators",
-        "description": "Safe transport incubators."
-    },
-    {
-        "id": 110,
-        "name": "Single-use Rhinolaryngoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 5000,
-        "image": "assets/images/products/single-use-rhinolaryngoscope-1.jpg",
-        "description": "Pre-sterilized and ready for immediate use, the Single-use Rhinolaryngoscopes significantly boost workflow efficiency and accelerate clinical turnaround in OPD settings.\n\n\n\n\nSterile Convenience, Streamlined Workflow\n\nThe Single-use Rhinolaryngoscopes feature sterile, single-use packaging, eliminating the need for reprocessing and allowing for immediate use, enhancing workflow efficiency and accelerates patient flow in outpatient departments.\n\nNavigate with Confidence and Clarity\n\nThe medical-grade Pebax insertion tube provides the ideal balance of flexibility and support for effortless exploration of the nasopharynx. Combined with a high-definition CMOS camera, it ensures clear and comprehensive visualization for accurate diagnosis.\n\nThe Right Size for Every Patient\n\nThe Single-use Rhinolaryngoscopes offer a selection of models in various sizes, ensuring a precise fit and optimal examination for diverse patient anatomies.",
-        "images": [
+        }
+        ]
+        },
+            {
+            id: 62,
+            name: "CH8600",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/8600_EN_1_2236a37243.png",
+            price: 147414,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/8600_EN_1_2236a37243.png",
+            "https://alioss.comen.com/cms-v2/10_f9ebc9b544.png",
+            "https://alioss.comen.com/cms-v2/11_c6d26bee7d.png",
+            "https://alioss.comen.com/cms-v2/image_3_bcf4380c9c.png",
+            "https://alioss.comen.com/cms-v2/3_2_1_9d4de6ff2c.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/9_ce8de5d3e6.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 63,
+            name: "CH8600CRP",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/EN_CH_8600_CRP_ac91199483_693ba0323f.jpeg",
+            price: 186460,
+            images: [
+            "https://alioss.comen.com/cms-v2/EN_CH_8600_CRP_ac91199483_693ba0323f.jpeg",
+            "https://alioss.comen.com/cms-v2/CH_8600_CRP_f954f6cfd3_337584ea32.jpeg",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 64,
+            name: "CH8500",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/CH_8500_EN_1_d5208e03f1.png",
+            price: 176154,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/CH_8500_EN_1_d5208e03f1.png",
+            "https://alioss.comen.com/cms-v2/12_315a9fb118.png",
+            "https://alioss.comen.com/cms-v2/19_1baeb9404f.png",
+            "https://alioss.comen.com/cms-v2/18_265f49cba7.png",
+            "https://alioss.comen.com/cms-v2/20_d3304ee2e3.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/21_9671a5ddbb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_2_1_9d4de6ff2c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8500_EN_1_bca26ced0a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 65,
+            name: "CH8500-V Series",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/CH_8500_EN_1_d5208e03f1.png",
+            price: 144551,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/CH_8500_EN_1_d5208e03f1.png",
+            "https://alioss.comen.com/cms-v2/12_315a9fb118.png",
+            "https://alioss.comen.com/cms-v2/19_1baeb9404f.png",
+            "https://alioss.comen.com/cms-v2/18_265f49cba7.png",
+            "https://alioss.comen.com/cms-v2/20_d3304ee2e3.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/21_9671a5ddbb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_2_1_9d4de6ff2c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8500_EN_1_bca26ced0a.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 66,
+            name: "CH8500CRP",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/CH_8500_CRP_EN_3c24c30341_ed46414a44.webp",
+            price: 140707,
+            images: [
+            "https://alioss.comen.com/cms-v2/CH_8500_CRP_EN_3c24c30341_ed46414a44.webp",
+            "https://alioss.comen.com/cms-v2/CH_8500_CRP_6e5e64b3f7_9cefcfcdd9.jpeg",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            features: [
+            
+        ]
+        },
+            {
+            id: 67,
+            name: "CH8300",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/8300_EN_1_125b7ef083.png",
+            price: 179542,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/8300_EN_1_125b7ef083.png",
+            "https://alioss.comen.com/cms-v2/image_1_5_be446b34f8.png",
+            "https://alioss.comen.com/cms-v2/4_2_2_252d8716d2.png",
+            "https://alioss.comen.com/cms-v2/17_d0539f71c6.png",
+            "https://alioss.comen.com/cms-v2/3_2_1_9d4de6ff2c.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8300_1_d5eeef23cd.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 68,
+            name: "CH8300CRP",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/8300_CRP_EN_1_fee670492c.png",
+            price: 32408,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/8300_CRP_EN_1_fee670492c.png",
+            "https://alioss.comen.com/cms-v2/5_2_efda25dd72.png",
+            "https://alioss.comen.com/cms-v2/1_5_1_bc9fa641ef.png",
+            "https://alioss.comen.com/cms-v2/3_2_1_4_bc63b9841d.png",
+            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/8300_1_1_394ec872b2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 69,
+            name: "CH8310",
+            brand: "COMEN",
+            category: "In Vitro Diagnostic",
+            description: "",
+            image: "https://alioss.comen.com/cms-v2/CH_8310_1_1_22e2f41ab3.png",
+            price: 107705,
+            features: [
+            
+        ],
+            images: [
+            "https://alioss.comen.com/cms-v2/CH_8310_1_1_22e2f41ab3.png",
+            "https://alioss.comen.com/cms-v2/image_1_6_011ee9a31d.png",
+            "https://alioss.comen.com/cms-v2/jubu_1_5ace88ead2.png",
+            "https://alioss.comen.com/cms-v2/2_2_1_e56027eaed.png",
+            "https://alioss.comen.com/cms-v2/18ujoa_2_83558310d9.png"
+        ],
+            advancedSections: [
+            {
+            title: "Process Explanations & Details",
+            points: [
+            "<img src=\"https://alioss.comen.com/cms-v2/3_2_1_3_03761755ef.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8310_2_9b1b4015f2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
+        ]
+        }
+        ]
+        },
+            {
+            id: 100,
+            name: "Bassinets",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 10000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Bassinets",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 101,
+            name: "Hybrid Intensive Care Unit",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 250000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Hybrid+Intensive+Care+Unit",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 102,
+            name: "Infant Incubators",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 120000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Infant+Incubators",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 103,
+            name: "Infant Warmer and Total Care",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 150000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Infant+Warmer",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 104,
+            name: "Neonatal Bubble CPAP",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 80000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Bubble+CPAP",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 105,
+            name: "Neonatal Humidifier",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 40000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Humidifier",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 106,
+            name: "Neonatal Resuscitator",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 45000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Resuscitator",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 107,
+            name: "Oxygen Therapy",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 30000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Oxygen+Therapy",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 108,
+            name: "Phototherapy",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 150000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Phototherapy",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 109,
+            name: "Transport Incubators",
+            brand: "FANEM",
+            category: "Neonatal Care",
+            price: 180000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Transport+Incubators",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 110,
+            name: "Single-use Rhinolaryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 5000,
+            image: "assets/images/products/single-use-rhinolaryngoscope-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/single-use-rhinolaryngoscope-1.jpg",
             "assets/images/products/single-use-rhinolaryngoscope-2.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 111,
-        "name": "Single-use Choledochoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 6000,
-        "image": "assets/images/products/single-use-choledochoscope-1.jpg",
-        "description": "The Single-use Choledochoscope offers an effective solution for percutaneous lithotripsy of biliary stones, while also serving as an ideal tool for postoperative care via sinus tract at the bedside.\n\n\nThe Single-use Revolution: Cost Savings & Efficiency Gains\n\nThe Single-use Choledochoscope reduces the cost of sterilization and maintenance. Its sterile packaging allows medical staff to use it immediately across various clinical scenarios, significantly improving diagnostic and treatment efficiency.\n\nMinimize Patient Trauma\n\nThe Single-use Choledochoscope features a soft, hydrophilic Pebax insertion tube that ensures smooth insertion and excellent flexibility. With a slim 5mm outer diameter, it enables easy sinus tract access at the bedside for postoperative examination and intervention, offering an optimal solution for both operating room and bedside care.",
-        "images": [
+        },
+            {
+            id: 111,
+            name: "Single-use Choledochoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 6000,
+            image: "assets/images/products/single-use-choledochoscope-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/single-use-choledochoscope-1.jpg",
             "assets/images/products/single-use-choledochoscope-2.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 112,
-        "name": "Single-use Duodenoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 6500,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Duodenoscope",
-        "description": "Single-use Duodenoscope."
-    },
-    {
-        "id": 113,
-        "name": "Single-use Bronchoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 5500,
-        "image": "assets/images/products/single-use-bronchoscope-1.jpg",
-        "description": "The Single-use Bronchoscope is available in 9 models, offering comprehensive solutions for airway management and the diagnosis and treatment of respiratory diseases across diverse patient populations. Its single-use nature significantly reduces the costs associated with disinfection, sterilization, and maintenance. The \"ready-to-use\" design enhances clinical efficiency and accelerates patient turnover in the ICU.\n\n\n\n\nNine Model Options to Fully Meet Clinical Demands\n\nThe Single-use Bronchoscope includes 1 diagnostic and 8 therapeutic models, designed for different patient groups. These versatile options can handle complex clinical scenarios efficiently, supporting routine and difficult airway intubation, respiratory examinations, bronchoalveolar lavage, biopsy, foreign body removal, and drug delivery in ICU, bedside, and operating room.\n\n\n\n\nBrand-New Design, Enhanced Performance\n\nOutstanding Functional Design\n\nThe Single-use Bronchoscope has been newly upgraded to enhance product perfo",
-        "images": [
+        },
+            {
+            id: 112,
+            name: "Single-use Duodenoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 6500,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Duodenoscope",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 113,
+            name: "Single-use Bronchoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 5500,
+            image: "assets/images/products/single-use-bronchoscope-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/single-use-bronchoscope-1.jpg",
             "assets/images/products/single-use-bronchoscope-2.jpg",
             "assets/images/products/single-use-bronchoscope-3.jpg",
             "assets/images/products/single-use-bronchoscope-4.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 114,
-        "name": "Single-use Collector",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 1000,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Collector",
-        "description": "Single-use Collector."
-    },
-    {
-        "id": 115,
-        "name": "Broncho Sampler",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 1200,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Broncho+Sampler",
-        "description": "Broncho Sampler."
-    },
-    {
-        "id": 116,
-        "name": "Single-use Ureterorenoscope HU30M",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 7000,
-        "image": "assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
-        "description": "The world’s first 6.3Fr Single-use Ureterorenoscope approved for surgery, the HU30M, redefines ureteroscopy with effortless ureter engagement, superior maneuverability, and optimal irrigation flow. Its ultra-slim design minimizes trauma while ensuring precision in complex cases.\n\nClinically proven and trusted by global experts, the HU30M enhances safety, efficiency, and patient outcomes—making it the smart choice for modern urology.\n\n\n\n\nHow can a smaller diameter benefit ureteral surgery?\n\nChallenging the Limits of URS\n\nThe 6.3Fr insertion tube diameter of the HU30M challenges the conventional limits of ureterorenoscope (URS) design. This innovation provides a surgical solution for congenital or pathological ureteral strictures previously deemed inoperable, expanding treatment options for complex cases. Clinical studies have proven its ability to facilitate the \"no-touch\" technique, navigating challenging anatomies while maintaining optimal flow rates for clear visualization.\n\nEnhanced",
-        "images": [
+        },
+            {
+            id: 114,
+            name: "Single-use Collector",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 1000,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Collector",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 115,
+            name: "Broncho Sampler",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 1200,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Broncho+Sampler",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 116,
+            name: "Single-use Ureterorenoscope HU30M",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 7000,
+            image: "assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
             "assets/images/products/single-use-ureterorenoscope-hu30m-2.png",
             "assets/images/products/single-use-ureterorenoscope-hu30m-3.jpg",
             "assets/images/products/single-use-ureterorenoscope-hu30m-4.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 117,
-        "name": "Single-use Ureterorenoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 6800,
-        "image": "assets/images/products/single-use-ureterorenoscope-1.png",
-        "description": "The HU Series Single-use Ureterorenoscope embodies ‘smaller, safer, and more efficient’ innovation—redefining urological standards. It delivers cost-effective and advanced solutions for clinicians and patients.\n△ Click on the image to view the details of 6.3Fr\n\n\n\n\nSlim yet powerful: The World's First Clinically Approved 6.3Fr\n\nThrough three generations of innovation, the HU series has overcome significant technical challenges. Without changing the working channel diameter 3.6Fr, the insertion tube diameter has progressively been reduced from 9.0Fr to 7.5Fr, and ultimately reach to the extraordinary 6.3Fr. Clinically proven, it reduces Ratio of Endoscope-Sheath Diameter (RESD), enhances maneuverability in RIRS surgery, improves intrarenal pressure management, and sets a new standard in precision urology.\n\nCost-Effective Advantage Over Traditional RIRS\n\nThe HU30 series Single-use Ureterorenoscope delivers significant cost savings compared to reusable systems. By eliminating reprocessing ",
-        "images": [
+        },
+            {
+            id: 117,
+            name: "Single-use Ureterorenoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 6800,
+            image: "assets/images/products/single-use-ureterorenoscope-1.png",
+            description: "",
+            images: [
             "assets/images/products/single-use-ureterorenoscope-1.png",
             "assets/images/products/single-use-ureterorenoscope-2.png",
             "assets/images/products/single-use-ureterorenoscope-3.jpg",
             "assets/images/products/single-use-ureterorenoscope-4.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 118,
-        "name": "Single-use Cystoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 6000,
-        "image": "assets/images/products/single-use-cystoscope-1.jpg",
-        "description": "The Single-use Cystoscope is designed to lower hospital costs and ensures patient comfort and safety. It is suitable for lower urinary system diagnosis and treatment, especially for bladder diverticulum. This disposable solution eliminates reprocessing costs while maintaining high clinical performance.\n\n\n\n\nThe Single-Use Revolution: Cost Savings & Efficiency Gains\n\nThe CY series reduces hospital costs by eliminating disinfection and maintenance. Its affordability enables outpatient cystoscopy, while single-use sterile packaging enhances diagnostic and treatment efficiency.\n\nOptimized Configuration, Enhanced Operational Experience\n\nWeighing less than 300g, the CY series features a standard adjustable angle knob and 210° up-and-down deflection. Combined with a high-definition processor, it allows for clear visualization of the bladder and diverticulum.\n\nPatient Comfort & Safety First\n\nThe streamlined, bullet-shaped tip ensures smooth urethral insertion with minimal resistance. Combined w",
-        "images": [
+        },
+            {
+            id: 118,
+            name: "Single-use Cystoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 6000,
+            image: "assets/images/products/single-use-cystoscope-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/single-use-cystoscope-1.jpg",
             "assets/images/products/single-use-cystoscope-2.jpg",
             "assets/images/products/single-use-cystoscope-3.png",
             "assets/images/products/single-use-cystoscope-4.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 119,
-        "name": "Single-Use Cysto-Nephroscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 7200,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Cysto-Nephroscope",
-        "description": "Single-Use Cysto-Nephroscope."
-    },
-    {
-        "id": 120,
-        "name": "Single-use Ureteral Access Sheath",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 800,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Access+Sheath",
-        "description": "HugeMed Single-use Ureteral Access Sheath is a single-use device used together with a URS for RIRS. It establishes a flexible and stable pathway in the complex urinary anatomy to facilitate multiple instrument entries. Clinically, it broadens indications, improves single-session stone-free rate (SFR), shortens operative time, lowers intrarenal pressure and temperature, and enhances visualization and irrigation efficiency.\n\n\n\n\nSlimmer for Smoother Access\n\nSpecifications: the Single-use Ureteral Access Sheath is available in working lengths of 40/45/50/55 cm and diameters of 8.5/10.5, 9/11, 10/12, 11/13, and 12/14 Fr, yielding 20 flexible combinations that cover needs from ultra-slim access to general negative-pressure aspiration.\n\nFor traditional non-suction UAS, the recommended safety rule is RESD ≤ 0.75. Benefiting from active suction that improves outflow and intrarenal pressure control, the Single-use Ureteral Access Sheath allows usage up to RESD ≤ 0.85. In particular, the combinat"
-    },
-    {
-        "id": 121,
-        "name": "Single-use Stent Removal Cystoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 6500,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Stent+Removal",
-        "description": "Single-use Stent Removal Cystoscope."
-    },
-    {
-        "id": 122,
-        "name": "Suction Pump",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 2500,
-        "image": "https://placehold.co/800x800/E8F3EC/075C3A?text=Suction+Pump",
-        "description": "Suction Pump."
-    },
-    {
-        "id": 123,
-        "name": "Video Laryngoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 15000,
-        "image": "assets/images/products/video-laryngoscope-1.jpg",
-        "description": "The Video Laryngoscope consists of an imaging part and an operational part. 3 types of imaging part meet the requirements of different application scenarios. The reusable flexible scopes provides patients with comfortable and cost-effective rhinolaryngoscopy  experience.\n\n\n\n\nFlexible for Superior Patient Comfort\n\nThe Video Laryngoscope flexible insertion tube offers a notably more comfortable experience for patients compared to rigid ones.\n\nReusable and Cost-Effective Design\n\nThe Video Laryngoscope features an IPX7 waterproof operational part, allowing the entire device to be disinfected by immersion after attaching the attachment of waterproof cap. Its reusable design helps reduce the use of medical consumables and lowers patient hospitalization costs.",
-        "images": [
+        },
+            {
+            id: 119,
+            name: "Single-Use Cysto-Nephroscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 7200,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Cysto-Nephroscope",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 120,
+            name: "Single-use Ureteral Access Sheath",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 800,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Access+Sheath",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 121,
+            name: "Single-use Stent Removal Cystoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 6500,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Stent+Removal",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 122,
+            name: "Suction Pump",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 2500,
+            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Suction+Pump",
+            description: "",
+            features: [
+            
+        ]
+        },
+            {
+            id: 123,
+            name: "Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 15000,
+            image: "assets/images/products/video-laryngoscope-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/video-laryngoscope-1.jpg",
             "assets/images/products/video-laryngoscope-2.jpg",
             "assets/images/products/video-laryngoscope-3.jpg"
+        ],
+            features: [
+            
         ]
-    },
-    {
-        "id": 124,
-        "name": "Reusable Ureterorenoscope",
-        "brand": "HUGEMED",
-        "category": "Endoscopy",
-        "price": 25000,
-        "image": "assets/images/products/reusable-ureterorenoscope-1.jpg",
-        "description": "The Reusable Ureterorenoscope can be reused after immersion disinfection, offering a cost-effective alternative to single-use devices. Its flexible insertion tube and 285° bending angle ensure enhanced maneuverability with no blind spots, improving both patient comfort and procedural efficiency.\n\n\n\n\nStreamlined Bullet-Shaped Tip for Low Resistance and Comfort\n\nThe bullet-shaped tip features a low-resistance design, allowing smoother insertion into the urethra. Combined with a soft Pebax-wrapped insertion tube, it minimizes urethral trauma, ensuring a safer and more comfortable experience for patients.\n\n285° Bending Angle for Better Access & Precision\n\nWith a bidirectional bending angle of up to 285° and double bending capability, the reusable ureterorenoscope reaches complex renal anatomy, eliminating blind spots for more accurate diagnosis and treatment.\n\nSuperior Durability, Lower Maintenance Costs\n\n316L stainless steel bending section enhances with laser engraving and multi-point mi",
-        "images": [
+        },
+            {
+            id: 124,
+            name: "Reusable Ureterorenoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            price: 25000,
+            image: "assets/images/products/reusable-ureterorenoscope-1.jpg",
+            description: "",
+            images: [
             "assets/images/products/reusable-ureterorenoscope-1.jpg",
             "assets/images/products/reusable-ureterorenoscope-2.png",
             "assets/images/products/reusable-ureterorenoscope-3.jpg",
             "assets/images/products/reusable-ureterorenoscope-4.jpg"
+        ],
+            features: [
+            
         ]
-    }
-];
+        }
+        ];
 
 const clients = [
     {
