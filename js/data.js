@@ -4,776 +4,1391 @@ const PHONE_NUMBER = "+919876543210";    // Replace with actual phone number
 
 // Data Structures
 const products = [
-            {
+        {
             id: 1,
             name: "V6/V8",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/229_75e9ba2348.png",
-            custom_url: "v6-v8-ventilator.html",
-            price: 137000,
-            features: [
+            custom_url: "v6-v8-ventilator",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/229_75e9ba2348.png",
-            "https://alioss.comen.com/cms-v2/1_1_a753392834.png",
-            "https://alioss.comen.com/cms-v2/2_1_1_b3a74827db.png",
-            "https://alioss.comen.com/cms-v2/3_1_1_a1dbaadbbb.png",
-            "https://alioss.comen.com/cms-v2/178_99c08a23ff.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/image_1_4_46e461b028.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/conditions_stages_5d5a5e1f86.svg\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/181_389eef02f5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/311_4ff7d0fd04.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/193_6c45bba74e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/229_75e9ba2348.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/229_75e9ba2348.png",
+                "https://alioss.comen.com/cms-v2/1_1_a753392834.png",
+                "https://alioss.comen.com/cms-v2/2_1_1_b3a74827db.png",
+                "https://alioss.comen.com/cms-v2/3_1_1_a1dbaadbbb.png",
+                "https://alioss.comen.com/cms-v2/178_99c08a23ff.png"
+            ],
+            
+            short_description: "A high-end life-support medical device designed to assist or replace spontaneous breathing in critically ill patients.",
+            key_highlights: [
+                "18.5-inch Ultra Large Screen",
+                "Large Angle Rotation (up to 270° horizontal)",
+                "Detachable Screen Design",
+                "Double Driven System (Pneumatic + Electronic)",
+                "Intelligent iV-Cycle Technology"
+            ],
+            
+            overview_text: "The V6/V8 series ICU patient ventilator is a life-support medical device designed to assist or replace spontaneous breathing in critically ill patients. This ventilator delivers precise oxygen and airflow control to ensure safe, stable, and effective respiratory therapy in intensive care environments. Comen V8 ventilators and K/NMPro series monitors integrate to provide clinicians with a single view of patient data, enabling them to access information more conveniently.",
+            
+            features: [
+                { title: "Expansive Visual", text: "Features an expansive 18.5-inch high-definition touchscreen, designed to enhance visibility and clinical workflow. The screen supports horizontal rotation up to 270° and vertical adjustment up to 45°, with a detachable design enabling flexible positioning for both bedside and remote operation." },
+                { title: "Double Driven System", text: "Pneumatic Driven + Electronic Driven Powerful Gas Delivery System. While the central gas supply ensures consistent ventilation support, the backup turbine-driven air source guarantees uninterrupted operation even in the presence of central gas supply issues." },
+                { title: "All Conditions, All Stages", text: "Provides comprehensive invasive ventilation modes, extensive non-invasive ventilation modes, and HFNC mode. Includes both neonatal invasive and non-invasive ventilation (incorporating Comen's exclusive NIPPV and SNIPPV modes)." },
+                { title: "Pulmonary Protective Strategy", text: "Provides many tools for lung protective ventilation to minimize ventilator-induced lung injury (VILI) in ARDS patients. Includes Sigh Function, SI Function, static P-V loop, C20/C Monitoring, and Stress Index Monitoring." },
+                { title: "Dual Channel Auxiliary Pressure", text: "Precisely monitors transpulmonary pressure by detecting both esophageal and intrapulmonary pressure. Excels in computing transdiaphragmatic pressure—an essential metric for evaluating respiratory muscle strength." },
+                { title: "Advanced Weaning Tools", text: "Includes comprehensive weaning tools such as P0.1 (Airway occlusion pressure), NIF (Negative Inspiratory Force), RSBI (Rapid Shallow Breathing Index), and SBT (Spontaneous Breathing Trial)." }
+            ],
+            
+            specifications: {
+                "Display": "18.5-inch high-definition touchscreen (detachable)",
+                "Gas Delivery System": "Double Driven (Pneumatic + Electronic Turbine Backup)",
+                "Ventilation Modes": "Invasive, Non-Invasive, HFNC, Neonatal (NIPPV, SNIPPV)",
+                "Lung Protective Tools": "Sigh, SI, Static P-V loop, C20/C, Stress Index",
+                "Advanced Calculations": "Energy Metabolism, Functional Residual Capacity, Alveolar Ventilation"
+            }
         },
-            {
+        {
             id: 2,
             name: "V2/V5",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/4_1d606e261b.png",
-            price: 44957,
-            features: [
+            custom_url: "v2-v5",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/4_1d606e261b.png",
-            "https://alioss.comen.com/cms-v2/V2_V5_8_d59268ddf0.png",
-            "https://alioss.comen.com/cms-v2/5_750b6e970f.png",
-            "https://alioss.comen.com/cms-v2/207_9c721d6dc8.png",
-            "https://alioss.comen.com/cms-v2/208_444986d560.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/212_e49cd8895b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_2_1_774a3f1fd1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/V5_192bd82b5d.gif\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/4_1d606e261b.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/4_1d606e261b.png",
+                "https://alioss.comen.com/cms-v2/V2_V5_8_d59268ddf0.png",
+                "https://alioss.comen.com/cms-v2/5_750b6e970f.png",
+                "https://alioss.comen.com/cms-v2/207_9c721d6dc8.png",
+                "https://alioss.comen.com/cms-v2/208_444986d560.png"
+            ],
+            
+            short_description: "A modern ICU ventilator equipped with a powerful turbine-driven system and intuitive 15.6-inch touchscreen.",
+            key_highlights: [
+                "Turbine-driven System (No central air compressor required)",
+                "15.6-inch TFT intuitive touchscreen",
+                "18 available ventilation modes",
+                "Intelligent iV-Cycle synchronization technology"
+            ],
+            
+            overview_text: "To cope with present and potential clinical challenges, V5 is equipped with a turbine-driven system. Advanced ventilation modes and comprehensively monitored parameters allow medical providers to step closer to the complete clinical picture of patients. A 15.6-inch TFT touchscreen with an intuitive UI system facilitates a smooth workflow: V5, a solution for modern respiratory support.",
+            
+            features: [
+                { title: "Turbine-driven Flexibility", text: "Rather than connecting an air compressor or a central air supply system, the turbine unleashes true mobility and flexibility. Upgraded control algorithms ensure strong power, ultra-sensitive response, and low noise operation." },
+                { title: "Sequential Treatments", text: "With 18 ventilation modes available, V5 provides full patient support throughout their treatment journey, from admission to discharge (intubation to weaning, invasive to non-invasive, and high-flow oxygen therapy)." },
+                { title: "All-round Monitoring & Diagnosing", text: "Equipped with advanced Weaning Tools (SBT, P0.1, NIF, RSBI) to prevent reintubation, and Lung Protective Tools (Stress Index, C20/C, Transpulmonary Pressure, SI) to reduce ventilation-associated lung injuries (VALI)." },
+                { title: "Accurate Oxygenation Assessment", text: "Collects data from high-flow oxygen therapy patients for accurately assessing ARDS prognosis. The oxygenation index assists in predicting respiratory diseases without arterial blood gas analysis." },
+                { title: "Intelligent Interconnection", text: "Connects seamlessly with syringe pumps, monitors, and intensive care information systems, forming a complete critical care network solution that elevates hospital management." }
+            ],
+            
+            specifications: {
+                "Display": "15.6-inch TFT touchscreen",
+                "Drive System": "High-performance Turbine-driven",
+                "Max Flow Rate": "≥ 210 L/min",
+                "Turbine Noise": "≤ 45dB",
+                "Turbine Lifespan": "≥ 20,000 hrs",
+                "Calculations": "Energy Metabolism, Alveolar Dead Space, Alveolar Tidal Volume"
+            }
         },
-            {
+        {
             id: 3,
             name: "V3/V3 Pro",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/233_d59172c677.png",
-            price: 155000,
-            images: [
-            "https://alioss.comen.com/cms-v2/233_d59172c677.png",
-            "https://alioss.comen.com/cms-v2/234_8c54e0ba6a.png",
-            "https://alioss.comen.com/cms-v2/235_94496f96a9.png",
-            "https://alioss.comen.com/cms-v2/236_c82929e1f9.png",
-            "https://alioss.comen.com/cms-v2/237_848dc5d61e.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/238_5ded83a99c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/239_362265c172.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_1_3ded2a72cb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/5_1_203884eff5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/2_3_1291279b71.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "v3-v3-pro",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/233_d59172c677.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/233_d59172c677.png",
+                "https://alioss.comen.com/cms-v2/234_8c54e0ba6a.png",
+                "https://alioss.comen.com/cms-v2/235_94496f96a9.png",
+                "https://alioss.comen.com/cms-v2/236_c82929e1f9.png",
+                "https://alioss.comen.com/cms-v2/237_848dc5d61e.png"
+            ],
+            
+            short_description: "A powerful yet portable ICU ventilator featuring turbine-driven technology, a hidden carry handle, and extended battery life.",
+            key_highlights: [
+                "Super Lightweight (10kg) with hidden carry handle",
+                "Extended Battery Life (up to 6.6 hours)",
+                "Integrated High-Performance Turbine",
+                "18 Ventilation Modes with Intelligent iV-Cycle",
+                "Modular Turbo Cartridge (20,000 hours runtime)"
+            ],
+            
+            overview_text: "The V3 Pro is a powerful yet portable ICU ventilator, featuring turbine-driven technology, a hidden carry handle, and extended battery life for true mobility. It supports a full range of patients from neonates to adults, offers advanced ventilation modes, and comes equipped with comprehensive clinical support tools.",
+            
+            features: [
+                { title: "Transcends Clinical Boundaries", text: "Engineered for dynamic healthcare environments with an ultra-lightweight design (10kg), endurance-optimized power system (6.6h battery), and hidden handle. Seamlessly serves ER interventions, ICU treatments, and intra-hospital transfers." },
+                { title: "Impressive Ventilation Performance", text: "With 18 ventilation modes and high flow oxygen therapy, V3 Pro provides full patient support throughout their treatment journey, from intubation to weaning. Intelligent iV-Cycle technology improves human-machine synchronization in both inspiration and expiration." },
+                { title: "Lung Protection Strategy", text: "Provides comprehensive assessment of ventilator-related factors impacting lung injury. Monitors Mechanical Power and Driving Pressure (ΔP) to guide individualized strategies, utilizing Low Tidal Volume Ventilation and Personalized PEEP Titration." },
+                { title: "Data-Powered Weaning", text: "Provides reliable weaning tools including RSBI (Rapid Shallow Breathing Index), SBT (Spontaneous Breathing Trial), NIF, and P0.1 to assess a patient's ability to breathe independently." },
+                { title: "Hassle-Free Maintenance", text: "Features a modular turbo cartridge that runs for 20,000 hours with one-click removal. Dual valves for inhalation and exhalation are fully autoclavable, killing hidden biofilms, and can be swapped in just 5 seconds." }
+            ],
+            
+            specifications: {
+                "Weight": "10 kg (Super Lightweight)",
+                "Battery Life": "Up to 6.6 hours of continuous ventilation",
+                "Drive System": "Internal Turbine Charged (No air supply needed)",
+                "Turbine Lifespan": "20,000 hours (Modular cartridge)",
+                "Ventilation Modes": "18 modes (Invasive, Non-invasive, HFNC)",
+                "Maintenance": "Autoclavable dual valves, 5-second swap"
+            }
         },
-            {
+        {
             id: 4,
             name: "V1/V1 Pro",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/AI_psd_1_03444929d1.png",
-            price: 68006,
-            images: [
-            "https://alioss.comen.com/cms-v2/AI_psd_1_03444929d1.png",
-            "https://alioss.comen.com/cms-v2/404_d72eccda34.png",
-            "https://alioss.comen.com/cms-v2/405_9b847cafc0.png",
-            "https://alioss.comen.com/cms-v2/407_3881469fa3.png",
-            "https://alioss.comen.com/cms-v2/406_82c1d25191.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/408_93a0870912.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/16_3_fde9b15f17.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/15_2_9e2dd69a25.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/12_3_3af2a72e31.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/14_3_8aa2802019.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "v1-v1-pro",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/AI_psd_1_03444929d1.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/AI_psd_1_03444929d1.png",
+                "https://alioss.comen.com/cms-v2/404_d72eccda34.png",
+                "https://alioss.comen.com/cms-v2/405_9b847cafc0.png",
+                "https://alioss.comen.com/cms-v2/407_3881469fa3.png",
+                "https://alioss.comen.com/cms-v2/406_82c1d25191.png"
+            ],
+            
+            short_description: "An upgraded turbine-driven emergency and transport ventilator designed for extreme environments.",
+            key_highlights: [
+                "Extreme Temperature Resilience (-15°C to 50°C)",
+                "10+ Hours Dual-Battery Power",
+                "6.5kg Ultra-light Ergonomic Design",
+                "IP34 Waterproof and Dustproof Rating",
+                "Approved for air, land, and sea operations"
+            ],
+            
+            overview_text: "V1 Pro is our newly upgraded turbine-driven emergency and transport ventilator. Engineered for reliability in the most challenging environments, V1 Pro ensures stable ventilation during patient transport, even under extreme conditions. With advanced features and intelligent control, it delivers ICU-level ventilation performance on the move—bringing critical care standards wherever it’s needed most.",
+            
+            features: [
+                { title: "Built to Brave Every Environment", text: "Engineered for extreme conditions. Operates in temperatures from -15°C to 50°C, and at altitudes up to 7,670 meters. IP34 dustproof/waterproof rating, 0.75m drop-tested, and 20G crash-resistant." },
+                { title: "Uninterrupted Power & Performance", text: "Features 10+ hours dual-battery power (equivalent to a 6-time-zone flight). The internal turbine eliminates the need for air cylinders and maintains 21% FiO₂ ventilation even during oxygen depletion." },
+                { title: "Break Boundaries, Seamless Care", text: "Replaces multiple specialized devices for wilderness rescue, ambulance care, intra-hospital transport, and ICU support. At just 6.5kg, it offers single-handed operation." },
+                { title: "Tough Outside, Precise Inside", text: "Harnesses ICU-grade precision with dynamic AMV modulation and CPR-synced response algorithms. Includes neonatal invasive and non-invasive ventilation modes for all age groups." },
+                { title: "Scientific Weaning & Synchronization", text: "Uses data-driven weaning assessment tools (RSBI, P0.1, NIF, SBT). Intelligent iV-Cycle technology improves man-machine synchronization in both inspiration and expiration." }
+            ],
+            
+            specifications: {
+                "Weight": "6.5 kg (Ergonomic design)",
+                "Battery Life": "10+ Hours Dual-Battery Power",
+                "Environmental Resilience": "-15°C to 50°C, Altitudes up to 7,670m",
+                "Durability Ratings": "IP34, 0.75m drop-tested, 20G crash-resistant",
+                "Certifications": "ISO 10651-3, ISO 80601-2-84, EN1789, RTCA/DO-160G",
+                "Patient Types": "Neonates, Pediatric, and Adults"
+            }
         },
-            {
+        {
             id: 5,
             name: "NV50/60/70",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/231_dc439244a3.png",
-            price: 149126,
-            images: [
-            "https://alioss.comen.com/cms-v2/231_dc439244a3.png",
-            "https://alioss.comen.com/cms-v2/215_a1fae07d7d.png",
-            "https://alioss.comen.com/cms-v2/216_1b83be35b2.png",
-            "https://alioss.comen.com/cms-v2/pic3_112be4437a.png",
-            "https://alioss.comen.com/cms-v2/12_4_46f5eb7311.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/11_2_22f60cf986.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/13_3_08a5dc64f3.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic7_5146dc03e2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/efrh_1f6190a32b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/227_fe66e3e9ac.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "nv50-60-70",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/231_dc439244a3.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/231_dc439244a3.png",
+                "https://alioss.comen.com/cms-v2/215_a1fae07d7d.png",
+                "https://alioss.comen.com/cms-v2/216_1b83be35b2.png",
+                "https://alioss.comen.com/cms-v2/pic3_112be4437a.png",
+                "https://alioss.comen.com/cms-v2/12_4_46f5eb7311.png"
+            ],
+            
+            short_description: "An advanced non-invasive ventilator featuring an 18-inch touchscreen and a powerful turbine for effective mask leakage compensation.",
+            key_highlights: [
+                "Focus on Non-Invasive Respiratory Support",
+                "18-inch rotating touchscreen display",
+                "Exceptionally powerful built-in turbine for leakage compensation",
+                "iV-Cycle synchronization technology for comfortable breathing"
+            ],
+            
+            overview_text: "Focus on Non-Invasive Respiratory Support. An 18-inch touchscreen with rotating display for easier operation and observation. Upgraded synchronization technology enables patients to have a comfortable breathing experience. An exceptionally powerful turbine ensures effective compensation for any leakage resulting from incomplete facial non-invasive mask sealing.",
+            
+            features: [
+                { title: "Pressure is Guaranteed", text: "With optimized algorithms, the built-in turbine offers compensation to mask air leakage during non-invasive ventilation, thereby establishing the most significant power core in the industry." },
+                { title: "Breathing as Casual", text: "iV-Cycle synchronization technology adjusts trigger values based on monitored data to mimic patients' breathing patterns during non-invasive ventilation, reducing discomfort and treatment failure." },
+                { title: "Advanced Comfort Technologies", text: "Features 'Rising Time' for comfortable inhalation flow rates, 'C-Free Pressure Reduction' in CPAP mode to reduce positive pressure during exhalation, and 'Ramp' to gradually increase pressure for patient adaptation." },
+                { title: "NIV for All Age Groups", text: "Provides non-invasive ventilation modes for adults and children, as well as special modes designed exclusively for newborns that are recommended by healthcare providers." },
+                { title: "Advanced NIV Modes", text: "Includes Proportional Pressure Support (PPS) for weaning, Volume Guaranteed Pressure Support (VAPS), and Nasal Intermittent Positive Pressure Ventilation (NIPPV) exclusive for newborns." }
+            ],
+            
+            specifications: {
+                "Display": "18-inch rotating touchscreen display",
+                "High Flow Therapy": "Wider flow range from 2 to 80 L/min",
+                "Key Modes": "PPS, VAPS, NIPPV, CPAP",
+                "Oxygenation Indicators": "SpO2, EtCO2, ROX, OSI, RSS, S/F",
+                "Target Patients": "Neonates, Pediatric, and Adults"
+            }
         },
-            {
+        {
             id: 6,
             name: "NV10",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/NV_10_af4a415e8e.png",
-            price: 66000,
-            images: [
-            "https://alioss.comen.com/cms-v2/NV_10_af4a415e8e.png",
-            "https://alioss.comen.com/cms-v2/sect1_item1_b5632f983c.png",
-            "https://alioss.comen.com/cms-v2/sect1_item2_de4596c176.png",
-            "https://alioss.comen.com/cms-v2/sect1_item3_e264134c71.png",
-            "https://alioss.comen.com/cms-v2/sect1_item4_0d8ea89b85.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/sect1_item5_f27426d00c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/sect1_item6_05d3267864.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/242_986c41c8b2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/243_e044bbbc44.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/244_161b8816eb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "nv10",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/NV_10_af4a415e8e.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/NV_10_af4a415e8e.png",
+                "https://alioss.comen.com/cms-v2/sect1_item1_b5632f983c.png",
+                "https://alioss.comen.com/cms-v2/sect1_item2_de4596c176.png",
+                "https://alioss.comen.com/cms-v2/sect1_item3_e264134c71.png",
+                "https://alioss.comen.com/cms-v2/sect1_item4_0d8ea89b85.png"
+            ],
+            
+            short_description: "A specialized neonatal ventilator providing precise respiratory support, noninvasive high-frequency oscillation, and lung-protective strategies.",
+            key_highlights: [
+                "Specialized Non-Invasive Ventilation (NIV) for Neonates",
+                "Noninvasive High-Frequency Oscillation Therapy",
+                "Up to 100% Leakage Compensation",
+                "Dual Sensor Synchronization (Abdominal & Pressure)",
+                "VentGuide Assisted Strategy Adjustments"
+            ],
+            
+            overview_text: "The NV10 neonatal ventilator is a critical medical device designed to provide respiratory support for newborns and young infants who cannot breathe adequately on their own. It delivers precise airflow and pressure to maintain stable oxygenation. This infant ventilator provides stable, lung-protective ventilation strategies.",
+            
+            features: [
+                { title: "Increase NIV Confidence", text: "Includes a complete NIV set with specialized ventilation tools for neonates, including HFNC + ROX, nCPAP + Apnea Auto-relief, DuoVent, SNIPPV, NIPPV, and Single-limb NHFO." },
+                { title: "Oscillation Therapy Revolution", text: "Noninvasive high-frequency oscillation enhances carbon dioxide elimination and treats PPHN effectively. The unique diaphragm oscillation design offers friction cancellation, linear amplitude, and patented noise reduction." },
+                { title: "Minimization of Work of Breath", text: "A single-limb setup effectively reduces dead space compared to a dual-limb configuration with a Y-piece, thereby drastically decreasing the work of breathing for infants." },
+                { title: "Sensitively Respond to Every Breath", text: "Utilizes 2 Sync Modes with a unique algorithm. An abdominal sensor for quick response and a pressure sensor to minimize false activations due to newborn restlessness, ensuring reduced patient discomfort." },
+                { title: "Targeted Pressure & Leakage Compensation", text: "Equipped with a leakage compensation system that provides up to 100% pressure compensation, ensuring that patients receive the precise set pressure even in the event of mask leakage." },
+                { title: "Data-Driven Clinical Decisions", text: "VentGuide provides early warnings for ventilation failure. The customizable dashboard monitors real-time parameters, while indicators like ROX assist in HFNC for early prediction of respiratory failure." }
+            ],
+            
+            specifications: {
+                "Target Patients": "Neonates and young infants",
+                "Oscillator Type": "Diaphragm Oscillation (Quiet & powerful)",
+                "Circuit Type": "Single-limb setup (Reduced dead space)",
+                "Sensors": "Non-invasive Abdominal and Pressure sensors",
+                "Leakage Compensation": "Up to 100% pressure compensatory",
+                "Diagnostic Indicators": "VentGuide, ROX (Hypoxic severity index)"
+            }
         },
-            {
+        {
             id: 7,
             name: "VN Series",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "assets/images/products/vn-series-1.png",
-            price: 88000,
-            images: [
-            "assets/images/products/vn-series-1.png",
-            "assets/images/products/vn-series-2.png",
-            "assets/images/products/vn-series-3.png",
-            "assets/images/products/vn-series-4.png"
-        ],
-            features: [
+            custom_url: "vn-series",
             
-        ]
+            image: "assets/images/products/vn-series-1.png",
+            gallery: [
+                "assets/images/products/vn-series-1.png",
+                "assets/images/products/vn-series-2.png",
+                "assets/images/products/vn-series-3.png",
+                "assets/images/products/vn-series-4.png"
+            ],
+            
+            short_description: "A comprehensive neonatal and pediatric ventilator delivering full-cycle precision ventilation protection for patients from 200g.",
+            key_highlights: [
+                "Designed for premature infants ≥ 200g",
+                "17 Ventilation Modes covering the full spectrum",
+                "5 Exclusive Patents for neonatal protection",
+                "Revolutionary HFOV-VG Volume Guarantee",
+                "IntelliCuff Intelligent Cuff Management"
+            ],
+            
+            overview_text: "Designed for neonates, premature infants, and pediatric patients with birth weight ≥200 g. Delivering full-cycle precision ventilation protection - from lung recruitment preparation through ventilator weaning assessment. The VN8HFO is a comprehensive neonatal ventilator engineered for critical care environments.",
+            
+            features: [
+                { title: "5 Exclusive Patents — Full Protection", text: "Builds a complete safety and precision framework with synergistic patents covering oscillation mechanics, trigger synchronization, and airway cuff management. Each patent targets a distinct clinical challenge in neonatal ventilation." },
+                { title: "Revolutionary HFOV-VG Technology", text: "Industry-leading volume guarantee high frequency ventilation technology provides a ventilation safety net for fragile lungs with tidal volumes as low as 0.1mL." },
+                { title: "Patented Voice Coil Diaphragm", text: "Diaphragm oscillation system with rolling motion realizes higher frequency, smoother, and quieter oscillation output, suitable for low lung compliance." },
+                { title: "IntelliCuff & TRC Management", text: "IntelliCuff continuously monitors ETT cuff pressure to reduce airway injury. TRC (Tube Resistance Compensation) automatically compensates for resistance, reducing the infant's work of breathing." },
+                { title: "Four-fold Synchronous Trigger", text: "Provides four trigger modes (flow, volume, pressure, and abdomen) to accurately match the infant's spontaneous breathing and drastically reduce patient-ventilator asynchrony." },
+                { title: "Full-Cycle Clinical Evaluation", text: "Features comprehensive weaning tools, Spontaneous Breathing Trial (SBT), and Functional Residual Capacity (FRC) measurement to assess pulmonary function recovery and guide PEEP optimization." }
+            ],
+            
+            specifications: {
+                "Target Patients": "Neonates, premature infants, and pediatric (≥200 g)",
+                "Ventilation Modes": "17 modes including HFO, PC-HFO, and HFNC",
+                "Tidal Volume Minimum": "As low as 0.1 mL",
+                "Trigger Modes": "Flow, Volume, Pressure, and Abdominal",
+                "Oscillation Type": "Patented Voice Coil Diaphragm",
+                "Advanced Safety": "Automatic Leakage Compensation (up to 45 L/min)"
+            }
         },
-            {
+        {
             id: 8,
             name: "NV8",
             brand: "COMEN",
             category: "Ventilator",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
-            price: 137000,
-            rich_description: "<p>The NV8 Neonatal Ventilator provides comprehensive and dedicated neonatal respiratory care with advanced non-invasive ventilation modes.</p>",
-            features_extended: [
-            "Synchronized Non-Invasive Ventilation (SNIPPV/NIPPV)",
-            "NCPAP mode with apnea wake-up function",
-            "High Flow Nasal Cannula (HFNC) therapy",
-            "Comprehensive monitoring including SpO2 and EtCO2",
-            "8-inch color touchscreen display"
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
-        ],
-            features: [
+            custom_url: "nv8",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+            ],
+            
+            short_description: "A high-end neonatal non-invasive ventilator designed to reduce intubation rates with industry-leading PIP performance.",
+            key_highlights: [
+                "All-in-one non-invasive ventilation solution",
+                "Industry-leading PIP (Peak Inspiratory Pressure) up to 20cmH2O",
+                "Provides NIPPV & SNIPPV for newborns",
+                "Abdominal respiratory sensor with apnea wake-up function",
+                "Online intelligent oxygen calibration without interrupting ventilation"
+            ],
+            
+            overview_text: "In order to reduce the damage caused by invasive ventilation to newborns/infants, Comen works hand in hand with clinical experts and launches NV8, a high-end non-invasive ventilator that fits well with clinical practice. NV8 provides an all-in-one non-invasive ventilation solution with PIP (Peak Inspiratory Pressure) as high as 20cmH2O. The comprehensive ventilation modes and pressure performance help ensure that newborns can avoid tracheal intubation.",
+            
+            features: [
+                { title: "All-in-One Non-Invasive Solution", text: "The NV8 provides NIPPV and SNIPPV for newborns. Clinical studies have proven that NIPPV/SNIPPV mode can effectively reduce the intubation rate and increase the success rate of invasive ventilation withdrawal." },
+                { title: "Fully Compatible Accessories", text: "Equipped with the NV Flow / Neo.Flow pressure generator for safe and comfortable sealing. Fully compatible with infant flow, medijet, and other brands. A wide range of nasal plugs and masks are available to meet premature infant needs." },
+                { title: "Intelligent Synchronization & Apnea Wake-up", text: "Provides reliable respiratory monitoring through an abdominal sensor with 10 levels of sensitivity. The accuracy of breathing synchronization in SNIPPV mode reaches more than 90%, and NCPAP mode features an apnea wake-up function." },
+                { title: "Industry-Leading Performance", text: "Inspiratory pressure is a critical indicator of non-invasive ventilation. The NV8 provides industry-leading performance with PIP (Peak Inspiratory Pressure) up to 20cmH2O, expanding the scope of treatment." },
+                { title: "Designed for Healthcare Providers", text: "Features a clear 8-inch LED touchscreen with a 15° tilt. Designed with a calibration-specific circuit that intelligently calibrates the oxygen cell automatically without interrupting ventilation." },
+                { title: "SpO2 Monitoring Function", text: "Equipped with Masimo/Nellcor SpO2 to help healthcare professionals determine the effectiveness of non-invasive ventilation therapy by monitoring changes in blood oxygen levels." }
+            ],
+            
+            specifications: {
+                "Target Patients": "Newborns and infants",
+                "Peak Inspiratory Pressure (PIP)": "Up to 20cmH2O",
+                "Key Modes": "NCPAP, NIPPV, SNIPPV",
+                "Sensors": "Abdominal respiratory sensor (10 sensitivity levels)",
+                "Display": "8-inch LED touchscreen, 15° tilt",
+                "Oxygen Calibration": "Intelligent online calibration without interrupting ventilation",
+                "SpO2 Monitoring": "Masimo/Nellcor SpO2 integrated"
+            }
         },
-            {
+        {
             id: 9,
             name: "NF5",
             brand: "COMEN",
             category: "High Flow Oxygen Therapy Humidifier",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/378_af23b22158.png",
-            price: 92161,
-            features: [
+            custom_url: "nf5",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/378_af23b22158.png",
-            "https://alioss.comen.com/cms-v2/379_49150abdc1.png",
-            "https://alioss.comen.com/cms-v2/2_5_bdbfc2153d.png",
-            "https://alioss.comen.com/cms-v2/3_4_1_a8a91c481f.png",
-            "https://alioss.comen.com/cms-v2/4_4_1_3d6438ab8a.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/384_89b6f8d2dc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/383_d493544512.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/386_ff18e049f5.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8_56af5c1ead.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/378_af23b22158.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/378_af23b22158.png",
+                "https://alioss.comen.com/cms-v2/379_49150abdc1.png",
+                "https://alioss.comen.com/cms-v2/2_5_bdbfc2153d.png",
+                "https://alioss.comen.com/cms-v2/3_4_1_a8a91c481f.png",
+                "https://alioss.comen.com/cms-v2/4_4_1_3d6438ab8a.png"
+            ],
+            
+            short_description: "A high-performance High Flow Heated Respiratory Humidifier with smart temperature control and precise oxygen delivery for all ages.",
+            key_highlights: [
+                "Wide application range (2-80 L/min) for infants to adults",
+                "Smart temperature (37℃) and humidity (100% RH) control",
+                "One-touch O₂ flush for rapid oxygen concentration increase",
+                "Integrated SpO2 monitoring (Comen, Masimo, Nellcor)",
+                "Intra-hospital transport ready with integrated battery and turbine"
+            ],
+            
+            overview_text: "NF5 is a High Flow Heated Respiratory Humidifier designed to be simple, practical, safe, and comfortable. It features an ultra-large 4.3-inch touch screen, an electronic air-O2 mixer system, and an intuitive UI design for caregivers. It provides highly efficient and precise oxygen therapy for both infants and adults.",
+            
+            features: [
+                { title: "Simple and Practical UI", text: "Equipped with a 4.3-inch touch screen and navigation knob for quick operation. Features an intuitive UI with large fonts and an electronic air-O2 mixer system for easy setup." },
+                { title: "Safe and Comfortable Heating", text: "Features 3 temperature sensors for real-time monitoring, synchronized closed-loop feedback, smart water level management, and over-temperature protection. Delivered via a soft, ergonomic nasal cannula." },
+                { title: "Efficient and Precise Control", text: "Adopt high-precision electronic air-oxygen mixing and monitoring to realize precise regulation. A One-touch O₂ flush rapidly increases oxygen reserve for suctioning or intubation." },
+                { title: "Smart Temp & Humidity Control", text: "Provides patients with accurate high-flow oxygen therapy close to human core body temperature (37℃) and 100% relative humidity (44mg/L), optimizing mucus and cilia function." },
+                { title: "Wide Range of Application", text: "The 2-80L/min flow control effectively flushes physiological dead space and avoids CO2 retention. Clinically suitable for infants (2-30L/min) and adults (10-80L/min)." },
+                { title: "Transport & Monitoring Ready", text: "Features a high-performance turbine (no compressed air needed) and an integrated battery for easy intra-hospital transport. Optional SpO2 monitoring helps doctors optimize treatment plans in real time." }
+            ],
+            
+            specifications: {
+                "Display": "4.3-inch touch screen",
+                "Adult Flow Range": "10-80 L/min",
+                "Infant/Child Flow Range": "2-30 L/min",
+                "Temperature Target": "37℃ (Core body temperature)",
+                "Humidity Target": "100% relative humidity (44mg/L)",
+                "Transport Capability": "Integrated turbine & battery, trolley available"
+            }
         },
-            {
+        {
             id: 10,
             name: "HT30",
             brand: "COMEN",
             category: "High Flow Oxygen Therapy Humidifier",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_3821278824.png",
-            price: 157577,
-            images: [
-            "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_3821278824.png",
-            "https://alioss.comen.com/cms-v2/3_H1200_20x_8_1_95d004643a.png",
-            "https://alioss.comen.com/cms-v2/4_H1200_20x_8_1_cd852d42a2.png",
-            "https://alioss.comen.com/cms-v2/5_H1200_20x_8_3_a3e3050150.png",
-            "https://alioss.comen.com/cms-v2/5_H1200_20x_8_1_e12da1046f.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/5_H1200_20x_8_2_905c178e9c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_H1200_20x_8_1_e507e2cc30.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "ht30",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_3821278824.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_3821278824.png",
+                "https://alioss.comen.com/cms-v2/3_H1200_20x_8_1_95d004643a.png",
+                "https://alioss.comen.com/cms-v2/4_H1200_20x_8_1_cd852d42a2.png",
+                "https://alioss.comen.com/cms-v2/5_H1200_20x_8_3_a3e3050150.png",
+                "https://alioss.comen.com/cms-v2/5_H1200_20x_8_1_e12da1046f.png"
+            ],
+            
+            short_description: "An intelligent respiratory humidifier providing precise humidity management, adaptive heated circuit technology, and reliable protective features.",
+            key_highlights: [
+                "Intelligent humidity control with output ≥12mg/L",
+                "Three specialized heating modes",
+                "Waterproof upper-and-lower enclosure design",
+                "Pressure-resistant up to 300 cmH₂O without leakage",
+                "Adaptive heated circuit technology with automatic resistance detection"
+            ],
+            
+            overview_text: "The HT30 Humidifier is primarily designed to deliver gas at appropriate temperature and humidity to patients, maintaining the normal physiological and defensive functions of the respiratory tract mucociliary system. It features an intelligent humidity control system with output humidity above 12mg/L, three heating modes, and automatic heating wire resistance detection to ensure optimal heating power.",
+            
+            features: [
+                { title: "Precise Humidity Management", text: "Independent temperature control of the water chamber and breathing circuit ensures stable humidity delivery, providing an absolute humidity output of ≥12 mg/L." },
+                { title: "Automatic Humidity Control Algorithm", text: "An intelligent control algorithm automatically adapts to changing ambient conditions, maintaining consistent humidity delivery while minimizing condensation throughout the breathing circuit." },
+                { title: "Adaptive Heated Circuit Technology", text: "Automatically detects heated-wire resistance and dynamically adjusts power output to optimize heating efficiency and ensure reliable humidification performance." },
+                { title: "Waterproof Design", text: "The upper-and-lower enclosure design effectively minimizes the risk of water ingress, enhancing the durability and safety of the device." },
+                { title: "Pressure-Resistant Design", text: "With an optimized aluminum heating plate and reusable humidification chamber, the system can withstand pressures above 300 cmH₂O without leakage." },
+                { title: "Anti-Screw-Fall Design", text: "Vertical PCB mounting avoids the heating-plate fixing screws and reduces the risk of short circuit or fire caused by dropped screws." }
+            ],
+            
+            specifications: {
+                "Humidity Output": "≥12 mg/L",
+                "Heating Modes": "3 distinct heating modes",
+                "Pressure Resistance": "Up to 300 cmH₂O without leakage",
+                "Safety Features": "Waterproof enclosure, Anti-screw-fall PCB mounting",
+                "Control Algorithm": "Automatic ambient condition adaptation"
+            }
         },
-            {
+        {
             id: 11,
             name: "HT50",
             brand: "COMEN",
             category: "High Flow Oxygen Therapy Humidifier",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_87c1ebe0cc.png",
-            price: 47694,
-            images: [
-            "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_87c1ebe0cc.png",
-            "https://alioss.comen.com/cms-v2/4_H1200_20x_8_2_f73839b010.png",
-            "https://alioss.comen.com/cms-v2/6_H1200_20x_8_1_44c3d5abe2.png",
-            "https://alioss.comen.com/cms-v2/5_H1200_20x_8_2_fdc944f88c.png",
-            "https://alioss.comen.com/cms-v2/8_H1200_20x_8_1_cebe990003.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/7_H1200_20x_8_1_99898b1a87.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_0ec81deb77.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/2_H1200_20x_8_1_912d5c354c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_H1200_20x_8_1_67588f9385.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "ht50",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_87c1ebe0cc.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/1_H1200_20x_8_2_87c1ebe0cc.png",
+                "https://alioss.comen.com/cms-v2/4_H1200_20x_8_2_f73839b010.png",
+                "https://alioss.comen.com/cms-v2/6_H1200_20x_8_1_44c3d5abe2.png",
+                "https://alioss.comen.com/cms-v2/5_H1200_20x_8_2_fdc944f88c.png",
+                "https://alioss.comen.com/cms-v2/8_H1200_20x_8_1_cebe990003.png"
+            ],
+            
+            short_description: "An advanced respiratory humidifier featuring precise airflow detection, dual-limb heating, and intelligent humidity control.",
+            key_highlights: [
+                "Precise airflow detection technology",
+                "Dual-Limb Heating Technology",
+                "Dry Heating Alarm",
+                "Probe Disconnection Detection",
+                "Intelligent automatic control algorithms"
+            ],
+            
+            overview_text: "The HT50 humidifier is primarily used to provide gas at appropriate temperature and humidity levels for patients, helping maintain the normal physiological and protective functions of the human airway mucociliary system. With precise airflow detection technology and advanced control algorithms, the HT50 can accurately control temperature and humidity output under a wide range of environmental conditions.",
+            
+            features: [
+                { title: "Intelligent Humidity Control", text: "The humidification chamber and breathing circuit are controlled independently. This ensures delivery of gas at body temperature and saturated humidity levels." },
+                { title: "Automatic Ambient Adaptation", text: "Intelligent automatic algorithms enable the system to deliver target humidity across a wide range of environmental conditions while minimizing condensate formation." },
+                { title: "Dual-Limb Heating Technology", text: "Heated inspiratory and expiratory limbs minimize condensation throughout the breathing circuit, ensuring stable humidification, accurate monitoring, and enhanced ventilation performance." },
+                { title: "Dry Heating Alarm", text: "Effectively detects dry-heating conditions, helping ensure adequate humidification and reducing the risk of secretion accumulation and airway complications." },
+                { title: "Probe Disconnection Detection", text: "By monitoring airflow and temperature trends, the system can dynamically identify whether the temperature probe is properly connected." }
+            ],
+            
+            specifications: {
+                "Heating Mechanism": "Dual-Limb Heating Technology",
+                "Detection Technology": "Precise airflow detection",
+                "Alarms": "Dry heating, Probe disconnection, Audible & Visual",
+                "Control System": "Independent chamber and circuit control"
+            }
         },
-            {
+        {
             id: 12,
             name: "X8",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/1_7_1_bc7c890884.png",
-            price: 40676,
-            images: [
-            "https://alioss.comen.com/cms-v2/1_7_1_bc7c890884.png",
-            "https://alioss.comen.com/cms-v2/1_10_b6fba615d1.png",
-            "https://alioss.comen.com/cms-v2/4_8_bb218fe54a.png",
-            "https://alioss.comen.com/cms-v2/49_80cbebb0af.png",
-            "https://alioss.comen.com/cms-v2/46_7d51a1c3cb.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/47_c5b4109d0b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/48_2bed5241ce.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/1_9_eb776fe81f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/3_12_ac493a53cc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/5_20x_8_1_6850e7c2e3.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "x8",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/1_7_1_bc7c890884.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/1_7_1_bc7c890884.png",
+                "https://alioss.comen.com/cms-v2/1_10_b6fba615d1.png",
+                "https://alioss.comen.com/cms-v2/4_8_bb218fe54a.png",
+                "https://alioss.comen.com/cms-v2/49_80cbebb0af.png",
+                "https://alioss.comen.com/cms-v2/46_7d51a1c3cb.png"
+            ],
+            
+            short_description: "An advanced integrated anesthesia machine delivering ICU-level ventilation, stable fresh-gas delivery, and comprehensive perioperative lung protection.",
+            key_highlights: [
+                "ICU-Level Ventilation Support with 9 modes",
+                "Electronic flowmeter and econometer for low-flow anesthesia",
+                "18.5-inch ultra-large capacitive touchscreen with 360° rotation",
+                "Built-in AGSS and BIS module for depth indication",
+                "Smart Anesthesia and Safe Management tools"
+            ],
+            
+            overview_text: "The X8 is an integrated anesthesia machine designed to support accurate control, stable delivery, ICU-level ventilation support, perioperative lung protection, and smart anesthesia management in one advanced workstation.",
+            
+            features: [
+                { title: "Stable Delivery & Low-Flow Anesthesia", text: "The electronic flowmeter allows direct setting of FiO2 and total flow. The econometer provides real-time fresh-gas usage information, guiding low-flow anesthesia and reducing waste, with a low circuit leakage of just 49.5 ml." },
+                { title: "ICU-Level Ventilation Support", text: "Provides comprehensive ventilation support including AMV and APRV. APRV supports the open-lung principle to recruit alveoli, improve oxygenation, and protect lung function. Supports VCV, PCV, PSV/CPAP, SIMV modes, and more." },
+                { title: "Integrated Modules & 18.5-inch Touchscreen", text: "An 18.5-inch ultra-large capacitive touchscreen with 360-degree rotation. Features built-in AGSS for waste-gas absorption, an integrated breathing circuit, a BIS module for anesthesia depth, and a negative pressure suction system." },
+                { title: "Perioperative Lung Protection", text: "Extends support beyond intraoperative control with High Flow Oxygen Therapy to prolong safe apnea time. Includes lung recruitment tools, esophageal pressure monitoring, sigh ventilation, and a VT/IBW tool for ideal tidal volume calculation." },
+                { title: "Smart Anesthesia and Safe Management", text: "Features quick startup, rapid self-tests, and visual self-checking procedures. Includes soda lime tank in-place reminders, gas usage monitoring, anesthesia consumption warnings, and data review/printing for post-case traceability." },
+                { title: "Data Interconnection", text: "By connecting with a data platform, X8 supports systematic and continuous data interconnection across emergency surgery, elective surgery, painless surgery, and day surgery, aiding whole-process patient management." }
+            ],
+            
+            specifications: {
+                "Display": "18.5-inch ultra-large capacitive touchscreen, 360° rotation",
+                "Ventilation Modes": "VCV, PCV, PSV/CPAP, SIMV-VC, SIMV-PC, SIMV-PRVC, PRVC, AMV, APRV",
+                "Integrated Modules": "AGSS, BIS module, Negative pressure suction",
+                "Leakage Rate": "49.5 ml low leakage of breathing circuits",
+                "Lung Protection": "HFNC, Esophageal pressure monitoring, VT/IBW tool"
+            }
         },
-            {
+        {
             id: 13,
             name: "AX900",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/262_950dcdd550.png",
-            price: 232000,
-            features: [
+            custom_url: "ax900",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/262_950dcdd550.png",
-            "https://alioss.comen.com/cms-v2/261_1_7aa5699045.png",
-            "https://alioss.comen.com/cms-v2/299_7d92aa09c0.png",
-            "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
-            "https://alioss.comen.com/cms-v2/263_9a5aa85f18.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/264_2fd72f2276.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_06bb0d894f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/AX_900_AX_900_A_ed8a9cab6a.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/262_950dcdd550.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/262_950dcdd550.png",
+                "https://alioss.comen.com/cms-v2/261_1_7aa5699045.png",
+                "https://alioss.comen.com/cms-v2/299_7d92aa09c0.png",
+                "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
+                "https://alioss.comen.com/cms-v2/263_9a5aa85f18.png"
+            ],
+            
+            short_description: "A high-performance anesthesia workstation featuring advanced pneumatic drive electronic control, precise ventilation, and an independent electronic flow meter.",
+            key_highlights: [
+                "Classic Ascending Bellows Pneumatic Drive Electronic Control",
+                "7% Ventilation Accuracy and 65ml/min Low Leakage",
+                "Independent 8-inch LED touch screen for flow meter operation",
+                "Advanced Fresh Gas Control System with real-time oxygen correction",
+                "Best Flow Indicator Tool for low-flow anesthesia guidance"
+            ],
+            
+            overview_text: "The AX-900 is a modern anesthesia machine ventilator designed to provide safe and precise anesthesia delivery during surgical procedures. Combining precision ventilation with intuitive controls, this anesthesia workstation ensures patient safety and surgical efficiency. It ensures accurate ventilation, continuous patient monitoring, and efficient operation, offering a reliable solution for all anesthesia management needs.",
+            
+            features: [
+                { title: "Classic Pneumatic Drive Electronic Control", text: "Adapts advanced pneumatic components to ensure safety and stability. The ascending bellows design provides a more compact circuit, realizing accurate ventilation, stable SIMV/PSV modes, and sharper triggering." },
+                { title: "Comprehensive Perioperative Ventilation", text: "Provides four kinds of control ventilation modes, three SIMV modes, and two pressure support ventilation modes, functioning as a high-performance anesthesia ventilator for induction, maintenance, recovery, and spontaneous breath exercise." },
+                { title: "Advanced Fresh Gas Control System", text: "Achieves fresh gas electronic closed-loop control. The system automatically adjusts the ratio of oxygen and balance gas, allowing real-time correction of oxygen concentration and total flow to correct fluid inertia errors." },
+                { title: "Best Flow Indicator Tool", text: "Gives the accurate flow of current anesthesia ventilation using a color spectrum diagram, improving efficiency, implementing precise anesthesia, and allowing anesthesiologists to practice low-flow anesthesia safely." },
+                { title: "Revolutionary Electronic Flow Meter", text: "Adopts an 8-inch LED touch screen for independent flow meter operation, providing better clarity than traditional integrated panels. Features an electronic gas source pressure gauge that eliminates pointer inertia." },
+                { title: "Exceptional Performance Parameters", text: "Achieves 7% ventilation accuracy and a very low leakage rate of 65ml/min. The circuit is autoclavable, and PEEP facilitates lung protection and recruitment maneuvers." }
+            ],
+            
+            specifications: {
+                "Flow Meter Display": "8-inch LED touch screen (Independent)",
+                "Ventilation Accuracy": "7%",
+                "Circuit Leakage": "65ml/min (Low Leakage)",
+                "Circuit Sterilization": "Autoclavable",
+                "Ventilation Modes": "4 Control, 3 SIMV, 2 Pressure Support modes",
+                "Gas Control": "Electronic closed-loop control, Best Flow Indicator"
+            }
         },
-            {
+        {
             id: 14,
             name: "AX-800/AX-700",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "assets/images/products/ax-800-ax-700-1.png",
-            price: 85336,
-            features: [
+            custom_url: "ax-800-ax-700",
             
-        ],
-            images: [
-            "assets/images/products/ax-800-ax-700-1.png",
-            "assets/images/products/ax-800-ax-700-2.png",
-            "assets/images/products/ax-800-ax-700-3.png",
-            "assets/images/products/ax-800-ax-700-4.png"
-        ]
+            image: "assets/images/products/ax-800-ax-700-1.png",
+            gallery: [
+                "assets/images/products/ax-800-ax-700-1.png",
+                "assets/images/products/ax-800-ax-700-2.png",
+                "assets/images/products/ax-800-ax-700-3.png",
+                "assets/images/products/ax-800-ax-700-4.png"
+            ],
+            
+            short_description: "Versatile anesthesia workstations featuring a modular design, 15-inch rotating touch screen, and classic pneumatic drive electronic control for precise ventilation.",
+            key_highlights: [
+                "15-inch four-way rotating touch screen (AX-800)",
+                "Comprehensive Perioperative Ventilation Modes",
+                "Electronic Flow Meter with back light",
+                "Modular plug-and-play design (AG, EtCO2, BIS)",
+                "Classic Ascending Bellows Pneumatic Drive Electronic Control"
+            ],
+            
+            overview_text: "The AX-800 and AX-700 are versatile anesthesia machines designed to provide safe and precise anesthesia delivery. They feature a modular design, classic pneumatic drive electronic control technology, and a 15-inch four-way rotating touch screen for comfortable operation.",
+            
+            features: [
+                { title: "Rotatable Touch Screen", text: "AX-800 features a 15” four-way rotating touch screen, more comfortable for doctors of different heights in different positions to observe and operate, reducing work fatigue." },
+                { title: "Comprehensive Perioperative Ventilation Modes", text: "Provides four kinds of control ventilation modes, three kinds of SIMV modes and two kinds of pressure support ventilation modes, providing more professional ventilation modes for anesthesia induction, maintenance, recovery and spontaneous breath exercise." },
+                { title: "Electronic Flow Meter", text: "Instantly know the fresh gas flow to your patient. A flow meter back light provides a quick reference even in a darkened environment." },
+                { title: "Modular Design", text: "Incorporates anesthesia-related monitoring functions such as AG, EtCO2, and BIS. The modular plug-and-play design enables resource sharing, reduces medical costs, and facilitates clinical work." },
+                { title: "Classic Pneumatic Drive Electronic Control", text: "The ascending bellows pneumatic electronic control technology provides a more compact circuit, realizing accurate ventilation, stable SIMV/PSV modes, and sharper triggering." },
+                { title: "Ergonomic & Practical Design", text: "Features a rotatable and lockable roomy drawer for exceptional storage capacity. An optional central brake system is available for time-saving and convenient use." }
+            ],
+            
+            specifications: {
+                "Display": "15-inch four-way rotating touch screen (AX-800)",
+                "Ventilation Accuracy": "7%",
+                "Circuit Leakage": "65ml/min (Low Leakage)",
+                "Circuit Sterilization": "Autoclavable",
+                "Modules": "AG, EtCO2, BIS (Plug-and-play)",
+                "Storage": "Rotatable and lockable roomy drawer"
+            }
         },
-            {
+        {
             id: 15,
             name: "AX600",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/253_9cbd8b1f8d.png",
-            price: 131000,
-            features: [
+            custom_url: "ax600",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/253_9cbd8b1f8d.png",
-            "https://alioss.comen.com/cms-v2/258_61bb5065ad.png",
-            "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
-            "https://alioss.comen.com/cms-v2/300_ffc844aadd.png",
-            "https://alioss.comen.com/cms-v2/256_3ae8ac77c0.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/299_7d92aa09c0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/257_cb384dad09.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_71e9428ca2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/AX_600_AX_700_A_AX_800_db082149ce.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/253_9cbd8b1f8d.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/253_9cbd8b1f8d.png",
+                "https://alioss.comen.com/cms-v2/258_61bb5065ad.png",
+                "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
+                "https://alioss.comen.com/cms-v2/300_ffc844aadd.png",
+                "https://alioss.comen.com/cms-v2/256_3ae8ac77c0.png"
+            ],
+            
+            short_description: "A versatile anesthesia workstation featuring a modular design, 12.1-inch rotating touch screen, and classic pneumatic drive electronic control for precise ventilation.",
+            key_highlights: [
+                "12.1-inch four-way rotating touch screen",
+                "Comprehensive Perioperative Ventilation Modes",
+                "Modular plug-and-play design (AG, EtCO2, BIS)",
+                "Classic Ascending Bellows Pneumatic Drive Electronic Control",
+                "Rotatable and lockable roomy drawer"
+            ],
+            
+            overview_text: "The AX-600 is a versatile anesthesia machine designed to provide safe and precise anesthesia delivery. It features a modular design, classic pneumatic drive electronic control technology, and a 12.1-inch four-way rotating touch screen for comfortable operation.",
+            
+            features: [
+                { title: "Rotatable Touch Screen", text: "AX-600 features a 12.1” four-way rotating touch screen, more comfortable for doctors of different heights in different positions to observe and operate, reducing work fatigue." },
+                { title: "Comprehensive Perioperative Ventilation Modes", text: "Provides four kinds of control ventilation modes, three kinds of SIMV modes and two kinds of pressure support ventilation modes, providing more professional ventilation modes for anesthesia induction, maintenance, recovery and spontaneous breath exercise." },
+                { title: "Modular Design", text: "Incorporates anesthesia-related monitoring functions such as AG, EtCO2, and BIS. The modular plug-and-play design enables resource sharing, reduces medical costs, and facilitates clinical work." },
+                { title: "Classic Pneumatic Drive Electronic Control", text: "The ascending bellows pneumatic electronic control technology provides a more compact circuit, realizing accurate ventilation, stable SIMV/PSV modes, and sharper triggering." },
+                { title: "Ergonomic & Practical Design", text: "Features a rotatable and lockable roomy drawer for exceptional storage capacity. An optional central brake system is available for time-saving and convenient use." }
+            ],
+            
+            specifications: {
+                "Display": "12.1-inch four-way rotating touch screen",
+                "Ventilation Accuracy": "7%",
+                "Circuit Leakage": "65ml/min (Low Leakage)",
+                "Circuit Sterilization": "Autoclavable",
+                "Modules": "AG, EtCO2, BIS (Plug-and-play)",
+                "Storage": "Rotatable and lockable roomy drawer"
+            }
         },
-            {
+        {
             id: 16,
-            name: "AX400/AX500",
+            name: "AX-400/AX-500",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/249_f7e3110f71.png",
-            price: 99344,
-            features: [
+            custom_url: "ax400-ax500",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/249_f7e3110f71.png",
-            "https://alioss.comen.com/cms-v2/248_79d9dd69ea.png",
-            "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
-            "https://alioss.comen.com/cms-v2/251_25403e9b52.png",
-            "https://alioss.comen.com/cms-v2/299_7d92aa09c0.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/252_22bc06605f.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_6f219e8678.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_50615d2206.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/AX_400_A_AX_500_A_6a79ff8d1c.pdf\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/249_f7e3110f71.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/249_f7e3110f71.png",
+                "https://alioss.comen.com/cms-v2/248_79d9dd69ea.png",
+                "https://alioss.comen.com/cms-v2/250_1_4a363d24fb.png",
+                "https://alioss.comen.com/cms-v2/251_25403e9b52.png",
+                "https://alioss.comen.com/cms-v2/299_7d92aa09c0.png"
+            ],
+            
+            short_description: "Versatile anesthesia workstations featuring a modular design, mechanical flowmeter, 12-inch touch screen, and classic pneumatic drive electronic control for precise ventilation.",
+            key_highlights: [
+                "12-inch high-resolution individual touch screen (AX-500)",
+                "Comprehensive Perioperative Ventilation Modes",
+                "Mechanical Flowmeter with dual flow tubes",
+                "Modular plug-and-play design (AG, EtCO2, BIS)",
+                "Classic Ascending Bellows Pneumatic Drive Electronic Control"
+            ],
+            
+            overview_text: "The AX-400 and AX-500 series are versatile anesthesia machines designed to provide safe and precise anesthesia delivery. They feature a modular design, classic pneumatic drive electronic control technology, a mechanical flowmeter, and a 12-inch high-resolution individual touch screen for comfortable and intuitive operation.",
+            
+            features: [
+                { title: "Individual Touch Screen", text: "The AX-500 features a 12-inch high-resolution screen that provides a clear and comfortable viewing experience. Its intuitive interface presents vital information in a clean, organized layout." },
+                { title: "Comprehensive Perioperative Ventilation Modes", text: "Provides four kinds of control ventilation modes, three kinds of SIMV modes and two kinds of pressure support ventilation modes, providing more professional ventilation modes for anesthesia induction, maintenance, recovery and spontaneous breath exercise." },
+                { title: "Modular Design", text: "Optional BIS, AG, and CO2 modules. Automatically identifies CO2, N2O, and 5 anesthetic gases. Supports real-time O2 concentration monitoring and allows monitoring modules to be shared with modular monitors." },
+                { title: "Mechanical Flowmeter", text: "Individual flow controls with dual flow tubes provide simple, precise control, facilitating easy and accurate minimal/low flow anesthesia. A 3-gas with 6-tubes flowmeter is optional." },
+                { title: "Classic Pneumatic Drive Electronic Control", text: "The ascending bellows pneumatic electronic control technology provides a more compact circuit, realizing accurate ventilation, stable SIMV/PSV modes, and sharper triggering." },
+                { title: "Safety & Ergonomics", text: "Features a one-hand installation CO2 absorber canister that supports replacement during operation. An optional closed-type active scavenging system (AGSS) effectively removes anesthesia gas from the working area." }
+            ],
+            
+            specifications: {
+                "Display": "12-inch high-resolution touch screen (AX-500)",
+                "Ventilation Accuracy": "7%",
+                "Circuit Leakage": "65ml/min (Low Leakage)",
+                "Flowmeter": "Mechanical with dual flow tubes (3-gas with 6-tubes optional)",
+                "Modules": "AG, EtCO2, BIS (Plug-and-play)",
+                "CO2 Absorber": "One-hand installation, replaceable during operation"
+            }
         },
-            {
+        {
             id: 17,
             name: "A5/A7",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/356_3c5159f081.png",
-            price: 80000,
-            features: [
+            custom_url: "a5-a7",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/356_3c5159f081.png",
-            "https://alioss.comen.com/cms-v2/357_a70c190e77.png",
-            "https://alioss.comen.com/cms-v2/358_1_c605bfb47c.png",
-            "https://alioss.comen.com/cms-v2/359_bc6e0aea32.png",
-            "https://alioss.comen.com/cms-v2/360_9b9b03c466.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/361_3e0b141cc1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/365_cfbf748455.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/8_7bacfdfffe.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/370_cfcc4a4362.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/369_bf58ae0cdb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/356_3c5159f081.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/356_3c5159f081.png",
+                "https://alioss.comen.com/cms-v2/357_a70c190e77.png",
+                "https://alioss.comen.com/cms-v2/358_1_c605bfb47c.png",
+                "https://alioss.comen.com/cms-v2/359_bc6e0aea32.png",
+                "https://alioss.comen.com/cms-v2/360_9b9b03c466.png"
+            ],
+            
+            short_description: "An ergonomic anesthesia machine providing comprehensive ventilation support, smart modular design, and powerful data storage for efficient perioperative care.",
+            key_highlights: [
+                "8.4-inch touch screen with smart pulmonary loop",
+                "PSVPro innovative pressure support ventilation mode",
+                "Three-slot smart modular design (AG+O2, BIS, CO2, NMT)",
+                "Highly integrated breathing circuit for compact & precise ventilation",
+                "Powerful Data Storage with AIMS interconnection"
+            ],
+            
+            overview_text: "The A7 anesthesia machine provides comprehensive ventilation support with intelligent and ergonomic operating design, serving as an optimal assistant during perioperative procedures. It features a highly integrated breathing circuit and advanced modular options for continuous patient monitoring.",
+            
+            features: [
+                { title: "Comprehensive Ventilation Support", text: "Various ventilation modes satisfy different clinical needs during the perioperation, providing comfortable, safe, and efficient support. Features PSVPro, an innovative mode designed to give smarter and more efficient pressure support." },
+                { title: "Compact & Precise Breathing Circuit", text: "The highly integrated breathing circuit design reduces air resistance and combines with fresh gas compensation technology to provide precise ventilation for both adult and child patients." },
+                { title: "Smart Modular Design", text: "Features a three-slot modular design supporting AG+O2, AG, BIS, CO2, NMT, and high-end parameters monitoring. Anesthetic gas is automatically recognized with calculation, and values/waveforms are displayed synchronously." },
+                { title: "Unlimited Possibilities", text: "Includes Flush O2 for high flow oxygen, an Auxiliary Common Gas Outlet (ACGO) to avoid cross-infection, and an AGSS to safely exhaust waste gas. A mounted rail supports an external GCX bracket." },
+                { title: "Ergonomic Operation Platform", text: "Features an 8.4-inch touch screen that displays up to five waveforms simultaneously. A smart pulmonary loop aids real-time monitoring, while a 0-15 l/min dual-channel mechanical flowmeter allows wider flow adjustment. A three-drawer design offers extensive storage." },
+                { title: "Powerful Data Storage", text: "The data system supports 2000 setting logs and 60 hours of data review. A backup battery lasts up to 6 hours. Interconnection with AIMS allows dynamic information tracking throughout the anesthetic period." }
+            ],
+            
+            specifications: {
+                "Display": "8.4-inch touch screen, up to 5 waveforms",
+                "Ventilation Modes": "PSVPro and various other modes",
+                "Modules": "Three-slot design (AG+O2, AG, BIS, CO2, NMT)",
+                "Flowmeter": "0-15 l/min dual-channel mechanical flowmeter",
+                "Data Storage": "2000 setting logs, 60 hours data review",
+                "Battery Backup": "Up to 6 hours"
+            }
         },
-            {
+        {
             id: 18,
             name: "AGSS-H/AGSS-L",
             brand: "COMEN",
             category: "Anesthesia Machine",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/image_png_8c609840ee.png",
-            price: 76517,
-            features: [
+            custom_url: "agss-h-agss-l",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/image_png_8c609840ee.png",
-            "https://alioss.comen.com/cms-v2/image_png_1_14541d267b.png",
-            "https://alioss.comen.com/cms-v2/image_png_2_851c7fd3eb.png",
-            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
-            "https://alioss.comen.com/cms-v2/8_1e470a31ae.png"
-        ]
+            image: "https://alioss.comen.com/cms-v2/image_png_8c609840ee.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/image_png_8c609840ee.png",
+                "https://alioss.comen.com/cms-v2/image_png_1_14541d267b.png",
+                "https://alioss.comen.com/cms-v2/image_png_2_851c7fd3eb.png",
+                "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+                "https://alioss.comen.com/cms-v2/8_1e470a31ae.png"
+            ],
+            
+            short_description: "An efficient Anesthetic Gas Scavenging System that safely removes hazardous waste gases and protects healthcare workers, requiring no power or chemical consumables.",
+            key_highlights: [
+                "AGSS-H suitable for high-velocity exhaust gas pipes (>75 L/min)",
+                "AGSS-L suitable for low-velocity exhaust gas pipes (<50 L/min)",
+                "Effectively removes high-risk gases (N2O, sevoflurane, isoflurane)",
+                "Compatible with all major brands of anesthesia machines",
+                "Physical gas absorption with no gas/power supply required"
+            ],
+            
+            overview_text: "The AGSS-H and AGSS-L are Anesthetic Gas Scavenging Systems designed to effectively remove waste anesthetic gases in conjunction with hospital exhaust pipes. They protect healthcare workers from the hazards of exhaled gases like N2O and isoflurane while reducing circuit ventilation abnormalities.",
+            
+            features: [
+                { title: "Effective Gas Removal", text: "Effectively removes intermittent waste anesthetic gases (exhaled gas and driving gas) in conjunction with hospital anesthetic gas exhaust pipes, protecting staff from toxicity." },
+                { title: "Reduces Ventilation Abnormalities", text: "Effectively reduces circuit ventilation abnormalities caused by negative pressure in the exhaust gas ducts." },
+                { title: "Broad Compatibility", text: "Provides corresponding connection solutions for all major brands of anesthesia machines. Compatible with jet AGS ducts, negative-pressure AGS ducts, or negative-pressure ducts for high- and low-velocity exhaust gas ducts." },
+                { title: "Cost-Effective & Maintenance-Free", text: "Absorbs gas through physical means, requiring no gas supply, power supply, or chemical consumables. Ready for use with a simple commissioning process." },
+                { title: "Mitigates Health Hazards", text: "Prevents leaks of inhaled anesthetics known to have mutagenicity, carcinogenicity, organ toxicity, and significant impacts on fertility and psychological well-being." }
+            ],
+            
+            specifications: {
+                "AGSS-H Flow Rate Target": "> 75 L/min",
+                "AGSS-L Flow Rate Target": "< 50 L/min",
+                "Compatibility": "All major anesthesia machine brands",
+                "Operation Principle": "Physical gas absorption (No power/consumables required)"
+            }
         },
-            {
+        {
             id: 19,
             name: "MR-M80T/MR-M60T",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/product_6afe6e94c3.png",
-            price: 175251,
-            images: [
-            "https://alioss.comen.com/cms-v2/product_6afe6e94c3.png",
-            "https://alioss.comen.com/cms-v2/mri_environment_b508bccf36.jpg",
-            "https://alioss.comen.com/cms-v2/magnetic_field_41ae876f02.png",
-            "https://alioss.comen.com/cms-v2/full_chain_0ef9130279.png",
-            "https://alioss.comen.com/cms-v2/fiber_optic_icon_a2dd491122.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/shielding_icon_7ed4a775c0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/filtering_icon_cd8e8cd1ca.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/monitor_detail_564cf0d772.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/screen_spec_99d29363ff.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/ecg_leadwire_1096524de4.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "mr-m80t-mr-m60t",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/product_6afe6e94c3.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/product_6afe6e94c3.png",
+                "https://alioss.comen.com/cms-v2/mri_environment_b508bccf36.jpg",
+                "https://alioss.comen.com/cms-v2/magnetic_field_41ae876f02.png",
+                "https://alioss.comen.com/cms-v2/full_chain_0ef9130279.png",
+                "https://alioss.comen.com/cms-v2/fiber_optic_icon_a2dd491122.png"
+            ],
+            
+            short_description: "MRI-compatible patient monitors featuring full-chain magnetic-safe design, fiber-optic transmission, and full-HD touchscreens for continuous care in high-field environments.",
+            key_highlights: [
+                "1.5T/3.0T high-field MRI compatibility",
+                "Full-chain magnetic-safe design to reduce projectile hazards",
+                "Three layers of anti-interference technology",
+                "18.5-inch (MR-M80T) / 15.6-inch (MR-M60T) full-HD touchscreens",
+                "Remote Monitoring and Dual-Screen Collaboration"
+            ],
+            
+            overview_text: "The MR-M80T and MR-M60T are advanced patient monitors purpose-built for 1.5T/3.0T high-field MRI environments. With a full-chain magnetic-safe design and real-time magnetic field indication, they provide continuous, safe, and accurate monitoring during MRI examinations.",
+            
+            features: [
+                { title: "Magnetic-Safe Innovation", text: "Purpose-built for 1.5T/3.0T MRI environments. The main unit operates safely in ≤60 mT fields, while acquisition boxes function in 3.0T fields without affecting image quality. Real-time magnetic field indication supports safer positioning." },
+                { title: "Full-Chain Magnetic-Safe Design", text: "Internal components, housing, sensors, and probes are magnetic-safe, minimizing risks like magnetic attraction or projectile hazards. Integrates fiber-optic transmission, multi-layer electromagnetic shielding, and adaptive filtering." },
+                { title: "Full-Parameter Monitoring", text: "MR-M80T features an 18.5-inch full-HD touchscreen (1920 × 1080), and MR-M60T features a 15.6-inch full-HD touchscreen. Both offer a clear sight of vital parameters." },
+                { title: "MRI-Specific Accessories", text: "Includes high-impedance MR ECG leadwires, carbon fiber MR ECG electrodes, and fiber-optic MR SpO2/Temperature probes to reduce image interference, artifacts, and induced burn risks." },
+                { title: "Efficient Information Interconnection", text: "The main unit and MR-M10 remote display enable synchronized observation and operation between the control room and shielded room, reducing unnecessary entry into the MRI room and improving workflow safety." }
+            ],
+            
+            specifications: {
+                "Display": "18.5-inch (MR-M80T) / 15.6-inch (MR-M60T) full-HD touchscreen (1920 × 1080)",
+                "MRI Compatibility": "1.5T / 3.0T high-field MRI",
+                "Anti-Interference": "Fiber-optic, multi-layer shielding, adaptive filtering",
+                "Accessories": "Magnetic-safe MR ECG, SpO2, and Temperature probes",
+                "Remote Collaboration": "Supported with MR-M10 remote display"
+            }
         },
-            {
+        {
             id: 20,
             name: "K Pro Series",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "assets/images/products/k-pro-series-1.png",
-            price: 152096,
-            features: [
+            custom_url: "k-pro-series",
             
-        ],
-            images: [
-            "assets/images/products/k-pro-series-1.png",
-            "assets/images/products/k-pro-series-2.png",
-            "assets/images/products/k-pro-series-3.png",
-            "assets/images/products/k-pro-series-4.png"
-        ]
+            image: "assets/images/products/k-pro-series-1.png",
+            gallery: [
+                "assets/images/products/k-pro-series-1.png",
+                "assets/images/products/k-pro-series-2.png",
+                "assets/images/products/k-pro-series-3.png",
+                "assets/images/products/k-pro-series-4.png"
+            ],
+            
+            short_description: "An advanced ICU multiparameter patient monitor featuring high-definition touchscreens, cutting-edge arrhythmia classification, scalable modular expansions, and seamless connectivity.",
+            key_highlights: [
+                "High-definition capacitive touchscreen with auto-brightness",
+                "27 arrhythmia classifications for precise rhythm assessment",
+                "Scalable modular expansions for Neurology, Respiratory, and Circulatory Monitoring",
+                "Seamless connectivity with HIS (HL7), Central Monitors, and Klink",
+                "24-hour ECG summary including HR trends and QT variations"
+            ],
+            
+            overview_text: "The K Pro Series intensive care unit monitor is designed with advanced technology, intelligent data integration, and an intuitive user experience to empower healthcare professionals and enhance patient safety in critical care environments.",
+            
+            features: [
+                { title: "Precision Monitoring with Clear Visibility", text: "Features a high-definition capacitive touchscreen with a 7:1 contrast ratio (WCAG 2.0 AAA standards). Auto-brightness adjustment minimizes glare, adapting to lighting conditions in ORs, ICUs, and emergency settings. Intelligent gesture controls allow effortless navigation." },
+                { title: "Cutting-Edge Cardiac Monitoring", text: "Integrates advanced monitoring parameters, including 27 arrhythmia classifications, QT/QTc monitoring to reduce sudden cardiac events, 6-lead ECG, and 24-hour ECG summaries detailing HR trends, QT variations, and pacemaker analysis." },
+                { title: "Scalable Modular Expansions", text: "Offers modular expansions for diverse clinical needs: Neurology (BIS, SedLine, EEG, aEEG, Masimo O3), Respiratory (RM, EtCO2, O2, Anesthesia Gas), and Circulatory Monitoring (C.O., ICG, PiCCO, ProAQT, Masimo Rainbow SET)." },
+                { title: "Seamless Information Integration", text: "Built for real-time data exchange ensuring smooth workflow. Supports direct HIS connection (HL7), centralized display via Central Monitor Systems, and seamless 'Klink' interconnection for real-time display of anesthesia machines, ventilators, and infusion systems." }
+            ],
+            
+            specifications: {
+                "Display Interface": "High-definition capacitive touchscreen, Auto-brightness, 7:1 contrast ratio",
+                "Cardiac Monitoring": "27 Arrhythmia classifications, QT/QTc, 6-lead ECG, 24-hour summary",
+                "Modular Expansions": "Neurology, Respiratory, and Circulatory parameters",
+                "Connectivity": "HIS (HL7), Central monitor system, Klink integration"
+            }
         },
-            {
+        {
             id: 21,
             name: "K22 Pro",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_f7d611d94a.png",
-            price: 41000,
-            features: [
+            custom_url: "k22-pro",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_f7d611d94a.png",
-            "https://alioss.comen.com/cms-v2/124_24e9de547f.png",
-            "https://alioss.comen.com/cms-v2/13_png_d192532fd6.png",
-            "https://alioss.comen.com/cms-v2/128_76fff78f85.png",
-            "https://alioss.comen.com/cms-v2/129_f5abe4cff1.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/130_c3eebbb906.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/133_761cb6df58.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/134_2f60f0ab1c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/132_21eff566a1.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/131_9ebe31e259.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_f7d611d94a.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_f7d611d94a.png",
+                "https://alioss.comen.com/cms-v2/124_24e9de547f.png",
+                "https://alioss.comen.com/cms-v2/13_png_d192532fd6.png",
+                "https://alioss.comen.com/cms-v2/128_76fff78f85.png",
+                "https://alioss.comen.com/cms-v2/129_f5abe4cff1.png"
+            ],
+            
+            short_description: "An expansive, fully modular 21.5-inch patient monitor featuring dual-OS support, embedded clinical tools like SepsisGuide, and seamless data connectivity across care settings.",
+            key_highlights: [
+                "21.5-inch Capacitive Touchscreen with Portrait & Landscape Modes",
+                "Fully modular with up to 8 slots + Z03 plug-in",
+                "Embedded Clinical Tools (SepsisGuide, EWS, GCS, ST Graphic)",
+                "Dual-OS Support (Linux & Windows) for advanced data processing",
+                "Seamless K-Link multi-device integration and HL7 compliance"
+            ],
+            
+            overview_text: "The K22 Pro is a fully modular patient monitor designed to deliver expansive and intuitive clinical support. With its 21.5-inch touchscreen, dual-OS support, and extensive clinical tools, it ensures precision monitoring across Emergency, OR, ICU, and Anesthesia environments.",
+            
+            features: [
+                { title: "Expansive, Intuitive Display", text: "Features a 21.5″ capacitive touchscreen with an intuitive UI and ergonomic design. Effortlessly switch between portrait and landscape modes to focus on detailed trends or display up to 16 channels at once." },
+                { title: "Fully Modular Design", text: "Customizable monitoring with up to 8 slots + Z03 plug-in. Easily scale capabilities with cardiac, gas-analysis, neuro, respiratory, and specialty modules as clinical needs evolve." },
+                { title: "Versatile Clinical Applications", text: "Ideal for Emergency & OR (seamless data handover with K1 transport monitor), ICU & NICU (Masimo Rainbow SET, dual SpO₂, apnea-wake technology), and Anesthesia Suites (optional Anesthesia Gas, NMT, BIS, SedLine®, Masimo O3)." },
+                { title: "Embedded Clinical Support Tools", text: "Includes SepsisGuide (SSC-aligned checklist), Early Warning Score (EWS) for automated risk stratification, Glasgow Coma Scale (GCS) tracking, and ST Graphic for quick assessment of ST segment elevations." },
+                { title: "Seamless Data Connectivity", text: "HL7-compliant for smooth integration with HIS, LIS, EMR, and PACS. Features K-Link multi-device integration, Central Monitoring via eCenter-CMS, and Dual-OS support (Linux & Windows) for native Windows applications." }
+            ],
+            
+            specifications: {
+                "Display": "21.5-inch capacitive touchscreen, Portrait & Landscape modes",
+                "Modularity": "Up to 8 slots + Z03 plug-in",
+                "Clinical Tools": "SepsisGuide, EWS, GCS, ST Graphic",
+                "OS Support": "Dual-OS (Linux & Windows)",
+                "Connectivity": "HL7, K-Link, eCenter-CMS integration"
+            }
         },
-            {
+        {
             id: 22,
             name: "K1",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_acf13457da.png",
-            price: 37000,
-            features: [
+            custom_url: "k1",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_acf13457da.png",
-            "https://alioss.comen.com/cms-v2/SYO_01763_5f5b5668f0.png",
-            "https://alioss.comen.com/cms-v2/A8_D_3852_4dbe465a79.png",
-            "https://alioss.comen.com/cms-v2/SYO_02440_8b9d3fa849.png",
-            "https://alioss.comen.com/cms-v2/SYO_02494_72504953c1.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/107_f0826ffa14.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/120_da58fa75c6.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/123_c7b4304d1b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/121_ac12fb9a01.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/122_1ae2b88acc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_acf13457da.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_acf13457da.png",
+                "https://alioss.comen.com/cms-v2/SYO_01763_5f5b5668f0.png",
+                "https://alioss.comen.com/cms-v2/A8_D_3852_4dbe465a79.png",
+                "https://alioss.comen.com/cms-v2/SYO_02440_8b9d3fa849.png",
+                "https://alioss.comen.com/cms-v2/SYO_02494_72504953c1.png"
+            ],
+            
+            short_description: "A highly portable, cutting-edge emergency and transport patient monitor featuring a 5.5-inch touchscreen, 10-hour battery life, and IP44 ingress protection for reliable prehospital and in-hospital care.",
+            key_highlights: [
+                "5.5-inch capacitive touchscreen with 1280×720 resolution",
+                "Conforms to EN1789 out-of-hospital transport standards",
+                "IP44 Ingress Protection against dust and water splashes",
+                "Up to 10 hours of uninterrupted battery life",
+                "Seamless data transfer to K12Pro, K15Pro, K18Pro, K22Pro"
+            ],
+            
+            overview_text: "The K1 is a cutting-edge emergency and transport patient monitor designed for seamless patient care across multiple hospital settings. Whether in the ICU, OR, Emergency Department, or General Ward, the K1 adapts effortlessly to offer robust monitoring solutions for all patient acuities.",
+            
+            features: [
+                { title: "Robust & Portable", text: "Lightweight and compact design makes it easy to carry. Features a 5.5-inch capacitive touchscreen (1280×720) with a robust structure for stability." },
+                { title: "Prehospital & In-Hospital Reliability", text: "Conforms to EN1789 out-of-hospital transport standards and features IP44 Ingress Protection against dust and water splashes, ensuring reliability in challenging environments." },
+                { title: "Long-Lasting Battery", text: "Operates for up to 10 hours for uninterrupted patient monitoring during transport." },
+                { title: "Advanced Clinical Applications", text: "Provides essential measurements (3/5-lead ECG, NIBP, SpO₂, IBP, Temp, Resp) and intelligent Clinical Support Tools like EWS, GCS, SepsisGuide, CCHD, and ECG 24H Summary." },
+                { title: "Scalable Advanced Parameters", text: "Available with a module rack & docking station for Hemodynamic Monitoring (Masimo Rainbow SET, IBP, C.O.), Respiratory (Apnea Wake-Up, RM), Neurology (NMT, SedLine, BIS), and Gas Analysis (Anesthetic Gas, EtCO₂)." },
+                { title: "Seamless Connectivity", text: "Ensures real-time patient data access via Wi-Fi and wired connectivity. Supports seamless data transfer to K-Pro series monitors and effortless HIS integration via HL7 protocol." }
+            ],
+            
+            specifications: {
+                "Display": "5.5-inch capacitive touchscreen (1280×720)",
+                "Battery Life": "Up to 10 hours",
+                "Transport Standard": "EN1789 Certified",
+                "Ingress Protection": "IP44",
+                "Connectivity": "Wi-Fi, Wired, HL7, K-Pro series data transfer"
+            }
         },
-            {
+        {
             id: 23,
             name: "NMPro Series",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_54c73e66f6.png",
-            price: 148492,
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_54c73e66f6.png",
-            "https://alioss.comen.com/cms-v2/5_9efb843e52.png",
-            "https://alioss.comen.com/cms-v2/Screenshot_d00ae0e7_d42a_4a3d_9d28_22d4b9f7840b_476349183c.png",
-            "https://alioss.comen.com/cms-v2/12_png_0eff9f5fb8.png",
-            "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/4_89c4d1a43c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "nmpro-series",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_54c73e66f6.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_54c73e66f6.png",
+                "https://alioss.comen.com/cms-v2/5_9efb843e52.png",
+                "https://alioss.comen.com/cms-v2/Screenshot_d00ae0e7_d42a_4a3d_9d28_22d4b9f7840b_476349183c.png",
+                "https://alioss.comen.com/cms-v2/12_png_0eff9f5fb8.png",
+                "https://alioss.comen.com/cms-v2/17_6f219e8678.png"
+            ],
+            
+            short_description: "A versatile semi-modular patient monitor featuring high-resolution displays, plug-and-play advanced modules, and comprehensive clinical decision support tools.",
+            key_highlights: [
+                "The Perfect Blend of Compactness and Modularity",
+                "High-resolution display for enhanced sensitivity and clarity",
+                "Plug-and-Play Advanced Modules (CO2, C.O., ICG, AG, BIS, NMT, RM)",
+                "Integrated Clinical Decision Support (24-hour ECG, SepsisGuide, CCHD, EWS, GCS)",
+                "Seamless integration with EMR, HIS, and PACS via standard HL7 protocol"
+            ],
+            
+            overview_text: "The NMPro Series is a semi-modular patient monitor that offers the perfect blend of compactness and modularity. With a high-resolution display and customizable advanced modules, it ensures flexible, accurate, and dynamic patient monitoring across various departments.",
+            
+            features: [
+                { title: "Flexible Monitoring, Smart Support", text: "Provides accurate, essential parameters (ECG, SpO2, temp, NIBP, respiration). Plug-and-play modules allow seamless integration of advanced parameters to meet specific clinical needs." },
+                { title: "Comprehensive Decision Support", text: "Integrated clinical tools like 24-hour ECG summaries, SepsisGuide, CCHD, EWS, and GCS recording empower healthcare teams to make informed, timely decisions." },
+                { title: "Emergency Department Versatility", text: "Allows for quick customization, providing basic monitoring and rapid integration of advanced modules (e.g., NMT, Masimo Rainbow SET, BIS) for varied patient conditions." },
+                { title: "Intensive Care Unit (ICU) Applications", text: "Perfect for continuous, dynamic monitoring. Its modularity enables the addition of advanced parameters for patients with complex conditions." },
+                { title: "Operating Room (OR) Decision Making", text: "Supports advanced parameters like NMT, BIS, and AG, providing surgeons with crucial data for circulation, anesthesia, and neuromuscular function." },
+                { title: "Seamless Integration into Hospital Systems", text: "Enables real-time transmission of patient data to Central Monitoring Stations (CMS) and seamless integration with EMR, HIS, and PACS via HL7 protocol for enhanced care coordination." }
+            ],
+            
+            specifications: {
+                "Display": "High-resolution display for immersive viewing",
+                "Modularity": "Semi-modular, Plug-and-Play Advanced Modules",
+                "Clinical Tools": "24-hour ECG, SepsisGuide, CCHD, EWS, GCS",
+                "Department Uses": "ED, ICU, OR",
+                "Connectivity": "HL7, EMR, HIS, PACS, CMS"
+            }
         },
-            {
+        {
             id: 24,
             name: "N Series",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_1dd4ae416c.png",
-            price: 88000,
-            features: [
+            custom_url: "n-series",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_1dd4ae416c.png",
-            "https://alioss.comen.com/cms-v2/5_68569a6fa9.png",
-            "https://alioss.comen.com/cms-v2/_30d1953c24.png",
-            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
-            "https://alioss.comen.com/cms-v2/4_87296cd048.png"
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_1dd4ae416c.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_1dd4ae416c.png",
+                "https://alioss.comen.com/cms-v2/5_68569a6fa9.png",
+                "https://alioss.comen.com/cms-v2/_30d1953c24.png",
+                "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+                "https://alioss.comen.com/cms-v2/4_87296cd048.png"
+            ],
+            
+            short_description: "An intuitive all-in-one patient monitor series featuring high-resolution touchscreens, advanced clinical algorithms, and specialized transport capabilities (N10).",
+            key_highlights: [
+                "High-Resolution Touchscreen with Smart Brightness Control",
+                "Built-in parameters: ECG, NIBP, SpO₂, EtCO₂, Dual-IBP, and C.O.",
+                "Integrated Clinical Decision Support (EWS, SepsisGuide, GCS, CCHD)",
+                "Advanced SiQ™ Pulse Oximetry and Smart NBP™",
+                "N10 Transport Model: EN 1789 certified, 3.65 kg, 6-hour battery"
+            ],
+            
+            overview_text: "The N Series patient monitors inspire simple and intuitive monitoring. Featuring high-resolution touchscreens, advanced clinical algorithms, and a comprehensive all-in-one suite, they are designed to provide complete insight and support robust clinical decision-making.",
+            
+            features: [
+                { title: "Ergonomic, Intuitive Interface", text: "Choose from three screen dimensions to simultaneously view up to 12 traces. Ambient-light sensors automatically adjust screen luminosity, reducing eye strain in dimmed ICUs or bright emergency bays." },
+                { title: "All-in-One Monitoring Suite", text: "Delivers compact care with built-in ECG, NIBP, SpO₂, EtCO₂, Dual-IBP, and Cardiac Output—no extra modules required. Features evidence-based tools including EWS, SepsisGuide, GCS, CCHD, 24-hour ECG summary, and 12-lead Glasgow resting analysis." },
+                { title: "Advanced Clinical Algorithms", text: "Includes SiQ™ Pulse Oximetry for accurate tracking even in <0.2% perfusion, motion-resistant Smart NBP™ validated down to neonates, and an Enhanced ECG Suite (optional 3/5/6/12-lead, 27-class arrhythmia detection, ST/QT analysis, HRV)." },
+                { title: "N10: Designed for Transport", text: "The N10 model weighs just 3.65 kg and offers up to 6 hours of continuous battery life with DC charging. EN 1789 certified with 0.75 m drop resistance, making it ideal for intra-facility transfers and ambulances." },
+                { title: "Ready-to-Go Rescue Bag", text: "Securely dock the N10 monitor in its custom-fitted bag. Access all controls without removal for a truly grab-and-run emergency response." }
+            ],
+            
+            specifications: {
+                "Display": "High-Resolution Touchscreen (up to 12 traces)",
+                "Built-in Parameters": "ECG, NIBP, SpO₂, EtCO₂, Dual-IBP, C.O.",
+                "Algorithms": "SiQ™ Pulse Oximetry, Smart NBP™, Enhanced ECG Suite",
+                "N10 Transport Features": "3.65 kg, 6-hr battery, EN 1789, 0.75m drop resistance",
+                "Clinical Tools": "EWS, SepsisGuide, GCS, CCHD, Glasgow analysis"
+            }
         },
-            {
+        {
             id: 25,
             name: "ND Series",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_990b628e04.png",
-            price: 130276,
-            features: [
+            custom_url: "nd-series",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_990b628e04.png",
-            "https://alioss.comen.com/cms-v2/135_ab76dbf4ec.png",
-            "https://alioss.comen.com/cms-v2/136_7e9648a374.png",
-            "https://alioss.comen.com/cms-v2/5_f2b6acd1a3.png",
-            "https://alioss.comen.com/cms-v2/138_ae735326c0.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/139_b46058dc01.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/10_png_8f93cb7158.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/141_e2d246206d.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/6_3984481abb.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/143_66726e8723.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_990b628e04.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_990b628e04.png",
+                "https://alioss.comen.com/cms-v2/135_ab76dbf4ec.png",
+                "https://alioss.comen.com/cms-v2/136_7e9648a374.png",
+                "https://alioss.comen.com/cms-v2/5_f2b6acd1a3.png",
+                "https://alioss.comen.com/cms-v2/138_ae735326c0.png"
+            ],
+            
+            short_description: "A versatile, user-friendly patient monitor featuring an effortless 3-tap workflow, intelligent clinical support tools, and seamless data connectivity across multiple display sizes.",
+            key_highlights: [
+                "Effortless 3-tap workflow and swipe interfaces (UI from KProSeries)",
+                "Versatile display sizes (10″/12″/15″) with 10° comfort-first tilt",
+                "Intelligent Clinical Support: EWS, CCHD, SepsisGuide™, 24h ECG Summary",
+                "Portable and wall-mountable design for accessibility everywhere",
+                "Unified monitoring via eCenter-CMS and HL7 V2.6 HIS integration"
+            ],
+            
+            overview_text: "The ND Series patient monitor values simplicity while maximizing care. Featuring an effortless 3-tap workflow and versatile display options, it delivers intelligent clinical support and seamless data connectivity for any healthcare environment.",
+            
+            features: [
+                { title: "Effortless Operation", text: "Complete any task within three taps to prevent training overload, using an intuitive UI inherited from the KProSeries. Swipe interfaces allow quick access to four tailored screens." },
+                { title: "Clinical Convenience Design", text: "Available in three model sizes (10″/12″/15″) to ensure optimal visibility. A 10° tilt feature provides a clear, glare-free view to reduce caregiver fatigue, while a flip-out cabinet board ensures effortless cable management." },
+                { title: "Intelligent Clinical Support", text: "Includes predictive Early Warning Scores (EWS), Critical Congenital Heart Disease (CCHD) screening for neonates, real-time SepsisGuide™ analytics, and 24-hour ECG activity statistics." },
+                { title: "Advanced Algorithms & Data Logging", text: "Combines basic and advanced monitoring for predictive risk stratification. Robust data logging helps detect critical conditions like CCHD in neonates." },
+                { title: "Accessibility Everywhere", text: "Portable by design with a lightweight form and built-in handle for seamless inter-unit transfers. Can also be securely wall-mounted via a GCX arm to save space and enhance bedside visibility." },
+                { title: "Seamless Data Connectivity", text: "Achieve unified monitoring through eCenter-CMS to view and control bedside monitors in real time. Enjoy instant, bi-directional data exchange with your hospital information system via HL7 V2.6 compatibility." }
+            ],
+            
+            specifications: {
+                "Display Sizes": "10-inch / 12-inch / 15-inch options with 10° tilt",
+                "Interface": "3-tap workflow, Swipe interfaces",
+                "Clinical Support": "EWS, CCHD, SepsisGuide™, 24h ECG",
+                "Design": "Portable with built-in handle, Wall-mountable (GCX arm)",
+                "Connectivity": "eCenter-CMS, HL7 V2.6 bidirectional integration"
+            }
         },
-            {
+        {
             id: 26,
             name: "eCenter-CMS",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "assets/images/products/ecenter-cms-1.png",
-            price: 92380,
-            images: [
-            "assets/images/products/ecenter-cms-1.png",
-            "assets/images/products/ecenter-cms-2.png",
-            "assets/images/products/ecenter-cms-3.png",
-            "assets/images/products/ecenter-cms-4.png"
-        ],
-            features: [
+            custom_url: "ecenter-cms",
             
-        ]
+            image: "assets/images/products/ecenter-cms-1.png",
+            gallery: [
+                "assets/images/products/ecenter-cms-1.png",
+                "assets/images/products/ecenter-cms-2.png",
+                "assets/images/products/ecenter-cms-3.png",
+                "assets/images/products/ecenter-cms-4.png"
+            ],
+            
+            short_description: "An all-in-one central monitoring solution offering comprehensive patient oversight across departments via Central Stations, Workstations, web-based View Stations, and Mobile apps.",
+            key_highlights: [
+                "All-in-one Central Monitoring Solution",
+                "Seamless integration across multiple medical devices",
+                "Effortless scalability for hospital expansion",
+                "Mobile Station for real-time access on smartphones or tablets",
+                "Tailored solutions for different roles: IT, managers, and clinicians"
+            ],
+            
+            overview_text: "eCenter-CMS offers unparalleled functionality to healthcare professionals for efficient workflow and centralized monitoring, putting patient information at their fingertips. It enhances responsiveness and ensures timely, accurate medical attention to significantly improve care outcomes.",
+            
+            features: [
+                { title: "Central Station", text: "Tailored for in-depth monitoring in a single department. Empowers you with comprehensive basic operations and diverse interoperability. The unique patient grouping feature categorizes patients based on clinical focus or attending physician." },
+                { title: "Workstation", text: "Perfect for facilities with multiple units. Enables patient information to flow across multiple departments, enhancing patient management, multi-bed monitoring, and remote-control functionalities. Supports data review and system management." },
+                { title: "View Station", text: "Tailored for IT and hospital administrative workers. Offers a unique web interface for accessing patient monitoring data from multiple network-connected bedside devices directly from an office PC. Features system maintenance for effective management of organizational structures and user roles." },
+                { title: "eCenter Viewer", text: "Access real-time patient information from anywhere. Can be positioned in lounges or corridors to display patient information from one or multiple Central Stations, giving managers critical insights to strategically allocate human resources." },
+                { title: "Mobile Station", text: "Redefines patient information access on your fingertips. The perfect tool for on-hospital and off-hospital monitoring via smartphone or pad. Enables access to real-time data, reviews, alarms, and trends for informed decisions anywhere." },
+                { title: "Seamless Device Integration", text: "Connects multiple medical devices to offer a comprehensive view of patients' status from various sources, moving beyond traditional single-unit monitoring." }
+            ],
+            
+            specifications: {
+                "Software Modules": "Central Station, Workstation, View Station, eCenter Viewer, Mobile Station",
+                "Integration": "Seamless connection across multiple medical devices",
+                "Accessibility": "PC, Web interface, Smartphone/Pad (Mobile Station)",
+                "Scalability": "Effortless scalability across departments"
+            }
         },
-            {
+        {
             id: 27,
-            name: "NC6 &amp; NC7",
+            name: "NC6 & NC7",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_7431e37775.png",
-            price: 101126,
-            features: [
+            custom_url: "nc6-and-nc7",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_7431e37775.png",
-            "https://alioss.comen.com/cms-v2/6_png_0a0f0f6b08.png",
-            "https://alioss.comen.com/cms-v2/pic7_76f55aa900.png",
-            "https://alioss.comen.com/cms-v2/pic9_e259a715d6.png",
-            "https://alioss.comen.com/cms-v2/148_74525ce13f.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/150_c1f8154ebc.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/149_c115c7c9c9.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic16_bf58eb7ff2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/pic15_638483948e.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/145_b1599b3c3b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_7431e37775.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_7431e37775.png",
+                "https://alioss.comen.com/cms-v2/6_png_0a0f0f6b08.png",
+                "https://alioss.comen.com/cms-v2/pic7_76f55aa900.png",
+                "https://alioss.comen.com/cms-v2/pic9_e259a715d6.png",
+                "https://alioss.comen.com/cms-v2/148_74525ce13f.png"
+            ],
+            
+            short_description: "A fast and precise vital signs monitor offering rapid NIBP, comprehensive respiratory tracking, flexible temperature monitoring, and a dedicated mobile trolley.",
+            key_highlights: [
+                "fastBP technology delivers readings in <15s with Orthostatic Hypotension detection",
+                "plethRESP™ technology for respiratory rate via SpO₂ (NC7 adds EtCO₂)",
+                "Flexible temperature monitoring with multiple probe compatibilities",
+                "Tailored modes: Spot Check and Continuous Monitoring",
+                "Seamless data integration with eCenter-CMS and HL7"
+            ],
+            
+            overview_text: "The COMEN NC6 & NC7 Patient Monitors set a new benchmark in clinical monitoring, offering speed, accuracy, and intelligent support to enhance ward rounds and optimize patient outcomes.",
+            
+            features: [
+                { title: "Precision Vital Signs Tracking", text: "fastBP technology delivers reliable blood pressure readings in under 15 seconds, with automatic detection of Orthostatic Hypotension (OH) for early fall prevention. plethRESP™ provides respiratory rate from SpO₂ signals, while the NC7 adds EtCO₂ monitoring." },
+                { title: "Flexible Temperature Monitoring", text: "Compatible with multiple probes and measurement sites (ear, oral, rectal, temporal artery, axillary), ensuring adaptable patient care." },
+                { title: "Optimized Clinical Workflow", text: "Choose between Spot Check for quick assessments or Continuous Monitoring for critical care. Features customizable layouts and clinical tools to fit any scenario." },
+                { title: "Empowered Informed Interventions", text: "Integrates evidence-based practices such as EWS, GCS, CCHD screening, and Pain Assessment, enabling comprehensive patient evaluation." },
+                { title: "Seamless Data Integration", text: "Connect effortlessly with eCenter-CMS and hospital networks via HL7 for real-time data exchange and centralized access." },
+                { title: "Dedicated Upgraded Trolley", text: "A custom-designed trolley ensures mobility with a 5000mAh backup battery for continuous monitoring and a quick-release snap-lock mechanism for instant unit connection." },
+                { title: "Real-World Deployment Scenarios", text: "General Wards: Mobile trolley and fastBP streamline ward rounds. ER: EWS auto-scoring and continuous respiratory monitoring. Neonatal Units: Dual SpO₂ for CCHD screening. Post-Op: Pain assessment tools." }
+            ],
+            
+            specifications: {
+                "NIBP": "fastBP technology (<15s) with OH detection",
+                "Respiration": "plethRESP™ (NC6/NC7) and EtCO₂ (NC7 only)",
+                "Temperature Sites": "Ear, oral, rectal, temporal artery, axillary",
+                "Workflow Modes": "Spot Check, Continuous Monitoring",
+                "Mobility": "Upgraded trolley with 5000mAh backup battery"
+            }
         },
-            {
+        {
             id: 28,
             name: "NC5",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/K_pro3_1_83d69e1747.png",
-            price: 87628,
-            features: [
+            custom_url: "nc5",
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_83d69e1747.png",
-            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
-            "https://alioss.comen.com/cms-v2/4_f5cbcd49b4.png"
-        ]
+            image: "https://alioss.comen.com/cms-v2/K_pro3_1_83d69e1747.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_83d69e1747.png",
+                "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+                "https://alioss.comen.com/cms-v2/4_f5cbcd49b4.png"
+            ],
+            
+            short_description: "A highly portable 8-inch vital signs monitor providing precise multi-parameter tracking and enhanced hospital connectivity for dynamic clinical environments.",
+            key_highlights: [
+                "Portable and lightweight design (2.5 kg) for efficient patient rounding",
+                "8-inch TFT LCD color display (800 × 600) showing up to 2 waveforms",
+                "Multi-parameter tracking: 3-lead ECG, NIBP, SpO₂, PR, Temp",
+                "Extended battery life: ≥8 hours under full charge",
+                "Comprehensive connectivity via Star8800 and HL7 integration"
+            ],
+            
+            overview_text: "The NC5 is a portable vital signs monitor designed for efficient patient rounding across medical/surgical wards, clinics, and emergency triage. It delivers comprehensive patient surveillance with enhanced connectivity and clinical intelligence, designed for dynamic hospital environments.",
+            
+            features: [
+                { title: "Multi-Parameter Precision Monitoring", text: "Includes 3-lead ECG, NIBP, SpO₂ (Masimo, Nellcor, or Comen), Pulse Rate (PR), and Temperature." },
+                { title: "High-Quality Display", text: "Features an 8-inch TFT color LCD screen with an 800 × 600 resolution, capable of simultaneously displaying up to 2 waveforms." },
+                { title: "Enhanced Portability", text: "Compact (165 × 250 × 165 mm) and lightweight (2.5 kg), making it ideal for medical/surgical wards, clinics, and emergency triage." },
+                { title: "Robust Operation & Durability", text: "Offers ≥8 hours of continuous operation under full charge. Features an IPX2 water ingress protection level on the main unit." },
+                { title: "Extensive Data Review", text: "Provides 160h of graph/table trends, 200 alarm events review, 2000 sets of NIBP measurement data, and 48h of waveform review." },
+                { title: "Comprehensive Connectivity", text: "Integrates seamlessly with Central Monitoring via Star8800 and Hospital Information Systems via HL7. Supports peripheral connectivity with Dual USB ports." }
+            ],
+            
+            specifications: {
+                "Display": "8-inch TFT color LCD, 800 × 600 resolution",
+                "Parameters": "3-lead ECG, NIBP, SpO₂, PR, Temp",
+                "Battery Life": "≥8 hours",
+                "Physical Specs": "165 × 250 × 165 mm, 2.5 kg, IPX2 protection",
+                "Data Storage": "160h trends, 2000 NIBP sets, 48h waveforms"
+            }
         },
-            {
+        {
             id: 29,
             name: "NC3",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
+            custom_url: "nc3",
+            
             image: "https://alioss.comen.com/cms-v2/K_pro3_1_abb856a601.png",
-            price: 54392,
-            features: [
+            gallery: [
+                "https://alioss.comen.com/cms-v2/K_pro3_1_abb856a601.png",
+                "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
+                "https://alioss.comen.com/cms-v2/4_70c5b080fc.png"
+            ],
             
-        ],
-            images: [
-            "https://alioss.comen.com/cms-v2/K_pro3_1_abb856a601.png",
-            "https://alioss.comen.com/cms-v2/17_6f219e8678.png",
-            "https://alioss.comen.com/cms-v2/4_70c5b080fc.png"
-        ]
+            short_description: "An ultra-compact vital signs monitor offering efficient patient rounding with intuitive single-button operation, reliable multi-parameter tracking, and an integrated transport handle.",
+            key_highlights: [
+                "Ultra-compact and lightweight (130×125×299 mm, 1.25 kg)",
+                "Integrated portable handle for easy bedside-to-bedside transport",
+                "Tri-brand SpO₂ compatibility (Masimo, Nellcor, Comen)",
+                "Single-button NIBP operation with backlight",
+                "Extended battery: ≥12 hours standby plus emergency power reserve"
+            ],
+            
+            overview_text: "The NC3 is a portable vital signs monitor designed for efficient patient rounding across medical/surgical wards, clinics, and emergency triage. Its compact design and intuitive operation streamline clinical workflows while ensuring reliable physiological parameter tracking.",
+            
+            features: [
+                { title: "Multi-Parameter Monitoring", text: "Provides essential vital signs tracking including NIBP, SpO₂, Temperature (infrared ear), and Pulse Rate (PR)." },
+                { title: "Tri-Brand SpO₂ Compatibility", text: "Supports leading SpO₂ technologies including Masimo, Nellcor, and Comen for flexible and accurate oxygenation tracking." },
+                { title: "Ultra-Portability", text: "Features an exceptionally compact size (130 × 125 × 299 mm) and lightweight design (1.25 kg), complete with an integrated handle for effortless bedside-to-bedside transport." },
+                { title: "Intuitive Single-Button Operation", text: "Simplifies workflows with a dedicated, backlit start/stop key for NIBP measurements, allowing for immediate and easy operation." },
+                { title: "Reliable Data Storage & Durability", text: "Stores up to 50 sets of patient data for quick review. Features an IPX1 degree of ingress protection (without ear thermometer)." },
+                { title: "Extended Battery Life", text: "Offers ≥ 12 hours of operation in standby when fully charged. Includes an emergency power reserve that provides an additional five minutes of runtime after the first low-battery alarm." }
+            ],
+            
+            specifications: {
+                "Parameters": "NIBP, SpO₂, Temp (infrared ear), PR",
+                "SpO₂ Support": "Masimo, Nellcor, Comen",
+                "Physical Specs": "130 × 125 × 299 mm, 1.25 kg, IPX1 protection",
+                "Battery Life": "≥12 hours (standby), 5-min emergency reserve",
+                "Data Storage": "50 sets"
+            }
         },
-            {
+        {
             id: 30,
-            name: "CF5&amp;CF8",
+            name: "CF5 & CF8",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
+            custom_url: "cf5andcf8",
+            
             image: "assets/images/products/cf5-amp-cf8-1.png",
-            price: 129445,
-            features: [
+            gallery: [
+                "assets/images/products/cf5-amp-cf8-1.png",
+                "assets/images/products/cf5-amp-cf8-2.png",
+                "assets/images/products/cf5-amp-cf8-3.png",
+                "assets/images/products/cf5-amp-cf8-4.png"
+            ],
             
-        ],
-            images: [
-            "assets/images/products/cf5-amp-cf8-1.png",
-            "assets/images/products/cf5-amp-cf8-2.png",
-            "assets/images/products/cf5-amp-cf8-3.png",
-            "assets/images/products/cf5-amp-cf8-4.png"
-        ]
+            short_description: "Advanced fetal and maternal monitors featuring high-sensitivity 12-crystal transducers, comprehensive CTG scoring, and wireless waterproof options for continuous care.",
+            key_highlights: [
+                "High-sensitivity 12-crystal transducer for accurate fetal heart tracking",
+                "Comprehensive CTG scoring including seven global standards (NRIES, Fischer, Oxford, etc.)",
+                "Continuous maternal monitoring (ECG, SpO₂, NIBP, RESP, TEMP)",
+                "Wireless and IP68 waterproof transducer options (CF5R & CF8R models)",
+                "Seamless data integration with HL7, built-in network printers, and scanners"
+            ],
+            
+            overview_text: "The Comen CF Series fetal and maternal monitors are designed to deliver high-quality, continuous monitoring with precision and reliability for both maternal and fetal well-being. With advanced technology and user-friendly features, these monitors ensure optimal care for expectant mothers and their babies.",
+            
+            features: [
+                { title: "Advanced Monitoring Technology", text: "Provides high sensitivity and stability with a 12-crystal transducer for fetal heart rate monitoring. The fetal heart signal indicator ensures accurate tracking even in challenging conditions." },
+                { title: "Comprehensive Maternal Assessment", text: "Continuously monitors maternal ECG, SpO₂, NIBP, RESP, and TEMP alongside fetal care to provide a complete and comprehensive patient assessment." },
+                { title: "Global CTG Scoring", text: "Includes comprehensive CTG scoring using seven global standards (such as NRIES, Fischer, and Oxford) for robust and reliable assessment." },
+                { title: "Wireless & Waterproof Design", text: "The CF5R and CF8R models feature wireless transducers to enhance patient comfort and support seamless transfers. The transducers are IP68 waterproof, ensuring reliable performance even in underwater labor situations." },
+                { title: "Hidden Handle Aesthetics", text: "Combines functionality with aesthetics through a concealed handle, allowing for easy portability while maintaining a sleek appearance in maternity clinics and hospitals." },
+                { title: "Seamless Data Integration", text: "Supports HL7 for easy integration with hospital networks, ensuring smooth data flow. Built-in network printers and scanner compatibility enable quick and efficient data management." }
+            ],
+            
+            specifications: {
+                "Fetal Monitoring": "12-crystal transducer, Fetal heart signal indicator",
+                "Maternal Parameters": "ECG, SpO₂, NIBP, RESP, TEMP",
+                "CTG Scoring": "7 global standards (NRIES, Fischer, Oxford, etc.)",
+                "Transducer": "Wireless and IP68 waterproof (CF5R & CF8R)",
+                "Connectivity": "HL7, Network printer, Scanner compatible"
+            }
         },
-            {
+        {
             id: 31,
-            name: "H300 &amp; H301",
+            name: "H300 & H301",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "assets/images/products/h300-amp-h301-1.png",
-            price: 129692,
-            images: [
-            "assets/images/products/h300-amp-h301-1.png",
-            "assets/images/products/h300-amp-h301-2.png",
-            "assets/images/products/h300-amp-h301-3.png",
-            "assets/images/products/h300-amp-h301-4.png"
-        ],
-            features: [
+            custom_url: "h300-and-h301",
             
-        ]
+            image: "assets/images/products/h300-amp-h301-1.png",
+            gallery: [
+                "assets/images/products/h300-amp-h301-1.png",
+                "assets/images/products/h300-amp-h301-2.png",
+                "assets/images/products/h300-amp-h301-3.png",
+                "assets/images/products/h300-amp-h301-4.png"
+            ],
+            
+            short_description: "Ultra-portable electrocardiographs weighing under 1.3kg, featuring an extended 9-hour battery, real-time signal quality monitoring, and seamless hospital IT connectivity.",
+            key_highlights: [
+                "Smaller, lighter, better: Weighs <1.3kg and under 6cm thick",
+                "Extended 9-hour battery life for continuous operation",
+                "Real-time Signal Quality Monitoring with color-coded feedback",
+                "Automatic lead-off and electrode reversal detection",
+                "Seamless connectivity (Email, SFTP, FTP, HTTPS, SAMBA)"
+            ],
+            
+            overview_text: "The H300 & H301 electrocardiographs combine a lightweight, ultra-portable design with software-driven signal quality protection. They ensure trustworthy results wherever you are, supporting continuous operation with extended battery life and seamless hospital integration.",
+            
+            features: [
+                { title: "Lightweight & Portable Design", text: "Weighs less than 1.3kg and is under 6cm thick, allowing it to be easily held in hand for effortless portability across clinical environments." },
+                { title: "Extended Battery Life", text: "Features an extended 9-hour battery life that supports continuous operation and allows for simultaneous charging during use." },
+                { title: "Real-Time Signal Quality Monitoring", text: "Utilizes color-coded indicators (green/yellow/red) to provide intuitive, real-time feedback on signal quality, ensuring clear and reliable ECG data." },
+                { title: "Advanced User Error Protection", text: "Automatically detects lead-off events and electrode reversal, providing real-time popup alerts to minimize operational errors and improve data reliability." },
+                { title: "Integrated Connectivity", text: "Supports a wide range of secure data transfer methods—including Email, SFTP, FTP, HTTPS, and SAMBA—for flexible integration with diverse hospital IT workflows." }
+            ],
+            
+            specifications: {
+                "Physical Specs": "<1.3 kg weight, <6 cm thickness",
+                "Battery Life": "9 hours (continuous operation & charging)",
+                "Signal Quality": "Color-coded indicators, Lead-off/reversal detection",
+                "Data Transfer": "Email, SFTP, FTP, HTTPS, SAMBA"
+            }
         },
-            {
+        {
             id: 32,
             name: "H1200",
             brand: "COMEN",
             category: "Patient Monitoring",
-            description: "",
-            image: "https://alioss.comen.com/cms-v2/H300_1_1_e003286035.png",
-            price: 183452,
-            images: [
-            "https://alioss.comen.com/cms-v2/H300_1_1_e003286035.png",
-            "https://alioss.comen.com/cms-v2/9_H1200_20x_8_1_8d556d25be.png",
-            "https://alioss.comen.com/cms-v2/10_H1200_20x_8_1_0360192e96.png",
-            "https://alioss.comen.com/cms-v2/11_H1200_20x_8_1_e7a0753ab6.png",
-            "https://alioss.comen.com/cms-v2/12_H1200_20x_8_1_37ed42cdfd.png"
-        ],
-            advancedSections: [
-            {
-            title: "Process Explanations & Details",
-            points: [
-            "<img src=\"https://alioss.comen.com/cms-v2/14_H1200_20x_8_1_8e675550ae.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/13_H1200_20x_8_1_939c87e90b.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/17_H1200_20x_8_1_6770c306e2.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/18_H1200_20x_8_1_89f8acf8d0.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\"><img src=\"https://alioss.comen.com/cms-v2/15_H1200_20x_8_1_ba0262082c.png\" style=\"width:100%; border-radius:8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);\">"
-        ]
-        }
-        ],
-            features: [
+            custom_url: "h1200",
             
-        ]
+            image: "https://alioss.comen.com/cms-v2/H300_1_1_e003286035.png",
+            gallery: [
+                "https://alioss.comen.com/cms-v2/H300_1_1_e003286035.png",
+                "https://alioss.comen.com/cms-v2/9_H1200_20x_8_1_8d556d25be.png",
+                "https://alioss.comen.com/cms-v2/10_H1200_20x_8_1_0360192e96.png",
+                "https://alioss.comen.com/cms-v2/11_H1200_20x_8_1_e7a0753ab6.png",
+                "https://alioss.comen.com/cms-v2/12_H1200_20x_8_1_37ed42cdfd.png"
+            ],
+            
+            short_description: "An advanced electrocardiograph featuring an alphanumeric keyboard, IPX1 waterproof protection, real-time signal quality monitoring, and comprehensive diagnostic analysis.",
+            key_highlights: [
+                "Convenient input with an alphanumeric keyboard and shortcut controls",
+                "IPX1 waterproof protection",
+                "Real-time Signal Quality Monitoring with color-coded feedback",
+                "Automatic lead-off and electrode reversal detection",
+                "Comprehensive diagnostic tools: VCG, HRV, and ST Segment Graphic Analysis"
+            ],
+            
+            overview_text: "The H1200 Electrocardiograph redefines precision and simplifies care. It features convenient input controls, advanced signal quality monitoring, and robust diagnostic analysis tools designed to empower digital healthcare connectivity.",
+            
+            features: [
+                { title: "Precision Redefined, Care Simplified", text: "Features convenient input and extensive shortcut controls with an integrated alphanumeric keyboard, all protected by an IPX1 waterproof rating." },
+                { title: "Advanced Signal Control & Review", text: "Real-time Signal Quality Monitoring provides intuitive color-coded feedback (green/yellow/red). Automatic lead-off and electrode reversal detection trigger real-time popup alerts to minimize user errors and improve data reliability." },
+                { title: "Robust Diagnostic Analysis", text: "Equipped with advanced diagnostic tools including Vectorcardiography (VCG), Heart Rate Variability (HRV) Analysis, and ST Segment Graphic Analysis." },
+                { title: "Empowering Digital Healthcare", text: "Provides seamless connectivity to support smarter ECG workflows and centralized data management within modern hospital networks." }
+            ],
+            
+            specifications: {
+                "Interface": "Alphanumeric keyboard with shortcut controls",
+                "Protection Rating": "IPX1 waterproof",
+                "Signal Quality": "Color-coded indicators, Lead-off/reversal detection",
+                "Diagnostic Tools": "VCG, HRV Analysis, ST Segment Graphic Analysis",
+                "Connectivity": "Digital Healthcare Connectivity"
+            }
         },
             {
             id: 33,

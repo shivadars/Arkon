@@ -3,286 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CF5&amp;CF8 | COMEN | Arkon Medical System</title>
-    <meta name="description" content="CF5&amp;CF8 by COMEN - Available at Arkon Medical System. Enquire for price and demo.">
+    <title>CF5 & CF8 | COMEN | Arkon Medical System</title>
+    <meta name="description" content="Advanced fetal and maternal monitors featuring high-sensitivity 12-crystal transducers, comprehensive CTG scoring, and wireless waterproof options for continuous care.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <style>
-        /* === COMEN-STYLE PRODUCT PAGE === */
-        .comen-hero {
-            position: relative;
-            background-color: #0a0a0a;
-            color: #fff;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            padding: 100px 0 80px;
-            margin-top: 70px;
+        /* === MODERN TEXT-BASED B2B PRODUCT PAGE === */
+        
+        /* Hero Layout */
+        .pd-hero-modern {
+            padding: 120px 0 60px;
+            background: #f8f9fa;
         }
-        .comen-hero-bg {
-            position: absolute;
-            top: 0; right: 0;
-            width: 65%;
-            height: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center right;
-            z-index: 0;
-            mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 30%, black 70%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 30%, black 70%);
-        }
-        .comen-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(100deg, #0a0a0a 40%, transparent 75%);
-            z-index: 1;
-        }
-        .comen-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 580px;
-        }
-        .comen-hero-eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            margin-bottom: 16px;
-            color: #0A8F55;
-            font-weight: 600;
-        }
-        .comen-hero-title {
-            font-size: clamp(2.2rem, 4vw, 3.8rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 20px;
-        }
-        .comen-hero-desc {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 36px;
-            color: rgba(255,255,255,0.75);
-        }
-        .comen-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-        .btn-hero-primary {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: #0A8F55; color: #fff;
-            padding: 14px 30px; border-radius: 6px;
-            font-size: 1rem; font-weight: 600; border: none; cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .btn-hero-primary:hover { background: #078a51; transform: translateY(-2px); }
-        .btn-hero-secondary {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.1); color: #fff;
-            padding: 14px 30px; border-radius: 6px;
-            font-size: 1rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); cursor: pointer;
-            transition: background 0.3s;
-        }
-        .btn-hero-secondary:hover { background: rgba(255,255,255,0.2); }
-        .comen-breadcrumb {
-            position: absolute; top: 90px; left: 0; right: 0;
-            z-index: 3; font-size: 0.85rem; color: rgba(255,255,255,0.5);
-        }
-        .comen-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
-        .comen-breadcrumb a:hover { color: #0A8F55; }
-        .comen-breadcrumb span { color: rgba(255,255,255,0.8); }
-
-        /* === FEATURE SECTIONS === */
-        .comen-section {
-            padding: 90px 0;
-            background: #fff;
-        }
-        .comen-section.dark-section {
-            background: #0d0d0d;
-            color: #fff;
-        }
-        .comen-section.grey-section {
-            background: #f7f8f9;
-        }
-        .comen-section-inner {
+        .pd-hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            gap: 60px;
+            align-items: start;
         }
-        .comen-section-inner.reverse { direction: rtl; }
-        .comen-section-inner.reverse > * { direction: ltr; }
-        .comen-section-text {}
-        .comen-section-text h2 {
-            font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            color: #111;
+        .pd-breadcrumb {
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            color: #666;
         }
-        .dark-section .comen-section-text h2 { color: #fff; }
-        .comen-section-text p {
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: #555;
-            margin-bottom: 16px;
-        }
-        .dark-section .comen-section-text p { color: rgba(255,255,255,0.7); }
-        .comen-feature-list {
-            list-style: none; padding: 0; margin-top: 24px;
-        }
-        .comen-feature-list li {
-            display: flex; align-items: flex-start;
-            margin-bottom: 14px; font-size: 1rem; color: #444;
-        }
-        .dark-section .comen-feature-list li { color: rgba(255,255,255,0.8); }
-        .comen-feature-list li::before {
-            content: '';
-            width: 8px; height: 8px; border-radius: 50%;
-            background: #0A8F55;
-            margin-right: 14px; margin-top: 7px; flex-shrink: 0;
-        }
-        .comen-section-image img {
-            width: 100%; height: auto;
-            object-fit: contain; max-height: 480px;
-            border-radius: 8px;
-        }
-
-        /* === INFOGRAPHICS (Full-Width Comen Images) === */
-        .comen-infographic-section {
-            padding: 0;
-            background: #fff;
-        }
-        .comen-infographic-section.dark-infographic {
-            background: #0d0d0d;
-        }
-        .comen-infographic-img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* === FEATURES GRID (for bullet point features) === */
-        .comen-features-section {
-            padding: 90px 0;
-            background: #f7f8f9;
-        }
-        .comen-features-section .section-label {
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            color: #0A8F55;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .comen-features-section h2 {
-            text-align: center;
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 60px;
-        }
-        .comen-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .comen-feature-card {
+        .pd-breadcrumb a { color: #0A8F55; text-decoration: none; }
+        
+        /* Gallery */
+        .pd-gallery-main {
             background: #fff;
             border-radius: 12px;
-            padding: 32px 28px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            border: 1px solid #eee;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .comen-feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 40px rgba(10,143,85,0.12);
-        }
-        .comen-feature-card-icon {
-            width: 48px; height: 48px;
-            background: rgba(10,143,85,0.1);
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px;
-        }
-        .comen-feature-card-icon svg { width: 24px; height: 24px; fill: #0A8F55; }
-        .comen-feature-card h3 {
-            font-size: 1.1rem; font-weight: 600;
-            color: #111; margin-bottom: 10px;
-        }
-        .comen-feature-card p {
-            font-size: 0.95rem; color: #666; line-height: 1.7;
-        }
-
-        /* === SPECS TABLE === */
-        .comen-specs-section {
-            padding: 90px 0;
-            background: #fff;
-        }
-        .comen-specs-section .section-label {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            color: #0A8F55;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .comen-specs-section h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 50px;
-        }
-        .comen-specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-        }
-        .comen-specs-table tr {
-            border-bottom: 1px solid #eee;
-            transition: background 0.2s;
-        }
-        .comen-specs-table tr:hover { background: #f9fefb; }
-        .comen-specs-table th {
-            width: 35%;
-            text-align: left;
-            padding: 18px 20px;
-            font-weight: 600;
-            color: #333;
-            background: #f7f8f9;
-        }
-        .comen-specs-table td {
-            padding: 18px 20px;
-            color: #555;
-        }
-
-        /* === CTA SECTION === */
-        .comen-cta-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a2a1a 100%);
+            padding: 40px;
             text-align: center;
-            color: #fff;
-        }
-        .comen-cta-section h2 {
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
             margin-bottom: 16px;
         }
-        .comen-cta-section p {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.7);
-            max-width: 560px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
+        .pd-gallery-main img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
         }
-        .comen-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .pd-gallery-thumbs {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .pd-thumb-item {
+            width: 80px;
+            height: 60px;
+            background: #fff;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 5px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pd-thumb-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .pd-thumb-item.active, .pd-thumb-item:hover {
+            border-color: #0A8F55;
+        }
+
+        /* Info Column */
+        .pd-brand-badge {
+            display: inline-block;
+            background: rgba(46, 49, 146, 0.08);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        .pd-title {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .pd-category {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .pd-short-desc {
+            font-size: 1.1rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .pd-highlights {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+        .pd-highlights li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        .pd-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Actions */
+        .pd-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-enquire {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-enquire:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 49, 146, 0.2);
+        }
+        .btn-whatsapp {
+            background: #fff;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-whatsapp:hover {
+            background: var(--primary-light);
+        }
+
+        /* Details Sections */
+        .pd-section {
+            padding: 80px 0;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+        }
+        .pd-section.bg-light {
+            background: var(--background);
+        }
+        .pd-section-header {
+            margin-bottom: 40px;
+        }
+        .pd-section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        /* Overview */
+        .pd-overview-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            max-width: 900px;
+        }
+
+        /* Features Grid */
+        .pd-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .pd-feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+        }
+        .pd-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(46, 49, 146, 0.08);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .pd-feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .pd-feature-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Specs Table */
+        .pd-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            max-width: 900px;
+        }
+        .pd-specs-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+        .pd-specs-table tr:hover { background: var(--background); }
+        .pd-specs-table th {
+            width: 30%;
+            text-align: left;
+            padding: 16px 20px;
+            background: var(--background);
+            color: var(--text);
+            font-weight: 600;
+        }
+        .pd-specs-table td {
+            padding: 16px 20px;
+            color: var(--text-muted);
+        }
+
+        /* Downloads */
+        .pd-download-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 32px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            max-width: 800px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .pd-download-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .pd-download-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        .btn-download {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-download:hover { text-decoration: underline; }
 
         @media (max-width: 900px) {
-            .comen-section-inner { grid-template-columns: 1fr; gap: 40px; }
-            .comen-section-inner.reverse { direction: ltr; }
-            .comen-hero-bg { width: 100%; opacity: 0.25; mask-image: none; -webkit-mask-image: none; }
-            .comen-hero-overlay { background: linear-gradient(180deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%); }
+            .pd-hero-container {
+                grid-template-columns: 1fr;
+            }
+            .pd-features-grid {
+                grid-template-columns: 1fr;
+            }
+            .pd-specs-table th {
+                width: 40%;
+            }
+            .pd-hero-modern {
+                padding: 100px 0 40px;
+            }
+        }
+        @media (max-width: 600px) {
+            .pd-specs-table th, .pd-specs-table td {
+                display: block;
+                width: 100%;
+                padding: 12px 16px;
+            }
+            .pd-specs-table th {
+                background: var(--primary-light);
+                border-bottom: none;
+            }
+            .pd-specs-table tr {
+                margin-bottom: 12px;
+                display: block;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                overflow: hidden;
+            }
         }
     </style>
 </head>
@@ -307,7 +341,7 @@
                 <ul>
                     <li><a href="../../index.html">Home</a></li>
                     <li class="nav-item-dropdown" id="products-solutions-nav">
-                        <a href="../../products.html">Products &amp; Solutions <span class="dropdown-icon">&#9660;</span></a>
+                        <a href="../../products.html" class="active">Products &amp; Solutions <span class="dropdown-icon">&#9660;</span></a>
                         <div class="mega-menu" id="mega-menu-content"></div>
                     </li>
                     <li><a href="../../about.html">About Us</a></li>
@@ -342,86 +376,139 @@
             <a href="../../about.html">About Us</a>
             <a href="../../index.html#contact">Contact</a>
         </nav>
-        <div class="mobile-nav-actions">
-            <a href="tel:+919876543210" class="mobile-nav-phone">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +91 98765 43210
-            </a>
-            <button class="btn btn-primary" style="width: 100%;" onclick="toggleMobileNav(); openQuoteModal();">Enquire Now &rarr;</button>
-        </div>
     </div>
 
     <main class="page-main">
         
-<section class="comen-hero">
-    <div class="comen-hero-bg" style="background-image: url('assets/images/products/cf5-amp-cf8-1.png');"></div>
-    <div class="comen-hero-overlay"></div>
-    <div class="container" style="position:relative;z-index:3;">
-        <div class="comen-breadcrumb container">
+<section class="pd-hero-modern">
+    <div class="container">
+        <div class="pd-breadcrumb">
             <a href="../../index.html">Home</a> &rsaquo;
             <a href="../../products.html">Products</a> &rsaquo;
-            <span>CF5&amp;CF8</span>
+            <span>CF5 & CF8</span>
         </div>
-        <div class="comen-hero-content" data-aos="fade-right">
-            <div class="comen-hero-eyebrow">COMEN &bull; Patient Monitoring</div>
-            <h1 class="comen-hero-title">CF5&amp;CF8</h1>
-            
-            <div class="comen-hero-actions">
-                <button class="btn-hero-primary" onclick="openQuoteModal('CF5&amp;CF8')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                    Enquire Now
-                </button>
-                <button class="btn-hero-secondary" onclick="contactWhatsApp()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/></svg>
-                    WhatsApp Us
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
         
-<section style="background:#f7f8f9;padding:40px 0;">
-    <div class="container">
-        <div id="main-product-img-wrap" style="text-align:center;margin-bottom:32px;">
-            <img id="main-product-img" src="assets/images/products/cf5-amp-cf8-1.png"
-                 style="max-height:420px;max-width:100%;object-fit:contain;border-radius:12px;"
-                 onerror="this.src='https://placehold.co/800x500/E8F3EC/0A8F55?text=CF5%26amp%3BCF8'">
-        </div>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <div class="pd-hero-container">
+            <div class="pd-hero-left" data-aos="fade-right">
+                <div class="pd-gallery-main">
+                    <img id="pd-main-img" src="assets/images/products/cf5-amp-cf8-1.png" alt="CF5 & CF8" onerror="this.src='https://placehold.co/800x800/E8EAF6/2E3192?text=CF5%20%26%20CF8'">
+                </div>
+                <div class="pd-gallery-thumbs">
+                    
+            <div class="pd-thumb-item active" onclick="setMainImage('assets/images/products/cf5-amp-cf8-1.png', this)">
+                <img src="assets/images/products/cf5-amp-cf8-1.png" alt="Thumbnail">
+            </div>
+        
+            <div class="pd-thumb-item " onclick="setMainImage('assets/images/products/cf5-amp-cf8-2.png', this)">
+                <img src="assets/images/products/cf5-amp-cf8-2.png" alt="Thumbnail">
+            </div>
+        
+            <div class="pd-thumb-item " onclick="setMainImage('assets/images/products/cf5-amp-cf8-3.png', this)">
+                <img src="assets/images/products/cf5-amp-cf8-3.png" alt="Thumbnail">
+            </div>
+        
+            <div class="pd-thumb-item " onclick="setMainImage('assets/images/products/cf5-amp-cf8-4.png', this)">
+                <img src="assets/images/products/cf5-amp-cf8-4.png" alt="Thumbnail">
+            </div>
+        
+                </div>
+            </div>
             
-            <div style="cursor:pointer;border:2px solid #0A8F55;border-radius:8px;overflow:hidden;transition:border-color 0.2s;"
-                 onclick="setThumb(this,'assets/images/products/cf5-amp-cf8-1.png')">
-                <img src="assets/images/products/cf5-amp-cf8-1.png" style="width:90px;height:70px;object-fit:contain;display:block;"
-                     onerror="this.src='https://placehold.co/90x70/E8F3EC/0A8F55?text=img'">
-            </div>
-            <div style="cursor:pointer;border:2px solid #ddd;border-radius:8px;overflow:hidden;transition:border-color 0.2s;"
-                 onclick="setThumb(this,'assets/images/products/cf5-amp-cf8-2.png')">
-                <img src="assets/images/products/cf5-amp-cf8-2.png" style="width:90px;height:70px;object-fit:contain;display:block;"
-                     onerror="this.src='https://placehold.co/90x70/E8F3EC/0A8F55?text=img'">
-            </div>
-            <div style="cursor:pointer;border:2px solid #ddd;border-radius:8px;overflow:hidden;transition:border-color 0.2s;"
-                 onclick="setThumb(this,'assets/images/products/cf5-amp-cf8-3.png')">
-                <img src="assets/images/products/cf5-amp-cf8-3.png" style="width:90px;height:70px;object-fit:contain;display:block;"
-                     onerror="this.src='https://placehold.co/90x70/E8F3EC/0A8F55?text=img'">
-            </div>
-            <div style="cursor:pointer;border:2px solid #ddd;border-radius:8px;overflow:hidden;transition:border-color 0.2s;"
-                 onclick="setThumb(this,'assets/images/products/cf5-amp-cf8-4.png')">
-                <img src="assets/images/products/cf5-amp-cf8-4.png" style="width:90px;height:70px;object-fit:contain;display:block;"
-                     onerror="this.src='https://placehold.co/90x70/E8F3EC/0A8F55?text=img'">
+            <div class="pd-hero-right" data-aos="fade-left">
+                <div class="pd-brand-badge">COMEN</div>
+                <h1 class="pd-title">CF5 & CF8</h1>
+                <div class="pd-category">Patient Monitoring</div>
+                
+                <p class="pd-short-desc">Advanced fetal and maternal monitors featuring high-sensitivity 12-crystal transducers, comprehensive CTG scoring, and wireless waterproof options for continuous care.</p>
+                <ul class='pd-highlights'><li>High-sensitivity 12-crystal transducer for accurate fetal heart tracking</li><li>Comprehensive CTG scoring including seven global standards (NRIES, Fischer, Oxford, etc.)</li><li>Continuous maternal monitoring (ECG, SpO₂, NIBP, RESP, TEMP)</li><li>Wireless and IP68 waterproof transducer options (CF5R & CF8R models)</li><li>Seamless data integration with HL7, built-in network printers, and scanners</li></ul>
+                
+                <div class="pd-actions">
+                    <button class="btn-enquire" onclick="openQuoteModal('CF5 & CF8')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        Request a Quote
+                    </button>
+                    <button class="btn-whatsapp" onclick="contactWhatsApp()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/></svg>
+                        WhatsApp Us
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section class="comen-cta-section">
+
+        
+<section class="pd-section">
     <div class="container">
-        <h2 data-aos="fade-up">Interested in the CF5&amp;CF8?</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Contact our experts today for pricing, availability, and demo arrangements.</p>
-        <div class="comen-cta-actions" data-aos="fade-up" data-aos-delay="200">
-            <button class="btn-hero-primary" onclick="openQuoteModal('CF5&amp;CF8')">Request a Quote</button>
-            <button class="btn-hero-secondary" onclick="contactWhatsApp()">WhatsApp Us</button>
+        <div class="pd-section-header">
+            <h2 class="pd-section-title">Overview</h2>
+        </div>
+        <div class="pd-overview-text" data-aos="fade-up">
+            The Comen CF Series fetal and maternal monitors are designed to deliver high-quality, continuous monitoring with precision and reliability for both maternal and fetal well-being. With advanced technology and user-friendly features, these monitors ensure optimal care for expectant mothers and their babies.
         </div>
     </div>
 </section>
+
+        
+<section class="pd-section bg-light">
+    <div class="container">
+        <div class="pd-section-header">
+            <h2 class="pd-section-title">Key Features</h2>
+        </div>
+        <div class="pd-features-grid">
+            
+        <div class="pd-feature-card" data-aos="fade-up">
+            <div class="pd-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+            <h3 class="pd-feature-title">Advanced Monitoring Technology</h3>
+            <p class="pd-feature-text">Provides high sensitivity and stability with a 12-crystal transducer for fetal heart rate monitoring. The fetal heart signal indicator ensures accurate tracking even in challenging conditions.</p>
+        </div>
+    
+        <div class="pd-feature-card" data-aos="fade-up">
+            <div class="pd-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+            <h3 class="pd-feature-title">Comprehensive Maternal Assessment</h3>
+            <p class="pd-feature-text">Continuously monitors maternal ECG, SpO₂, NIBP, RESP, and TEMP alongside fetal care to provide a complete and comprehensive patient assessment.</p>
+        </div>
+    
+        <div class="pd-feature-card" data-aos="fade-up">
+            <div class="pd-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+            <h3 class="pd-feature-title">Global CTG Scoring</h3>
+            <p class="pd-feature-text">Includes comprehensive CTG scoring using seven global standards (such as NRIES, Fischer, and Oxford) for robust and reliable assessment.</p>
+        </div>
+    
+        <div class="pd-feature-card" data-aos="fade-up">
+            <div class="pd-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+            <h3 class="pd-feature-title">Wireless & Waterproof Design</h3>
+            <p class="pd-feature-text">The CF5R and CF8R models feature wireless transducers to enhance patient comfort and support seamless transfers. The transducers are IP68 waterproof, ensuring reliable performance even in underwater labor situations.</p>
+        </div>
+    
+        <div class="pd-feature-card" data-aos="fade-up">
+            <div class="pd-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+            <h3 class="pd-feature-title">Hidden Handle Aesthetics</h3>
+            <p class="pd-feature-text">Combines functionality with aesthetics through a concealed handle, allowing for easy portability while maintaining a sleek appearance in maternity clinics and hospitals.</p>
+        </div>
+    
+        <div class="pd-feature-card" data-aos="fade-up">
+            <div class="pd-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+            <h3 class="pd-feature-title">Seamless Data Integration</h3>
+            <p class="pd-feature-text">Supports HL7 for easy integration with hospital networks, ensuring smooth data flow. Built-in network printers and scanner compatibility enable quick and efficient data management.</p>
+        </div>
+    
+        </div>
+    </div>
+</section>
+
+        
+<section class="pd-section">
+    <div class="container">
+        <div class="pd-section-header">
+            <h2 class="pd-section-title">Technical Specifications</h2>
+        </div>
+        <table class="pd-specs-table" data-aos="fade-up">
+            <tbody><tr><th>Fetal Monitoring</th><td>12-crystal transducer, Fetal heart signal indicator</td></tr><tr><th>Maternal Parameters</th><td>ECG, SpO₂, NIBP, RESP, TEMP</td></tr><tr><th>CTG Scoring</th><td>7 global standards (NRIES, Fischer, Oxford, etc.)</td></tr><tr><th>Transducer</th><td>Wireless and IP68 waterproof (CF5R & CF8R)</td></tr><tr><th>Connectivity</th><td>HL7, Network printer, Scanner compatible</td></tr></tbody>
+        </table>
+    </div>
+</section>
+
     </main>
 
     <!-- Footer -->
@@ -430,31 +517,18 @@
             <div class="footer-col-compact">
                 <img src="../../assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color:white;padding:6px;border-radius:4px;object-fit:contain;max-height:50px;">
                 <p class="footer-desc">Medical equipment solutions for hospitals, clinics, laboratories and healthcare providers.</p>
-                <div class="social-icons"><a href="#">f</a><a href="#">in</a><a href="#">ig</a><a href="#">yt</a></div>
             </div>
             <div class="footer-col-compact">
                 <h4>Products</h4>
                 <ul>
                     <li><a href="../../products.html">All Products</a></li>
-                    <li><a href="../../products.html?category=ICU%20Equipment">ICU Equipment</a></li>
-                    <li><a href="../../products.html?category=Diagnostic%20Equipment">Diagnostic Equipment</a></li>
-                    <li><a href="../../products.html?category=Laboratory%20Equipment">Laboratory Equipment</a></li>
                 </ul>
             </div>
             <div class="footer-col-compact">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="../../about.html">About Us</a></li>
-                    <li><a href="#">Why Choose Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-col-compact">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Enquire Now</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="../../index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -465,23 +539,15 @@
     <div class="modal-overlay" id="quoteModal">
         <div class="modal-container">
             <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
-            <div class="modal-header"><h2>Enquire Now</h2><p>Fill out the form below and our team will get back to you shortly.</p></div>
+            <div class="modal-header"><h2>Enquire Now</h2></div>
             <form id="quoteForm" onsubmit="submitQuoteForm(event)">
                 <div class="form-row">
-                    <div class="form-group"><label for="quoteName">Name *</label><input type="text" id="quoteName" class="form-control" required></div>
-                    <div class="form-group"><label for="quoteCompany">Company / Hospital</label><input type="text" id="quoteCompany" class="form-control"></div>
+                    <div class="form-group"><label>Name *</label><input type="text" id="quoteName" class="form-control" required></div>
+                    <div class="form-group"><label>Phone *</label><input type="tel" id="quotePhone" class="form-control" required></div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group"><label for="quotePhone">Phone *</label><input type="tel" id="quotePhone" class="form-control" required></div>
-                    <div class="form-group"><label for="quoteEmail">Email</label><input type="email" id="quoteEmail" class="form-control"></div>
-                </div>
-                <div class="form-group"><label for="quoteProduct">Product of Interest</label><input type="text" id="quoteProduct" class="form-control" value="CF5&amp;CF8"></div>
-                <div class="form-row">
-                    <div class="form-group"><label for="quoteQuantity">Quantity</label><input type="number" id="quoteQuantity" class="form-control" min="1"></div>
-                    <div class="form-group"><label for="quoteLocation">Location</label><input type="text" id="quoteLocation" class="form-control"></div>
-                </div>
-                <div class="form-group"><label for="quoteMessage">Message</label><textarea id="quoteMessage" class="form-control" rows="4"></textarea></div>
-                <div id="formSuccess" class="form-success" style="display:none;color:var(--secondary);margin-bottom:16px;font-weight:500;">Your enquiry has been submitted successfully!</div>
+                <div class="form-group"><label>Product of Interest</label><input type="text" id="quoteProduct" class="form-control" value="CF5 & CF8"></div>
+                <div class="form-group"><label>Message</label><textarea id="quoteMessage" class="form-control" rows="4"></textarea></div>
+                <div id="formSuccess" class="form-success" style="display:none;color:var(--secondary);margin-bottom:16px;">Submitted successfully!</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline" onclick="closeQuoteModal()">Cancel</button>
                     <button type="submit" class="btn btn-primary">Submit Enquiry</button>
@@ -493,10 +559,6 @@
     <!-- Scroll Progress -->
     <div class="scroll-heartbeat-wrap" id="scroll-heartbeat" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/></svg>
-        <div class="heartbeat-icon">
-            <div class="ecg-monitor"><svg class="heart-svg" viewBox="0 0 84 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M 0,10 h 4.5 l 1.5,-2 l 1.5,2 h 1.5 l 1.5,2.5 l 2.5,-16.5 l 2.5,19 l 1.5,-5 c 1.8,-3 3.5,-3 5,0 h 6 h 4.5 l 1.5,-2 l 1.5,2 h 1.5 l 1.5,2.5 l 2.5,-16.5 l 2.5,19 l 1.5,-5 c 1.8,-3 3.5,-3 5,0 h 6 h 4.5 l 1.5,-2 l 1.5,2 h 1.5 l 1.5,2.5 l 2.5,-16.5 l 2.5,19 l 1.5,-5 c 1.8,-3 3.5,-3 5,0 h 6"/></svg></div>
-            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </div>
     </div>
 
     <script src="../../js/data.js"></script>
@@ -505,14 +567,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
-
-        // Thumbnail image swap
-        function setThumb(el, src) {
-            document.getElementById("main-product-img").src = src;
-            document.querySelectorAll("[onclick^='setThumb']").forEach(function(t) {
-                t.style.borderColor = "#ddd";
-            });
-            el.style.borderColor = "#0A8F55";
+        function setMainImage(src, el) {
+            document.getElementById('pd-main-img').src = src;
+            document.querySelectorAll('.pd-thumb-item').forEach(e => e.classList.remove('active'));
+            el.classList.add('active');
         }
     </script>
 </body>
