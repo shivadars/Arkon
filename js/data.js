@@ -2357,3 +2357,9 @@ _catNames.forEach(catName => {
         img: prod && prod.image ? prod.image : "https://placehold.co/800x800/E8F3EC/075C3A?text=" + encodeURIComponent(catName)
     });
 });
+
+
+// Export for Node.js build script
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = products;
+}
