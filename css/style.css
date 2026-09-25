@@ -5375,21 +5375,21 @@ html {
     transform: translateX(0);
 }
 
-.mega-menu-category {
+.header .mega-menu-category {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 14px 24px;
     cursor: pointer;
-    color: var(--text-muted);
+    color: #334155; /* Dark slate gray for high contrast */
     transition: all 0.2s ease;
     font-weight: 500;
     font-size: 15px;
-    text-decoration: none;
+    text-decoration: none !important;
     border-left: 3px solid transparent;
 }
 
-.mega-menu-category::after {
+.header .mega-menu-category::after {
     content: "";
     font-size: 18px;
     opacity: 0;
@@ -5397,13 +5397,14 @@ html {
     transition: all 0.2s ease;
 }
 
-.mega-menu-category:hover, .mega-menu-category.active {
+.header .mega-menu-category:hover, 
+.header .mega-menu-category.active {
     background: var(--surface);
     color: var(--primary);
     border-left: 3px solid var(--primary);
 }
 
-.mega-menu-category.active::after {
+.header .mega-menu-category.active::after {
     opacity: 1;
     transform: translateX(0);
 }
@@ -5419,21 +5420,21 @@ html {
     display: block;
 }
 
-.mega-menu-product-item {
+.header .mega-menu-product-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px 24px;
     cursor: pointer;
-    color: var(--text-muted);
+    color: #334155;
     transition: all 0.2s ease;
     font-weight: 500;
     font-size: 15px;
-    text-decoration: none;
+    text-decoration: none !important;
     border-left: 3px solid transparent;
 }
 
-.mega-menu-product-item:hover {
+.header .mega-menu-product-item:hover {
     background: var(--surface);
     color: var(--primary);
     border-left: 3px solid var(--primary);
@@ -6573,12 +6574,12 @@ html {
     transition: all 0.3s ease;
 }
 
-/* When a specific logo is hovered, dim all other logos */
-.clients-grid:has(.client-logo:hover) .client-logo {
+/* When a specific logo is hovered, dim all OTHER logos */
+.clients-grid:has(.client-logo:hover) .client-logo:not(:hover) {
     filter: grayscale(100%) opacity(40%);
 }
 
-/* Except the one currently being hovered */
+/* Ensure the currently hovered logo pops and stays full color */
 .clients-grid .client-logo:hover {
     filter: grayscale(0%) opacity(100%);
     transform: scale(1.05);
