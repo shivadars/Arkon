@@ -5808,9 +5808,10 @@ html {
 /* Razorpay-style Hero Section */
 .rz-hero {
     position: relative;
-    padding: 100px 0 0 0; /* Remove bottom padding so image can touch the bottom */
+    padding: 0;
     background-color: #ffffff;
     overflow: hidden;
+    height: calc(100vh - 90px);
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -5922,12 +5923,12 @@ html {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .rz-left {
     flex: 0 0 58%;
     padding-right: 40px;
-    padding-bottom: 80px; /* Offset the removed hero padding to keep text vertically centered */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6011,7 +6012,8 @@ html {
 .rz-right {
     flex: 0 0 42%;
     position: relative;
-    min-height: 500px;
+    min-height: 100%;
+    height: 100%;
 }
 
 .rz-carousel-track {
@@ -6066,34 +6068,29 @@ html {
 .rz-image-wrapper::after {
     content: '';
     position: absolute;
-    bottom: 5px; /* Moved down to touch the bottom */
+    bottom: 0; /* Touches the bottom */
     right: 15%; /* Position shadow under the right-aligned image */
     width: 60%;
     height: 20px;
     background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
     z-index: 1;
     pointer-events: none;
-    animation: rz-shadow-pulse 6s ease-in-out infinite;
+    transform: translateX(-50%);
+    opacity: 0.8;
 }
 
 .rz-image-wrapper img {
-    max-height: 580px; /* Main image larger */
+    width: 85%;
+    height: 85%;
+    max-height: 85%;
+    max-width: 85%;
     object-fit: contain;
+    object-position: right bottom;
     /* Soft 1px inner dark shadow eats the white fringe/halo left by the cutout algorithm */
     filter: drop-shadow(0 0 2px rgba(15, 23, 42, 0.4)) drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
     z-index: 2;
-    transform: translateY(20px); /* Extend toward the bottom */
-    animation: rz-float-image 6s ease-in-out infinite;
-}
-
-@keyframes rz-float-image {
-    0%, 100% { transform: translateY(20px); }
-    50% { transform: translateY(0px); } /* Float up and return */
-}
-
-@keyframes rz-shadow-pulse {
-    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
-    50% { transform: translateX(-50%) scale(0.85); opacity: 0.4; }
+    transform: translateY(0); /* Start at original position */
+    box-sizing: border-box;
 }
 
 /* Floating Brand Tag (Top Right) - Razorpay Comet Style */
@@ -6188,7 +6185,8 @@ html {
 }
 
 @media (max-width: 992px) {
-    .rz-container { flex-direction: column; }
+    .rz-hero { height: auto; padding: 40px 0; }
+    .rz-container { flex-direction: column; height: auto; }
     .rz-left, .rz-right { flex: 0 0 100%; padding: 0; }
     .rz-bg-slant { width: 100%; clip-path: polygon(0 40%, 100% 20%, 100% 100%, 0% 100%); }
     .rz-title { font-size: 40px; }
