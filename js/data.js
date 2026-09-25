@@ -2960,32 +2960,83 @@ const products = [
             name: "Single-use Rhinolaryngoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 5000,
-            image: "assets/images/products/single-use-rhinolaryngoscope-1.jpg",
-            description: "",
-            images: [
-            "assets/images/products/single-use-rhinolaryngoscope-1.jpg",
-            "assets/images/products/single-use-rhinolaryngoscope-2.jpg"
-        ],
-            features: [
+            custom_url: "single-use-rhinolaryngoscope",
             
-        ]
+            image: "../../assets/products/hugemed-rhinolaryngoscope-1.png",
+            gallery: [
+                "../../assets/products/hugemed-rhinolaryngoscope-1.png",
+                "../../assets/products/hugemed-rhinolaryngoscope-2.png"
+            ],
+            
+            short_description: "Pre-sterilized and ready for immediate use, significantly boosting workflow efficiency and accelerating clinical turnaround in OPD settings.",
+            key_highlights: [
+                "Sterile Convenience, Streamlined Workflow",
+                "High-definition CMOS camera for clear visualization",
+                "Medical-grade Pebax insertion tube for flexibility and support",
+                "Ergonomic handle under 300g for maximum comfort"
+            ],
+            
+            overview_text: "Making Rhinolaryngoscopy Safer and More Efficient. The Single-use Rhinolaryngoscope features sterile, single-use packaging, eliminating the need for reprocessing and allowing for immediate use. Its medical-grade Pebax insertion tube provides the ideal balance of flexibility and support for effortless exploration of the nasopharynx, while a high-definition CMOS camera ensures clear visualization.",
+            
+            features: [
+                { title: "Born for OPDs", text: "Single-use for fast clinical turnaround; quick connection to the portable image processor MS-8 with its integrated 15.6\" FHD touchscreen display for instant report generation and printing." },
+                { title: "Lightweight and Easily Maneuverable", text: "Compact and lightweight ergonomic handle (under 300g), ensuring ease of handling and portability." },
+                { title: "Enhanced Patient Comfort", text: "Designed for a gentle and well-tolerated examination experience. The rhinolaryngoscope's smooth insertion tube and ergonomic design minimize patient discomfort." },
+                { title: "Improved Efficiency", text: "“Always Ready-to-use” with no waiting time, eliminating reprocessing and accelerating hospital turnover rate." },
+                { title: "Advanced Control & Connectivity", text: "Features smooth bending control, a suction port/button, a working channel for biopsies, and dual multifunction buttons for quick white balance adjustment and screenshots." },
+                { title: "Stable Quality", text: "Single-use design ensures that imaging and bending angles always remain in pristine, optimal condition for every patient." }
+            ],
+            
+            specifications: {
+                "Insertion Tube": "Medical-grade Pebax",
+                "Handle Weight": "< 300g",
+                "Camera": "High-definition CMOS, LED at Distal Tip",
+                "Controls": "Bending Control, Suction Button, Dual Multifunction Buttons",
+                "Working Channel": "Yes (Suction and Biopsy capable)",
+                "System Compatibility": "Portable image processor MS-8 (15.6\" FHD display)"
+            }
         },
             {
             id: 111,
             name: "Single-use Choledochoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 6000,
-            image: "assets/images/products/single-use-choledochoscope-1.jpg",
-            description: "",
-            images: [
-            "assets/images/products/single-use-choledochoscope-1.jpg",
-            "assets/images/products/single-use-choledochoscope-2.jpg"
-        ],
-            features: [
+            custom_url: "single-use-choledochoscope",
             
-        ]
+            image: "../../assets/products/hugemed-choledochoscope-1.png",
+            gallery: [
+                "../../assets/products/hugemed-choledochoscope-1.png",
+                "../../assets/products/hugemed-choledochoscope-2.png"
+            ],
+            
+            short_description: "An ideal choice for percutaneous choledochoscopy and bedside T-tube tract choledochoscopy.",
+            key_highlights: [
+                "Ideal for percutaneous and bedside T-tube tract choledochoscopy",
+                "Sterile packaging for immediate use, reducing sterilization costs",
+                "Soft, hydrophilic Pebax insertion tube for smooth insertion",
+                "Slim 5mm outer diameter for easy sinus tract access"
+            ],
+            
+            overview_text: "The Single-use Choledochoscope offers an effective solution for percutaneous lithotripsy of biliary stones, while also serving as an ideal tool for postoperative care via sinus tract at the bedside. Its sterile packaging allows medical staff to use it immediately across various clinical scenarios, significantly improving diagnostic and treatment efficiency while reducing the cost of sterilization and maintenance.",
+            
+            features: [
+                { title: "Improved Efficiency", text: "“Always Ready-to-use” with no waiting time, accelerating hospital turnover rate and significantly improving diagnostic and treatment efficiency." },
+                { title: "Visualized Inspection", text: "The flexible insertion tube, combined with a CMOS camera at distal tip, enables physicians to perform precise diagnosis and treatment under direct visualization." },
+                { title: "Smooth Insertion & Navigation", text: "210° up/down angulation at the distal tip, combined with passive bending technology, helps navigate difficult bending section with ease, allowing accurate access to target area." },
+                { title: "Minimize Patient Trauma", text: "Features a soft, hydrophilic Pebax insertion tube and a slim 5mm outer diameter for easy bedside sinus tract access and intervention." },
+                { title: "Ergonomic & Lightweight Control", text: "The handle is ergonomically designed, with an overall weight of less than 300g, making it comfortable for medical staff to use." },
+                { title: "Comprehensive Toolset", text: "Equipped with an irrigation valve, working channel port for biopsies, suction connector/button, and dual multifunction buttons for quick white balance adjustment and screenshots." }
+            ],
+            
+            specifications: {
+                "Insertion Tube": "Medical-grade Pebax (Hydrophilic)",
+                "Outer Diameter": "5mm",
+                "Distal Tip Angulation": "210° Up/Down",
+                "Camera": "CMOS with LED at Distal Tip",
+                "Handle Weight": "< 300g",
+                "Working Channel": "Yes (Suction and Biopsy capable)",
+                "Irrigation": "Irrigation Valve included"
+            }
         },
             {
             id: 112,
@@ -3004,18 +3055,40 @@ const products = [
             name: "Single-use Bronchoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 5500,
-            image: "assets/images/products/single-use-bronchoscope-1.jpg",
-            description: "",
-            images: [
-            "assets/images/products/single-use-bronchoscope-1.jpg",
-            "assets/images/products/single-use-bronchoscope-2.jpg",
-            "assets/images/products/single-use-bronchoscope-3.jpg",
-            "assets/images/products/single-use-bronchoscope-4.jpg"
-        ],
-            features: [
+            custom_url: "single-use-bronchoscope",
             
-        ]
+            image: "../../assets/products/hugemed-bronchoscope-1.png",
+            gallery: [
+                "../../assets/products/hugemed-bronchoscope-1.png",
+                "../../assets/products/hugemed-bronchoscope-2.png"
+            ],
+            
+            short_description: "Available in 9 models, offering comprehensive solutions for airway management and the diagnosis and treatment of respiratory diseases.",
+            key_highlights: [
+                "9 Model Options (1 Diagnostic, 8 Therapeutic)",
+                "Sterile packaging for immediate use, reducing sterilization costs",
+                "Compatible with the MS-8 medical image processor",
+                "Always Ready-to-use to accelerate ICU patient turnover"
+            ],
+            
+            overview_text: "The Single-use Bronchoscope is available in 9 models (1 diagnostic and 8 therapeutic), designed for different patient groups. These versatile options can handle complex clinical scenarios efficiently, supporting routine and difficult airway intubation, respiratory examinations, bronchoalveolar lavage, biopsy, foreign body removal, and drug delivery in ICU, bedside, and operating room.",
+            
+            features: [
+                { title: "Improved Efficiency", text: "“Always Ready-to-use” with no waiting time, accelerating hospital turnover rate and eliminating sterilization downtime." },
+                { title: "Smooth Insertion", text: "210° up/down angulation at the distal tip, combined with passive bending technology, helps navigate difficult bending section with ease. It allows accurate access to target area for precise diagnosis and treatment." },
+                { title: "Effortless Handling", text: "With 9 models featuring varied specifications, our single-use bronchoscopes cover a wide range of patient populations and clinical conditions, providing effective solutions for complex respiratory disease management." },
+                { title: "Brand-New Design", text: "Newly upgraded to enhance product performance and optimize user experience, delivering clear surgical visuals and ensuring an efficient clinical workflow." },
+                { title: "Instructions For Use", text: "Available in Download Center: Instructions for Use for Single-use Bronchoscope V1.0 (7.08MB) and V2.1 (2.89MB)." }
+            ],
+            
+            specifications: {
+                "Models": "9 variants (1 Diagnostic, 8 Therapeutic)",
+                "Applications": "Intubation, Lavage, Biopsy, Foreign Body Removal, Drug Delivery",
+                "Distal Tip Angulation": "210° Up/Down",
+                "System Compatibility": "MS-8 Medical Image Processor",
+                "Sterilization": "Pre-sterilized, Single-use",
+                "Settings": "ICU, Bedside, Operating Room"
+            }
         },
             {
             id: 114,
@@ -3061,39 +3134,66 @@ const products = [
         },
             {
             id: 117,
-            name: "Single-use Ureterorenoscope",
+            name: "HU Series Single-use Ureterorenoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 6800,
-            image: "assets/images/products/single-use-ureterorenoscope-1.png",
-            description: "",
-            images: [
-            "assets/images/products/single-use-ureterorenoscope-1.png",
-            "assets/images/products/single-use-ureterorenoscope-2.png",
-            "assets/images/products/single-use-ureterorenoscope-3.jpg",
-            "assets/images/products/single-use-ureterorenoscope-4.jpg"
-        ],
+            custom_url: "single-use-ureterorenoscope",
+            image: "../../assets/products/hu-series-1.png",
+            gallery: [
+                "../../assets/products/hu-series-1.png",
+                "../../assets/products/hu-series-evolution.png"
+            ],
+            short_description: "The HU Series Single-use Ureterorenoscope embodies ‘smaller, safer, and more efficient’ innovation—redefining urological standards. It delivers cost-effective and advanced solutions for clinicians and patients.",
+            key_highlights: [
+                "The World's First Clinically Approved 6.3Fr",
+                "Cost-effective with no maintenance",
+                "User-friendly ergonomic handle",
+                "Up to 285° up and down bending angle",
+                "Optimized Imaging with 160K CMOS sensor chip"
+            ],
+            overview_text: "Slim yet powerful: Through three generations of innovation, the HU series has overcome significant technical challenges. Without changing the working channel diameter 3.6Fr, the insertion tube diameter has progressively been reduced from 9.0Fr to 7.5Fr, and ultimately reach to the extraordinary 6.3Fr. Clinically proven, it reduces Ratio of Endoscope-Sheath Diameter (RESD), enhances maneuverability in RIRS surgery, improves intrarenal pressure management, and sets a new standard in precision urology.",
             features: [
-            
-        ]
+                { title: "Cost-Effective Advantage Over Traditional RIRS", text: "The HU30 series Single-use Ureterorenoscope delivers significant cost savings compared to reusable systems. By eliminating reprocessing and maintenance expenses, it reduces both surgical costs for patients and operational burdens for hospitals. This cost-efficient solution makes advanced RIRS accessible to the value-segment market without compromising performance." },
+                { title: "Optimized Usability and Surgical Efficiency", text: "Weighing less than 300g, the HU30M effectively alleviates surgeon fatigue during long procedures. Its standard features, including an adjustable angle knob, 285° bending range, 1080P optimization algorithm, and passive bending function, support doctors in easily tackling even the most challenging surgeries." },
+                { title: "Cost-effective", text: "Raise cash flow ratio; No maintenance & disinfection cost." },
+                { title: "User-friendly", text: "Simple and intuitive ergonomic handle, giving more comfort and preciseness on the examination." },
+                { title: "285° Bending Angle", text: "Bending section made by medical grade stainless steel, Up to 285°up and down bending angle." },
+                { title: "1:1 Torque Ratio", text: "The 1:1 torque ratio maximizes the replication of the medical staff's precise movements, ensure smooth surgical procedures." },
+                { title: "Optimized Imaging", text: "160K CMOS sensor chip on tip design; Optimized algorithm improves image quality." }
+            ]
         },
             {
             id: 118,
             name: "Single-use Cystoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 6000,
-            image: "assets/images/products/single-use-cystoscope-1.jpg",
-            description: "",
-            images: [
-            "assets/images/products/single-use-cystoscope-1.jpg",
-            "assets/images/products/single-use-cystoscope-2.jpg",
-            "assets/images/products/single-use-cystoscope-3.png",
-            "assets/images/products/single-use-cystoscope-4.jpg"
-        ],
+            custom_url: "single-use-cystoscope",
+            image: "../../assets/products/hugemed-cystoscope-1.png",
+            gallery: [
+                "../../assets/products/hugemed-cystoscope-1.png",
+                "../../assets/products/hugemed-cystoscope-2.png"
+            ],
+            short_description: "Designed to lower hospital costs and ensure patient comfort and safety, especially for bladder diverticulum diagnosis and treatment.",
+            key_highlights: [
+                "Streamlined bullet-shaped tip for minimal resistance",
+                "Soft insertion tube wrapped in Pebax",
+                "Lightweight and easily maneuverable (< 300g)",
+                "210° up-and-down deflection"
+            ],
+            overview_text: "The Single-use Cystoscope is designed to lower hospital costs and ensures patient comfort and safety. It is suitable for lower urinary system diagnosis and treatment, especially for bladder diverticulum. This disposable solution eliminates reprocessing costs while maintaining high clinical performance. The CY series reduces hospital costs by eliminating disinfection and maintenance. Its affordability enables outpatient cystoscopy, while single-use sterile packaging enhances diagnostic and treatment efficiency.",
             features: [
-            
-        ]
+                { title: "Streamlined Bullet-shaped Tip", text: "The bullet-shaped low-resistance design for tip allows the insertion tube to enter the urethra more easily." },
+                { title: "Lightweight and Easily Maneuverable", text: "Compact and lightweight design (less than 300g), ensuring ease of handling and portability." },
+                { title: "Cost-effective", text: "Raise cash flow ratio; No maintenance & disinfection cost." },
+                { title: "Improved Efficiency", text: "“Always Ready-to-use” with no waiting time, accelerating hospital turnover rate." },
+                { title: "Stable Quality", text: "Single-use design ensures that imaging and bending angles always remain in optimal condition." }
+            ],
+            specifications: {
+                "Insertion Tube": "Soft, Pebax wrapped",
+                "Deflection": "210° Up/Down",
+                "Handle Weight": "< 300g",
+                "Tip Design": "Bullet-shaped, low-resistance"
+            }
         },
             {
             id: 119,
@@ -3112,12 +3212,34 @@ const products = [
             name: "Single-use Ureteral Access Sheath",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 800,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Access+Sheath",
-            description: "",
+            custom_url: "single-use-ureteral-access-sheath",
+            image: "../../assets/products/hugemed-ureteral-access-sheath-1.png",
+            gallery: [
+                "../../assets/products/hugemed-ureteral-access-sheath-1.png",
+                "../../assets/products/hugemed-ureteral-access-sheath-2.png"
+            ],
+            short_description: "A single-use device used together with a URS for RIRS, establishing a flexible and stable pathway in complex urinary anatomy.",
+            key_highlights: [
+                "Improves single-session stone-free rate (SFR)",
+                "Available in 20 flexible combinations of lengths and diameters",
+                "Slider Valve for fine control of suction power",
+                "Hydrophilic coating and tapered tip for smooth insertion"
+            ],
+            overview_text: "The Single-use Ureteral Access Sheath establishes a flexible and stable pathway in the complex urinary anatomy to facilitate multiple instrument entries. Clinically, it broadens indications, improves single-session stone-free rate (SFR), shortens operative time, lowers intrarenal pressure and temperature, and enhances visualization and irrigation efficiency. It comes in working lengths of 40/45/50/55 cm and diameters of 8.5/10.5, 9/11, 10/12, 11/13, and 12/14 Fr, yielding 20 flexible combinations that cover needs from ultra-slim access to general negative-pressure aspiration.",
             features: [
-            
-        ]
+                { title: "Slimmer for Smoother Access", text: "Benefiting from active suction that improves outflow and intrarenal pressure control, it allows usage up to RESD ≤ 0.85, enabling the tackling of challenging stones in narrower, deeper calyces." },
+                { title: "Advanced Suction Control", text: "Features a Slider Valve for fine control of suction power, enabling effective intrarenal pressure management while improving efficiency." },
+                { title: "Reduced Insertion Trauma", text: "The sheath's Beveled Edge design and Tapered Dilator tip design minimize insertion trauma." },
+                { title: "Flexible Yet Strong", text: "The Stainless-Steel Flat Coil reinforced shaft balances flexibility with structural strength, while the hydrophilic coating ensures smoother access." },
+                { title: "Instructions For Use", text: "Available in Download Center for multiple languages (EN, ES, FR, IT, etc.)" }
+            ],
+            specifications: {
+                "Lengths Available": "40 cm, 45 cm, 50 cm, 55 cm",
+                "Diameters Available (Fr)": "8.5/10.5, 9/11, 10/12, 11/13, 12/14",
+                "Shaft Design": "Stainless-Steel Flat Coil reinforced",
+                "Suction Control": "Slider Valve",
+                "Coating": "Hydrophilic Coating with Depth Mark"
+            }
         },
             {
             id: 121,
@@ -3148,35 +3270,99 @@ const products = [
             name: "Video Laryngoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 15000,
-            image: "assets/images/products/video-laryngoscope-1.jpg",
-            description: "",
-            images: [
-            "assets/images/products/video-laryngoscope-1.jpg",
-            "assets/images/products/video-laryngoscope-2.jpg",
-            "assets/images/products/video-laryngoscope-3.jpg"
-        ],
+            custom_url: "video-laryngoscope",
+            image: "../../assets/products/hugemed-video-laryngoscope-1.png",
+            gallery: [
+                "../../assets/products/hugemed-video-laryngoscope-1.png",
+                "../../assets/products/hugemed-video-laryngoscope-2.png"
+            ],
+            short_description: "Reusable flexible scopes that provide patients with a comfortable and cost-effective rhinolaryngoscopy experience.",
+            key_highlights: [
+                "3 types of imaging parts for different application scenarios",
+                "Smart Handle with quick buttons for snapshots and video recording",
+                "IPX7 waterproof operational part for easy immersion disinfection",
+                "Reusable design helps reduce medical consumable usage"
+            ],
+            overview_text: "The Video Laryngoscope consists of an imaging part and an operational part. 3 types of imaging part meet the requirements of different application scenarios. The reusable flexible scopes provides patients with comfortable and cost-effective rhinolaryngoscopy experience. The Video Laryngoscope flexible insertion tube offers a notably more comfortable experience for patients compared to rigid ones. It features an IPX7 waterproof operational part, allowing the entire device to be disinfected by immersion after attaching the waterproof cap. Its reusable design helps reduce the use of medical consumables and lowers patient hospitalization costs.",
             features: [
-            
-        ]
+                { title: "Smart Handle", text: "The handle integrates a quick button for snapshots and video recording, along with suction function and bending angle control lever, enhancing clinical efficiency." },
+                { title: "Easy Immersion Disinfection", text: "IPX7 waterproofing allows safe and thorough cleaning after attaching the waterproof cap, ensuring reliable reprocessing." },
+                { title: "Enhanced Patient Comfort", text: "Designed for a gentle and well-tolerated examination experience, the rhinolaryngoscope's smooth insertion tube and ergonomic design minimize patient discomfort." }
+            ],
+            specifications: {
+                "Design": "Reusable flexible scopes",
+                "Waterproofing": "IPX7 (operational part)",
+                "Handle Features": "Snapshots, video recording, suction, bending angle control",
+                "Imaging Parts": "3 types available"
+            }
         },
             {
             id: 124,
             name: "Reusable Ureterorenoscope",
             brand: "HUGEMED",
             category: "Endoscopy",
-            price: 25000,
-            image: "assets/images/products/reusable-ureterorenoscope-1.jpg",
-            description: "",
-            images: [
-            "assets/images/products/reusable-ureterorenoscope-1.jpg",
-            "assets/images/products/reusable-ureterorenoscope-2.png",
-            "assets/images/products/reusable-ureterorenoscope-3.jpg",
-            "assets/images/products/reusable-ureterorenoscope-4.jpg"
-        ],
+            custom_url: "reusable-ureterorenoscope",
+            image: "../../assets/products/hugemed-reusable-ureterorenoscope-1.png",
+            gallery: [
+                "../../assets/products/hugemed-reusable-ureterorenoscope-1.png",
+                "../../assets/products/hugemed-reusable-ureterorenoscope-2.png"
+            ],
+            short_description: "Providing cost-effective URS solutions for developing regions with a reusable design and superior durability.",
+            key_highlights: [
+                "Cost-effective reusable alternative to single-use devices",
+                "Streamlined bullet-shaped tip for low resistance and comfort",
+                "285° bidirectional bending angle for precision",
+                "316L stainless steel bending section for enhanced durability"
+            ],
+            overview_text: "The Reusable Ureterorenoscope can be reused after immersion disinfection, offering a cost-effective alternative to single-use devices. Its flexible insertion tube and 285° bending angle ensure enhanced maneuverability with no blind spots, improving both patient comfort and procedural efficiency. The bullet-shaped tip features a low-resistance design, allowing smoother insertion into the urethra. Combined with a soft Pebax-wrapped insertion tube, it minimizes urethral trauma, ensuring a safer and more comfortable experience for patients. With a bidirectional bending angle of up to 285° and double bending capability, the reusable ureterorenoscope reaches complex renal anatomy, eliminating blind spots for more accurate diagnosis and treatment.",
             features: [
-            
-        ]
+                { title: "Streamlined Bullet-shaped Tip", text: "The bullet-shaped low-resistance design for tip allows the insertion tube to enter the urethra more easily." },
+                { title: "Medical-grade Material", text: "The insertion tube is wrapped in medical-grade composite material Pebax, providing a balanced experience of rigidity and flexibility." },
+                { title: "Optimized Imaging", text: "160K CMOS sensor chip on tip design; Optimized algorithm improves image quality." },
+                { title: "User-friendly", text: "Simple and intuitive ergonomic handle, giving more comfort and preciseness on the examination." },
+                { title: "285° Bending Angle", text: "Bending section made by medical grade stainless steel, Up to 285° up and down bending angle." },
+                { title: "1:1 Torque Ratio", text: "The 1:1 torque ratio maximizes the replication of the medical staff's precise movements, ensure smooth surgical procedures." },
+                { title: "Superior Durability", text: "316L stainless steel bending section enhances with laser engraving and multi-point micro-welding for exceptional stability and longevity. And the integrated CMOS camera tip is more impact-resistant than fiber-optic endoscopes, significantly reducing repair costs." }
+            ],
+            specifications: {
+                "Design": "Reusable after immersion disinfection",
+                "Bending Angle": "285° Up/Down",
+                "Insertion Tube": "Soft Pebax-wrapped",
+                "Bending Section Material": "316L stainless steel",
+                "Camera": "160K CMOS sensor chip"
+            }
+        },
+        {
+            id: 125,
+            name: "Single-use Ureterorenoscope HU30M",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "single-use-ureterorenoscope-hu30m",
+            image: "../../assets/products/hu30m-hero.png",
+            gallery: [
+                "../../assets/products/hu30m-hero.png",
+                "../../assets/products/hu-series-1.png"
+            ],
+            short_description: "The world’s first 6.3Fr Single-use Ureterorenoscope approved for surgery, the HU30M, redefines ureteroscopy with effortless ureter engagement, superior maneuverability, and optimal irrigation flow.",
+            key_highlights: [
+                "6.3Fr O.D. insertion tube",
+                "120° left and right insertion tube rotation",
+                "Up to 285° up and down bending angle",
+                "1:1 Torque Ratio",
+                "Facilitates the \"no-touch\" technique"
+            ],
+            overview_text: "Clinically proven and trusted by global experts, the HU30M enhances safety, efficiency, and patient outcomes—making it the smart choice for modern urology. Its ultra-slim design minimizes trauma while ensuring precision in complex cases.",
+            features: [
+                { title: "Challenging the Limits of URS", text: "The 6.3Fr insertion tube diameter of the HU30M challenges the conventional limits of ureterorenoscope (URS) design. This innovation provides a surgical solution for congenital or pathological ureteral strictures previously deemed inoperable, expanding treatment options for complex cases." },
+                { title: "Enhanced Patient Comfort and Safety", text: "The ultra-thin insertion tube makes it possible to perform procedures without pre-placed double-J stents, sheaths, or guidewires, significantly enhancing patient comfort before and after surgery and accelerating postoperative recovery. Additionally, it provides greater infusion space, helping reduce temperature rise caused by laser lithotripsy, relieving renal pressure, improving the stone-clearance rate in soft-scope RIRS surgeries, and reducing the likelihood of \"stone street\" formation postoperatively." },
+                { title: "Optimized Usability and Surgical Efficiency", text: "Weighing less than 300g, the HU30M effectively alleviates surgeon fatigue during long procedures. Its standard features, including an adjustable angle knob, 285° bending range, 1080P optimization algorithm, and passive bending function, support doctors in easily tackling even the most challenging surgeries." },
+                { title: "6.3Fr O.D.", text: "Clinical studies have proven its ability to facilitate the \"no-touch\" technique, navigating challenging anatomies while maintaining optimal flow rates for clear visualization." },
+                { title: "Adjustable Angle Knob", text: "120° left and right insertion tube rotation." },
+                { title: "User-friendly", text: "Simple and intuitive ergonomic handle, giving more comfort and preciseness on the examination." },
+                { title: "285° Bending Angle", text: "Bending section made by medical grade stainless steel, Up to 285° up and down bending angle." },
+                { title: "1:1 Torque Ratio", text: "The 1:1 torque ratio maximizes the replication of the medical staff's precise movements, ensure smooth surgical procedures." },
+                { title: "Stable Quality", text: "Single-use design ensures that imaging and bending angles always remain in optimal condition." }
+            ]
         }
         ];
 

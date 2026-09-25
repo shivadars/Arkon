@@ -3,28 +3,24 @@
 
 
 // ─── Product URL Helper ───────────────────────────────────────────────────────
-// COMEN products → static generated page
-// All other brands → dynamic product-detail.html?id=X
+// All products → static generated page
 function getProductUrl(p) {
     const root = window.ROOT_PATH || '';
-    if (p.brand && p.brand.toUpperCase() === 'COMEN') {
-        let slug;
-        if (p.custom_url) {
-            slug = p.custom_url.replace(/\.html$/i, '').toLowerCase();
-        } else {
-            slug = p.name
-                .replace(/&amp;/g, 'and')
-                .replace(/&/g, 'and')
-                .toLowerCase()
-                .replace(/[\/\\+]/g, '-')
-                .replace(/\s+/g, '-')
-                .replace(/[^a-z0-9\-]/g, '')
-                .replace(/-+/g, '-')
-                .replace(/^-|-$/g, '');
-        }
-        return `${root}products/${slug}/index.html`;
+    let slug;
+    if (p.custom_url) {
+        slug = p.custom_url.replace(/\.html$/i, '').toLowerCase();
+    } else {
+        slug = p.name
+            .replace(/&amp;/g, 'and')
+            .replace(/&/g, 'and')
+            .toLowerCase()
+            .replace(/[\/\\+]/g, '-')
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9\-]/g, '')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
     }
-    return `${root}${p.custom_url || 'product-detail.html?id=' + p.id}`;
+    return `${root}products/${slug}/index.html`;
 }
 
 // Mobile Navigation Toggle
