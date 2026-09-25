@@ -906,7 +906,7 @@ const rzSlides = [
     {
         title: "Next-Gen Medical Imaging",
         subtext: "Exceptional clarity and precision diagnostics with our premium clinical ultrasound systems.",
-        image: "assets/products/ai-ultrasound.png",
+        image: "assets/products/EP_50_1_d36118899b.png",
         name: "Comen Ultrasound",
         cat: "Medical Imaging"
     },

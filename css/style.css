@@ -270,34 +270,46 @@ p {
     text-decoration: underline;
 }
 
+
 /* Header */
 .header {
-    height: 90px;
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
+    height: 70px;
+    background-color: var(--primary);
+    border-radius: 40px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 95%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
 .header.header--fixed {
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 0;
-    width: 100%;
+    right: 0;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1400px;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background-color: var(--primary);
+    border-radius: 40px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: headerSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes headerSlideDown {
     from {
-        transform: translateY(-100%);
+        transform: translateY(-100px);
         opacity: 0.7;
     }
     to {
@@ -311,14 +323,31 @@ p {
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     height: 100%;
+    position: relative;
 }
 
 .logo {
-    justify-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: -35px; /* Concentric with pill's left border radius */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo img {
-    height: 32px;
+    height: 36px !important;
+    object-fit: contain;
 }
 
 .main-nav {
@@ -339,14 +368,16 @@ p {
 .main-nav a {
     font-weight: 500;
     font-size: 15px;
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.9);
     transition: var(--transition);
     display: block;
     line-height: 1;
 }
 
-.main-nav a:hover {
-    color: var(--primary);
+.main-nav a:hover, .main-nav a.active {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .header-actions {
@@ -354,14 +385,34 @@ p {
     justify-self: flex-end;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 32px; /* Increased from 20px to prevent crowding */
+}
+
+.header-actions .btn-primary {
+    background-color: transparent !important;
+    color: white !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    border: 2px solid white !important; /* Outline style */
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+.header-actions .btn-primary:hover {
+    background-color: white !important;
+    color: var(--primary) !important;
+    transform: translateY(-2px) !important;
 }
 
 .header-phone {
     font-weight: 600;
-    color: var(--text);
+    color: white;
     font-size: 15px;
     white-space: nowrap;
+}
+
+.header-phone svg {
+    stroke: white !important;
 }
 
 .whatsapp-icon {
@@ -369,6 +420,10 @@ p {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+}
+
+.whatsapp-icon svg {
+    fill: white !important;
 }
 
 .whatsapp-icon:hover {
@@ -3447,6 +3502,17 @@ p {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 100%;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+        margin-left: -20px; /* Concentric with mobile pill border radius */
+    }
+    
+    .logo img {
+        height: 30px !important;
     }
 
     .main-nav, .header-actions {
@@ -3455,18 +3521,15 @@ p {
 
     .mobile-menu-btn {
         display: flex;
+        z-index: 10; /* Keep above if logo overlaps */
+    }
+    
+    .mobile-menu-btn span {
+        background-color: white !important;
     }
 
     .header {
-        height: 70px;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-
-    h2 {
-        font-size: 32px;
+        height: 60px; /* Thinner pill on mobile */
     }
 
     .hero {
@@ -5811,7 +5874,7 @@ html {
     padding: 0;
     background-color: #ffffff;
     overflow: hidden;
-    height: calc(100vh - 90px);
+    height: 100vh; /* Fill full viewport height natively */
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -5929,6 +5992,7 @@ html {
 .rz-left {
     flex: 0 0 58%;
     padding-right: 40px;
+    padding-top: 90px; /* Offset the absolute header to visually center text in the remaining space */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6080,10 +6144,10 @@ html {
 }
 
 .rz-image-wrapper img {
-    width: 85%;
-    height: 85%;
-    max-height: 85%;
-    max-width: 85%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     object-fit: contain;
     object-position: right bottom;
     /* Soft 1px inner dark shadow eats the white fringe/halo left by the cutout algorithm */
@@ -6091,6 +6155,13 @@ html {
     z-index: 2;
     transform: translateY(0); /* Start at original position */
     box-sizing: border-box;
+}
+
+/* Specifically reduce the size of the K22 Pro (slide 0) and NV10 (slide 2) so they don't overlap the header */
+#rz-slide-0 .rz-image-wrapper img,
+#rz-slide-2 .rz-image-wrapper img {
+    max-height: 75%;
+    max-width: 85%;
 }
 
 /* Floating Brand Tag (Top Right) - Razorpay Comet Style */
