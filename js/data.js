@@ -3468,28 +3468,32 @@ const products = [
 
 const clients = [
     {
-        "name": "Regional Cancer Centre",
-        "img": "assets/clients/regional-cancer-centre.png"
+        "name": "KIMS Hospital",
+        "img": "assets/clients/uploaded_client_1.png"
     },
     {
-        "name": "KIMS Hospital",
-        "img": "assets/clients/kims-hospital.png"
+        "name": "Regional Cancer Centre",
+        "img": "assets/clients/uploaded_client_2.png"
+    },
+    {
+        "name": "Jubilee Mission",
+        "img": "assets/clients/uploaded_client_3.png"
+    },
+    {
+        "name": "Govt Medical College Thrissur",
+        "img": "assets/clients/uploaded_client_4.png"
+    },
+    {
+        "name": "Dr. Somervell Memorial CSI Medical College",
+        "img": "assets/clients/uploaded_client_5.png"
     },
     {
         "name": "Holy Ghost Mission",
         "img": "assets/clients/holy-ghost-mission.png"
     },
     {
-        "name": "Jubilee Mission",
-        "img": "assets/clients/jubilee-mission.png"
-    },
-    {
-        "name": "Govt Medical College Thrissur",
-        "img": "assets/clients/medical-college-thrissur.png"
-    },
-    {
         "name": "Pushpagiri Institutions",
-        "img": "https://placehold.co/150x80/FFFFFF/17211D?text=Pushpagiri"
+        "img": "assets/clients/uploaded_client_6.png"
     },
     {
         "name": "Rajagiri Hospital",
