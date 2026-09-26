@@ -178,7 +178,8 @@ function initSolutionsCarousel() {
     solutionsData.forEach((sol) => {
         const item = document.createElement('a');
         item.className = 'solution-card';
-        item.href = sol.link;
+        const solId = sol.title.toLowerCase().replace(/ /g, '-');
+        item.href = `products.html?solution=${solId}`;
         item.setAttribute('aria-label', sol.title);
 
         item.innerHTML = `
@@ -194,19 +195,19 @@ function initSolutionsCarousel() {
                 <h3>${sol.title}</h3>
                 <p>${sol.description}</p>
                 <div class="solution-actions">
-                    <button class="solution-btn-primary">Sign Up &rarr;</button>
-                    <button class="solution-btn-secondary">Know More</button>
+                    <span class="solution-btn-primary">Explore Products &rarr;</span>
+                    <span class="solution-btn-secondary quote-btn">Get a Quote</span>
                 </div>
             </div>
         `;
         
-        // Ensure modal works if enquire clicked directly
-        const enquireBtn = item.querySelector('.solution-btn-primary');
-        if(enquireBtn) {
-            enquireBtn.addEventListener('click', (e) => {
+        // Redirect to contact section
+        const quoteBtn = item.querySelector('.quote-btn');
+        if(quoteBtn) {
+            quoteBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                openQuoteModal();
+                window.location.href = 'index.html#contact';
             });
         }
 
