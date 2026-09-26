@@ -2840,12 +2840,27 @@ const products = [
             name: "Bassinets",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 10000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Bassinets",
-            description: "",
+            custom_url: "bassinets",
+            image: "../../assets/products/fanem-oval-baby-cradle.png",
+            gallery: [
+                "../../assets/products/fanem-oval-baby-cradle.png",
+                "../../assets/products/fanem-panda-cradle.png"
+            ],
+            short_description: "Providing ergonomic and humanized care for newborns. Explore the Fanem Bassinet series, including the Panda® Cradle and Oval Baby Cradle®.",
+            key_highlights: [
+                "Panda® Cradle: Ideal for humanized care",
+                "Oval Baby Cradle®: Ergonomic and easy to use",
+                "Voltage Options: 127V / 220V"
+            ],
+            overview_text: "The Fanem Bassinets series is designed to provide safety and comfort for newborns while ensuring ergonomic ease for caregivers. The lineup includes the Panda® Cradle, ideal for humanized care, and the Oval Baby Cradle®, recognized for its ergonomic and easy-to-use design. These bassinets integrate seamlessly into neonatal environments, providing a secure space for infants.",
             features: [
-            
-        ]
+                { title: "Panda® Cradle", text: "Designed specifically to be ideal for humanized care for newborns, providing a warm and secure environment." },
+                { title: "Oval Baby Cradle®", text: "Ergonomic and easy to use, ensuring safe and efficient neonatal care for both the infant and healthcare staff." }
+            ],
+            specifications: {
+                "Available Models": "Panda® Cradle, Oval Baby Cradle®",
+                "Voltage": "127V / 220V"
+            }
         },
             {
             id: 101,
@@ -2864,60 +2879,145 @@ const products = [
             name: "Infant Incubators",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 120000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Infant+Incubators",
-            description: "",
+            custom_url: "infant-incubators",
+            image: "../../assets/products/fanem-1186-a.png",
+            gallery: [
+                "../../assets/products/fanem-1186-a.png",
+                "../../assets/products/fanem-1186-c.png",
+                "../../assets/products/fanem-vision-advanced-2286.png",
+                "../../assets/products/fanem-2386-incubator.png",
+                "../../assets/products/fanem-it-158-ts.png",
+                "../../assets/products/fanem-it-158-ts-babypuff.png"
+            ],
+            short_description: "Providing a safe, controlled microenvironment for newborns. Explore the Fanem Infant Incubator series including standard and transport models.",
+            key_highlights: [
+                "1186® A and 1186® C Incubators",
+                "Vision® Advanced 2286 Incubator & 2386 Incubator",
+                "IT 158-TS® Transport Incubators (with Babypuff® 1020 option)"
+            ],
+            overview_text: "The Fanem Infant Incubator series offers a comprehensive range of state-of-the-art solutions designed to provide a secure and controlled microenvironment for premature and critically ill newborns. The lineup includes standard intensive care incubators and the highly mobile IT 158-TS® Transport Incubators for stable transit. These incubators feature advanced thermal regulation, ensuring the highest level of life support and developmental care across all clinical scenarios.",
             features: [
-            
-        ]
+                { title: "Standard Care (1186® Series & 2386)", text: "Reliable and precise incubators designed for standard and advanced neonatal intensive care." },
+                { title: "Vision® Advanced 2286", text: "Advanced features for high-acuity neonatal intensive care." },
+                { title: "IT 158-TS® Transport", text: "Robust and reliable transport incubator for safe neonatal transit, with options for integrated resuscitation (Babypuff® 1020)." }
+            ],
+            specifications: {
+                "Available Models": "1186® A, 1186® C, Vision® Advanced 2286, 2386 Incubator, IT 158-TS® Transport"
+            }
         },
             {
             id: 103,
             name: "Infant Warmer and Total Care",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 150000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Infant+Warmer",
-            description: "",
+            custom_url: "infant-warmer-and-total-care",
+            image: "../../assets/products/fanem-ampla-2085-color.png",
+            gallery: [
+                "../../assets/products/fanem-ampla-2085-color.png",
+                "../../assets/products/fanem-ampla-2085-led.png",
+                "../../assets/products/fanem-duetto-2386.png",
+                "../../assets/products/fanem-duetto-2386-2.png",
+                "../../assets/products/fanem-duetto-2386-3.png"
+            ],
+            short_description: "Delivering optimal thermal support and comprehensive care. Explore the Fanem Infant Warmer series including the Ampla® and DUETTO® Hybrid models.",
+            key_highlights: [
+                "DUETTO® 2386 HYBRID UNIT",
+                "Ampla® 2085 COLOR Infant Warmer",
+                "Ampla® 2085 LED Infant Warmer"
+            ],
+            overview_text: "The Fanem Infant Warmer and Total Care series provides precise and stable thermal environments critical for neonatal development and resuscitation. The lineup includes the advanced DUETTO® 2386 Hybrid Unit, which seamlessly combines an incubator's microenvironment with a radiant warmer's accessibility, alongside the Ampla® 2085 series (COLOR and LED models) for exceptional radiant warming and clinical flexibility.",
             features: [
-            
-        ]
+                { title: "DUETTO® 2386 HYBRID UNIT", text: "State-of-the-art hybrid design offering the best of both intensive care incubators and radiant warmers." },
+                { title: "Ampla® 2085 COLOR & LED", text: "Advanced infant warmers featuring precise radiant heating, user-friendly interfaces, and reliable total care." }
+            ],
+            specifications: {
+                "Available Models": "DUETTO® 2386 HYBRID UNIT, Ampla® 2085 COLOR, Ampla® 2085 LED"
+            }
         },
             {
             id: 104,
             name: "Neonatal Bubble CPAP",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 80000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Bubble+CPAP",
-            description: "",
+            custom_url: "neonatal-bubble-cpap",
+            image: "../../assets/products/fanem-babypap-1150-s.png",
+            gallery: [
+                "../../assets/products/fanem-babypap-1150-s.png",
+                "../../assets/products/fanem-babypap-1150-s-2.png",
+                "../../assets/products/fanem-fog-2140a.png"
+            ],
+            short_description: "The simplicity that optimizes ventilatory assistance. Featuring the Babypap® 1150-S with FOG 2140A humidifier.",
+            key_highlights: [
+                "Babypap® 1150-S System",
+                "FOG 2140A Humidifier",
+                "Optimized Ventilatory Assistance",
+                "Voltage Options: 127V / 220V"
+            ],
+            overview_text: "The Babypap® 1150-S Bubble CPAP provides gentle, non-invasive ventilatory assistance specifically designed for newborns. With the integration of the FOG 2140A humidifier, it offers simplicity in operation while maintaining optimal moisture and pressure levels to effectively support neonatal respiratory functions.",
             features: [
-            
-        ]
+                { title: "Optimized Ventilatory Assistance", text: "The simplicity that optimizes ventilatory assistance for the most fragile patients." },
+                { title: "FOG 2140A Humidifier", text: "Integrated humidifier ensures optimal moisture delivery during respiratory support." },
+                { title: "Simplicity in Design", text: "Easy to assemble, adjust, and monitor for streamlined clinical workflows." }
+            ],
+            specifications: {
+                "Model": "Babypap® 1150-S",
+                "Humidifier": "FOG 2140A",
+                "Voltage": "127V / 220V"
+            }
         },
             {
             id: 105,
             name: "Neonatal Humidifier",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 40000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Humidifier",
-            description: "",
+            custom_url: "neonatal-humidifier",
+            image: "../../assets/products/fanem-fog-2140a-main.png",
+            gallery: [
+                "../../assets/products/fanem-fog-2140a-main.png",
+                "../../assets/products/fanem-fog-2140a-chamber.png"
+            ],
+            short_description: "The best technology at your fingertips.",
+            key_highlights: [
+                "FOG 2140A Humidifier",
+                "Advanced moisture control",
+                "Voltage Options: 127V / 220V"
+            ],
+            overview_text: "The FOG 2140A Humidifier brings the best technology to your fingertips, ensuring optimal moisture delivery for neonatal respiratory support. Designed for precision and reliability, it seamlessly integrates with neonatal care systems to provide consistent and controlled humidification.",
             features: [
-            
-        ]
+                { title: "Advanced Technology", text: "The best technology at your fingertips for precise humidification." },
+                { title: "Reliable Performance", text: "Ensures consistent and optimal moisture delivery for neonatal respiratory support." }
+            ],
+            specifications: {
+                "Model": "FOG 2140A",
+                "Voltage": "127V / 220V"
+            }
         },
             {
             id: 106,
             name: "Neonatal Resuscitator",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 45000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Resuscitator",
-            description: "",
+            custom_url: "neonatal-resuscitator",
+            image: "../../assets/products/fanem-babypuff-1020-main.png",
+            gallery: [
+                "../../assets/products/fanem-babypuff-1020-main.png",
+                "../../assets/products/fanem-babypuff-1020-side.png"
+            ],
+            short_description: "From the first breath of life.",
+            key_highlights: [
+                "BABYPUFF® 1020",
+                "Precise resuscitation support",
+                "Reliable PIP and PEEP control"
+            ],
+            overview_text: "The BABYPUFF® 1020 Neonatal Resuscitator is designed to provide vital respiratory support from the very first breath of life. Delivering precise and controlled resuscitation, it ensures the safety and well-being of the most fragile patients during critical moments.",
             features: [
-            
-        ]
+                { title: "Precise Control", text: "Accurate regulation of Peak Inspiratory Pressure (PIP) and Positive End-Expiratory Pressure (PEEP) for safe and effective resuscitation." },
+                { title: "First Breath Support", text: "Provides essential and immediate respiratory assistance from the first breath of life." },
+                { title: "Ergonomic Design", text: "Designed for ease of use in high-pressure delivery and neonatal intensive care environments." }
+            ],
+            specifications: {
+                "Model": "BABYPUFF® 1020"
+            }
         },
             {
             id: 107,
