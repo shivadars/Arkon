@@ -304,7 +304,7 @@ p {
     -webkit-backdrop-filter: none;
     border-bottom: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: headerSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: headerSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes headerSlideDown {

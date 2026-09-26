@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSocialsCard();
     initStackGallery();
     initMegaMenu();
+    initSmartHeader();
 
     setupPhoneLinks();
     
@@ -80,11 +81,9 @@ function initSmartHeader() {
         if (!isFixed && currentScrollY > showThreshold) {
             isFixed = true;
             header.classList.add('header--fixed');
-            document.body.style.paddingTop = header.offsetHeight + 'px';
         } else if (isFixed && currentScrollY <= hideThreshold) {
             isFixed = false;
             header.classList.remove('header--fixed');
-            document.body.style.paddingTop = '0';
         }
         ticking = false;
     }
