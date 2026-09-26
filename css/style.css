@@ -5390,21 +5390,21 @@ html {
     position: absolute;
     top: 100%;
     left: 50%;
-    width: 900px;
-    max-width: 90vw;
+    width: 1100px;
+    max-width: 95vw;
     background: var(--surface);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
     border-radius: var(--radius-md);
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, 15px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    z-index: 1000;
+    z-index: 9999;
     display: grid;
-    grid-template-columns: 220px 250px 1fr;
+    grid-template-columns: 200px 310px 1fr;
     border: 1px solid var(--border);
-    min-height: 450px;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .nav-item-dropdown:hover .mega-menu,
@@ -5418,6 +5418,8 @@ html {
     background: var(--primary);
     color: white;
     padding: 24px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .mega-menu-level-2-wrapper {
@@ -5436,7 +5438,7 @@ html {
     border-right: 1px solid var(--border);
     padding: 16px 0;
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 70vh;
 }
 
 /* Custom Scrollbar */
@@ -5465,11 +5467,11 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 32px;
+    padding: 20px 32px;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     transition: all 0.2s ease;
     letter-spacing: 0.5px;
 }
@@ -5497,14 +5499,17 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 24px;
+    padding: 13px 24px;
     cursor: pointer;
     color: #334155;
     transition: all 0.2s ease;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none !important;
     border-left: 3px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .mega-menu-category::after {
@@ -5530,8 +5535,8 @@ html {
 .mega-menu-level-3 {
     padding: 16px 0;
     overflow-y: auto;
-    max-height: 60vh;
-    background: #f0f2f5;
+    max-height: 70vh;
+    background: #ffffff;
 }
 
 .mega-menu-products-grid {
@@ -5542,7 +5547,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 24px;
+    padding: 12px 24px;
+    gap: 12px;
     cursor: pointer;
     color: #334155;
     transition: all 0.2s ease;

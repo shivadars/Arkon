@@ -668,7 +668,7 @@ function initMegaMenu() {
     // Use exact COMEN product categories for the menu
     const productCategories = [
         "Ventilator",
-        "High Flow Oxygen Therapy Humidifier",
+        "High Flow O\u2082 Humidifier",
         "Anesthesia Machine",
         "Patient Monitoring",
         "Defibrillator Monitor",
@@ -865,7 +865,6 @@ function renderLvl3(productsToRender) {
                     </a>
                 `).join('')}
             </div>
-            ${productsToRender.length > 15 ? `<div style="text-align: right; margin-top: 16px;"><a href="products.html" class="link-action" style="font-weight:600; color:var(--primary);">View All &rarr;</a></div>` : ''}
         `;
     }
     
