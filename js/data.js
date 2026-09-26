@@ -3497,19 +3497,11 @@ const clients = [
     },
     {
         "name": "Rajagiri Hospital",
-        "img": "https://placehold.co/150x80/FFFFFF/17211D?text=Rajagiri"
-    },
-    {
-        "name": "Caritas Hospital",
-        "img": "https://placehold.co/150x80/FFFFFF/17211D?text=Caritas"
-    },
-    {
-        "name": "Care with Love",
-        "img": "https://placehold.co/150x80/FFFFFF/17211D?text=Care+With+Love"
+        "img": "assets/clients/uploaded_client_7.png"
     },
     {
         "name": "KMSCL",
-        "img": "https://placehold.co/150x80/FFFFFF/17211D?text=KMSCL"
+        "img": "assets/clients/uploaded_client_8.png"
     }
 ];
 
