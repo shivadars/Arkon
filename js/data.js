@@ -263,12 +263,12 @@ const products = [
             category: "Ventilator",
             custom_url: "vn-series",
             
-            image: "assets/images/products/vn-series-1.png",
+            image: "../../assets/images/products/vn-series-1.png",
             gallery: [
-                "assets/images/products/vn-series-1.png",
-                "assets/images/products/vn-series-2.png",
-                "assets/images/products/vn-series-3.png",
-                "assets/images/products/vn-series-4.png"
+                "../../assets/images/products/vn-series-1.png",
+                "../../assets/images/products/vn-series-2.png",
+                "../../assets/images/products/vn-series-3.png",
+                "../../assets/images/products/vn-series-4.png"
             ],
             
             short_description: "A comprehensive neonatal and pediatric ventilator delivering full-cycle precision ventilation protection for patients from 200g.",
@@ -307,7 +307,10 @@ const products = [
             category: "Ventilator",
             custom_url: "nv8",
             
+            image: "../../assets/products/comen-nv8-1.png",
             gallery: [
+                "../../assets/products/comen-nv8-1.png",
+                "../../assets/products/comen-nv8-2.png"
             ],
             
             short_description: "A high-end neonatal non-invasive ventilator designed to reduce intubation rates with industry-leading PIP performance.",
@@ -561,12 +564,12 @@ const products = [
             category: "Anesthesia Machine",
             custom_url: "ax-800-ax-700",
             
-            image: "assets/images/products/ax-800-ax-700-1.png",
+            image: "../../assets/images/products/ax-800-ax-700-1.png",
             gallery: [
-                "assets/images/products/ax-800-ax-700-1.png",
-                "assets/images/products/ax-800-ax-700-2.png",
-                "assets/images/products/ax-800-ax-700-3.png",
-                "assets/images/products/ax-800-ax-700-4.png"
+                "../../assets/images/products/ax-800-ax-700-1.png",
+                "../../assets/images/products/ax-800-ax-700-2.png",
+                "../../assets/images/products/ax-800-ax-700-3.png",
+                "../../assets/images/products/ax-800-ax-700-4.png"
             ],
             
             short_description: "Versatile anesthesia workstations featuring a modular design, 15-inch rotating touch screen, and classic pneumatic drive electronic control for precise ventilation.",
@@ -820,12 +823,12 @@ const products = [
             category: "Patient Monitoring",
             custom_url: "k-pro-series",
             
-            image: "assets/images/products/k-pro-series-1.png",
+            image: "../../assets/images/products/k-pro-series-1.png",
             gallery: [
-                "assets/images/products/k-pro-series-1.png",
-                "assets/images/products/k-pro-series-2.png",
-                "assets/images/products/k-pro-series-3.png",
-                "assets/images/products/k-pro-series-4.png"
+                "../../assets/images/products/k-pro-series-1.png",
+                "../../assets/images/products/k-pro-series-2.png",
+                "../../assets/images/products/k-pro-series-3.png",
+                "../../assets/images/products/k-pro-series-4.png"
             ],
             
             short_description: "An advanced ICU multiparameter patient monitor featuring high-definition touchscreens, cutting-edge arrhythmia classification, scalable modular expansions, and seamless connectivity.",
@@ -1074,12 +1077,12 @@ const products = [
             category: "Patient Monitoring",
             custom_url: "ecenter-cms",
             
-            image: "assets/images/products/ecenter-cms-1.png",
+            image: "../../assets/images/products/ecenter-cms-1.png",
             gallery: [
-                "assets/images/products/ecenter-cms-1.png",
-                "assets/images/products/ecenter-cms-2.png",
-                "assets/images/products/ecenter-cms-3.png",
-                "assets/images/products/ecenter-cms-4.png"
+                "../../assets/images/products/ecenter-cms-1.png",
+                "../../assets/images/products/ecenter-cms-2.png",
+                "../../assets/images/products/ecenter-cms-3.png",
+                "../../assets/images/products/ecenter-cms-4.png"
             ],
             
             short_description: "An all-in-one central monitoring solution offering comprehensive patient oversight across departments via Central Stations, Workstations, web-based View Stations, and Mobile apps.",
@@ -1242,12 +1245,12 @@ const products = [
             category: "Patient Monitoring",
             custom_url: "cf5andcf8",
             
-            image: "assets/images/products/cf5-amp-cf8-1.png",
+            image: "../../assets/images/products/cf5-amp-cf8-1.png",
             gallery: [
-                "assets/images/products/cf5-amp-cf8-1.png",
-                "assets/images/products/cf5-amp-cf8-2.png",
-                "assets/images/products/cf5-amp-cf8-3.png",
-                "assets/images/products/cf5-amp-cf8-4.png"
+                "../../assets/images/products/cf5-amp-cf8-1.png",
+                "../../assets/images/products/cf5-amp-cf8-2.png",
+                "../../assets/images/products/cf5-amp-cf8-3.png",
+                "../../assets/images/products/cf5-amp-cf8-4.png"
             ],
             
             short_description: "Advanced fetal and maternal monitors featuring high-sensitivity 12-crystal transducers, comprehensive CTG scoring, and wireless waterproof options for continuous care.",
@@ -1285,12 +1288,12 @@ const products = [
             category: "Patient Monitoring",
             custom_url: "h300-and-h301",
             
-            image: "assets/images/products/h300-amp-h301-1.png",
+            image: "../../assets/images/products/h300-amp-h301-1.png",
             gallery: [
-                "assets/images/products/h300-amp-h301-1.png",
-                "assets/images/products/h300-amp-h301-2.png",
-                "assets/images/products/h300-amp-h301-3.png",
-                "assets/images/products/h300-amp-h301-4.png"
+                "../../assets/images/products/h300-amp-h301-1.png",
+                "../../assets/images/products/h300-amp-h301-2.png",
+                "../../assets/images/products/h300-amp-h301-3.png",
+                "../../assets/images/products/h300-amp-h301-4.png"
             ],
             
             short_description: "Ultra-portable electrocardiographs weighing under 1.3kg, featuring an extended 9-hour battery, real-time signal quality monitoring, and seamless hospital IT connectivity.",
@@ -2867,12 +2870,27 @@ const products = [
             name: "Hybrid Intensive Care Unit",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 250000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Hybrid+Intensive+Care+Unit",
-            description: "",
+            custom_url: "hybrid-intensive-care-unit",
+            image: "../../assets/products/fanem-duetto-2386.png",
+            gallery: [
+                "../../assets/products/fanem-duetto-2386.png",
+                "../../assets/products/fanem-duetto-2386-2.png",
+                "../../assets/products/fanem-duetto-2386-3.png"
+            ],
+            short_description: "State-of-the-art hybrid design offering the best of both intensive care incubators and radiant warmers.",
+            key_highlights: [
+                "DUETTO® 2386 HYBRID UNIT",
+                "Combines incubator and radiant warmer",
+                "Advanced thermal management"
+            ],
+            overview_text: "The DUETTO® 2386 Hybrid Unit brings together the strengths of an intensive care incubator and an open radiant warmer in a single, seamlessly integrated device. This hybrid approach ensures minimal disturbance to the newborn while providing critical access for caregivers during resuscitation or intensive procedures.",
             features: [
-            
-        ]
+                { title: "Hybrid Capability", text: "Easily transitions between a closed incubator microenvironment and an open radiant warmer." },
+                { title: "Optimal Accessibility", text: "Allows unrestricted access for medical teams without compromising the infant's thermal stability." }
+            ],
+            specifications: {
+                "Model": "DUETTO® 2386 HYBRID UNIT"
+            }
         },
             {
             id: 102,
@@ -3024,36 +3042,87 @@ const products = [
             name: "Oxygen Therapy",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 30000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Oxygen+Therapy",
-            description: "",
+            custom_url: "oxygen-therapy",
+            image: "../../assets/products/fanem-oxitenda-014.png",
+            gallery: [
+                "../../assets/products/fanem-pediatric-resuscitator-020.png",
+                "../../assets/products/fanem-babypap-1150-s-3.png",
+                "../../assets/products/fanem-oxitenda-014.png",
+                "../../assets/products/fanem-babypuff-1020-3.png",
+                "../../assets/products/fanem-acrylic-helmet-016.png"
+            ],
+            short_description: "Comprehensive respiratory solutions including resuscitators, CPAP, tents, and hoods.",
+            key_highlights: [
+                "Pediatric Resuscitator 020",
+                "Babypap® 1150-S with FOG 2140A humidifier",
+                "Oxitenda® 014 – Oxygen Tent",
+                "BABYPUFF® 1020 Neonatal resuscitator",
+                "Acrylic oxygen helmet (Hood) 016"
+            ],
+            overview_text: "The Fanem Oxygen Therapy lineup provides comprehensive and reliable respiratory support across all stages of neonatal care. From the vital first breaths supported by the BABYPUFF® 1020 and Pediatric Resuscitator 020, to sustained and optimized ventilatory assistance via the Babypap® 1150-S, and controlled environments provided by the Oxitenda® 014 Oxygen Tent and Acrylic Oxygen Helmet.",
             features: [
-            
-        ]
+                { title: "Resuscitation Support", text: "Immediate and precise life support via the BABYPUFF® 1020 and Pediatric Resuscitator 020." },
+                { title: "Ventilatory Assistance", text: "Optimized, gentle non-invasive respiratory support using the Babypap® 1150-S with integrated FOG 2140A humidifier." },
+                { title: "Controlled Environments", text: "Stable oxygen microenvironments provided by the Oxitenda® 014 and Acrylic Oxygen Helmet." }
+            ],
+            specifications: {
+                "Available Models": "Pediatric Resuscitator 020, Babypap® 1150-S, Oxitenda® 014, BABYPUFF® 1020, Acrylic Helmet 016"
+            }
         },
             {
             id: 108,
             name: "Phototherapy",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 150000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Phototherapy",
-            description: "",
+            custom_url: "phototherapy",
+            image: "../../assets/products/fanem-bilitron-3006.png",
+            gallery: [
+                "../../assets/products/fanem-bilitron-3006.png",
+                "../../assets/products/fanem-bilitron-sky-5006.png",
+                "../../assets/products/fanem-bilitron-bed-4006.png"
+            ],
+            short_description: "Advanced jaundice management. Featuring BILITRON® 3006, SKY 5006, and BED 4006.",
+            key_highlights: [
+                "BILITRON® 3006 PHOTOTHERAPY",
+                "BILITRON® SKY 5006 PHOTOTHERAPY",
+                "BILITRON® BED 4006 PHOTOTHERAPY",
+                "High-intensity LED technology"
+            ],
+            overview_text: "The Fanem Phototherapy lineup provides effective and safe jaundice management for newborns. The series includes the BILITRON® 3006 for versatile targeted treatment, the BILITRON® SKY 5006 for expansive overhead coverage, and the BILITRON® BED 4006 for integrated, comfortable under-patient therapy. All models utilize high-intensity LED technology to rapidly reduce bilirubin levels.",
             features: [
-            
-        ]
+                { title: "BILITRON® 3006", text: "Compact, highly focused LED phototherapy for intense and localized jaundice treatment." },
+                { title: "BILITRON® SKY 5006", text: "Overhead phototherapy system providing extensive coverage area for maximum effectiveness." },
+                { title: "BILITRON® BED 4006", text: "Under-patient phototherapy bed designed for maximum patient comfort while delivering highly effective treatment from below." }
+            ],
+            specifications: {
+                "Available Models": "BILITRON® 3006, BILITRON® SKY 5006, BILITRON® BED 4006"
+            }
         },
             {
             id: 109,
             name: "Transport Incubators",
             brand: "FANEM",
             category: "Neonatal Care",
-            price: 180000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Transport+Incubators",
-            description: "",
+            custom_url: "transport-incubators",
+            image: "../../assets/products/fanem-it158ts-phototherapy.png",
+            gallery: [
+                "../../assets/products/fanem-it158ts-phototherapy.png",
+                "../../assets/products/fanem-it158ts-phototherapy-2.png"
+            ],
+            short_description: "Safe and reliable transport for critical neonatal care. Featuring the IT 158-TS® lineup.",
+            key_highlights: [
+                "IT 158-TS® Transport Incubator",
+                "IT 158-TS with Integrated Babypuff® 1020"
+            ],
+            overview_text: "The IT 158-TS® Transport Incubators are designed for the safe and secure transport of high-risk newborns within or outside the hospital. Available with an integrated Babypuff® 1020 resuscitator, these incubators ensure that vital respiratory support and a stable microenvironment are maintained without interruption.",
             features: [
-            
-        ]
+                { title: "IT 158-TS®", text: "Reliable transport incubator providing a stable thermal microenvironment during patient transit." },
+                { title: "Integrated Babypuff® 1020", text: "Certain models feature the integrated Babypuff® 1020, delivering immediate and precise resuscitation and ventilatory support." },
+                { title: "Mobility and Safety", text: "Engineered for maximum mobility, battery autonomy, and secure patient handling." }
+            ],
+            specifications: {
+                "Available Models": "IT 158-TS®, IT 158-TS® with Integrated Babypuff® 1020"
+            }
         },
             {
             id: 110,
@@ -3220,13 +3289,13 @@ const products = [
             brand: "HUGEMED",
             category: "Endoscopy",
             price: 7000,
-            image: "assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
+            image: "../../assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
             description: "",
             images: [
-            "assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
-            "assets/images/products/single-use-ureterorenoscope-hu30m-2.png",
-            "assets/images/products/single-use-ureterorenoscope-hu30m-3.jpg",
-            "assets/images/products/single-use-ureterorenoscope-hu30m-4.jpg"
+            "../../assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
+            "../../assets/images/products/single-use-ureterorenoscope-hu30m-2.png",
+            "../../assets/images/products/single-use-ureterorenoscope-hu30m-3.jpg",
+            "../../assets/images/products/single-use-ureterorenoscope-hu30m-4.jpg"
         ],
             features: [
             
