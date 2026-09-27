@@ -1016,7 +1016,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.accordion-item');
     if (items.length > 0) {
         const baseHeight = 90;
-        const peakHeight = 350;
 
         function onScroll() {
             const windowHeight = window.innerHeight;
@@ -1025,6 +1024,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             items.forEach((item) => {
                 const rect = item.getBoundingClientRect();
+                
+                // Dynamically calculate peak height based on text length
+                const bodyInner = item.querySelector('.accordion-body-inner');
+                // Add baseHeight (90) + text height + extra padding for breathing room
+                const targetPeakHeight = bodyInner ? baseHeight + bodyInner.scrollHeight + 60 : 350;
+                
                 let height = baseHeight;
                 let progress = 0;
                 let isActive = false;
@@ -1037,11 +1042,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (rect.top <= startY && rect.top > peakY) {
                     // Expanding phase (scrolling down)
                     progress = (startY - rect.top) / (startY - peakY);
-                    height = baseHeight + (peakHeight - baseHeight) * progress;
+                    height = baseHeight + (targetPeakHeight - baseHeight) * progress;
                     if (progress > 0.5) isActive = true;
                 } else if (rect.top <= peakY) {
                     // Above the middle - STAY EXPANDED!
-                    height = peakHeight;
+                    height = targetPeakHeight;
                     progress = 1;
                     isActive = true;
                 }
@@ -1050,7 +1055,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.height = height + 'px';
                 
                 // Map opacity to progress directly
-                const bodyInner = item.querySelector('.accordion-body-inner');
                 if (bodyInner) {
                     // fade in smoothly as it expands
                     const opacity = Math.max(0, Math.min(1, (progress - 0.2) / 0.6));

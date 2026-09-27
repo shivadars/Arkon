@@ -3571,14 +3571,13 @@ p {
     }
 
     .logo {
-        width: 52px;
-        height: 52px;
-        margin-left: -20px;
-        /* Concentric with mobile pill border radius */
+        width: 60px;
+        height: 60px;
+        margin-left: -24px; /* Exactly counters the container padding to touch the left edge */
     }
 
     .logo img {
-        height: 30px !important;
+        height: 32px !important;
     }
 
     .main-nav,
@@ -3721,6 +3720,12 @@ p {
 
     .header {
         height: 64px;
+    }
+
+    .logo {
+        width: 64px;
+        height: 64px;
+        margin-left: -16px; /* Exactly counters the 16px container padding */
     }
 
     h1 {
@@ -5257,25 +5262,29 @@ html {
    ============================================ */
 @media (max-width: 768px) {
     .about-stack-card {
-        height: auto;
-        min-height: auto;
-        position: relative;
-        top: auto;
+        height: calc(100vh - 60px);
+        position: sticky;
+        top: 60px;
+        overflow: hidden;
+        background: white; /* Ensure background is solid when sliding over */
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.1); /* Shadow to separate cards vertically */
     }
 
     .about-stack-inner {
         grid-template-columns: 1fr;
+        height: 100%;
     }
 
     /* On mobile, image always comes first visually */
     .about-stack-image {
-        height: 50vw;
-        min-height: 240px;
-        max-height: 360px;
+        height: 35vh; /* Take up 35% of the screen height */
+        min-height: auto;
+        max-height: none;
         order: -1;
     }
 
     .about-stack-card--reversed .about-stack-inner {
+        grid-template-columns: 1fr;
         direction: ltr;
     }
 
@@ -5284,11 +5293,15 @@ html {
     }
 
     .about-stack-text {
-        padding: 36px 24px 48px 24px;
+        display: block; /* Forces text to the top, breaking the desktop flex-centering */
+        padding: 24px 20px 32px 20px;
+        height: calc(65vh - 60px);
+        overflow-y: auto; /* Let text scroll within the card if it's too long */
     }
 
     .about-stack-heading {
         font-size: 28px;
+        margin-bottom: 16px;
     }
 
     .about-stack-eyebrow {
@@ -5313,10 +5326,10 @@ html {
         font-size: 13px;
     }
 
-    /* No stacking effect on mobile â€” just normal flow */
+    /* Full slide-over effect without 3D scale down */
     .about-stack-card {
-        opacity: 1;
-        transform: none;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .about-stack-card::before {
@@ -6471,40 +6484,88 @@ html {
 @media (max-width: 992px) {
     .rz-hero {
         height: auto;
-        padding: 120px 0 40px;
+        padding: 100px 0 0px;
     }
 
     .rz-container {
         flex-direction: column;
         height: auto;
-        gap: 40px;
+        gap: 0;
     }
 
-    .rz-left,
-    .rz-right {
-        flex: 0 0 100%;
-        padding: 0;
-    }
-
-    .rz-right {
-        min-height: 400px;
-    }
-
-    .rz-bg-slant {
+    .rz-left {
+        flex: none;
         width: 100%;
-        clip-path: polygon(0 40%, 100% 20%, 100% 100%, 0% 100%);
+        padding: 0 24px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 2;
+    }
+
+    .rz-right {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        height: 420px; /* Taller to fit the image properly */
+        position: relative;
+        z-index: 1;
+        margin-top: -20px; /* Pull the image slightly up into the text area */
+    }
+
+    .rz-blue-bg {
+        width: 100%;
+        top: 0;
+        height: 100%;
+        clip-path: none;
     }
 
     .rz-title {
-        font-size: 40px;
+        font-size: 38px;
+        text-align: left;
+    }
+
+    .rz-subtext {
+        font-size: 16px;
+        margin-bottom: 24px;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .rz-buttons {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
     }
 
     .rz-title-rotating-wrapper {
         height: 44px;
     }
 
+    .rz-image-wrapper::before {
+        width: 280px; 
+        height: 280px;
+        top: 50%;
+        left: 50%;
+    }
+    
+    .rz-image-wrapper img {
+        object-position: center bottom; /* Center the equipment on mobile */
+    }
+
     .rz-nav-arrow {
-        display: none;
+        display: flex;
+        top: auto;
+        bottom: 200px; /* Position arrows on either side of the image */
+    }
+    
+    .rz-nav-prev {
+        left: 10px;
+    }
+    
+    .rz-nav-next {
+        right: 10px;
     }
 }
 
@@ -6816,14 +6877,20 @@ html {
 @media (max-width: 900px) {
     .clients-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 40px 20px;
     }
 }
 
 @media (max-width: 600px) {
     .clients-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        /* Use a 3-column grid so 9 logos fit perfectly into a 3x3 square */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px 20px; /* Increased vertical and horizontal space */
+    }
+
+    .clients-grid .client-logo {
+        max-width: 95%; /* Allow slight stretch if needed */
+        max-height: 70px; /* Slightly larger to balance the new space */
     }
 }/* ---- NEW CONTACT US SECTION ---- */
 .contact-section-new {
