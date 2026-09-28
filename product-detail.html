@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
     <!-- Page Loader -->
@@ -88,7 +88,7 @@
     <main class="page-main pd-nike-layout">
         <section class="pd-hero-wrapper" id="pd-hero-bg">
             <div class="container">
-                <div class="breadcrumbs" id="pd-breadcrumbs" style="padding-top: 30px; margin-bottom: 40px;">
+                <div class="breadcrumbs" id="pd-breadcrumbs" style="padding-top: 120px; margin-bottom: 40px;">
                     <a href="index.html">Home</a> &gt; <a href="products.html">Products</a>
                 </div>
                 
@@ -111,53 +111,37 @@
     <footer class="footer" id="contact">
         <div class="container footer-grid-compact">
             <div class="footer-col-compact">
-                <img src="assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color: white; padding: 6px; border-radius: 4px; object-fit: contain; max-height: 50px;">
+                <img src="assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color: white; padding: 10px; border-radius: 6px; object-fit: contain; max-height: 65px;">
                 <p class="footer-desc">Medical equipment solutions for hospitals, clinics, laboratories and healthcare providers.</p>
-                <div class="social-icons">
-                    <a href="#">f</a>
-                    <a href="#">in</a>
-                    <a href="#">ig</a>
-                    <a href="#">yt</a>
+                <div class="footer-contact-info" style="margin-top: 24px;">
+                    <div style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 16px;">📞</span> +91 98765 43210
+                    </div>
+                    <div style="color: rgba(255, 255, 255, 0.8); display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 16px;">✉</span> info@arkonmedical.com
+                    </div>
                 </div>
             </div>
             <div class="footer-col-compact">
                 <h4>Products</h4>
                 <ul>
                     <li><a href="products.html">All Products</a></li>
-                    <li><a href="products.html?category=ICU%20Equipment">ICU Equipment</a></li>
-                    <li><a href="products.html?category=Diagnostic%20Equipment">Diagnostic Equipment</a></li>
-                    <li><a href="products.html?category=Laboratory%20Equipment">Laboratory Equipment</a></li>
-                    <li><a href="products.html?category=Surgical%20Equipment">Surgical Equipment</a></li>
+                    <li><a href="products.html?category=Ventilator">Ventilator</a></li>
+                    <li><a href="products.html?category=Patient%20Monitoring">Patient Monitoring</a></li>
+                    <li><a href="products.html?category=Anesthesia%20Machine">Anesthesia Machine</a></li>
+                    <li><a href="products.html?category=Surgical%20Light">Surgical Light</a></li>
+                    <li><a href="products.html?category=Incubator">Incubator</a></li>
                 </ul>
             </div>
             <div class="footer-col-compact">
-                <h4>Company</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-
-
-                    <li><a href="#">Why Choose Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-col-compact">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Enquire Now</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-            <div class="footer-col-compact">
-                <h4>Contact Us</h4>
-                <ul class="contact-compact">
-                    <li><span class="icon">dY"?</span> 123, Healthcare Avenue,<br>New Delhi - 110001, India</li>
-                    <li><span class="icon">o%,?</span> info@arkonmedicalsystem.com</li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom-compact">
+        <div class="footer-bottom-compact" style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px; padding-top: 20px;">
             &copy; 2024 Arkon Medical System. All Rights Reserved.
         </div>
     </footer>
@@ -237,8 +221,8 @@
         </div>
     </div>
 
-    <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/data.js?v=2"></script>
+    <script src="js/script.js?v=3"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);

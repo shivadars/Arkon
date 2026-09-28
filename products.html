@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
     <!-- Page Loader -->
@@ -87,7 +87,7 @@
     <main class="page-main bg-light">
 
 
-        <section class="page-content section-spacing" style="padding-top: 0; padding-bottom: 0;">
+        <section class="page-content section-spacing" style="padding-top: 120px; padding-bottom: 40px;">
 
             <div class="container products-layout" data-aos="fade-up">
                 <button class="mobile-filter-toggle" onclick="document.querySelector('.products-sidebar').classList.toggle('show-mobile'); this.textContent = document.querySelector('.products-sidebar').classList.contains('show-mobile') ? '✕ Hide Categories' : '☰ Show Categories';">
@@ -136,56 +136,37 @@
     <footer class="footer" id="contact">
         <div class="container footer-grid-compact">
             <div class="footer-col-compact">
-                <img src="assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color: white; padding: 6px; border-radius: 4px; object-fit: contain; max-height: 50px;">
+                <img src="assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color: white; padding: 10px; border-radius: 6px; object-fit: contain; max-height: 65px;">
                 <p class="footer-desc">Medical equipment solutions for hospitals, clinics, laboratories and healthcare providers.</p>
-                <div class="social-icons">
-                    <a href="#">f</a>
-                    <a href="#">in</a>
-                    <a href="#">ig</a>
-                    <a href="#">yt</a>
+                <div class="footer-contact-info" style="margin-top: 24px;">
+                    <div style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 16px;">📞</span> +91 98765 43210
+                    </div>
+                    <div style="color: rgba(255, 255, 255, 0.8); display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 16px;">✉</span> info@arkonmedical.com
+                    </div>
                 </div>
             </div>
             <div class="footer-col-compact">
                 <h4>Products</h4>
                 <ul>
                     <li><a href="products.html">All Products</a></li>
-                    <li><a href="index.html#categories">Categories</a></li>
-                    <li><a href="products.html?category=ICU%20Equipment">ICU Equipment</a></li>
-                    <li><a href="products.html?category=Diagnostic%20Equipment">Diagnostic Equipment</a></li>
-                    <li><a href="products.html?category=Laboratory%20Equipment">Laboratory Equipment</a></li>
-                    <li><a href="products.html?category=Surgical%20Equipment">Surgical Equipment</a></li>
+                    <li><a href="products.html?category=Ventilator">Ventilator</a></li>
+                    <li><a href="products.html?category=Patient%20Monitoring">Patient Monitoring</a></li>
+                    <li><a href="products.html?category=Anesthesia%20Machine">Anesthesia Machine</a></li>
+                    <li><a href="products.html?category=Surgical%20Light">Surgical Light</a></li>
+                    <li><a href="products.html?category=Incubator">Incubator</a></li>
                 </ul>
             </div>
-        <div class="footer-col-compact">
-            <h4>Company</h4>
-            <ul>
-                <li><a href="index.html#about">About Us</a></li>
-
-
-                <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-col-compact">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Enquire Now</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Sitemap</a></li>
-            </ul>
-        </div>
             <div class="footer-col-compact">
-                <h4>Contact Us</h4>
-                <ul class="contact-compact">
-                    <li><span class="icon">📍</span> 123, Healthcare Avenue,<br>New Delhi - 110001, India</li>
-                    <li><span class="icon" style="display: inline-flex; align-items: center; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A8F55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> +91 98765 43210</li>
-                    <li><span class="icon">✉️</span> info@arkonmedicalsystem.com</li>
-                    <li><span class="icon">🕒</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom-compact">
+        <div class="footer-bottom-compact" style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px; padding-top: 20px;">
             &copy; 2024 Arkon Medical System. All Rights Reserved.
         </div>
     </footer>
@@ -265,8 +246,8 @@
         </div>
     </div>
 
-    <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/data.js?v=2"></script>
+    <script src="js/script.js?v=3"></script>
     <script>
         // Page specific logic for products.html
         document.addEventListener('DOMContentLoaded', () => {
@@ -503,12 +484,12 @@
                 let html = '';
                 currentItems.forEach(prod => {
                     html += `
-                        <div class="product-card" data-product-id="${prod.id}">
+                        <div class="product-card" data-product-id="${prod.id}" style="cursor: pointer;" onclick="window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">
                             <div class="img-wrapper">
                                 <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
                             <h3>${prod.name}</h3>
-                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">View Details</button>
+                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="event.stopPropagation(); window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">View Details</button>
                         </div>
                     `;
                 });

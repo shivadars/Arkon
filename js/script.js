@@ -669,7 +669,7 @@ function initMegaMenu() {
     // Use exact COMEN product categories for the menu
     const productCategories = [
         "Ventilator",
-        "High Flow O\u2082 Humidifier",
+        "High Flow Oxygen Therapy Humidifier",
         "Anesthesia Machine",
         "Patient Monitoring",
         "Defibrillator Monitor",
@@ -683,7 +683,8 @@ function initMegaMenu() {
         "Infusion System",
         "Endoscopy",
         "Ultrasound",
-        "In Vitro Diagnostic"
+        "In Vitro Diagnostic",
+        "Neonatal Care"
     ];
     
     // 1. Build Desktop Mega Menu
@@ -754,13 +755,13 @@ function initMegaMenu() {
     let mobileHTML = `
         <div class="mobile-accordion-item">
             <a href="products.html" class="mobile-accordion-link">Products</a>
-            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)">▼</button>
+            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)">&lt;</button>
         </div>
         <div class="mobile-accordion-level" id="mobile-products-group">
             ${productCategories.map((cat, idx) => `
                 <div class="mobile-accordion-item">
                     <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
-                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)">▼</button>
+                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)">&lt;</button>
                 </div>
                 <div class="mobile-accordion-level" id="mobile-cat-${idx}">
                     ${products.filter(p => p.category === cat).map(p => `
@@ -775,13 +776,13 @@ function initMegaMenu() {
         mobileHTML += `
             <div class="mobile-accordion-item">
                 <a href="products.html" class="mobile-accordion-link">Solutions</a>
-                <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)">▼</button>
+                <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)">&lt;</button>
             </div>
             <div class="mobile-accordion-level" id="mobile-solutions-group">
                 ${solutions.map((sol, idx) => `
                     <div class="mobile-accordion-item">
                         <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
-                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)">▼</button>
+                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)">&lt;</button>
                     </div>
                     <div class="mobile-accordion-level" id="mobile-sol-${idx}">
                         ${getSolutionProducts(sol.id).map(p => `
@@ -880,7 +881,9 @@ function toggleMobileMegaMenu() {
         mobileMenu.classList.toggle('active');
         const icon = mobileMenu.previousElementSibling.querySelector('.dropdown-icon');
         if (icon) {
-            icon.style.transform = mobileMenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            icon.style.display = "inline-block"; // Needs display inline-block to rotate
+            icon.style.transition = "transform 0.3s ease";
+            icon.style.transform = mobileMenu.classList.contains('active') ? 'rotate(-90deg)' : 'rotate(0deg)';
         }
     }
 }
@@ -889,7 +892,7 @@ function toggleMobileAccordion(targetId, btnElement) {
     const target = document.getElementById(targetId);
     if (target) {
         target.classList.toggle('active');
-        btnElement.style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        btnElement.style.transform = target.classList.contains('active') ? 'rotate(-90deg)' : 'rotate(0deg)';
     }
 }
 

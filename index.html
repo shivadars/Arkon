@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 
 <body>
@@ -71,7 +71,7 @@
         <nav class="mobile-nav-links">
             <a href="index.html" class="active">Home</a>
             <div class="mobile-nav-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileMegaMenu()">Products & Solutions <span class="dropdown-icon">▼</span></button>
+                <button class="mobile-dropdown-toggle" onclick="toggleMobileMegaMenu()">Products & Solutions <span class="dropdown-icon" style="font-weight: 300;">&lt;</span></button>
                 <div class="mobile-mega-menu" id="mobile-mega-menu-content"></div>
             </div>
             <a href="about.html">About Us</a>
@@ -394,19 +394,10 @@
                 </ul>
             </div>
             <div class="footer-col-compact">
-                <h4>Company</h4>
+                <h4>Quick Links</h4>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Why Choose Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-col-compact">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Enquire Now</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -491,8 +482,8 @@
         </div>
     </div>
 
-    <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/data.js?v=2"></script>
+    <script src="js/script.js?v=3"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

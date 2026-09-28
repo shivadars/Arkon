@@ -2182,7 +2182,7 @@ p {
 
 .footer-grid-compact {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     margin-bottom: 16px;
 }
 
@@ -3435,10 +3435,10 @@ p {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 85%;
-    max-width: 360px;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
-    background: white;
+    background: #ebebeb;
     z-index: 1001;
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
@@ -3451,31 +3451,15 @@ p {
     right: 0;
 }
 
-.mobile-nav-overlay::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: -1;
-}
-
-.mobile-nav-overlay.active::before {
-    opacity: 1;
-    visibility: visible;
-}
+/* Removed legacy overlay ::before since menu is 100% width */
 
 .mobile-nav-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .mobile-nav-close {
@@ -3500,12 +3484,12 @@ p {
 
 .mobile-nav-links a {
     display: block;
-    padding: 14px 24px;
+    padding: 18px 24px;
     font-size: 16px;
-    font-weight: 500;
-    color: var(--text);
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
     transition: var(--transition);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .mobile-nav-links a:hover {
@@ -3571,13 +3555,20 @@ p {
     }
 
     .logo {
-        width: 60px;
-        height: 60px;
-        margin-left: -24px; /* Exactly counters the container padding to touch the left edge */
+        width: 50px;
+        height: 50px;
+        max-height: 50px;
+        padding: 5px; /* Reduce padding so it fits inside */
+        margin-left: -16px; /* Don't push it too far left */
+        box-sizing: border-box; /* Crucial so padding doesn't increase height beyond 50px */
+        overflow: hidden;
     }
 
     .logo img {
-        height: 32px !important;
+        height: 34px !important; 
+        max-height: 34px !important;
+        object-fit: contain;
+        display: block;
     }
 
     .main-nav,
@@ -3596,7 +3587,7 @@ p {
     }
 
     .header {
-        height: 60px;
+        height: 50px;
         /* Thinner pill on mobile */
     }
 
@@ -3719,12 +3710,14 @@ p {
     }
 
     .header {
-        height: 64px;
+        height: 50px;
     }
 
     .logo {
-        width: 64px;
-        height: 64px;
+        width: 50px;
+        height: 50px;
+        max-height: 50px;
+        overflow: hidden;
         margin-left: -16px; /* Exactly counters the 16px container padding */
     }
 
@@ -3959,7 +3952,7 @@ p {
 
     /* Minus icon when active */
     .footer-col-compact.active h4::after {
-        content: 'âˆ’';
+        content: '-';
     }
 
     /* Hide lists by default */
@@ -4248,8 +4241,8 @@ p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -5593,11 +5586,11 @@ html {
 .mobile-dropdown-toggle {
     background: none;
     border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
     text-align: left;
-    padding: 16px 0;
+    padding: 18px 24px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -5608,16 +5601,16 @@ html {
 }
 
 .mobile-dropdown-toggle:hover {
-    color: var(--primary-light);
+    color: #000;
 }
 
 .mobile-mega-menu {
     display: none;
     flex-direction: column;
-    padding-bottom: 16px;
-    background: rgba(0, 0, 0, 0.15);
-    margin: 0 -24px;
-    padding: 0 24px 16px 24px;
+    padding-bottom: 0;
+    background: white;
+    margin: 0;
+    padding: 0;
 }
 
 .mobile-mega-menu.active {
@@ -5625,11 +5618,10 @@ html {
 }
 
 .mobile-accordion-level {
-    padding-left: 16px;
+    padding-left: 20px;
     display: none;
     flex-direction: column;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    margin-left: 8px;
+    margin-left: 0;
 }
 
 .mobile-accordion-level.active {
@@ -5653,8 +5645,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 14px 24px;
+    border-bottom: none;
 }
 
 .mobile-accordion-item:last-child {
@@ -5662,51 +5654,42 @@ html {
 }
 
 .mobile-accordion-link {
-    color: rgba(255, 255, 255, 0.85);
+    color: #000;
     font-size: 15px;
+    font-weight: 500;
     flex: 1;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .mobile-accordion-link:hover {
-    color: white;
+    color: #000;
 }
 
 .mobile-accordion-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 6px 12px;
+    background: none;
+    border: none;
+    color: #000;
+    padding: 6px 0 6px 12px;
     cursor: pointer;
-    font-size: 12px;
-    transition: all 0.2s;
-}
-
-.mobile-accordion-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    font-size: 16px;
+    font-weight: 300;
+    transition: transform 0.2s;
 }
 
 .mobile-product-item {
-    padding: 10px 0;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 24px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
     text-decoration: none;
     transition: color 0.2s;
     display: flex;
     align-items: center;
 }
 
-.mobile-product-item::before {
-    content: "";
-    margin-right: 8px;
-    color: var(--primary);
-    font-size: 18px;
-}
-
 .mobile-product-item:hover {
-    color: white;
+    color: #000;
 }
 
 /* ============================================
@@ -6921,6 +6904,20 @@ html {
 @media (max-width: 992px) {
     .contact-grid-new {
         grid-template-columns: 1fr;
+    }
+    
+    .contact-left-new {
+        padding-right: 0; /* Remove right padding on mobile */
+        order: 2;
+    }
+    
+    .contact-right-new {
+        order: 1;
+    }
+    
+    .contact-left-new h3,
+    .contact-left-new p.subtitle {
+        text-align: center; /* Center the headers */
     }
 }
 
