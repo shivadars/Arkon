@@ -327,16 +327,23 @@ function viewProductDetails(productName) {
 
 // Modal Logic
 function openQuoteModal(productName = '') {
-    const contactSection = document.querySelector('.popout-contact-section');
-    if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-        
-        if (productName) {
-            const subjectInput = contactSection.querySelector('input[placeholder="Subject"]');
-            if (subjectInput) {
-                subjectInput.value = 'Inquiry about ' + productName;
-            }
+    const contactSection = document.getElementById('contact');
+    
+    // Set the subject if provided
+    if (productName && contactSection) {
+        const subjectInput = contactSection.querySelector('input[placeholder="Subject"], input[name="subject"]');
+        if (subjectInput) {
+            subjectInput.value = 'Inquiry about ' + productName;
         }
+    }
+
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Optionally update the URL without triggering hash jump
+        history.pushState(null, null, '#contact');
+    } else {
+        // If not on the page, navigate to homepage contact section
+        window.location.href = 'index.html#contact';
     }
 }
 
@@ -755,13 +762,13 @@ function initMegaMenu() {
     let mobileHTML = `
         <div class="mobile-accordion-item">
             <a href="products.html" class="mobile-accordion-link">Products</a>
-            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)">&lt;</button>
+            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
         </div>
         <div class="mobile-accordion-level" id="mobile-products-group">
             ${productCategories.map((cat, idx) => `
                 <div class="mobile-accordion-item">
                     <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
-                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)">&lt;</button>
+                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                 </div>
                 <div class="mobile-accordion-level" id="mobile-cat-${idx}">
                     ${products.filter(p => p.category === cat).map(p => `
@@ -776,13 +783,13 @@ function initMegaMenu() {
         mobileHTML += `
             <div class="mobile-accordion-item">
                 <a href="products.html" class="mobile-accordion-link">Solutions</a>
-                <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)">&lt;</button>
+                <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
             </div>
             <div class="mobile-accordion-level" id="mobile-solutions-group">
                 ${solutions.map((sol, idx) => `
                     <div class="mobile-accordion-item">
                         <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
-                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)">&lt;</button>
+                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                     </div>
                     <div class="mobile-accordion-level" id="mobile-sol-${idx}">
                         ${getSolutionProducts(sol.id).map(p => `
@@ -879,11 +886,11 @@ function toggleMobileMegaMenu() {
     const mobileMenu = document.getElementById('mobile-mega-menu-content');
     if (mobileMenu) {
         mobileMenu.classList.toggle('active');
-        const icon = mobileMenu.previousElementSibling.querySelector('.dropdown-icon');
+        const icon = mobileMenu.previousElementSibling.querySelector('.dropdown-icon-svg');
         if (icon) {
             icon.style.display = "inline-block"; // Needs display inline-block to rotate
             icon.style.transition = "transform 0.3s ease";
-            icon.style.transform = mobileMenu.classList.contains('active') ? 'rotate(-90deg)' : 'rotate(0deg)';
+            icon.style.transform = mobileMenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
     }
 }
@@ -892,7 +899,7 @@ function toggleMobileAccordion(targetId, btnElement) {
     const target = document.getElementById(targetId);
     if (target) {
         target.classList.toggle('active');
-        btnElement.style.transform = target.classList.contains('active') ? 'rotate(-90deg)' : 'rotate(0deg)';
+        btnElement.querySelector('svg').style.transform = target.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
     }
 }
 
@@ -1077,4 +1084,55 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial setup
         setTimeout(onScroll, 50);
     }
+});
+
+// Contact Section Navigation Highlighting
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.getElementById('contact');
+    const homeLinks = document.querySelectorAll('a[href="index.html"]');
+    const contactLinks = document.querySelectorAll('a[href="#contact"], a[href="index.html#contact"]');
+    
+    // 1. Check if we arrived with #contact hash
+    if (window.location.hash === '#contact') {
+        homeLinks.forEach(link => link.classList.remove('active'));
+        contactLinks.forEach(link => link.classList.add('active'));
+
+    }
+
+    // 2. Setup scroll observer if the contact section exists on this page
+    if (contactSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    homeLinks.forEach(link => link.classList.remove('active'));
+                    contactLinks.forEach(link => link.classList.add('active'));
+                } else {
+                    // Only restore Home active if we are actually on the home page
+                    if(window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+                        contactLinks.forEach(link => link.classList.remove('active'));
+                        homeLinks.forEach(link => link.classList.add('active'));
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(contactSection);
+    }
+});
+
+// Ensure contact links always scroll to the section, even if the URL hash is already #contact
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.getElementById('contact');
+    if (!contactSection) return;
+
+    const contactLinks = document.querySelectorAll('a[href="#contact"], a[href="index.html#contact"]');
+    contactLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Only intercept if we are already on the homepage
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+                e.preventDefault(); // Prevent native jump so we can always force a smooth scroll
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, null, '#contact'); // Update URL without jumping
+            }
+        });
+    });
 });

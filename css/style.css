@@ -379,8 +379,8 @@ p {
 .main-nav a:hover,
 .main-nav a.active {
     color: #ffffff;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .header-actions {
@@ -5409,6 +5409,14 @@ html {
     transform: translate(-50%, 0);
 }
 
+.nav-item-dropdown:hover .dropdown-icon-svg {
+    transform: rotate(180deg);
+}
+
+.nav-item-dropdown:has(.mega-menu.is-active) .dropdown-icon-svg {
+    transform: rotate(180deg);
+}
+
 .mega-menu-level-1 {
     background: var(--primary);
     color: white;
@@ -6180,8 +6188,9 @@ html {
 
 .rz-title-rotating-wrapper {
     display: block;
-    height: 52px;
-    /* Adjusted wrapper height to cleanly fit the 48px font */
+    min-height: 52px;
+    height: auto;
+    /* Adjusted wrapper height to cleanly fit the font, while allowing expansion */
     overflow: hidden;
     position: relative;
 }
@@ -6505,15 +6514,18 @@ html {
     }
 
     .rz-title {
-        font-size: 38px;
+        font-size: 28px;
         text-align: left;
+        line-height: 1.25;
+        letter-spacing: -0.5px;
     }
 
     .rz-subtext {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 24px;
         text-align: left;
         max-width: 100%;
+        line-height: 1.5;
     }
 
     .rz-buttons {
@@ -6523,7 +6535,12 @@ html {
     }
 
     .rz-title-rotating-wrapper {
-        height: 44px;
+        min-height: 44px;
+        height: auto;
+    }
+
+    .rz-image-wrapper {
+        justify-content: center;
     }
 
     .rz-image-wrapper::before {
@@ -6835,6 +6852,7 @@ html {
     justify-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 530px;
 }
 
 .clients-grid .client-logo {
@@ -6879,6 +6897,7 @@ html {
 .contact-section-new {
     padding: 80px 0;
     background-color: #fff;
+    scroll-margin-top: 100px;
 }
 
 .contact-section-new .section-header {
@@ -7143,5 +7162,34 @@ html {
 @media (max-width: 480px) {
     .brand-text {
         font-size: 16px !important;
+    }
+}
+
+
+/* Ensure all main sections have perfectly uniform spacing on mobile */
+@media (max-width: 992px) {
+    .solutions-section,
+    .accordion-showcase-section,
+    .clients-section,
+    .contact-section-new,
+    .about-section {
+        padding: 30px 0 !important;
+    }
+
+    /* Except hero which has its own specific top padding for the nav */
+    .rz-hero {
+        padding-top: 100px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    /* Ensure the client grid doesn't have huge gap on mobile */
+    .clients-grid {
+        gap: 55px 20px !important;
+        min-height: auto !important;
+    }
+
+    /* Remove excessive padding inside the carousel track on mobile */
+    .solutions-track {
+        padding-bottom: 10px !important;
     }
 }

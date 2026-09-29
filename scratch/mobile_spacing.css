@@ -1,0 +1,23 @@
+
+/* Ensure all main sections have perfectly uniform spacing on mobile */
+@media (max-width: 992px) {
+    .solutions-section,
+    .accordion-showcase-section,
+    .clients-section,
+    .contact-section-new,
+    .about-section {
+        padding: 60px 0 !important;
+    }
+
+    /* Except hero which has its own specific top padding for the nav */
+    .rz-hero {
+        padding-top: 100px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    /* Ensure the client grid doesn't have huge gap on mobile */
+    .clients-grid {
+        gap: 30px 20px !important;
+        min-height: auto !important;
+    }
+}

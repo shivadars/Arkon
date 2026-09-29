@@ -34,7 +34,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="nav-item-dropdown" id="products-solutions-nav">
-                        <a href="products.html" class="active">Products & Solutions <span class="dropdown-icon">▼</span></a>
+                        <a href="products.html" class="active">Products & Solutions <svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
                         <div class="mega-menu" id="mega-menu-content"></div>
                     </li>
                     <li><a href="about.html">About Us</a></li>
@@ -74,10 +74,10 @@
         <nav class="mobile-nav-links">
             <a href="index.html">Home</a>
             <div class="mobile-nav-dropdown">
-                <button class="mobile-dropdown-toggle" onclick="toggleMobileMegaMenu()">Products & Solutions <span class="dropdown-icon">▼</span></button>
+                <button class="mobile-dropdown-toggle" onclick="toggleMobileMegaMenu()">Products & Solutions <svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                 <div class="mobile-mega-menu" id="mobile-mega-menu-content"></div>
             </div>
-            <a href="index.html#categories">Categories</a>
+
             <a href="about.html">About Us</a>
             <a href="index.html#contact">Contact</a>
         </nav>
@@ -96,8 +96,8 @@
         <section class="page-content section-spacing" style="padding-top: 120px; padding-bottom: 40px;">
 
             <div class="container products-layout" data-aos="fade-up">
-                <button class="mobile-filter-toggle" onclick="document.querySelector('.products-sidebar').classList.toggle('show-mobile'); this.textContent = document.querySelector('.products-sidebar').classList.contains('show-mobile') ? '✕ Hide Categories' : '☰ Show Categories';">
-                    ☰ Show Categories
+                <button class="mobile-filter-toggle" onclick="document.querySelector('.products-sidebar').classList.toggle('show-mobile'); this.textContent = document.querySelector('.products-sidebar').classList.contains('show-mobile') ? '✕ Hide Filters' : '☰ Show Filters';">
+                    ☰ Show Filters
                 </button>
                 <aside class="products-sidebar">
                     <div class="sidebar-section category-section">
@@ -139,7 +139,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
+    <footer class="footer" id="footer">
         <div class="container footer-grid-compact">
             <div class="footer-col-compact">
                 <img src="assets/logo/Arkon.png" alt="Arkon Medical System" class="footer-logo-compact" style="background-color: white; padding: 10px; border-radius: 6px; object-fit: contain; max-height: 65px;">
