@@ -492,7 +492,7 @@
                     html += `
                         <div class="product-card" data-product-id="${prod.id}" style="cursor: pointer;" onclick="window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">
                             <div class="img-wrapper">
-                                <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
+                                <img src="${(prod.image || '').replace('../../', '')}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
                             <h3>${prod.name}</h3>
                             <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="event.stopPropagation(); window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">View Details</button>

@@ -7131,3 +7131,17 @@ html {
 .contact-social-icons a:hover {
     background-color: var(--secondary);
 }
+
+/* Brand Text Responsiveness */
+@media (max-width: 1024px) {
+    .brand-text {
+        font-size: 18px !important;
+        margin-left: 2px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text {
+        font-size: 16px !important;
+    }
+}

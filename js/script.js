@@ -899,22 +899,22 @@ function toggleMobileAccordion(targetId, btnElement) {
 // Razorpay-style Hero Carousel Logic
 const rzSlides = [
     {
-        title: "Comprehensive Patient Monitoring",
-        subtext: "Real-time vitals and high-acuity telemetry with the K22 Pro multi-parameter monitor.",
+        title: "Arkon Comprehensive Patient Monitoring",
+        subtext: "Arkon provides real-time vitals and high-acuity telemetry with the K22 Pro multi-parameter monitor.",
         image: "assets/products/ai-monitor.png",
         name: "Comen K22 Pro",
         cat: "Patient Monitor"
     },
     {
-        title: "Next-Gen Medical Imaging",
-        subtext: "Exceptional clarity and precision diagnostics with our premium clinical ultrasound systems.",
+        title: "Arkon Next-Gen Medical Imaging",
+        subtext: "Exceptional clarity and precision diagnostics powered by Arkon's premium clinical ultrasound systems.",
         image: "assets/products/EP_50_1_d36118899b.png",
         name: "Comen Ultrasound",
         cat: "Medical Imaging"
     },
     {
-        title: "Gentle Neonatal Care",
-        subtext: "Advanced respiratory support engineered specifically for the most delicate newborns.",
+        title: "Arkon Gentle Neonatal Care",
+        subtext: "Arkon delivers advanced respiratory support engineered specifically for the most delicate newborns.",
         image: "assets/products/ai-neonatal.png",
         name: "Comen NV10",
         cat: "Neonatal Ventilator"
