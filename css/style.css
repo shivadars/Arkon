@@ -6854,7 +6854,7 @@ html {
     column-gap: 60px;
     align-items: center;
     justify-items: center;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     min-height: 530px;
 }
