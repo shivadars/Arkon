@@ -35,7 +35,7 @@
 
             // Update Breadcrumbs
             breadcrumbs.innerHTML = `<a href="index.html">Home</a> &gt; <a href="products.html">Products</a> &gt; <a href="products.html?category=${encodeURIComponent(product.category)}">${product.category}</a> &gt; ${product.name}`;
-            document.title = product.name + ' | Arkon Medical System';
+            document.title = product.name + ' | Arkon Medical Systems';
 
             // Generate description HTML & Key Features
             let descriptionHtml = '';

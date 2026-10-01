@@ -1,5 +1,5 @@
 /**
- * build.js - Arkon Medical System Static Site Generator (Modern Text Layout)
+ * build.js - Arkon Medical Systems Static Site Generator (Modern Text Layout)
  * Usage: node build.js
  */
 
@@ -169,10 +169,10 @@ products.forEach(product => {
 
     if (!slug) { console.warn("Skipping id=" + product.id); return; }
 
-    const title    = `${product.name} | ${product.brand} | Arkon Medical System`;
+    const title    = `${product.name} | ${product.brand} | Arkon Medical Systems`;
     const metaDesc = product.short_description
         ? product.short_description
-        : `${product.name} by ${product.brand} - Available at Arkon Medical System.`;
+        : `${product.name} by ${product.brand} - Available at Arkon Medical Systems.`;
 
     let html = template
         .replace("{{TITLE}}",            title)

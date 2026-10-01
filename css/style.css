@@ -276,7 +276,7 @@ p {
     height: 70px;
     background-color: var(--primary);
     border-radius: 40px;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 0;
     right: 0;
@@ -304,7 +304,6 @@ p {
     -webkit-backdrop-filter: none;
     border-bottom: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: headerSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes headerSlideDown {
@@ -689,6 +688,7 @@ p {
 
 /* Solutions Carousel Section */
 .solutions-section {
+    padding: 80px 0 0 0;
     overflow: hidden;
 }
 
@@ -1253,8 +1253,7 @@ p {
 
 /* Logo Carousel Component */
 .clients-section {
-    padding-top: 60px;
-    padding-bottom: 30px;
+    padding: 50px 0 0 0;
     overflow: hidden;
 }
 
@@ -6826,7 +6825,7 @@ html {
 }
 
 .accordion-showcase-section {
-    padding: 40px 0 40px;
+    padding: 40px 0 0 0;
     background-color: var(--white);
 }
 
@@ -6895,7 +6894,7 @@ html {
     }
 }/* ---- NEW CONTACT US SECTION ---- */
 .contact-section-new {
-    padding: 80px 0;
+    padding: 50px 0 80px 0;
     background-color: #fff;
     scroll-margin-top: 100px;
 }

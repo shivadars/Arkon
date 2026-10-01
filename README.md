@@ -1,6 +1,6 @@
 # Medical Equipment Website - Desktop Version
 
-This repository contains the purely HTML, CSS, and Vanilla JavaScript implementation for the desktop/laptop version of the Arkon Medical System website.
+This repository contains the purely HTML, CSS, and Vanilla JavaScript implementation for the desktop/laptop version of the Arkon Medical Systems website.
 
 ## Features Included
 
