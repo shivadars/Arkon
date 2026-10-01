@@ -6713,7 +6713,7 @@ html {
 .accordion-content {
     position: relative;
     z-index: 2;
-    padding: 30px 56px 48px 56px;
+    padding: 30px 56px 30px 56px;
 }
 
 .accordion-header {
@@ -6757,9 +6757,14 @@ html {
 .accordion-body-inner p {
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     opacity: 0.9;
     color: inherit;
+    text-align: justify;
+}
+
+.accordion-body-inner p:last-child {
+    margin-bottom: 0;
 }
 
 .accordion-link {
@@ -6806,7 +6811,7 @@ html {
 
 .accordion-item.active .accordion-body-inner {
     padding-top: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 0;
     opacity: 1;
     transform: translateY(0);
     overflow: visible;
@@ -6830,7 +6835,7 @@ html {
 }
 
 .accordion-container {
-    max-width: 1050px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -6855,8 +6860,9 @@ html {
 }
 
 .clients-grid .client-logo {
-    max-width: 240px;
-    max-height: 110px;
+    width: 100%;
+    max-width: 220px;
+    height: 100px;
     object-fit: contain;
     /* Full color by default */
     filter: grayscale(0%) opacity(100%);
@@ -6871,7 +6877,7 @@ html {
 /* Ensure the currently hovered logo pops and stays full color */
 .clients-grid .client-logo:hover {
     filter: grayscale(0%) opacity(100%);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 @media (max-width: 900px) {
