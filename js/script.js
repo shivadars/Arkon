@@ -1096,25 +1096,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash === '#contact') {
         homeLinks.forEach(link => link.classList.remove('active'));
         contactLinks.forEach(link => link.classList.add('active'));
-
     }
 
-    // 2. Setup scroll observer if the contact section exists on this page
+    // 2. Setup scroll observer — only highlight "Contact" when the heading
+    //    is right below the navbar (not when the bottom of the section peeks in).
+    //    rootMargin shrinks the detection zone: ignore everything except a small
+    //    band just below the header.
     if (contactSection) {
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        // Only trigger when the contact section's top enters the zone
+        // from the top of viewport to (headerHeight + 150px) below it
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     homeLinks.forEach(link => link.classList.remove('active'));
                     contactLinks.forEach(link => link.classList.add('active'));
                 } else {
-                    // Only restore Home active if we are actually on the home page
                     if(window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
                         contactLinks.forEach(link => link.classList.remove('active'));
                         homeLinks.forEach(link => link.classList.add('active'));
                     }
                 }
             });
-        }, { threshold: 0.5 });
+        }, { 
+            // Top margin: ignore everything above the header
+            // Bottom margin: shrink from bottom so only top portion counts
+            rootMargin: `-${headerHeight}px 0px -70% 0px`,
+            threshold: 0 
+        });
         observer.observe(contactSection);
     }
 });
@@ -1136,3 +1146,124 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Product Features Accordion Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const featureAccordions = document.querySelectorAll('.pd-accordion-header');
+    if (featureAccordions.length > 0) {
+        featureAccordions.forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                
+                // Close others
+                const siblings = item.parentElement.querySelectorAll('.pd-accordion-item');
+                siblings.forEach(sibling => {
+                    if (sibling !== item) {
+                        sibling.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+    }
+});
+
+// ============================================
+// Bulletproof Contact / Anchor Navigation
+// ============================================
+// The accordion section dynamically changes height as you scroll through it,
+// so a one-shot scroll calculation from the top of the page always lands short.
+// This uses a self-correcting loop that keeps scrolling until the target is
+// actually visible in the viewport.
+(function() {
+    /**
+     * Checks if an element is properly visible below the header.
+     */
+    function isInView(el) {
+        const rect = el.getBoundingClientRect();
+        const header = document.querySelector('.header');
+        const headerH = header ? header.offsetHeight : 80;
+        // Target top should be within headerH+30 to headerH+200 from viewport top
+        return rect.top >= headerH && rect.top <= headerH + 200;
+    }
+
+    /**
+     * Self-correcting scroll: keeps recalculating and scrolling until
+     * the target is actually in view. Gives up after maxAttempts.
+     */
+    function scrollToTarget(hash, attempt) {
+        attempt = attempt || 0;
+        const target = document.querySelector(hash);
+        if (!target) return;
+
+        // Already in view — done!
+        if (isInView(target)) return;
+
+        // Give up after 15 attempts (4.5 seconds)
+        if (attempt > 15) return;
+
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 30;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+
+        // Recheck after scroll animation settles
+        setTimeout(function() {
+            scrollToTarget(hash, attempt + 1);
+        }, 300);
+    }
+
+    // 1. Intercept ALL same-page anchor clicks (e.g. clicking "Contact" in nav)
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href*="#"]');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Extract hash from href
+        let hash;
+        if (href.startsWith('#')) {
+            hash = href;
+        } else if (href.includes('#')) {
+            // Links like "index.html#contact" — only handle if pointing to current page
+            try {
+                const url = new URL(href, window.location.href);
+                if (url.pathname === window.location.pathname ||
+                    (url.pathname.endsWith('index.html') && window.location.pathname.endsWith('index.html'))) {
+                    hash = '#' + href.split('#')[1];
+                }
+            } catch(ex) {}
+        }
+
+        if (hash && document.querySelector(hash)) {
+            e.preventDefault();
+            scrollToTarget(hash);
+            // Don't add hash to URL — prevents refresh from scrolling to contact
+        }
+    });
+
+    // 2. Cross-page navigation: arriving at page with #hash in URL
+    if (window.location.hash) {
+        const hash = window.location.hash;
+
+        // Prevent browser's premature jump
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                scrollToTarget(hash);
+                // Clean hash so refresh doesn't re-trigger
+                setTimeout(function() {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }, 5000);
+            }, 200);
+        });
+    }
+})();
+
+

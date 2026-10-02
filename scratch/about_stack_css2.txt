@@ -1,0 +1,311 @@
+﻿
+  }
+  
+> .about-stack-section {
+      position: relative;
+      overflow: visible;
+      background: var(--surface);
+  }
+  
+> .about-stack-track {
+      position: relative;
+  }
+  
+  /* ---- Individual Sticky Card ---- */
+> .about-stack-card {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      min-height: 600px;
+      width: 100%;
+  
+  /* Apply scroll reveal animation ONLY to the inner content */
+> .about-stack-card .about-stack-inner {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+> .about-stack-card.is-visible .about-stack-inner {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  
+  /* Alternating background colors for each card */
+> .about-stack-card:nth-child(odd) {
+      background: #ffffff;
+  }
+  
+> .about-stack-card:nth-child(even) {
+      background: var(--background);
+  }
+  
+  /* ---- Inner Grid: Text + Image side by side ---- */
+> .about-stack-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+      width: 100%;
+  }
+  
+  /* ---- Text Side ---- */
+> .about-stack-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 80px;
+  }
+  
+> .about-stack-text-content {
+      max-width: 520px;
+  }
+  
+> .about-stack-eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+  }
+  
+> .about-stack-eyebrow::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  
+> .about-stack-heading {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 24px;
+  }
+  
+> .about-stack-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+  }
+  
+> .about-stack-desc:last-of-type {
+      margin-bottom: 28px;
+  }
+  
+> .about-stack-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+  }
+  
+  /* Checklist grid */
+> .about-stack-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+  }
+  
+> .about-stack-check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 14px;
+  }
+  
+> .about-stack-check-item svg {
+      flex-shrink: 0;
+  }
+  
+  /* ---- Image Side ---- */
+> .about-stack-image {
+      position: relative;
+      overflow: hidden;
+  }
+  
+> .about-stack-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+> .about-stack-card.is-visible .about-stack-image img {
+      transform: scale(1);
+  }
+  
+> .about-stack-card:hover .about-stack-image img {
+      transform: scale(1.03);
+  }
+  
+  /* ---- Reversed card: image on left, text on right ---- */
+> .about-stack-card--reversed .about-stack-inner {
+      grid-template-columns: 1fr 1fr;
+      direction: rtl;
+  }
+  
+> .about-stack-card--reversed .about-stack-text,
+> .about-stack-card--reversed .about-stack-image {
+      direction: ltr;
+  }
+  
+  /* ---- Scroll Indicator on First Card ---- */
+  .about-scroll-indicator {
+  
+  /* ---- Subtle top shadow on each card for depth ---- */
+> .about-stack-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+  
+> .about-stack-card:first-child::before {
+      display: none;
+  }
+  
+  /* ============================================
+     RESPONSIVE: TABLET (1024px)
+     ============================================ */
+  @media (max-width: 1024px) {
+>     .about-stack-text {
+          padding: 48px 48px;
+      }
+  
+>     .about-stack-heading {
+          font-size: 36px;
+      }
+  
+>     .about-stack-card {
+          min-height: 520px;
+      }
+  }
+  
+  /* ============================================
+     ============================================ */
+  @media (max-width: 768px) {
+>     .about-stack-card {
+          height: calc(100vh - 60px);
+          position: sticky;
+          top: 60px;
+          overflow: hidden;
+          background: white; /* Ensure background is solid when sliding over */
+      }
+  
+>     .about-stack-inner {
+          grid-template-columns: 1fr;
+          height: 100%;
+      }
+  
+      /* On mobile, image always comes first visually */
+>     .about-stack-image {
+          height: 35vh; /* Take up 35% of the screen height */
+          min-height: auto;
+          max-height: none;
+          order: -1;
+      }
+  
+>     .about-stack-card--reversed .about-stack-inner {
+          grid-template-columns: 1fr;
+          direction: ltr;
+      }
+  
+>     .about-stack-card--reversed .about-stack-image {
+          order: -1;
+      }
+  
+>     .about-stack-text {
+          display: block; /* Forces text to the top, breaking the desktop flex-centering */
+          padding: 24px 20px 32px 20px;
+          height: calc(65vh - 60px);
+          overflow-y: auto; /* Let text scroll within the card if it's too long */
+      }
+  
+>     .about-stack-heading {
+          font-size: 28px;
+          margin-bottom: 16px;
+      }
+  
+>     .about-stack-eyebrow {
+          font-size: 11px;
+          padding-left: 28px;
+      }
+  
+>     .about-stack-eyebrow::before {
+          width: 18px;
+      }
+  
+>     .about-stack-desc {
+          font-size: 14px;
+      }
+  
+>     .about-stack-checklist {
+          grid-template-columns: 1fr;
+          gap: 10px;
+      }
+  
+>     .about-stack-check-item {
+          font-size: 13px;
+      }
+  
+      /* Full slide-over effect without 3D scale down */
+>     .about-stack-card {
+          opacity: 1 !important;
+          transform: none !important;
+      }
+  
+>     .about-stack-card::before {
+          display: none;
+      }
+  }
+  
+  /* ============================================
+     ============================================ */
+  @media (max-width: 480px) {
+>     .about-stack-heading {
+          font-size: 24px;
+      }
+  
+>     .about-stack-text {
+          padding: 28px 16px 36px 16px;
+      }
+  
+>     .about-stack-image {
+          height: 55vw;
+          min-height: 200px;
+      }
+  
+>     .about-stack-desc {
+          font-size: 13px;
+      }
+  }
+  
+  /* ============================================
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+>     .about-stack-card {
+          opacity: 1;
+          transform: none;
+          transition: none;
+      }
+  
+>     .about-stack-image img {
+          transition: none;
+      }
+  
+>     .about-stack-card:hover .about-stack-image img {
+          transform: none;
+      }
+  }
+  
+  
+
+

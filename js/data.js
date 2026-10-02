@@ -3538,39 +3538,39 @@ const products = [
 const clients = [
     {
         "name": "KIMS Hospital",
-        "img": "assets/clients/uploaded_client_1.png"
+        "img": "assets/clients/hq_kims.png"
     },
     {
         "name": "Regional Cancer Centre",
-        "img": "assets/clients/uploaded_client_2.png"
+        "img": "assets/clients/hq_rcc.png"
     },
     {
-        "name": "Jubilee Mission",
-        "img": "assets/clients/uploaded_client_3.png"
+        "name": "T.D. Medical College, Alappuzha",
+        "img": "assets/clients/hq_td_medical.png"
     },
     {
         "name": "Govt Medical College Thrissur",
-        "img": "assets/clients/uploaded_client_4.png"
+        "img": "assets/clients/hq_thrissur_medical.png"
     },
     {
         "name": "Dr. Somervell Memorial CSI Medical College",
-        "img": "assets/clients/uploaded_client_5.png"
+        "img": "assets/clients/hq_csi_medical.png"
     },
     {
-        "name": "Holy Ghost Mission",
-        "img": "assets/clients/holy-ghost-mission.png"
+        "name": "St. John's National Academy of Health Sciences",
+        "img": "assets/clients/hq_st_johns.png"
     },
     {
         "name": "Pushpagiri Institutions",
-        "img": "assets/clients/uploaded_client_6.png"
+        "img": "assets/clients/hq_pushpagiri.png"
     },
     {
         "name": "Rajagiri Hospital",
-        "img": "assets/clients/uploaded_client_7.png"
+        "img": "assets/clients/hq_rajagiri.png"
     },
     {
         "name": "KMSCL",
-        "img": "assets/clients/uploaded_client_8.png"
+        "img": "assets/clients/hq_kmscl.png"
     }
 ];
 

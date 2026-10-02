@@ -5013,14 +5013,16 @@ html {
     margin-bottom: 0;
     will-change: transform;
     scroll-snap-align: start;
-    /* Scroll reveal */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    /* Removed opacity from container so background scrolls naturally */
 }
 
-.about-stack-card.is-visible {
+/* Scroll reveal completely disabled for natural stacking */
+.about-stack-card .about-stack-inner {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-stack-card.is-visible .about-stack-inner {
     opacity: 1;
     transform: translateY(0);
 }
@@ -5091,6 +5093,7 @@ html {
     color: var(--text-muted);
     line-height: 1.75;
     margin-bottom: 16px;
+    text-align: justify;
 }
 
 .about-stack-desc:last-of-type {
@@ -5143,9 +5146,7 @@ html {
     transform: scale(1);
 }
 
-.about-stack-card:hover .about-stack-image img {
-    transform: scale(1.03);
-}
+.about-stack-card:hover .about-stack-image img { /* hover disabled */ }
 
 /* ---- Reversed card: image on left, text on right ---- */
 .about-stack-card--reversed .about-stack-inner {
@@ -6865,8 +6866,8 @@ html {
 
 .clients-grid .client-logo {
     width: 100%;
-    max-width: 220px;
-    height: 100px;
+    max-width: 240px;
+    height: 130px;
     object-fit: contain;
     /* Full color by default */
     filter: grayscale(0%) opacity(100%);
@@ -6904,9 +6905,8 @@ html {
     }
 }/* ---- NEW CONTACT US SECTION ---- */
 .contact-section-new {
-    padding: 50px 0 80px 0;
+    padding: 50px 0 80px 0; 
     background-color: #fff;
-    scroll-margin-top: 100px;
 }
 
 .contact-section-new .section-header {
@@ -7204,3 +7204,387 @@ html {
         padding-bottom: 10px !important;
     }
 }
+
+/* Overview & Specs 2-Column Grid */
+.pd-overview-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+.pd-overview-col, .pd-specs-col {
+    width: 100%;
+}
+@media (max-width: 991px) {
+    .pd-overview-specs-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* Product Features Accordion */
+.pd-features-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.pd-accordion-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.pd-accordion-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 4px 20px rgba(46, 49, 146, 0.08);
+}
+.pd-accordion-header {
+    padding: 24px 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    user-select: none;
+}
+.pd-accordion-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.pd-accordion-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(46, 49, 146, 0.08);
+    color: var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pd-accordion-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.pd-accordion-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+.pd-accordion-toggle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+}
+.pd-accordion-toggle::before,
+.pd-accordion-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--text-muted);
+    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 2px;
+}
+.pd-accordion-toggle::before {
+    top: 11px; left: 0; width: 24px; height: 2px;
+}
+.pd-accordion-toggle::after {
+    top: 0; left: 11px; width: 2px; height: 24px;
+}
+.pd-accordion-item.active .pd-accordion-toggle::after {
+    transform: rotate(90deg);
+}
+.pd-accordion-item.active .pd-accordion-toggle::before,
+.pd-accordion-item.active .pd-accordion-toggle::after {
+    background: var(--primary);
+}
+.pd-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: #fafafa;
+}
+.pd-accordion-item.active .pd-accordion-content {
+    max-height: 800px;
+    padding: 20px 32px 32px 96px;
+}
+.pd-accordion-text {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .pd-accordion-header { padding: 20px; }
+    .pd-accordion-item.active .pd-accordion-content { padding: 0 20px 20px 20px; }
+    .pd-accordion-title-wrap { gap: 12px; }
+}
+
+/* Premium Side-by-Side Features Layout */
+.pd-features-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+    align-items: start;
+}
+.pd-features-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+/* Override previous accordion styles for unified flush look */
+.pd-features-accordion {
+    max-width: 100%;
+}
+.pd-accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none !important;
+}
+.pd-accordion-item:last-child {
+    border-bottom: none;
+}
+.pd-accordion-item.active {
+    border-color: rgba(0,0,0,0.08);
+}
+.pd-accordion-header {
+    background: transparent;
+    padding: 24px 0;
+}
+.pd-accordion-icon {
+    background: transparent;
+    width: 32px;
+    height: 32px;
+}
+.pd-accordion-icon svg {
+    width: 28px;
+    height: 28px;
+}
+.pd-accordion-title {
+    font-size: 1.25rem;
+}
+.pd-accordion-content {
+    background: transparent;
+}
+.pd-accordion-item.active .pd-accordion-content {
+    padding: 0 0 32px 48px;
+}
+
+/* Thicker Plus/Minus */
+.pd-accordion-toggle {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.pd-accordion-toggle::before {
+    top: 15px; left: 8px; width: 14px; height: 2px;
+}
+.pd-accordion-toggle::after {
+    top: 8px; left: 14px; width: 2px; height: 14px;
+}
+.pd-accordion-item.active .pd-accordion-toggle {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+.pd-accordion-item.active .pd-accordion-toggle::before,
+.pd-accordion-item.active .pd-accordion-toggle::after {
+    background: #fff;
+}
+
+@media (max-width: 991px) {
+    .pd-features-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .pd-accordion-header {
+        padding: 20px 0;
+    }
+    .pd-accordion-item.active .pd-accordion-content {
+        padding: 0 0 24px 0;
+    }
+}
+
+/* Refined Single-Column Layout & Alignment */
+.pd-features-layout {
+    display: block !important;
+}
+.pd-features-layout-left {
+    margin-bottom: 40px !important;
+    text-align: left;
+    max-width: 800px;
+}
+
+/* Make the entire accordion a premium white card */
+.pd-features-accordion {
+    background: #fff;
+    border-radius: 16px;
+    padding: 10px 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.pd-accordion-header {
+    padding: 24px 0;
+}
+
+.pd-accordion-icon {
+    width: 24px;
+    height: 24px;
+}
+.pd-accordion-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+}
+
+.pd-accordion-title-wrap {
+    gap: 20px;
+}
+
+/* Perfectly align the description text with the title text (24px icon + 20px gap = 44px) */
+.pd-accordion-item.active .pd-accordion-content {
+    padding: 0 0 32px 44px !important;
+}
+
+@media (max-width: 768px) {
+    .pd-features-accordion {
+        padding: 10px 20px;
+    }
+    .pd-accordion-item.active .pd-accordion-content {
+        padding: 0 0 24px 0 !important; /* Reset indent on mobile */
+    }
+}
+
+/* Fix Toggle Icon: Replace CSS shapes with crisp SVG Plus/Minus */
+.pd-accordion-toggle {
+    width: 24px !important;
+    height: 24px !important;
+    border: none !important;
+    background-color: transparent !important;
+    /* Crisp dark Plus SVG */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Hide the old hacky pseudo elements */
+.pd-accordion-toggle::before,
+.pd-accordion-toggle::after {
+    display: none !important;
+}
+
+/* Active State: Minus SVG (Primary Color) and rotate 180deg for smooth spin effect */
+.pd-accordion-item.active .pd-accordion-toggle {
+    transform: rotate(180deg) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E3192' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E") !important;
+}
+
+/* Guaranteed Mobile Responsiveness Fixes */
+@media (max-width: 768px) {
+    /* 1. Accordion Card padding and shape */
+    .pd-features-accordion {
+        padding: 10px 16px !important;
+        border-radius: 12px !important;
+    }
+    
+    /* 2. Smaller heading to prevent awkward wrapping */
+    .pd-accordion-title {
+        font-size: 1.05rem !important;
+    }
+
+    /* 3. Reduce gap between icon and title */
+    .pd-accordion-title-wrap {
+        gap: 12px !important;
+    }
+    
+    /* 4. Shrink the checkmark icon slightly */
+    .pd-accordion-icon,
+    .pd-accordion-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    /* 5. Perfect indentation for description text (20px icon + 12px gap = 32px) */
+    .pd-accordion-item.active .pd-accordion-content {
+        padding: 0 0 24px 32px !important; 
+    }
+    
+    /* 6. Reduce top heading spacing */
+    .pd-features-layout-left {
+        margin-bottom: 24px !important;
+    }
+}
+
+/* 7. Ensure Technical Specifications table doesn't break mobile layout */
+.pd-specs-col {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.pd-specs-table {
+    min-width: 100%;
+    width: max-content;
+}
+@media (max-width: 500px) {
+    .pd-specs-table th, .pd-specs-table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop & Laptop Readability Optimizations */
+@media (min-width: 992px) {
+    /* Prevent the single-column layout from stretching too wide on large monitors */
+    .pd-features-layout {
+        max-width: 1000px !important;
+        margin: 0 auto !important; /* Centers the block on the page */
+    }
+    
+    /* Ensure the accordion card doesn't stretch past the readable width */
+    .pd-features-accordion {
+        max-width: 1000px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Add elegant hover effects on desktop for better interactivity */
+    .pd-accordion-header {
+        transition: opacity 0.2s ease;
+    }
+    .pd-accordion-header:hover .pd-accordion-title {
+        color: var(--primary);
+    }
+}
+
+/* Revert centering to keep it strictly Left-Aligned as requested */
+@media (min-width: 992px) {
+    .pd-features-layout {
+        margin: 0 !important; /* Removes auto-centering */
+    }
+    .pd-features-accordion {
+        margin: 0 !important; /* Removes auto-centering */
+    }
+}
+.pd-features-layout-left {
+    text-align: left !important;
+}
+
+/* Global anchor offset: accounts for sticky header on all #anchor clicks */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
