@@ -331,8 +331,12 @@ p {
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 60px;
-    height: 60px;
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    flex: 0 0 60px !important; /* Strictly forbid flex sizing */
+    aspect-ratio: 1 / 1 !important; /* Force perfect circle */
     border-radius: 50%;
     margin-left: -35px;
     /* Concentric with pill's left border radius */
@@ -352,15 +356,15 @@ p {
 }
 
 .main-nav {
-    justify-self: center;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .main-nav ul {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -373,6 +377,7 @@ p {
     transition: var(--transition);
     display: block;
     line-height: 1;
+    white-space: nowrap;
 }
 
 .main-nav a:hover,
@@ -384,11 +389,11 @@ p {
 
 .header-actions {
     display: flex;
-    justify-self: flex-end;
     justify-content: flex-end;
     align-items: center;
-    gap: 32px;
-    /* Increased from 20px to prevent crowding */
+    gap: 16px;
+    white-space: nowrap;
+    /* Reduced gap to prevent crowding on small desktop screens */
 }
 
 .header-actions .btn-primary {
@@ -2434,6 +2439,7 @@ p {
     border-radius: 0;
     box-shadow: 2px 0 20px rgba(49, 59, 130, 0.2);
     border: none;
+    position: -webkit-sticky;
     position: sticky;
     top: 90px;
     height: calc(100vh - 90px);
@@ -2662,8 +2668,17 @@ p {
 }
 
 .breadcrumbs a {
-    color: var(--primary);
+    color: var(--primary) !important;
     text-decoration: none;
+}
+
+.breadcrumbs a:visited {
+    color: var(--primary) !important;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-hover) !important;
+    text-decoration: underline;
 }
 
 .category-header-block h1 {
@@ -3547,7 +3562,7 @@ p {
    RESPONSIVE: TABLET LANDSCAPE (â‰¤ 1024px)
    ============================================ */
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
     .container {
         padding: 0 24px;
     }
@@ -3560,13 +3575,17 @@ p {
     }
 
     .logo {
-        width: 50px;
-        height: 50px;
-        max-height: 50px;
-        padding: 5px; /* Reduce padding so it fits inside */
-        margin-left: -16px; /* Don't push it too far left */
-        box-sizing: border-box; /* Crucial so padding doesn't increase height beyond 50px */
-        overflow: hidden;
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important; /* Force width */
+        min-height: 50px !important;
+        flex: 0 0 50px !important; /* Prevent flex squishing */
+        aspect-ratio: 1 / 1 !important; /* Force perfect circle */
+        max-height: 50px !important;
+        padding: 5px !important; /* Reduce padding so it fits inside */
+        margin-left: -16px !important; /* Don't push it too far left */
+        box-sizing: border-box !important; /* Crucial so padding doesn't increase height beyond 50px */
+        overflow: hidden !important;
     }
 
     .logo img {
@@ -3719,11 +3738,15 @@ p {
     }
 
     .logo {
-        width: 50px;
-        height: 50px;
-        max-height: 50px;
-        overflow: hidden;
-        margin-left: -16px; /* Exactly counters the 16px container padding */
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        min-height: 50px !important;
+        flex: 0 0 50px !important;
+        aspect-ratio: 1 / 1 !important;
+        max-height: 50px !important;
+        overflow: hidden !important;
+        margin-left: -16px !important; /* Exactly counters the 16px container padding */
     }
 
     h1 {
@@ -3901,13 +3924,15 @@ p {
     .footer-grid-compact {
         grid-template-columns: 1fr;
         /* Single column to stack everything */
-        gap: 0;
+        gap: 0 !important;
     }
 
     .footer-col-compact {
         border-right: none !important;
         padding: 0 !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0 !important;
+        min-height: auto !important;
     }
 
     .footer {
@@ -3918,9 +3943,11 @@ p {
     /* 1: Logo & Social */
     .footer-col-compact:nth-child(1) {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding-top: 16px !important;
+        padding-bottom: 30px !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -3939,11 +3966,12 @@ p {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 12px 0;
-        font-size: 14px;
-        margin-bottom: 0 !important;
+        padding: 24px 0 !important;
+        font-size: 15px;
+        margin: 0 !important;
         cursor: pointer;
         user-select: none;
+        line-height: 1 !important;
     }
 
     /* Plus icon */
@@ -3975,9 +4003,9 @@ p {
         display: block;
     }
 
-    /* Remove borders from 5th item if needed, but keeping it looks consistent */
+    /* Restore border on last item so Quick Links is properly framed */
     .footer-col-compact:last-child {
-        border-bottom: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 
     /* Modal */
@@ -7592,3 +7620,27 @@ html {
     scroll-padding-top: 100px;
 }
 
+/* Footer mobile layout fix for RLABZ 3D text and floating button overlap */
+@media (max-width: 768px) {
+    .footer-bottom-compact p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        line-height: 1.4;
+    }
+    .footer-bottom-compact p span {
+        display: none !important; /* hide the vertical pipe | */
+    }
+    .footer-bottom-compact {
+        padding-bottom: 50px !important; /* reduced from 90px */
+    }
+    .footer-bottom-compact[style] {
+        border-top: none !important;
+        margin-top: 0 !important;
+    }
+    .footer-col-compact:nth-child(1) > div {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
