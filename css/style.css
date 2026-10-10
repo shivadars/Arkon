@@ -7335,7 +7335,8 @@ html {
     font-size: 1.1rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-top: 16px;
+    margin-top: 8px; /* Tighter spacing below title */
+    margin-bottom: 10px;
 }
 
 /* Override previous accordion styles for unified flush look */
@@ -7420,12 +7421,26 @@ html {
 
 /* Refined Single-Column Layout & Alignment */
 .pd-features-layout {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 40px;
+    align-items: start;
+}
+/* Specifically reduce the top padding of the section containing Key Features */
+.pd-section:has(.pd-features-layout) {
+    padding-top: 40px !important;
+}
+@media (max-width: 991px) {
+    .pd-features-layout {
+        grid-template-columns: 1fr;
+    }
 }
 .pd-features-layout-left {
-    margin-bottom: 40px !important;
+    margin-bottom: 0px !important; /* Reduces space below Key Features title */
     text-align: left;
-    max-width: 800px;
+    max-width: 100%;
+    grid-column: 1 / -1; /* Make the header span full width */
 }
 
 /* Make the entire accordion a premium white card */
@@ -7550,16 +7565,16 @@ html {
 
 /* Desktop & Laptop Readability Optimizations */
 @media (min-width: 992px) {
-    /* Prevent the single-column layout from stretching too wide on large monitors */
+    /* Allow the two-column layout to stretch and fill the space on large monitors */
     .pd-features-layout {
-        max-width: 1000px !important;
+        max-width: 100% !important;
         margin: 0 auto !important; /* Centers the block on the page */
     }
     
-    /* Ensure the accordion card doesn't stretch past the readable width */
+    /* Ensure the accordion card doesn't restrict the layout width */
     .pd-features-accordion {
-        max-width: 1000px !important;
-        margin: 0 auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
     
     /* Add elegant hover effects on desktop for better interactivity */
@@ -7569,19 +7584,6 @@ html {
     .pd-accordion-header:hover .pd-accordion-title {
         color: var(--primary);
     }
-}
-
-/* Revert centering to keep it strictly Left-Aligned as requested */
-@media (min-width: 992px) {
-    .pd-features-layout {
-        margin: 0 !important; /* Removes auto-centering */
-    }
-    .pd-features-accordion {
-        margin: 0 !important; /* Removes auto-centering */
-    }
-}
-.pd-features-layout-left {
-    text-align: left !important;
 }
 
 /* Global anchor offset: accounts for sticky header on all #anchor clicks */
