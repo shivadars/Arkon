@@ -7644,3 +7644,15 @@ html {
         margin-bottom: 0 !important;
     }
 }
+
+/* Product Detail Page - Justified Text Content */
+.pd-overview-text,
+.pd-short-desc,
+.pd-accordion-text,
+.pd-feature-text,
+.pd-features-subtitle,
+.dynamic-text-section p,
+.pd-split-desc p {
+    text-align: justify !important;
+    text-justify: inter-word;
+}

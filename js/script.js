@@ -325,7 +325,7 @@ function viewProductDetails(productName) {
     alert(`Viewing details for: ${productName}\n(Navigation to /products/${productName.toLowerCase().replace(/ /g, '-')} would happen here)`);
 }
 
-// Modal Logic
+// Modal Logic / Enquire Now action
 function openQuoteModal(productName = '') {
     const contactSection = document.getElementById('contact');
     
@@ -337,13 +337,15 @@ function openQuoteModal(productName = '') {
         }
     }
 
-    if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Optionally update the URL without triggering hash jump
-        history.pushState(null, null, '#contact');
+    if (contactSection && typeof window.scrollToTarget === 'function') {
+        window.scrollToTarget('#contact');
+    } else if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
     } else {
         // If not on the page, navigate to homepage contact section
-        window.location.href = 'index.html#contact';
+        const contactAnchor = document.querySelector('a[href*="#contact"]');
+        const contactUrl = contactAnchor ? contactAnchor.getAttribute('href') : 'index.html#contact';
+        window.location.href = contactUrl;
     }
 }
 
@@ -1129,24 +1131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Ensure contact links always scroll to the section, even if the URL hash is already #contact
-document.addEventListener('DOMContentLoaded', () => {
-    const contactSection = document.getElementById('contact');
-    if (!contactSection) return;
-
-    const contactLinks = document.querySelectorAll('a[href="#contact"], a[href="index.html#contact"]');
-    contactLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Only intercept if we are already on the homepage
-            if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
-                e.preventDefault(); // Prevent native jump so we can always force a smooth scroll
-                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                history.pushState(null, null, '#contact'); // Update URL without jumping
-            }
-        });
-    });
-});
-
 // Product Features Accordion Logic
 document.addEventListener('DOMContentLoaded', function() {
     const featureAccordions = document.querySelectorAll('.pd-accordion-header');
@@ -1176,8 +1160,18 @@ document.addEventListener('DOMContentLoaded', function() {
 // The accordion section dynamically changes height as you scroll through it,
 // so a one-shot scroll calculation from the top of the page always lands short.
 // This uses a self-correcting loop that keeps scrolling until the target is
-// actually visible in the viewport.
+// actually visible in the viewport and Contact on the navbar becomes active (bold).
 (function() {
+    /**
+     * Highlights Contact as active/bold on the navbar and removes active from other links.
+     */
+    function markContactActive() {
+        const homeLinks = document.querySelectorAll('.main-nav a[href="index.html"], .mobile-nav-links a[href="index.html"]');
+        const contactLinks = document.querySelectorAll('.main-nav a[href="#contact"], .main-nav a[href="index.html#contact"], .mobile-nav-links a[href="#contact"], .mobile-nav-links a[href="index.html#contact"]');
+        homeLinks.forEach(link => link.classList.remove('active'));
+        contactLinks.forEach(link => link.classList.add('active'));
+    }
+
     /**
      * Checks if an element is properly visible below the header.
      */
@@ -1199,10 +1193,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!target) return;
 
         // Already in view — done!
-        if (isInView(target)) return;
+        if (isInView(target)) {
+            if (hash === '#contact') markContactActive();
+            return;
+        }
 
         // Give up after 15 attempts (4.5 seconds)
-        if (attempt > 15) return;
+        if (attempt > 15) {
+            if (hash === '#contact') markContactActive();
+            return;
+        }
 
         const header = document.querySelector('.header');
         const headerHeight = header ? header.offsetHeight : 80;
@@ -1214,6 +1214,9 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToTarget(hash, attempt + 1);
         }, 300);
     }
+
+    // Expose globally so Enquire Now button can use the exact same navigation
+    window.scrollToTarget = scrollToTarget;
 
     // 1. Intercept ALL same-page anchor clicks (e.g. clicking "Contact" in nav)
     document.addEventListener('click', function(e) {
