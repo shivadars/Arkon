@@ -908,25 +908,25 @@ function toggleMobileAccordion(targetId, btnElement) {
 // Razorpay-style Hero Carousel Logic
 const rzSlides = [
     {
-        title: "Arkon Comprehensive Patient Monitoring",
-        subtext: "Arkon provides real-time vitals and high-acuity telemetry with the K22 Pro multi-parameter monitor.",
-        image: "assets/products/ai-monitor.png",
-        name: "Comen K22 Pro",
-        cat: "Patient Monitor"
-    },
-    {
-        title: "Arkon Next-Gen Medical Imaging",
-        subtext: "Exceptional clarity and precision diagnostics powered by Arkon's premium clinical ultrasound systems.",
-        image: "assets/products/EP_50_1_d36118899b.png",
-        name: "Comen Ultrasound",
-        cat: "Medical Imaging"
-    },
-    {
-        title: "Arkon Gentle Neonatal Care",
-        subtext: "Arkon delivers advanced respiratory support engineered specifically for the most delicate newborns.",
+        title: "Network Of Satisfied Customers And Trusted Support With",
+        subtext: "Delivering reliable neonatal care, ventilators, and clinical technology backed by our dedicated support team.",
         image: "assets/products/ai-neonatal.png",
-        name: "Comen NV10",
-        cat: "Neonatal Ventilator"
+        name: "Neonatal Care Systems",
+        cat: "Critical Care"
+    },
+    {
+        title: "Assured Service And Support And Reaching Out With Wide Product Range With",
+        subtext: "Comprehensive clinical solutions spanning advanced ultrasound imaging, surgical setups, and operating room infrastructure.",
+        image: "assets/products/EP_50_1_d36118899b.png",
+        name: "Medical Imaging & Surgery",
+        cat: "Hospital Infrastructure"
+    },
+    {
+        title: "Keeping Up With Changes In Healthcare Industry With",
+        subtext: "State-of-the-art multi-parameter patient monitoring and diagnostic technology built for the evolving demands of modern hospitals.",
+        image: "assets/products/ai-monitor.png",
+        name: "Advanced Patient Monitoring",
+        cat: "High-Acuity Monitoring"
     }
 ];
 
@@ -950,15 +950,23 @@ function initRzCarousel() {
         track.appendChild(slideDiv);
     });
     
-    updateRzText(0);
+    updateRzText(0, true);
     startRzInterval();
 }
 
-function updateRzText(index) {
+function updateRzText(index, isInitial = false) {
     const titleEl = document.getElementById('rz-rotating-text');
     const subtextEl = document.getElementById('rz-subtext');
     
     if (titleEl && subtextEl) {
+        if (isInitial) {
+            titleEl.textContent = rzSlides[index].title;
+            subtextEl.textContent = rzSlides[index].subtext;
+            titleEl.classList.remove('slide-up-out', 'slide-up-in');
+            subtextEl.style.opacity = '1';
+            return;
+        }
+
         // Animate out
         titleEl.classList.remove('slide-up-in');
         titleEl.classList.add('slide-up-out');

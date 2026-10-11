@@ -6198,8 +6198,8 @@ html {
 }
 
 .rz-left {
-    flex: 0 0 58%;
-    padding-right: 40px;
+    flex: 0 0 62%;
+    padding-right: 24px;
     padding-top: 90px;
     /* Offset the absolute header to visually center text in the remaining space */
     display: flex;
@@ -6208,31 +6208,25 @@ html {
 }
 
 .rz-title {
-    font-size: 48px;
-    /* Reduced to fit within two lines */
-
-    /* Modern typography */
-    line-height: 1.15;
-    margin-bottom: 24px;
-    /* Slightly reduced breathing room for smaller font */
-    letter-spacing: -1.5px;
-    /* Tighter kerning for the smaller text */
-    font-weight: 600;
+    margin-bottom: 0;
 }
 
 .rz-title-rotating-wrapper {
     display: block;
-    min-height: 52px;
-    height: auto;
-    /* Adjusted wrapper height to cleanly fit the font, while allowing expansion */
+    min-height: 84px;
+    height: 84px;
     overflow: hidden;
     position: relative;
 }
 
 .rz-rotating-text {
     display: block;
-    color: #2E3192;
-    /* Use reference primary blue color */
+    color: #2E3192; /* Top Blue */
+    font-size: clamp(1.36rem, 1.95vw, 1.78rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    text-wrap: balance;
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
 }
 
@@ -6247,18 +6241,25 @@ html {
 }
 
 .rz-title-static {
+    display: block;
     color: #17211D;
+    font-size: clamp(2.2rem, 3.4vw, 3.1rem);
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.8px;
+    text-transform: uppercase;
+    line-height: 1.12;
+    margin-top: 10px;
 }
 
 .rz-subtext {
-    font-size: 20px;
-
+    font-size: 17.5px;
     color: #475569;
-    margin-bottom: 48px;
-    /* More breathing room around text */
-    max-width: 90%;
+    margin-top: 21px;
+    margin-bottom: 34px;
+    max-width: 620px;
     line-height: 1.6;
-    min-height: 60px;
+    min-height: 56px;
     transition: opacity 0.4s ease;
 }
 
@@ -6291,7 +6292,7 @@ html {
 }
 
 .rz-right {
-    flex: 0 0 42%;
+    flex: 0 0 38%;
     position: relative;
     min-height: 100%;
     height: 100%;
@@ -6548,14 +6549,28 @@ html {
     }
 
     .rz-title {
-        font-size: 28px;
-        text-align: left;
-        line-height: 1.25;
+        margin-bottom: 0;
+    }
+
+    .rz-title-rotating-wrapper {
+        min-height: 62px;
+        height: auto;
+    }
+
+    .rz-rotating-text {
+        font-size: 1.22rem;
+        line-height: 1.3;
+    }
+
+    .rz-title-static {
+        font-size: 2.05rem;
         letter-spacing: -0.5px;
+        margin-top: 8px;
     }
 
     .rz-subtext {
-        font-size: 14px;
+        font-size: 15.5px;
+        margin-top: 14px;
         margin-bottom: 24px;
         text-align: left;
         max-width: 100%;
