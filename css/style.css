@@ -7667,3 +7667,20 @@ html {
     text-align: justify !important;
     text-justify: inter-word;
 }
+
+/* Product Detail Page - Breadcrumbs & Active Thumbnails Theme Colors */
+.pd-breadcrumb a,
+.pd-breadcrumb a:visited {
+    color: var(--primary) !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.pd-breadcrumb a:hover {
+    color: var(--primary-hover) !important;
+    text-decoration: underline;
+}
+
+.pd-thumb-item.active,
+.pd-thumb-item:hover {
+    border-color: var(--primary) !important;
+}
