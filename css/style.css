@@ -7455,9 +7455,20 @@ html {
     column-gap: 40px;
     align-items: start;
 }
-/* Specifically reduce the top padding of the section containing Key Features */
-.pd-section:has(.pd-features-layout) {
+/* Specifically reduce spacing of the section containing Key Features and before footer */
+.pd-section:has(.pd-features-layout),
+.pd-section.bg-light:has(.pd-features-layout) {
     padding-top: 40px !important;
+    padding-bottom: 25px !important;
+}
+
+.page-main > .pd-section:last-child,
+.page-main > .pd-section:last-of-type {
+    padding-bottom: 25px !important;
+}
+
+.pd-features-layout {
+    margin-bottom: 0 !important;
 }
 @media (max-width: 991px) {
     .pd-features-layout {
