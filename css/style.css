@@ -320,10 +320,15 @@ p {
 
 .header-inner {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
     align-items: center;
     height: 100%;
     position: relative;
+    padding-left: 5px !important;
+    padding-right: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .logo {
@@ -338,8 +343,8 @@ p {
     flex: 0 0 60px !important; /* Strictly forbid flex sizing */
     aspect-ratio: 1 / 1 !important; /* Force perfect circle */
     border-radius: 50%;
-    margin-left: -35px;
-    /* Concentric with pill's left border radius */
+    margin-left: 0 !important;
+    /* Concentric with pill's left border radius: 35px radius - 30px logo radius = 5px padding-left */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
 }
@@ -438,6 +443,40 @@ p {
 
 .whatsapp-icon:hover {
     transform: scale(1.1);
+}
+
+/* Responsive Desktop: Laptop / Mid-sized screens (992px to 1240px) */
+@media (min-width: 992px) and (max-width: 1240px) {
+    .header-inner {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-left: 5px !important;
+        padding-right: 20px !important;
+    }
+
+    .main-nav ul {
+        gap: clamp(12px, 1.4vw, 18px) !important;
+    }
+
+    .main-nav a {
+        font-size: clamp(13.5px, 1.1vw, 14.5px) !important;
+    }
+
+    .header-actions {
+        gap: clamp(8px, 1.1vw, 12px) !important;
+    }
+
+    .header-actions .btn-primary {
+        padding: 8px 16px !important;
+        font-size: 13.5px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1140px) {
+    .header-phone {
+        display: none !important;
+    }
 }
 
 /* Hero */
@@ -3562,57 +3601,74 @@ p {
    RESPONSIVE: TABLET LANDSCAPE (â‰¤ 1024px)
    ============================================ */
 
-@media (max-width: 1150px) {
+@media (max-width: 991px) {
     .container {
         padding: 0 24px;
     }
 
+    .header {
+        height: 56px !important;
+        border-radius: 28px !important;
+        top: 15px !important;
+    }
+
+    .header.header--fixed {
+        top: 15px !important;
+        height: 56px !important;
+        border-radius: 28px !important;
+    }
+
     .header-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 100% !important;
+        padding-left: 5px !important;
+        padding-right: 18px !important;
     }
 
     .logo {
-        width: 50px !important;
-        height: 50px !important;
-        min-width: 50px !important; /* Force width */
-        min-height: 50px !important;
-        flex: 0 0 50px !important; /* Prevent flex squishing */
-        aspect-ratio: 1 / 1 !important; /* Force perfect circle */
-        max-height: 50px !important;
-        padding: 5px !important; /* Reduce padding so it fits inside */
-        margin-left: -16px !important; /* Don't push it too far left */
-        box-sizing: border-box !important; /* Crucial so padding doesn't increase height beyond 50px */
+        width: 46px !important;
+        height: 46px !important;
+        min-width: 46px !important;
+        min-height: 46px !important;
+        flex: 0 0 46px !important;
+        aspect-ratio: 1 / 1 !important;
+        max-height: 46px !important;
+        padding: 4px !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        background-color: white !important;
+        box-sizing: border-box !important;
         overflow: hidden !important;
     }
 
     .logo img {
-        height: 34px !important; 
-        max-height: 34px !important;
-        object-fit: contain;
-        display: block;
+        height: 28px !important; 
+        max-height: 28px !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    .brand-text {
+        font-size: 20px !important;
     }
 
     .main-nav,
     .header-actions {
-        display: none;
+        display: none !important;
     }
 
     .mobile-menu-btn {
-        display: flex;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
         z-index: 10;
-        /* Keep above if logo overlaps */
+        margin: 0;
     }
 
     .mobile-menu-btn span {
         background-color: white !important;
-    }
-
-    .header {
-        height: 50px;
-        /* Thinner pill on mobile */
     }
 
     .hero {
@@ -3733,21 +3789,7 @@ p {
         padding: 0 16px;
     }
 
-    .header {
-        height: 50px;
-    }
 
-    .logo {
-        width: 50px !important;
-        height: 50px !important;
-        min-width: 50px !important;
-        min-height: 50px !important;
-        flex: 0 0 50px !important;
-        aspect-ratio: 1 / 1 !important;
-        max-height: 50px !important;
-        overflow: hidden !important;
-        margin-left: -16px !important; /* Exactly counters the 16px container padding */
-    }
 
     h1 {
         font-size: 32px;
@@ -4144,6 +4186,55 @@ p {
 @media (max-width: 480px) {
     .container {
         padding: 0 12px;
+    }
+
+    .header {
+        height: 52px !important;
+        border-radius: 26px !important;
+        top: 12px !important;
+        width: 94% !important;
+    }
+
+    .header.header--fixed {
+        top: 12px !important;
+        height: 52px !important;
+        border-radius: 26px !important;
+    }
+
+    .header-inner {
+        padding-left: 5px !important;
+        padding-right: 14px !important;
+    }
+
+    .logo {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        flex: 0 0 42px !important;
+        aspect-ratio: 1 / 1 !important;
+        max-height: 42px !important;
+        padding: 3px !important;
+        margin: 0 !important;
+    }
+
+    .logo img {
+        height: 24px !important;
+        max-height: 24px !important;
+    }
+
+    .brand-text {
+        font-size: 17px !important;
+    }
+
+    .mobile-menu-btn {
+        width: 32px !important;
+        height: 32px !important;
+        gap: 4px !important;
+    }
+
+    .mobile-menu-btn span {
+        width: 20px !important;
     }
 
     h1 {
@@ -5079,7 +5170,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 80px;
+    padding: 105px 80px 60px 80px;
 }
 
 .about-stack-text-content {
