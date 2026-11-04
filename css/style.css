@@ -280,7 +280,7 @@ p {
     top: 20px;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1005;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
     max-width: 1400px;
@@ -297,7 +297,7 @@ p {
     margin: 0 auto;
     width: 95%;
     max-width: 1400px;
-    z-index: 1000;
+    z-index: 1005;
     background-color: var(--primary);
     border-radius: 40px;
     backdrop-filter: none;
@@ -5500,6 +5500,36 @@ html {
 /* ==========================================================================
    MEGA MENU STYLES
    ========================================================================== */
+
+/* Full-Screen Frosted Backdrop Blur for Mega Menu */
+.mega-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1002;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+}
+
+body.mega-menu-active .mega-menu-backdrop,
+body:has(.nav-item-dropdown:hover) .mega-menu-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+@media (max-width: 991px) {
+    .mega-menu-backdrop {
+        display: none !important;
+    }
+}
 
 /* Desktop Mega Menu */
 .nav-item-dropdown {

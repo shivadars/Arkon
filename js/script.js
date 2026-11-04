@@ -729,6 +729,27 @@ function initMegaMenu() {
         </div>
     `;
 
+    // Ensure Mega Menu backdrop blur overlay exists in the DOM
+    let backdrop = document.querySelector('.mega-menu-backdrop');
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'mega-menu-backdrop';
+        backdrop.id = 'megaMenuBackdrop';
+        document.body.appendChild(backdrop);
+    }
+
+    backdrop.addEventListener('click', () => {
+        desktopContainers.forEach(c => c.classList.remove('is-active'));
+        document.body.classList.remove('mega-menu-active');
+    });
+
+    backdrop.addEventListener('mouseenter', () => {
+        megaMenuTimeout = setTimeout(() => {
+            desktopContainers.forEach(c => c.classList.remove('is-active'));
+            document.body.classList.remove('mega-menu-active');
+        }, 150);
+    });
+
     desktopContainers.forEach(container => {
         container.innerHTML = desktopHTML;
         
@@ -738,11 +759,13 @@ function initMegaMenu() {
             parentLi.addEventListener('mouseenter', () => {
                 clearTimeout(megaMenuTimeout);
                 container.classList.add('is-active');
+                document.body.classList.add('mega-menu-active');
             });
             parentLi.addEventListener('mouseleave', () => {
                 megaMenuTimeout = setTimeout(() => {
                     container.classList.remove('is-active');
-                }, 300); // slight delay to prevent flicker
+                    document.body.classList.remove('mega-menu-active');
+                }, 250); // slight delay to prevent flicker
             });
         }
     });
@@ -751,12 +774,14 @@ function initMegaMenu() {
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.nav-item-dropdown')) {
             desktopContainers.forEach(c => c.classList.remove('is-active'));
+            document.body.classList.remove('mega-menu-active');
         }
     });
     
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             desktopContainers.forEach(c => c.classList.remove('is-active'));
+            document.body.classList.remove('mega-menu-active');
         }
     });
 
