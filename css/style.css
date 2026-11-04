@@ -8126,16 +8126,7 @@ html {
         max-width: 85% !important;
         object-position: center bottom !important;
     }
-    .rz-blue-beam {
-        transform: skewX(-15deg) !important;
-        opacity: 0.8 !important;
-    }
-    .rz-blue-beam-1 { left: 45% !important; }
-    .rz-blue-beam-2 { left: 55% !important; }
-    .rz-blue-beam-3 { left: 65% !important; }
-    .rz-blue-beam-4 { left: 75% !important; }
-    .rz-blue-beam-5 { left: 85% !important; }
-    .rz-blue-beam-6 { left: 95% !important; }
+
 
     .rz-hero .rz-nav-arrow {
         display: flex !important;
