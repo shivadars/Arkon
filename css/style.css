@@ -7895,6 +7895,25 @@ html {
     font-weight: 600 !important;
 }
 
+.rz-buttons .btn-text {
+    background: transparent !important;
+    border: none !important;
+    color: #2E3192 !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    cursor: pointer;
+    padding: 12px 20px;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.rz-buttons .btn-text:hover {
+    color: #1e2167 !important;
+    text-decoration: underline !important;
+}
+
 .rz-btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -8168,15 +8187,19 @@ html {
     }
     .rz-buttons {
         flex-direction: column !important;
-        gap: 12px !important;
-        width: 100% !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        width: auto !important;
     }
-    .rz-buttons .btn-primary,
-    .rz-btn-secondary {
-        width: 100% !important;
-        justify-content: center !important;
+    .rz-buttons .btn-primary {
+        width: auto !important;
+        padding: 12px 24px !important;
+        font-size: 15px !important;
+        border-radius: 6px !important;
         text-align: center !important;
-        padding: 12px 20px !important;
+    }
+    .rz-buttons .btn-text {
+        padding: 8px 12px !important;
         font-size: 15px !important;
     }
     .rz-right {
