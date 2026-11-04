@@ -8161,50 +8161,62 @@ html {
 /* --- Mobile Devices (<= 480px) --- */
 @media (max-width: 480px) {
     .rz-hero {
-        padding-top: 88px !important;
-        padding-bottom: 24px !important;
+        padding-top: 104px !important;
+        padding-bottom: 48px !important;
+    }
+    .rz-container {
+        width: 100% !important;
+        padding: 0 !important;
+        gap: 8px !important;
     }
     .rz-left {
-        padding: 0 16px !important;
+        padding: 0 20px !important;
     }
     .rz-hero .rz-title-rotating-wrapper {
-        min-height: 56px !important;
+        min-height: 54px !important;
+        margin-bottom: 4px !important;
     }
     .rz-hero .rz-rotating-text {
-        font-size: clamp(1.12rem, 4.4vw, 1.25rem) !important;
-        line-height: 1.3 !important;
+        font-size: clamp(1.1rem, 4.3vw, 1.25rem) !important;
+        line-height: 1.35 !important;
     }
     .rz-hero .rz-title-static {
         font-size: clamp(1.35rem, 5.8vw, 1.58rem) !important;
         line-height: 1.2 !important;
-        margin-top: 4px !important;
+        margin-top: 8px !important;
         letter-spacing: -0.3px !important;
     }
     .rz-hero .rz-subtext {
-        font-size: 14.5px !important;
-        line-height: 1.55 !important;
-        margin-top: 10px !important;
-        margin-bottom: 18px !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        margin-top: 14px !important;
+        margin-bottom: 22px !important;
+        max-width: 100% !important;
     }
     .rz-buttons {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 6px !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 16px !important;
+        flex-wrap: wrap !important;
+        margin-bottom: 24px !important;
         width: auto !important;
     }
     .rz-buttons .btn-primary {
         width: auto !important;
-        padding: 11px 22px !important;
+        padding: 12px 22px !important;
         font-size: 14.5px !important;
         border-radius: 6px !important;
         text-align: center !important;
     }
     .rz-buttons .btn-text {
-        padding: 6px 0 !important;
+        padding: 6px 4px !important;
         font-size: 14.5px !important;
         text-align: left !important;
     }
     .rz-right {
-        height: 300px !important;
+        height: 310px !important;
+    }
+    .rz-hero .rz-nav-arrow {
+        bottom: 155px !important;
     }
 }
