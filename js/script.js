@@ -207,7 +207,7 @@ function initSolutionsCarousel() {
             quoteBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                window.location.href = 'index.html#contact';
+                openQuoteModal(sol.title);
             });
         }
 
@@ -329,11 +329,15 @@ function viewProductDetails(productName) {
 function openQuoteModal(productName = '') {
     const contactSection = document.getElementById('contact');
     
-    // Set the subject if provided
+    // Set the subject and message if provided
     if (productName && contactSection) {
         const subjectInput = contactSection.querySelector('input[placeholder="Subject"], input[name="subject"]');
         if (subjectInput) {
             subjectInput.value = 'Inquiry about ' + productName;
+        }
+        const messageTextarea = contactSection.querySelector('textarea');
+        if (messageTextarea) {
+            messageTextarea.value = 'Hi, I would like to request a quote and more information regarding ' + productName + '.';
         }
     }
 
@@ -342,7 +346,12 @@ function openQuoteModal(productName = '') {
     } else if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
     } else {
-        // If not on the page, navigate to homepage contact section
+        // If not on the page, store product name and navigate to homepage contact section
+        if (productName) {
+            try {
+                sessionStorage.setItem('pendingInquiryProduct', productName);
+            } catch (e) {}
+        }
         const contactAnchor = document.querySelector('a[href*="#contact"]');
         const contactUrl = contactAnchor ? contactAnchor.getAttribute('href') : 'index.html#contact';
         window.location.href = contactUrl;
@@ -1132,6 +1141,20 @@ document.addEventListener('DOMContentLoaded', () => {
         homeLinks.forEach(link => link.classList.remove('active'));
         contactLinks.forEach(link => link.classList.add('active'));
     }
+
+    // Check for pending product inquiry from cross-page navigation
+    try {
+        const pendingProduct = sessionStorage.getItem('pendingInquiryProduct');
+        if (pendingProduct) {
+            sessionStorage.removeItem('pendingInquiryProduct');
+            if (contactSection) {
+                const subj = contactSection.querySelector('input[placeholder="Subject"], input[name="subject"]');
+                if (subj) subj.value = 'Inquiry about ' + pendingProduct;
+                const msg = contactSection.querySelector('textarea');
+                if (msg) msg.value = 'Hi, I would like to request a quote and more information regarding ' + pendingProduct + '.';
+            }
+        }
+    } catch (e) {}
 
     // 2. Setup scroll observer — only highlight "Contact" when the heading
     //    is right below the navbar (not when the bottom of the section peeks in).

@@ -937,6 +937,12 @@ p {
     background: transparent;
     border: none;
     cursor: pointer;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.solution-btn-secondary:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
 
 .products-grid {
