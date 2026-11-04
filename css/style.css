@@ -7699,3 +7699,77 @@ html {
 .pd-thumb-item:hover {
     border-color: var(--primary) !important;
 }
+
+
+/* ==========================================================================
+   Hero Section Polish & Typography Enhancements
+   ========================================================================== */
+
+/* Enhanced Secondary Button (Know More) */
+.rz-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2E3192 !important;
+    background: #ffffff !important;
+    border: 1.5px solid #2E3192 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    padding: 11px 22px !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(46, 49, 146, 0.08);
+    transition: all 0.25s ease !important;
+}
+
+.rz-btn-secondary:hover {
+    background-color: #2E3192 !important;
+    color: #ffffff !important;
+    border-color: #2E3192 !important;
+    box-shadow: 0 6px 18px rgba(46, 49, 146, 0.25) !important;
+    transform: translateY(-2px);
+}
+
+.rz-btn-secondary svg {
+    transition: transform 0.25s ease;
+}
+
+.rz-btn-secondary:hover svg {
+    transform: translateX(4px);
+}
+
+/* Crisp Subtitle Legibility */
+.rz-hero .rz-subtext {
+    color: #334155 !important;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+/* High-Contrast Carousel Navigation Arrows */
+.rz-hero .rz-nav-arrow {
+    background: #ffffff !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12) !important;
+    transition: all 0.25s ease;
+}
+
+.rz-hero .rz-nav-arrow:hover {
+    background: #2E3192 !important;
+    color: #ffffff !important;
+    border-color: #2E3192 !important;
+    box-shadow: 0 8px 24px rgba(46, 49, 146, 0.3) !important;
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* Grounding shadow under equipment */
+.rz-image-wrapper::after {
+    bottom: 2% !important;
+    right: 8% !important;
+    width: 65% !important;
+    height: 22px !important;
+    background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.08) 50%, rgba(15, 23, 42, 0) 75%) !important;
+    transform: none !important;
+    opacity: 0.9 !important;
+}

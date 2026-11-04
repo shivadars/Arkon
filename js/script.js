@@ -908,22 +908,22 @@ function toggleMobileAccordion(targetId, btnElement) {
 // Razorpay-style Hero Carousel Logic
 const rzSlides = [
     {
-        title: "Network Of Satisfied Customers And Trusted Support With",
-        subtext: "Delivering reliable neonatal care, ventilators, and clinical technology backed by our dedicated support team.",
+        title: "Advance Critical Care & Neonatal Life Support with",
+        subtext: "Delivering reliable neonatal ventilators, incubators, and clinical technology backed by our dedicated support team.",
         image: "assets/products/ai-neonatal.png",
         name: "Neonatal Care Systems",
         cat: "Critical Care"
     },
     {
-        title: "Assured Service And Support And Reaching Out With Wide Product Range With",
-        subtext: "Comprehensive clinical solutions spanning advanced ultrasound imaging, surgical setups, and operating room infrastructure.",
+        title: "Upgrade Hospital Infrastructure & Surgical Setups with",
+        subtext: "Comprehensive clinical solutions spanning advanced ultrasound imaging, surgical equipment, and operating room technology.",
         image: "assets/products/EP_50_1_d36118899b.png",
         name: "Medical Imaging & Surgery",
         cat: "Hospital Infrastructure"
     },
     {
-        title: "Keeping Up With Changes In Healthcare Industry With",
-        subtext: "State-of-the-art multi-parameter patient monitoring and diagnostic technology built for the evolving demands of modern hospitals.",
+        title: "Elevate Patient Monitoring & Diagnostic Precision with",
+        subtext: "State-of-the-art multi-parameter patient monitoring systems engineered for the evolving demands of modern hospitals.",
         image: "assets/products/ai-monitor.png",
         name: "Advanced Patient Monitoring",
         cat: "High-Acuity Monitoring"
