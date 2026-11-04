@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css?v=26">
+    <link rel="stylesheet" href="../../css/style.css?v=28">
     <style>
         /* === MODERN TEXT-BASED B2B PRODUCT PAGE === */
         
@@ -287,32 +287,66 @@
         }
         .btn-download:hover { text-decoration: underline; }
 
+        /* Mobile overflow & layout protection */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        @media (max-width: 991px) {
+            [data-aos="fade-left"],
+            [data-aos="fade-right"],
+            [data-aos="fade-up-left"],
+            [data-aos="fade-up-right"] {
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
         @media (max-width: 900px) {
             .pd-hero-container {
                 grid-template-columns: 1fr;
+                gap: 28px;
             }
             .pd-features-grid {
                 grid-template-columns: 1fr;
             }
-            .pd-specs-table th {
-                width: 40%;
-            }
             .pd-hero-modern {
-                padding: 100px 0 40px;
+                padding: 85px 0 35px;
             }
         }
         @media (max-width: 600px) {
+            .pd-gallery-main {
+                padding: 20px 14px;
+            }
+            .pd-actions {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            .btn-enquire, .btn-whatsapp {
+                width: 100%;
+                justify-content: center;
+                padding: 13px 20px;
+            }
+            .pd-specs-table {
+                display: block;
+                width: 100%;
+            }
+            .pd-specs-table tbody {
+                display: block;
+                width: 100%;
+            }
             .pd-specs-table th, .pd-specs-table td {
                 display: block;
                 width: 100%;
-                padding: 12px 16px;
+                padding: 10px 14px;
             }
             .pd-specs-table th {
-                background: var(--primary-light);
-                border-bottom: none;
+                background: #f1f5f9;
+                border-bottom: 1px solid var(--border);
             }
             .pd-specs-table tr {
-                margin-bottom: 12px;
+                margin-bottom: 10px;
                 display: block;
                 border: 1px solid var(--border);
                 border-radius: 8px;
@@ -649,7 +683,7 @@
 
     <script src="../../js/data.js?v=4"></script>
     <script>window.ROOT_PATH = '../../';</script>
-    <script src="../../js/script.js?v=8"></script>
+    <script src="../../js/script.js?v=9"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
