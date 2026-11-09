@@ -696,7 +696,6 @@ function initMegaMenu() {
         "Surgical Light",
         "Operating Table",
         "Warmer",
-        "Incubator",
         "Hypothermia Treatment",
         "Jaundice Treatment",
         "Infusion System",
