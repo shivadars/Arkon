@@ -686,6 +686,7 @@ function initMegaMenu() {
 
     // Use exact COMEN product categories for the menu
     const productCategories = [
+        "Endoscopy",
         "Ventilator",
         "High Flow Oxygen Therapy Humidifier",
         "Anesthesia Machine",
@@ -699,7 +700,6 @@ function initMegaMenu() {
         "Hypothermia Treatment",
         "Jaundice Treatment",
         "Infusion System",
-        "Endoscopy",
         "Ultrasound",
         "In Vitro Diagnostic",
         "Neonatal Care"

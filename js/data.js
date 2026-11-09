@@ -3673,6 +3673,27 @@ const testimonials = [
 
 const solutions = [
     {
+        "id": "endoscopy",
+        "name": "Endoscopy",
+        "products": [
+            "Single-use Rhinolaryngoscope",
+            "Single-use Choledochoscope",
+            "Single-use Duodenoscope",
+            "Single-use Bronchoscope",
+            "Single-use Collector",
+            "Broncho Sampler",
+            "Single-use Ureterorenoscope HU30M",
+            "Single-use Ureterorenoscope",
+            "Single-use Cystoscope",
+            "Single-Use Cysto-Nephroscope",
+            "Single-use Ureteral Access Sheath",
+            "Single-use Stent Removal Cystoscope",
+            "Suction Pump",
+            "Video Laryngoscope",
+            "Reusable Ureterorenoscope"
+        ]
+    },
+    {
         "id": "critical-care",
         "name": "Critical Care",
         "products": [
@@ -3759,34 +3780,14 @@ const solutions = [
             "ME660",
             "eCenter-CMS"
         ]
-    },
-    {
-        "id": "endoscopy",
-        "name": "Endoscopy",
-        "products": [
-            "Single-use Rhinolaryngoscope",
-            "Single-use Choledochoscope",
-            "Single-use Duodenoscope",
-            "Single-use Bronchoscope",
-            "Single-use Collector",
-            "Broncho Sampler",
-            "Single-use Ureterorenoscope HU30M",
-            "Single-use Ureterorenoscope",
-            "Single-use Cystoscope",
-            "Single-Use Cysto-Nephroscope",
-            "Single-use Ureteral Access Sheath",
-            "Single-use Stent Removal Cystoscope",
-            "Suction Pump",
-            "Video Laryngoscope",
-            "Reusable Ureterorenoscope"
-        ]
     }
 ];
 const categories = [];
 const _catNames = [
+    "Endoscopy",
     "Ventilator", "High Flow Oxygen Therapy Humidifier", "Anesthesia Machine", "Patient Monitoring", 
     "Defibrillator Monitor", "AED", "Surgical Light", "Operating Table", "Warmer", "Incubator", 
-    "Hypothermia Treatment", "Jaundice Treatment", "Infusion System", "Endoscopy", "Ultrasound", 
+    "Hypothermia Treatment", "Jaundice Treatment", "Infusion System", "Ultrasound", 
     "In Vitro Diagnostic", "Neonatal Care"
 ];
 
