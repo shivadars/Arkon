@@ -818,10 +818,7 @@ function initMegaMenu() {
                 "Single-use Cystoscope",
                 "Single-Use Cysto-Nephroscope",
                 "Single-use Ureteral Access Sheath",
-                "Single-use Stent Removal Cystoscope",
-                "Single-use Collector",
-                "Broncho Sampler",
-                "Suction Pump"
+                "Single-use Stent Removal Cystoscope"
             ]
         },
         {
@@ -986,10 +983,7 @@ function getEndoscopySubcategoryProducts(subcatId) {
                 "Single-use Cystoscope",
                 "Single-Use Cysto-Nephroscope",
                 "Single-use Ureteral Access Sheath",
-                "Single-use Stent Removal Cystoscope",
-                "Single-use Collector",
-                "Broncho Sampler",
-                "Suction Pump"
+                "Single-use Stent Removal Cystoscope"
             ]
         },
         {
