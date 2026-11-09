@@ -2917,42 +2917,6 @@ const products = [
                 "Imaging Parts": "3 types available"
             }
         },
-            {
-            id: 124,
-            name: "Reusable Ureterorenoscope",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            custom_url: "reusable-ureterorenoscope",
-            image: "../../assets/products/hugemed-reusable-ureterorenoscope-1.png",
-            gallery: [
-                "../../assets/products/hugemed-reusable-ureterorenoscope-1.png",
-                "../../assets/products/hugemed-reusable-ureterorenoscope-2.png"
-            ],
-            short_description: "Providing cost-effective URS solutions for developing regions with a reusable design and superior durability.",
-            key_highlights: [
-                "Cost-effective reusable alternative to single-use devices",
-                "Streamlined bullet-shaped tip for low resistance and comfort",
-                "285° bidirectional bending angle for precision",
-                "316L stainless steel bending section for enhanced durability"
-            ],
-            overview_text: "The Reusable Ureterorenoscope can be reused after immersion disinfection, offering a cost-effective alternative to single-use devices. Its flexible insertion tube and 285° bending angle ensure enhanced maneuverability with no blind spots, improving both patient comfort and procedural efficiency. The bullet-shaped tip features a low-resistance design, allowing smoother insertion into the urethra. Combined with a soft Pebax-wrapped insertion tube, it minimizes urethral trauma, ensuring a safer and more comfortable experience for patients. With a bidirectional bending angle of up to 285° and double bending capability, the reusable ureterorenoscope reaches complex renal anatomy, eliminating blind spots for more accurate diagnosis and treatment.",
-            features: [
-                { title: "Streamlined Bullet-shaped Tip", text: "The bullet-shaped low-resistance design for tip allows the insertion tube to enter the urethra more easily." },
-                { title: "Medical-grade Material", text: "The insertion tube is wrapped in medical-grade composite material Pebax, providing a balanced experience of rigidity and flexibility." },
-                { title: "Optimized Imaging", text: "160K CMOS sensor chip on tip design; Optimized algorithm improves image quality." },
-                { title: "User-friendly", text: "Simple and intuitive ergonomic handle, giving more comfort and preciseness on the examination." },
-                { title: "285° Bending Angle", text: "Bending section made by medical grade stainless steel, Up to 285° up and down bending angle." },
-                { title: "1:1 Torque Ratio", text: "The 1:1 torque ratio maximizes the replication of the medical staff's precise movements, ensure smooth surgical procedures." },
-                { title: "Superior Durability", text: "316L stainless steel bending section enhances with laser engraving and multi-point micro-welding for exceptional stability and longevity. And the integrated CMOS camera tip is more impact-resistant than fiber-optic endoscopes, significantly reducing repair costs." }
-            ],
-            specifications: {
-                "Design": "Reusable after immersion disinfection",
-                "Bending Angle": "285° Up/Down",
-                "Insertion Tube": "Soft Pebax-wrapped",
-                "Bending Section Material": "316L stainless steel",
-                "Camera": "160K CMOS sensor chip"
-            }
-        },
         {
             id: 125,
             name: "Single-use Ureterorenoscope HU30M",
@@ -3141,8 +3105,7 @@ const solutions = [
             "Single-use Ureteral Access Sheath",
             "Single-use Stent Removal Cystoscope",
             "Suction Pump",
-            "Video Laryngoscope",
-            "Reusable Ureterorenoscope"
+            "Video Laryngoscope"
         ]
     },
     {

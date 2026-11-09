@@ -828,8 +828,7 @@ function initMegaMenu() {
             id: "reusable-endoscope",
             name: "Reusable endoscope",
             productNames: [
-                "Video Laryngoscope",
-                "Reusable Ureterorenoscope"
+                "Video Laryngoscope"
             ]
         }
     ];
@@ -997,8 +996,7 @@ function getEndoscopySubcategoryProducts(subcatId) {
             id: "reusable-endoscope",
             name: "Reusable endoscope",
             productNames: [
-                "Video Laryngoscope",
-                "Reusable Ureterorenoscope"
+                "Video Laryngoscope"
             ]
         }
     ];
