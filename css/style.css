@@ -5704,6 +5704,67 @@ body:has(.nav-item-dropdown:hover) .mega-menu-backdrop {
     background: #ffffff;
 }
 
+.mega-menu-level-3.has-subcategories {
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.mega-menu-endoscopy-wrapper {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    height: 100%;
+    min-height: 380px;
+}
+
+.mega-menu-subcategories-col {
+    background: #f8fafc;
+    border-right: 1px solid var(--border);
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.mega-menu-subcat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.mega-menu-subcat-item:hover,
+.mega-menu-subcat-item.active {
+    background: #ffffff;
+    color: var(--primary, #2E3192);
+    border-left-color: var(--primary, #2E3192);
+}
+
+.mega-menu-subcat-item svg {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.35;
+}
+
+.mega-menu-subcat-item:hover svg,
+.mega-menu-subcat-item.active svg {
+    transform: translateX(3px);
+    opacity: 1;
+    stroke: var(--primary, #2E3192);
+}
+
+.mega-menu-subcat-products {
+    padding: 16px 0;
+    overflow-y: auto;
+    max-height: 70vh;
+    background: #ffffff;
+}
+
 .mega-menu-products-grid {
     display: block;
 }

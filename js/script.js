@@ -792,6 +792,50 @@ function initMegaMenu() {
         }
     });
 
+    // Endoscopy subcategories configuration
+    const endoscopySubcategories = [
+        {
+            id: "airway-management",
+            name: "Airway Management",
+            productNames: [
+                "Single-use Bronchoscope",
+                "Video Laryngoscope",
+                "Single-use Rhinolaryngoscope",
+                "Broncho Sampler",
+                "Suction Pump"
+            ]
+        },
+        {
+            id: "single-use-endoscope",
+            name: "Single use endoscope",
+            productNames: [
+                "Single-use Bronchoscope",
+                "Single-use Rhinolaryngoscope",
+                "Single-use Choledochoscope",
+                "Single-use Duodenoscope",
+                "HU Series Single-use Ureterorenoscope",
+                "Single-use Ureterorenoscope HU30M",
+                "Single-use Cystoscope",
+                "Single-Use Cysto-Nephroscope",
+                "Single-use Ureteral Access Sheath",
+                "Single-use Stent Removal Cystoscope",
+                "Single-use Collector",
+                "Broncho Sampler",
+                "Suction Pump"
+            ]
+        },
+        {
+            id: "reusable-endoscope",
+            name: "Reusable endoscope",
+            productNames: [
+                "Video Laryngoscope",
+                "Reusable Ureterorenoscope"
+            ]
+        }
+    ];
+
+    window.endoscopySubcategories = endoscopySubcategories;
+
     // 2. Build Mobile Mega Menu
     let mobileHTML = `
         <div class="mobile-accordion-item">
@@ -799,17 +843,40 @@ function initMegaMenu() {
             <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
         </div>
         <div class="mobile-accordion-level" id="mobile-products-group">
-            ${productCategories.map((cat, idx) => `
-                <div class="mobile-accordion-item">
-                    <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
-                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                </div>
-                <div class="mobile-accordion-level" id="mobile-cat-${idx}">
-                    ${products.filter(p => p.category === cat).map(p => `
-                        <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
-                    `).join('')}
-                </div>
-            `).join('')}
+            ${productCategories.map((cat, idx) => {
+                if (cat === 'Endoscopy') {
+                    return `
+                        <div class="mobile-accordion-item">
+                            <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
+                            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                        </div>
+                        <div class="mobile-accordion-level" id="mobile-cat-${idx}">
+                            ${endoscopySubcategories.map((subcat, sIdx) => `
+                                <div class="mobile-accordion-item" style="padding-left: 14px;">
+                                    <span class="mobile-accordion-link" style="font-size: 13px; font-weight: 600;">${subcat.name}</span>
+                                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-endo-sub-${sIdx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                                </div>
+                                <div class="mobile-accordion-level" id="mobile-endo-sub-${sIdx}" style="padding-left: 14px;">
+                                    ${getEndoscopySubcategoryProducts(subcat.id).map(p => `
+                                        <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                                    `).join('')}
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+                return `
+                    <div class="mobile-accordion-item">
+                        <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
+                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    </div>
+                    <div class="mobile-accordion-level" id="mobile-cat-${idx}">
+                        ${products.filter(p => p.category === cat).map(p => `
+                            <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                        `).join('')}
+                    </div>
+                `;
+            }).join('')}
         </div>
     `;
 
@@ -820,17 +887,40 @@ function initMegaMenu() {
                 <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
             </div>
             <div class="mobile-accordion-level" id="mobile-solutions-group">
-                ${solutions.map((sol, idx) => `
-                    <div class="mobile-accordion-item">
-                        <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
-                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                    </div>
-                    <div class="mobile-accordion-level" id="mobile-sol-${idx}">
-                        ${getSolutionProducts(sol.id).map(p => `
-                            <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
-                        `).join('')}
-                    </div>
-                `).join('')}
+                ${solutions.map((sol, idx) => {
+                    if (sol.id === 'endoscopy') {
+                        return `
+                            <div class="mobile-accordion-item">
+                                <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
+                                <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                            </div>
+                            <div class="mobile-accordion-level" id="mobile-sol-${idx}">
+                                ${endoscopySubcategories.map((subcat, sIdx) => `
+                                    <div class="mobile-accordion-item" style="padding-left: 14px;">
+                                        <span class="mobile-accordion-link" style="font-size: 13px; font-weight: 600;">${subcat.name}</span>
+                                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-endo-sub-${sIdx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                                    </div>
+                                    <div class="mobile-accordion-level" id="mobile-sol-endo-sub-${sIdx}" style="padding-left: 14px;">
+                                        ${getEndoscopySubcategoryProducts(subcat.id).map(p => `
+                                            <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                                        `).join('')}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `;
+                    }
+                    return `
+                        <div class="mobile-accordion-item">
+                            <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
+                            <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                        </div>
+                        <div class="mobile-accordion-level" id="mobile-sol-${idx}">
+                            ${getSolutionProducts(sol.id).map(p => `
+                                <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                            `).join('')}
+                        </div>
+                    `;
+                }).join('')}
             </div>
         `;
     }
@@ -870,6 +960,128 @@ function getSolutionProducts(solutionId) {
     return solutionProducts;
 }
 
+// Endoscopy Subcategory Product Resolver
+function getEndoscopySubcategoryProducts(subcatId) {
+    const subcats = window.endoscopySubcategories || [
+        {
+            id: "airway-management",
+            name: "Airway Management",
+            productNames: [
+                "Single-use Bronchoscope",
+                "Video Laryngoscope",
+                "Single-use Rhinolaryngoscope",
+                "Broncho Sampler",
+                "Suction Pump"
+            ]
+        },
+        {
+            id: "single-use-endoscope",
+            name: "Single use endoscope",
+            productNames: [
+                "Single-use Bronchoscope",
+                "Single-use Rhinolaryngoscope",
+                "Single-use Choledochoscope",
+                "Single-use Duodenoscope",
+                "HU Series Single-use Ureterorenoscope",
+                "Single-use Ureterorenoscope HU30M",
+                "Single-use Cystoscope",
+                "Single-Use Cysto-Nephroscope",
+                "Single-use Ureteral Access Sheath",
+                "Single-use Stent Removal Cystoscope",
+                "Single-use Collector",
+                "Broncho Sampler",
+                "Suction Pump"
+            ]
+        },
+        {
+            id: "reusable-endoscope",
+            name: "Reusable endoscope",
+            productNames: [
+                "Video Laryngoscope",
+                "Reusable Ureterorenoscope"
+            ]
+        }
+    ];
+
+    const subcat = subcats.find(s => s.id === subcatId);
+    if (!subcat) return [];
+    
+    const list = [];
+    const seen = new Set();
+    subcat.productNames.forEach(name => {
+        const prod = products.find(p => p.category === 'Endoscopy' && p.name === name);
+        if (prod && !seen.has(prod.id)) {
+            seen.add(prod.id);
+            list.push(prod);
+        }
+    });
+    return list;
+}
+
+function buildProductsListHtml(productsToRender) {
+    if (!productsToRender || productsToRender.length === 0) {
+        return `<p style="padding: 20px; color: var(--text-muted);">No products found.</p>`;
+    }
+    return `
+        <div class="mega-menu-products-grid">
+            ${productsToRender.map(p => `
+                <a href="${getProductUrl(p)}" class="mega-menu-product-item">
+                    <span class="mega-menu-product-name">${p.name}</span>
+                    <span class="mega-menu-product-brand">${p.brand}</span>
+                </a>
+            `).join('')}
+        </div>
+    `;
+}
+
+function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {
+    const subcats = window.endoscopySubcategories || [
+        { id: "airway-management", name: "Airway Management" },
+        { id: "single-use-endoscope", name: "Single use endoscope" },
+        { id: "reusable-endoscope", name: "Reusable endoscope" }
+    ];
+    
+    const subcatProducts = getEndoscopySubcategoryProducts(activeSubcatId);
+    
+    const html = `
+        <div class="mega-menu-endoscopy-wrapper">
+            <div class="mega-menu-subcategories-col">
+                ${subcats.map(subcat => `
+                    <div class="mega-menu-subcat-item ${subcat.id === activeSubcatId ? 'active' : ''}" 
+                         onmouseenter="showEndoscopySubcategoryProducts('${subcat.id}', this)">
+                        <span>${subcat.name}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="mega-menu-subcat-products" id="mega-endoscopy-products">
+                ${buildProductsListHtml(subcatProducts)}
+            </div>
+        </div>
+    `;
+    
+    document.querySelectorAll('#mega-lvl3-content').forEach(contentArea => {
+        contentArea.classList.add('has-subcategories');
+        contentArea.innerHTML = html;
+    });
+}
+
+function showEndoscopySubcategoryProducts(subcatId, element) {
+    if (element) {
+        const col = element.closest('.mega-menu-subcategories-col');
+        if (col) {
+            col.querySelectorAll('.mega-menu-subcat-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+    }
+    
+    const subcatProducts = getEndoscopySubcategoryProducts(subcatId);
+    const container = document.getElementById('mega-endoscopy-products');
+    if (container) {
+        container.innerHTML = buildProductsListHtml(subcatProducts);
+    }
+}
+
 function showMegaMenuCategoryProducts(encodedCategory, element, isInit = false) {
     const category = decodeURIComponent(encodedCategory);
     
@@ -879,8 +1091,12 @@ function showMegaMenuCategoryProducts(encodedCategory, element, isInit = false) 
         element.classList.add('active');
     }
     
-    const categoryProducts = products.filter(p => p.category === category);
-    renderLvl3(categoryProducts);
+    if (category === 'Endoscopy') {
+        renderEndoscopyLvl3('airway-management');
+    } else {
+        const categoryProducts = products.filter(p => p.category === category);
+        renderLvl3(categoryProducts);
+    }
 }
 
 function showMegaMenuSolutionProducts(solutionId, element, isInit = false) {
@@ -890,28 +1106,18 @@ function showMegaMenuSolutionProducts(solutionId, element, isInit = false) {
         element.classList.add('active');
     }
     
-    const solutionProducts = getSolutionProducts(solutionId);
-    renderLvl3(solutionProducts);
+    if (solutionId === 'endoscopy') {
+        renderEndoscopyLvl3('airway-management');
+    } else {
+        const solutionProducts = getSolutionProducts(solutionId);
+        renderLvl3(solutionProducts);
+    }
 }
 
 function renderLvl3(productsToRender) {
-    let html = '';
-    if (productsToRender.length === 0) {
-        html = `<p style="padding: 20px; color: var(--text-muted);">No products found.</p>`;
-    } else {
-        html = `
-            <div class="mega-menu-products-grid">
-                ${productsToRender.slice(0, 15).map(p => `
-                    <a href="${getProductUrl(p)}" class="mega-menu-product-item">
-                        <span class="mega-menu-product-name">${p.name}</span>
-                        <span class="mega-menu-product-brand">${p.brand}</span>
-                    </a>
-                `).join('')}
-            </div>
-        `;
-    }
-    
+    const html = buildProductsListHtml(productsToRender.slice(0, 15));
     document.querySelectorAll('#mega-lvl3-content').forEach(contentArea => {
+        contentArea.classList.remove('has-subcategories');
         contentArea.innerHTML = html;
     });
 }
