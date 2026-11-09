@@ -700,7 +700,6 @@ function initMegaMenu() {
         "Jaundice Treatment",
         "Infusion System",
         "Ultrasound",
-        "In Vitro Diagnostic",
         "Neonatal Care"
     ];
     
