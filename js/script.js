@@ -674,9 +674,163 @@ function initStackGallery() {
 }
 
 // ============================================
-// Mega Menu Logic (3-Level Refined)
+// Mega Menu Logic (3-Level Refined with Hover + Click Pinned Support)
 // ============================================
 let megaMenuTimeout = null;
+let isMegaMenuPinned = false;
+let isMegaMenuHovered = false;
+
+// Category/Subcategory Lock States:
+// When null: hovering freely previews categories & products ("before when we hover it should show like previous")
+// When clicked: locks onto that category/subcategory ("when we click endoscopy and hover to other ventilator the products should not change it should change only when we click")
+let lockedCategory = null;
+let lockedSolution = null;
+let lockedSubcatId = null;
+let currentMegaMenuGroup = 'products';
+
+function openMegaMenuPinned() {
+    clearTimeout(megaMenuTimeout);
+    isMegaMenuPinned = true;
+    const desktopContainers = document.querySelectorAll('#mega-menu-content');
+    desktopContainers.forEach(c => c.classList.add('is-active'));
+    document.querySelectorAll('.nav-item-dropdown').forEach(li => {
+        li.classList.add('is-active', 'is-pinned');
+    });
+    document.body.classList.add('mega-menu-active');
+}
+
+function pinMegaMenu() {
+    clearTimeout(megaMenuTimeout);
+    isMegaMenuPinned = true;
+    const desktopContainers = document.querySelectorAll('#mega-menu-content');
+    desktopContainers.forEach(c => c.classList.add('is-active'));
+    document.querySelectorAll('.nav-item-dropdown').forEach(li => {
+        li.classList.add('is-active', 'is-pinned');
+    });
+    document.body.classList.add('mega-menu-active');
+}
+
+function closeMegaMenu(force = false) {
+    if (force) {
+        isMegaMenuPinned = false;
+        isMegaMenuHovered = false;
+        lockedCategory = null;
+        lockedSolution = null;
+        lockedSubcatId = null;
+        currentMegaMenuGroup = 'products';
+    }
+    if (!isMegaMenuPinned) {
+        clearTimeout(megaMenuTimeout);
+        lockedCategory = null;
+        lockedSolution = null;
+        lockedSubcatId = null;
+        currentMegaMenuGroup = 'products';
+        const desktopContainers = document.querySelectorAll('#mega-menu-content');
+        desktopContainers.forEach(c => c.classList.remove('is-active'));
+        document.querySelectorAll('.nav-item-dropdown').forEach(li => {
+            li.classList.remove('is-active');
+            if (force) li.classList.remove('is-pinned');
+        });
+        document.body.classList.remove('mega-menu-active');
+    }
+}
+
+// Hover handlers (change products only when NOT locked by click)
+function handleMegaMenuCategoryHover(encodedCategory, element) {
+    if (lockedCategory !== null) return;
+    showMegaMenuCategoryProducts(encodedCategory, element);
+}
+
+function handleMegaMenuSolutionHover(solutionId, element) {
+    if (lockedSolution !== null) return;
+    showMegaMenuSolutionProducts(solutionId, element);
+}
+
+function handleEndoscopySubcatHover(subcatId, element) {
+    if (lockedSubcatId !== null) return;
+    showEndoscopySubcategoryProducts(subcatId, element);
+}
+
+function handleMegaMenuGroupHover(group, element) {
+    currentMegaMenuGroup = group;
+    if (element && !element.classList.contains('active')) {
+        lockedCategory = null;
+        lockedSolution = null;
+        lockedSubcatId = null;
+        showMegaMenuGroup(group, element);
+    }
+}
+
+// Click handlers (pin and lock onto the clicked item, or navigate for main groups)
+function handleMegaMenuGroupClick(group, element, event) {
+    if (event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.button === 1) return;
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    const root = window.ROOT_PATH || '';
+    if (group === 'solutions') {
+        window.location.href = `${root}products.html?solution=all`;
+    } else {
+        window.location.href = `${root}products.html`;
+    }
+}
+
+function handleMegaMenuCategoryClick(encodedCategory, element, event) {
+    if (event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.button === 1) return;
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    pinMegaMenu();
+    const category = decodeURIComponent(encodedCategory);
+    
+    // Clicking the already locked category toggles lock off (resets to free hover mode)
+    if (lockedCategory === category) {
+        lockedCategory = null;
+        lockedSubcatId = null;
+        return;
+    }
+    
+    lockedCategory = category;
+    lockedSubcatId = null;
+    showMegaMenuCategoryProducts(encodedCategory, element);
+}
+
+function handleMegaMenuSolutionClick(solutionId, element, event) {
+    if (event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.button === 1) return;
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    pinMegaMenu();
+    
+    if (lockedSolution === solutionId) {
+        lockedSolution = null;
+        return;
+    }
+    
+    lockedSolution = solutionId;
+    lockedCategory = null;
+    showMegaMenuSolutionProducts(solutionId, element);
+}
+
+function handleEndoscopySubcatClick(subcatId, element, event) {
+    if (event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.button === 1) return;
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    pinMegaMenu();
+    
+    if (lockedSubcatId === subcatId) {
+        lockedSubcatId = null;
+        return;
+    }
+    
+    lockedSubcatId = subcatId;
+    showEndoscopySubcategoryProducts(subcatId, element);
+}
 
 function initMegaMenu() {
     const desktopContainers = document.querySelectorAll('#mega-menu-content');
@@ -703,18 +857,20 @@ function initMegaMenu() {
         "Neonatal Care"
     ];
     
+    const root = window.ROOT_PATH || '';
+    
     // 1. Build Desktop Mega Menu
     const desktopHTML = `
         <div class="mega-menu-level-1">
-            <div class="mega-menu-group-item active" onmouseenter="showMegaMenuGroup('products', this)">PRODUCTS</div>
-            <div class="mega-menu-group-item" onmouseenter="showMegaMenuGroup('solutions', this)">SOLUTIONS</div>
+            <a href="${root}products.html" class="mega-menu-group-item active" onmouseenter="handleMegaMenuGroupHover('products', this)" onclick="handleMegaMenuGroupClick('products', this, event)">PRODUCTS</a>
+            <a href="${root}products.html?solution=all" class="mega-menu-group-item" onmouseenter="handleMegaMenuGroupHover('solutions', this)" onclick="handleMegaMenuGroupClick('solutions', this, event)">SOLUTIONS</a>
         </div>
         
         <div class="mega-menu-level-2-wrapper">
             <!-- Products Categories -->
             <div class="mega-menu-level-2" id="mega-lvl2-products">
                 ${productCategories.map((cat, idx) => `
-                    <a href="products.html?category=${encodeURIComponent(cat)}" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="showMegaMenuCategoryProducts('${encodeURIComponent(cat)}', this)">
+                    <a href="${root}products.html?category=${encodeURIComponent(cat)}" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="handleMegaMenuCategoryHover('${encodeURIComponent(cat)}', this)" onclick="handleMegaMenuCategoryClick('${encodeURIComponent(cat)}', this, event)">
                         ${cat}
                     </a>
                 `).join('')}
@@ -723,7 +879,7 @@ function initMegaMenu() {
             <!-- Solutions Categories -->
             <div class="mega-menu-level-2" id="mega-lvl2-solutions" style="display: none;">
                 ${typeof solutions !== 'undefined' ? solutions.map((sol, idx) => `
-                    <a href="products.html?solution=${sol.id}" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="showMegaMenuSolutionProducts('${sol.id}', this)">
+                    <a href="${root}products.html?solution=${sol.id}" class="mega-menu-category ${idx === 0 ? 'active' : ''}" onmouseenter="handleMegaMenuSolutionHover('${sol.id}', this)" onclick="handleMegaMenuSolutionClick('${sol.id}', this, event)">
                         ${sol.name}
                     </a>
                 `).join('') : ''}
@@ -746,49 +902,84 @@ function initMegaMenu() {
     }
 
     backdrop.addEventListener('click', () => {
-        desktopContainers.forEach(c => c.classList.remove('is-active'));
-        document.body.classList.remove('mega-menu-active');
+        closeMegaMenu(true);
     });
 
     backdrop.addEventListener('mouseenter', () => {
-        megaMenuTimeout = setTimeout(() => {
-            desktopContainers.forEach(c => c.classList.remove('is-active'));
-            document.body.classList.remove('mega-menu-active');
-        }, 150);
+        if (!isMegaMenuPinned) {
+            megaMenuTimeout = setTimeout(() => {
+                if (!isMegaMenuPinned && !isMegaMenuHovered) {
+                    closeMegaMenu(false);
+                }
+            }, 150);
+        }
     });
 
     desktopContainers.forEach(container => {
         container.innerHTML = desktopHTML;
         
-        // Prevent flickering by managing class on the container itself
+        // Prevent flickering and support both hover and click-pin
         const parentLi = container.closest('.nav-item-dropdown');
         if (parentLi) {
             parentLi.addEventListener('mouseenter', () => {
+                if (window.innerWidth <= 991) return;
+                isMegaMenuHovered = true;
                 clearTimeout(megaMenuTimeout);
-                container.classList.add('is-active');
+                desktopContainers.forEach(c => c.classList.add('is-active'));
+                parentLi.classList.add('is-active');
                 document.body.classList.add('mega-menu-active');
             });
+
             parentLi.addEventListener('mouseleave', () => {
-                megaMenuTimeout = setTimeout(() => {
-                    container.classList.remove('is-active');
-                    document.body.classList.remove('mega-menu-active');
-                }, 250); // slight delay to prevent flicker
+                if (window.innerWidth <= 991) return;
+                isMegaMenuHovered = false;
+                if (!isMegaMenuPinned) {
+                    megaMenuTimeout = setTimeout(() => {
+                        if (!isMegaMenuPinned && !isMegaMenuHovered) {
+                            closeMegaMenu(false);
+                        }
+                    }, 250); // slight delay to prevent flicker
+                }
+            });
+
+            // Handle clicking on "Products & Solutions" dropdown trigger
+            parentLi.addEventListener('click', (e) => {
+                if (window.innerWidth <= 991) return;
+                
+                // If the click is on the trigger link/icon outside the mega menu content popup
+                if (!e.target.closest('.mega-menu')) {
+                    const root = window.ROOT_PATH || '';
+                    if (currentMegaMenuGroup === 'solutions') {
+                        e.preventDefault();
+                        window.location.href = `${root}products.html?solution=all`;
+                    } else {
+                        if (!e.target.closest('a')) {
+                            window.location.href = `${root}products.html`;
+                        }
+                    }
+                }
             });
         }
+
+        // Product links inside the mega menu
+        container.addEventListener('click', (e) => {
+            const productItem = e.target.closest('.mega-menu-product-item');
+            if (productItem) {
+                closeMegaMenu(true);
+            }
+        });
     });
     
     // Global close handlers
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.nav-item-dropdown')) {
-            desktopContainers.forEach(c => c.classList.remove('is-active'));
-            document.body.classList.remove('mega-menu-active');
+            closeMegaMenu(true);
         }
     });
     
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            desktopContainers.forEach(c => c.classList.remove('is-active'));
-            document.body.classList.remove('mega-menu-active');
+            closeMegaMenu(true);
         }
     });
 
@@ -835,7 +1026,7 @@ function initMegaMenu() {
     // 2. Build Mobile Mega Menu
     let mobileHTML = `
         <div class="mobile-accordion-item">
-            <a href="products.html" class="mobile-accordion-link">Products</a>
+            <a href="${root}products.html" class="mobile-accordion-link">Products</a>
             <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-products-group', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
         </div>
         <div class="mobile-accordion-level" id="mobile-products-group">
@@ -843,7 +1034,7 @@ function initMegaMenu() {
                 if (cat === 'Endoscopy') {
                     return `
                         <div class="mobile-accordion-item">
-                            <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
+                            <a href="${root}products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
                             <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                         </div>
                         <div class="mobile-accordion-level" id="mobile-cat-${idx}">
@@ -863,7 +1054,7 @@ function initMegaMenu() {
                 }
                 return `
                     <div class="mobile-accordion-item">
-                        <a href="products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
+                        <a href="${root}products.html?category=${encodeURIComponent(cat)}" class="mobile-accordion-link">${cat}</a>
                         <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-cat-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                     </div>
                     <div class="mobile-accordion-level" id="mobile-cat-${idx}">
@@ -879,7 +1070,7 @@ function initMegaMenu() {
     if (typeof solutions !== 'undefined') {
         mobileHTML += `
             <div class="mobile-accordion-item">
-                <a href="products.html" class="mobile-accordion-link">Solutions</a>
+                <a href="${root}products.html?solution=all" class="mobile-accordion-link">Solutions</a>
                 <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-solutions-group', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
             </div>
             <div class="mobile-accordion-level" id="mobile-solutions-group">
@@ -887,7 +1078,7 @@ function initMegaMenu() {
                     if (sol.id === 'endoscopy') {
                         return `
                             <div class="mobile-accordion-item">
-                                <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
+                                <a href="${root}products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
                                 <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                             </div>
                             <div class="mobile-accordion-level" id="mobile-sol-${idx}">
@@ -907,7 +1098,7 @@ function initMegaMenu() {
                     }
                     return `
                         <div class="mobile-accordion-item">
-                            <a href="products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
+                            <a href="${root}products.html?solution=${sol.id}" class="mobile-accordion-link">${sol.name}</a>
                             <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-${idx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
                         </div>
                         <div class="mobile-accordion-level" id="mobile-sol-${idx}">
@@ -932,6 +1123,7 @@ function initMegaMenu() {
 }
 
 function showMegaMenuGroup(group, element) {
+    currentMegaMenuGroup = group;
     document.querySelectorAll('.mega-menu-group-item').forEach(el => el.classList.remove('active'));
     element.classList.add('active');
     
@@ -1040,7 +1232,8 @@ function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {
             <div class="mega-menu-subcategories-col">
                 ${subcats.map(subcat => `
                     <div class="mega-menu-subcat-item ${subcat.id === activeSubcatId ? 'active' : ''}" 
-                         onmouseenter="showEndoscopySubcategoryProducts('${subcat.id}', this)">
+                         onmouseenter="handleEndoscopySubcatHover('${subcat.id}', this)"
+                         onclick="handleEndoscopySubcatClick('${subcat.id}', this, event)">
                         <span>${subcat.name}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
@@ -1113,6 +1306,23 @@ function renderLvl3(productsToRender) {
         contentArea.innerHTML = html;
     });
 }
+
+// Global window exposure for mega menu interactions
+window.handleMegaMenuGroupHover = handleMegaMenuGroupHover;
+window.handleMegaMenuGroupClick = handleMegaMenuGroupClick;
+window.handleMegaMenuCategoryHover = handleMegaMenuCategoryHover;
+window.handleMegaMenuCategoryClick = handleMegaMenuCategoryClick;
+window.handleMegaMenuSolutionHover = handleMegaMenuSolutionHover;
+window.handleMegaMenuSolutionClick = handleMegaMenuSolutionClick;
+window.handleEndoscopySubcatHover = handleEndoscopySubcatHover;
+window.handleEndoscopySubcatClick = handleEndoscopySubcatClick;
+window.openMegaMenuPinned = openMegaMenuPinned;
+window.pinMegaMenu = pinMegaMenu;
+window.closeMegaMenu = closeMegaMenu;
+window.showMegaMenuGroup = showMegaMenuGroup;
+window.showMegaMenuCategoryProducts = showMegaMenuCategoryProducts;
+window.showMegaMenuSolutionProducts = showMegaMenuSolutionProducts;
+window.showEndoscopySubcategoryProducts = showEndoscopySubcategoryProducts;
 
 function toggleMobileMegaMenu() {
     const mobileMenu = document.getElementById('mobile-mega-menu-content');
