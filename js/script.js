@@ -411,7 +411,7 @@ function contactWhatsApp(productName = '') {
         message = `Hello, I am interested in ${productName}. I would like to know more about pricing and availability.`;
     }
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, '')}?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
     
     window.open(whatsappUrl, '_blank');
 }
@@ -1015,12 +1015,112 @@ function initMegaMenu() {
             id: "reusable-endoscope",
             name: "Reusable Endoscope",
             productNames: [
+                "VL3S Video Laryngoscope",
+                "Video Laryngoscope"
+            ]
+        }
+    ];
+
+    // Single-Use Endoscope Medical Specialties
+    const singleUseSpecialties = [
+        {
+            id: "urology",
+            name: "Urology",
+            iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5.5C7.5 5.5 5 7.8 5 11.5c0 3.8 2 6.5 5.2 6.5 2 0 2.8-1 2.8-2.2 0-1.2-.8-1.8-.8-2.8 0-1 .8-1.5 1.5-2.2.8-1 .3-3.8-3.2-5.3z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 11.5c.8 0 1.5.5 1.5 1.2m-1.5-1.2l-1.5-.8m1.5.8l-1.2 1.5" stroke-width="1.3" stroke-linecap="round"/><path d="M21.5 5.5C24.5 5.5 27 7.8 27 11.5c0 3.8-2 6.5-5.2 6.5-2 0-2.8-1-2.8-2.2 0-1.2.8-1.8.8-2.8 0-1-.8-1.5-1.5-2.2-.8-1-.3-3.8 3.2-5.3z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 11.5c-.8 0-1.5.5-1.5 1.2m1.5-1.2l1.5-.8m-1.5.8l1.2 1.5" stroke-width="1.3" stroke-linecap="round"/><path d="M11.8 15c1 3.2 2.2 6.5 2.8 9.2m5.6-9.2c-1 3.2-2.2 6.5-2.8 9.2" stroke-width="1.7" stroke-linecap="round"/><path d="M13 24.2c0-1.2 1.3-2 3-2s3 .8 3 2c0 2-1.3 3.6-3 3.6s-3-1.6-3-3.6z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 27.8v2.2" stroke-width="2" stroke-linecap="round"/></svg>`,
+            productNames: [
+                "Single-use Ureterorenoscope HU30M",
+                "HU Series Single-use Ureterorenoscope",
+                "Single-use Cystoscope",
+                "Single-use Ureteral Access Sheath"
+            ]
+        },
+        {
+            id: "pulmonology",
+            name: "Pulmonology",
+            iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 4h3v6.5h-3z" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 6.2h3m-3 2.2h3" stroke-width="1.4" stroke-linecap="round"/><path d="M16 10.5c-1.8 1.8-3.6 3-6.2 3.8m6.2-3.8c1.8 1.8 3.6 3 6.2 3.8" stroke-width="1.9" stroke-linecap="round"/><path d="M12 13.5l-2.2 2.8m1.8-3.8l-2.5-.8m9.7 1.8l2.2 2.8m-1.8-3.8l2.5-.8" stroke-width="1.4" stroke-linecap="round"/><path d="M12 9C8.2 9 4.8 12.2 4.8 17.5c0 5 2.2 8.5 6.2 8.5 2.2 0 3.2-1.5 3.5-3.5.3-2.5-.2-6.5-.2-9 0-2.2-.8-4.5-2.3-4.5z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 9c3.8 0 7.2 3.2 7.2 8.5 0 5-2.2 8.5-6.2 8.5-2.2 0-3.2-1.5-3.5-3.5-.3-2.5.2-6.5.2-9 0-2.2.8-4.5 2.3-4.5z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            productNames: [
+                "Single-use Bronchoscope"
+            ]
+        },
+        {
+            id: "gastroenterology",
+            name: "Gastroenterology",
+            iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5v4.5" stroke-width="2" stroke-linecap="round"/><path d="M16 8c-2.5-1.5-5.5-1-7 1-1.8 2.2-2.5 5.5-2 8.5.8 4.2 3.8 6.5 7.2 6.5 3.2 0 5.2-1.5 6.2-3.8 1-2.2.5-4.5 0-5.8-.8-2-2.8-3.2-4.4-3.2-2.2 0-3 1.2-3 2.5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 19.5c2.2 0 4.2 1 4.8 2.6.7 1.8-.5 3.6-2.5 4-2.5.5-5.5 0-7.5.6-2.2.6-3 2.2-1.8 3.6 1.2 1.4 3.8 1.4 6.5 1.4s5-.5 6.8-1.5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 25.5c1.8-1 4.5-.8 6.5-.5" stroke-width="1.4" stroke-linecap="round"/></svg>`,
+            productNames: [
+                "Single-use Choledochoscope"
+            ]
+        },
+        {
+            id: "ent",
+            name: "E. N. T.",
+            iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21 4.5C16 4.5 12 7.2 10.2 11c-.5 1-1 1.8-1.7 2.2C7.3 14 6 15 5.5 16.2c-.4 1 .2 1.8 1.2 2 .8.2 1.5.3 1.8.8.2.4.1.8-.2 1.2-.4.6-.3 1.2.3 1.6.5.3.8.8.9 1.4.3 1.4.8 2.6 1.5 3.3.6.6 1.2 1.2 1.5 2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 4.5c4.5 0 7.5 3.2 7.5 8 0 2.8-.8 5.5-1.2 7.5l1.2 8.5" stroke-width="1.8" stroke-linecap="round"/><path d="M20.5 13c1.5 0 2.7 1 2.7 2.5 0 1.5-1 2.5-2.2 2.8" stroke-width="1.6" stroke-linecap="round"/><path d="M20.8 14.8c.5 0 .9.3.9.8s-.4.8-.9.8" stroke-width="1.3" stroke-linecap="round"/><path d="M7.8 17h5c1.4 0 2.4.9 2.4 2.2v8.8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 20.5h4" stroke-width="2.2" stroke-linecap="round"/><path d="M15.2 17.2l4.8-2" stroke-width="1.4" stroke-linecap="round"/><path d="M13.5 24h3.4" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+            productNames: [
+                "Single-use Rhinolaryngoscope"
+            ]
+        }
+    ];
+
+    // Reusable Endoscope Medical Specialties
+    const reusableSpecialties = [
+        {
+            id: "pulmonology",
+            name: "Pulmonology",
+            iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 4h3v6.5h-3z" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 6.2h3m-3 2.2h3" stroke-width="1.4" stroke-linecap="round"/><path d="M16 10.5c-1.8 1.8-3.6 3-6.2 3.8m6.2-3.8c1.8 1.8 3.6 3 6.2 3.8" stroke-width="1.9" stroke-linecap="round"/><path d="M12 13.5l-2.2 2.8m1.8-3.8l-2.5-.8m9.7 1.8l2.2 2.8m-1.8-3.8l2.5-.8" stroke-width="1.4" stroke-linecap="round"/><path d="M12 9C8.2 9 4.8 12.2 4.8 17.5c0 5 2.2 8.5 6.2 8.5 2.2 0 3.2-1.5 3.5-3.5.3-2.5-.2-6.5-.2-9 0-2.2-.8-4.5-2.3-4.5z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 9c3.8 0 7.2 3.2 7.2 8.5 0 5-2.2 8.5-6.2 8.5-2.2 0-3.2-1.5-3.5-3.5-.3-2.5.2-6.5.2-9 0-2.2.8-4.5 2.3-4.5z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            productNames: [
+                "VL3S Video Laryngoscope"
+            ]
+        },
+        {
+            id: "ent",
+            name: "E. N. T.",
+            iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21 4.5C16 4.5 12 7.2 10.2 11c-.5 1-1 1.8-1.7 2.2C7.3 14 6 15 5.5 16.2c-.4 1 .2 1.8 1.2 2 .8.2 1.5.3 1.8.8.2.4.1.8-.2 1.2-.4.6-.3 1.2.3 1.6.5.3.8.8.9 1.4.3 1.4.8 2.6 1.5 3.3.6.6 1.2 1.2 1.5 2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 4.5c4.5 0 7.5 3.2 7.5 8 0 2.8-.8 5.5-1.2 7.5l1.2 8.5" stroke-width="1.8" stroke-linecap="round"/><path d="M20.5 13c1.5 0 2.7 1 2.7 2.5 0 1.5-1 2.5-2.2 2.8" stroke-width="1.6" stroke-linecap="round"/><path d="M20.8 14.8c.5 0 .9.3.9.8s-.4.8-.9.8" stroke-width="1.3" stroke-linecap="round"/><path d="M7.8 17h5c1.4 0 2.4.9 2.4 2.2v8.8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 20.5h4" stroke-width="2.2" stroke-linecap="round"/><path d="M15.2 17.2l4.8-2" stroke-width="1.4" stroke-linecap="round"/><path d="M13.5 24h3.4" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+            productNames: [
                 "Video Laryngoscope"
             ]
         }
     ];
 
     window.endoscopySubcategories = endoscopySubcategories;
+    window.singleUseSpecialties = singleUseSpecialties;
+    window.reusableSpecialties = reusableSpecialties;
+
+    // Helper to render Mobile Endoscopy subcategory items (with Specialty groups for Single-Use & Reusable)
+    function renderMobileEndoscopySubcatProducts(subcatId) {
+        if (subcatId === 'single-use-endoscope' || subcatId === 'reusable-endoscope') {
+            const specs = subcatId === 'single-use-endoscope'
+                ? (window.singleUseSpecialties || singleUseSpecialties)
+                : (window.reusableSpecialties || reusableSpecialties);
+            return specs.map(spec => {
+                const prods = [];
+                spec.productNames.forEach(name => {
+                    const prod = products.find(p => p.category === 'Endoscopy' && p.name === name);
+                    if (prod) prods.push(prod);
+                });
+                if (prods.length === 0) return '';
+                return `
+                    <div class="mobile-specialty-group">
+                        <div class="mobile-specialty-header">
+                            <span class="mobile-specialty-icon">${spec.iconSvg}</span>
+                            <span class="mobile-specialty-title">${spec.name}</span>
+                        </div>
+                        <div class="mobile-specialty-items">
+                            ${prods.map(p => `
+                                <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        } else {
+            const prods = getEndoscopySubcategoryProducts(subcatId);
+            if (prods.length === 0) {
+                return `<span style="padding: 10px 18px; font-size: 13px; color: #94a3b8; display: block;">No products currently listed</span>`;
+            }
+            return prods.map(p => `
+                <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+            `).join('');
+        }
+    }
 
     // 2. Build Mobile Mega Menu
     let mobileHTML = `
@@ -1046,15 +1146,7 @@ function initMegaMenu() {
                                         </button>
                                     </div>
                                     <div class="mobile-accordion-level mobile-subcat-products" id="mobile-endo-sub-${sIdx}">
-                                        ${(() => {
-                                            const prods = getEndoscopySubcategoryProducts(subcat.id);
-                                            if (prods.length === 0) {
-                                                return `<span style="padding: 10px 16px; font-size: 13px; color: #94a3b8; display: block;">No products currently listed</span>`;
-                                            }
-                                            return prods.map(p => `
-                                                <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
-                                            `).join('');
-                                        })()}
+                                        ${renderMobileEndoscopySubcatProducts(subcat.id)}
                                     </div>
                                 </div>
                             `).join('')}
@@ -1100,15 +1192,7 @@ function initMegaMenu() {
                                             </button>
                                         </div>
                                         <div class="mobile-accordion-level mobile-subcat-products" id="mobile-sol-endo-sub-${sIdx}">
-                                            ${(() => {
-                                                const prods = getEndoscopySubcategoryProducts(subcat.id);
-                                                if (prods.length === 0) {
-                                                    return `<span style="padding: 10px 16px; font-size: 13px; color: #94a3b8; display: block;">No products currently listed</span>`;
-                                                }
-                                                return prods.map(p => `
-                                                    <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
-                                                `).join('');
-                                            })()}
+                                            ${renderMobileEndoscopySubcatProducts(subcat.id)}
                                         </div>
                                     </div>
                                 `).join('')}
@@ -1200,6 +1284,7 @@ function getEndoscopySubcategoryProducts(subcatId) {
             id: "reusable-endoscope",
             name: "Reusable Endoscope",
             productNames: [
+                "VL3S Video Laryngoscope",
                 "Video Laryngoscope"
             ]
         }
@@ -1241,6 +1326,49 @@ function buildProductsListHtml(productsToRender) {
     `;
 }
 
+function buildEndoscopySpecialtiesHtml(subcatId) {
+    const specs = subcatId === 'single-use-endoscope'
+        ? (window.singleUseSpecialties || singleUseSpecialties)
+        : (window.reusableSpecialties || reusableSpecialties);
+    
+    return `
+        <div class="mega-menu-specialties-grid">
+            ${specs.map(spec => {
+                const prods = [];
+                spec.productNames.forEach(name => {
+                    const prod = products.find(p => p.category === 'Endoscopy' && p.name === name);
+                    if (prod) prods.push(prod);
+                });
+                return `
+                    <div class="mega-menu-specialty-col">
+                        <div class="mega-menu-specialty-header">
+                            <div class="mega-menu-specialty-icon">
+                                ${spec.iconSvg}
+                            </div>
+                            <span class="mega-menu-specialty-title">
+                                ${spec.name}
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="mega-menu-specialty-products">
+                            ${prods.map(p => `
+                                <a href="${getProductUrl(p)}" class="mega-menu-specialty-prod-link">
+                                    <span class="mega-menu-specialty-prod-name">${p.name}</span>
+                                    ${p.brand ? `<span class="mega-menu-product-brand">${p.brand}</span>` : ''}
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+}
+
+function buildSingleUseSpecialtiesHtml() {
+    return buildEndoscopySpecialtiesHtml('single-use-endoscope');
+}
+
 function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {
     const subcats = window.endoscopySubcategories || [
         { id: "airway-management", name: "Airway Management" },
@@ -1249,6 +1377,9 @@ function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {
     ];
     
     const subcatProducts = getEndoscopySubcategoryProducts(activeSubcatId);
+    const contentHtml = (activeSubcatId === 'single-use-endoscope' || activeSubcatId === 'reusable-endoscope')
+        ? buildEndoscopySpecialtiesHtml(activeSubcatId)
+        : buildProductsListHtml(subcatProducts);
     
     const html = `
         <div class="mega-menu-endoscopy-wrapper">
@@ -1263,7 +1394,7 @@ function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {
                 `).join('')}
             </div>
             <div class="mega-menu-subcat-products" id="mega-endoscopy-products">
-                ${buildProductsListHtml(subcatProducts)}
+                ${contentHtml}
             </div>
         </div>
     `;
@@ -1286,7 +1417,9 @@ function showEndoscopySubcategoryProducts(subcatId, element) {
     const subcatProducts = getEndoscopySubcategoryProducts(subcatId);
     const container = document.getElementById('mega-endoscopy-products');
     if (container) {
-        container.innerHTML = buildProductsListHtml(subcatProducts);
+        container.innerHTML = (subcatId === 'single-use-endoscope' || subcatId === 'reusable-endoscope')
+            ? buildEndoscopySpecialtiesHtml(subcatId)
+            : buildProductsListHtml(subcatProducts);
     }
 }
 

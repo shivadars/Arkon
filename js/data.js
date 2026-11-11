@@ -1,6 +1,7 @@
 // Contact Configuration
-const WHATSAPP_NUMBER = "+919876543210"; // Replace with actual WhatsApp number
-const PHONE_NUMBER = "+919876543210";    // Replace with actual phone number
+const WHATSAPP_NUMBER = "+918138021100"; // Replace with actual WhatsApp number
+const PHONE_NUMBER = "+914844024426";
+const PHONE_NUMBER_MOBILE = "+918138021100";    // Replace with actual phone number
 
 // Data Structures
 const products = [
