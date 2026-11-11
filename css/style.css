@@ -5562,7 +5562,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     z-index: 9999;
     display: grid;
-    grid-template-columns: 170px 240px 1fr;
+    grid-template-columns: 155px 305px 1fr;
     border: 1px solid var(--border);
     overflow: hidden;
     isolation: isolate;
@@ -5683,17 +5683,17 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 13px 24px;
+    padding: 12px 20px;
     cursor: pointer;
     color: #334155;
     transition: all 0.2s ease;
     font-weight: 500;
     font-size: 14px;
+    line-height: 1.35;
     text-decoration: none !important;
     border-left: 3px solid transparent;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: normal;
 }
 
 .header .mega-menu-category::after {
