@@ -258,8 +258,7 @@ function initLogoGrid() {
     if (!grid || typeof clients === 'undefined') return;
     
     let html = '';
-    // Use up to 12 clients for a 4x3 grid
-    const displayClients = clients.slice(0, 12);
+    const displayClients = clients;
     
     displayClients.forEach(client => {
         html += `<img src="${client.img}" alt="${client.name}" class="client-logo" title="${client.name}">`;
@@ -1006,7 +1005,6 @@ function initMegaMenu() {
                 "Single-use Rhinolaryngoscope",
                 "Single-use Choledochoscope",
                 "HU Series Single-use Ureterorenoscope",
-                "Single-use Ureterorenoscope HU30M",
                 "Single-use Cystoscope",
                 "Single-use Ureteral Access Sheath"
             ]
@@ -1028,7 +1026,6 @@ function initMegaMenu() {
             name: "Urology",
             iconSvg: `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5.5C7.5 5.5 5 7.8 5 11.5c0 3.8 2 6.5 5.2 6.5 2 0 2.8-1 2.8-2.2 0-1.2-.8-1.8-.8-2.8 0-1 .8-1.5 1.5-2.2.8-1 .3-3.8-3.2-5.3z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 11.5c.8 0 1.5.5 1.5 1.2m-1.5-1.2l-1.5-.8m1.5.8l-1.2 1.5" stroke-width="1.3" stroke-linecap="round"/><path d="M21.5 5.5C24.5 5.5 27 7.8 27 11.5c0 3.8-2 6.5-5.2 6.5-2 0-2.8-1-2.8-2.2 0-1.2.8-1.8.8-2.8 0-1-.8-1.5-1.5-2.2-.8-1-.3-3.8 3.2-5.3z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 11.5c-.8 0-1.5.5-1.5 1.2m1.5-1.2l1.5-.8m-1.5.8l1.2 1.5" stroke-width="1.3" stroke-linecap="round"/><path d="M11.8 15c1 3.2 2.2 6.5 2.8 9.2m5.6-9.2c-1 3.2-2.2 6.5-2.8 9.2" stroke-width="1.7" stroke-linecap="round"/><path d="M13 24.2c0-1.2 1.3-2 3-2s3 .8 3 2c0 2-1.3 3.6-3 3.6s-3-1.6-3-3.6z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 27.8v2.2" stroke-width="2" stroke-linecap="round"/></svg>`,
             productNames: [
-                "Single-use Ureterorenoscope HU30M",
                 "HU Series Single-use Ureterorenoscope",
                 "Single-use Cystoscope",
                 "Single-use Ureteral Access Sheath"
@@ -1275,7 +1272,6 @@ function getEndoscopySubcategoryProducts(subcatId) {
                 "Single-use Rhinolaryngoscope",
                 "Single-use Choledochoscope",
                 "HU Series Single-use Ureterorenoscope",
-                "Single-use Ureterorenoscope HU30M",
                 "Single-use Cystoscope",
                 "Single-use Ureteral Access Sheath"
             ]

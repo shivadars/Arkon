@@ -7367,20 +7367,20 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 /* Clients Grid */
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 100px;
-    column-gap: 60px;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 70px;
+    column-gap: 45px;
     align-items: center;
     justify-items: center;
     width: 100%;
     margin: 0 auto;
-    min-height: 530px;
+    min-height: 460px;
 }
 
 .clients-grid .client-logo {
     width: 100%;
-    max-width: 240px;
-    height: 130px;
+    max-width: 220px;
+    height: 110px;
     object-fit: contain;
     /* Full color by default */
     filter: grayscale(0%) opacity(100%);
@@ -7398,23 +7398,23 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     transform: scale(1.1);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .clients-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px 20px;
+        gap: 50px 30px;
     }
 }
 
 @media (max-width: 600px) {
     .clients-grid {
-        /* Use a 3-column grid so 9 logos fit perfectly into a 3x3 square */
+        /* Use a 3-column grid so 15 logos fit into 5 rows of 3 */
         grid-template-columns: repeat(3, 1fr);
-        gap: 50px 20px; /* Increased vertical and horizontal space */
+        gap: 36px 16px;
     }
 
     .clients-grid .client-logo {
-        max-width: 95%; /* Allow slight stretch if needed */
-        max-height: 70px; /* Slightly larger to balance the new space */
+        max-width: 95%;
+        max-height: 65px;
     }
 }/* ---- NEW CONTACT US SECTION ---- */
 .contact-section-new {
@@ -7708,7 +7708,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     
     /* Ensure the client grid doesn't have huge gap on mobile */
     .clients-grid {
-        gap: 55px 20px !important;
+        gap: 36px 16px !important;
         min-height: auto !important;
     }
 

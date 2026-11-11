@@ -3276,16 +3276,48 @@ const clients = [
         "img": "assets/clients/hq_kims.png"
     },
     {
+        "name": "Aster Medcity",
+        "img": "assets/clients/hq_aster.png"
+    },
+    {
+        "name": "VPS Lakeshore Hospital",
+        "img": "assets/clients/hq_lakeshore.png"
+    },
+    {
+        "name": "Amrita Hospitals",
+        "img": "assets/clients/hq_amrita.png"
+    },
+    {
         "name": "Regional Cancer Centre",
         "img": "assets/clients/hq_rcc.png"
+    },
+    {
+        "name": "Rajagiri Hospital",
+        "img": "assets/clients/hq_rajagiri.png"
+    },
+    {
+        "name": "Lisie Hospital",
+        "img": "assets/clients/hq_lisie.png"
+    },
+    {
+        "name": "Jubilee Mission Medical College",
+        "img": "assets/clients/hq_jubilee.png"
+    },
+    {
+        "name": "Govt Medical College Thrissur",
+        "img": "assets/clients/hq_thrissur_medical.png"
     },
     {
         "name": "T.D. Medical College, Alappuzha",
         "img": "assets/clients/hq_td_medical.png"
     },
     {
-        "name": "Govt Medical College Thrissur",
-        "img": "assets/clients/hq_thrissur_medical.png"
+        "name": "Ananthapuri Hospitals",
+        "img": "assets/clients/hq_ananthapuri.png"
+    },
+    {
+        "name": "Pushpagiri Institutions",
+        "img": "assets/clients/hq_pushpagiri.png"
     },
     {
         "name": "Dr. Somervell Memorial CSI Medical College",
@@ -3294,14 +3326,6 @@ const clients = [
     {
         "name": "St. John's National Academy of Health Sciences",
         "img": "assets/clients/hq_st_johns.png"
-    },
-    {
-        "name": "Pushpagiri Institutions",
-        "img": "assets/clients/hq_pushpagiri.png"
-    },
-    {
-        "name": "Rajagiri Hospital",
-        "img": "assets/clients/hq_rajagiri.png"
     },
     {
         "name": "KMSCL",
