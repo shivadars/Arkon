@@ -2659,18 +2659,7 @@ const products = [
                 "Irrigation": "Irrigation Valve included"
             }
         },
-            {
-            id: 112,
-            name: "Single-use Duodenoscope",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 6500,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Duodenoscope",
-            description: "",
-            features: [
-            
-        ]
-        },
+
             {
             id: 113,
             name: "Single-use Bronchoscope",
@@ -2711,48 +2700,7 @@ const products = [
                 "Settings": "ICU, Bedside, Operating Room"
             }
         },
-            {
-            id: 114,
-            name: "Single-use Collector",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 1000,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Collector",
-            description: "",
-            features: [
-            
-        ]
-        },
-            {
-            id: 115,
-            name: "Broncho Sampler",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 1200,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Broncho+Sampler",
-            description: "",
-            features: [
-            
-        ]
-        },
-            {
-            id: 116,
-            name: "Single-use Ureterorenoscope HU30M",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 7000,
-            image: "../../assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
-            description: "",
-            images: [
-            "../../assets/images/products/single-use-ureterorenoscope-hu30m-1.jpg",
-            "../../assets/images/products/single-use-ureterorenoscope-hu30m-2.png",
-            "../../assets/images/products/single-use-ureterorenoscope-hu30m-3.jpg",
-            "../../assets/images/products/single-use-ureterorenoscope-hu30m-4.jpg"
-        ],
-            features: [
-            
-        ]
-        },
+
             {
             id: 117,
             name: "HU Series Single-use Ureterorenoscope",
@@ -2816,18 +2764,7 @@ const products = [
                 "Tip Design": "Bullet-shaped, low-resistance"
             }
         },
-            {
-            id: 119,
-            name: "Single-Use Cysto-Nephroscope",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 7200,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Cysto-Nephroscope",
-            description: "",
-            features: [
-            
-        ]
-        },
+
             {
             id: 120,
             name: "Single-use Ureteral Access Sheath",
@@ -2862,30 +2799,7 @@ const products = [
                 "Coating": "Hydrophilic Coating with Depth Mark"
             }
         },
-            {
-            id: 121,
-            name: "Single-use Stent Removal Cystoscope",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 6500,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Stent+Removal",
-            description: "",
-            features: [
-            
-        ]
-        },
-            {
-            id: 122,
-            name: "Suction Pump",
-            brand: "HUGEMED",
-            category: "Endoscopy",
-            price: 2500,
-            image: "https://placehold.co/800x800/E8F3EC/075C3A?text=Suction+Pump",
-            description: "",
-            features: [
-            
-        ]
-        },
+
             {
             id: 123,
             name: "Video Laryngoscope",
@@ -2948,6 +2862,410 @@ const products = [
                 { title: "1:1 Torque Ratio", text: "The 1:1 torque ratio maximizes the replication of the medical staff's precise movements, ensure smooth surgical procedures." },
                 { title: "Stable Quality", text: "Single-use design ensures that imaging and bending angles always remain in optimal condition." }
             ]
+        },
+        {
+            id: 126,
+            name: "VL4REX Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "vl4rex-video-laryngoscope",
+            image: "../../assets/products/vl4rex-video-laryngoscope-1.jpg?v=2",
+            gallery: [
+                "../../assets/products/vl4rex-video-laryngoscope-1.jpg?v=2",
+                "../../assets/products/vl4rex-video-laryngoscope-2.jpg?v=2"
+            ],
+            short_description: "Modular video laryngoscope with detachable handle, 316L stainless steel and titanium alloy blades designed for emergency, critical care, and ICU intubation.",
+            key_highlights: [
+                "Modular Design with Detachable Handle & Portable Architecture",
+                "Medical-Grade 316L Stainless Steel Blades (13 Reusable Blade Models)",
+                "High-Performance Titanium Alloy Blades (7 Models Available)",
+                "High-Angulation HT2, HT3, HT4 & HT P2 Blades for Difficult Airway Scenarios",
+                "High-Resolution CMOS Sensor with Integrated Anti-Fog Lens & LED",
+                "Quick Button: One-Click Snapshot & Long-Press Video Recording"
+            ],
+            overview_text: "The VL4REX functions as a video laryngoscope through various combinations of imaging part, cables, detachable handles, and reusable laryngoscope blades. This product is widely applicable in departments requiring intubation, such as emergency rooms, operating theaters, and ICUs. Its portability and a wide range of selectable blades offer convenience across diverse scenarios.",
+            features: [
+                {
+                    title: "316L Stainless Steel Blade",
+                    text: "Featuring modular design with a detachable handle and 13 reusable blade models, the stainless steel blades are ideal for emergency and critical care settings where various types of patients may be encountered. The medical-grade 316L stainless steel provides the blade with exceptional strength and corrosion resistance."
+                },
+                {
+                    title: "Titanium Forged in Every Intubation",
+                    text: "The titanium alloy blades are crafted from high-performance titanium alloy, featuring a lightweight design enabled by its low-density properties to provide clinicians with enhanced comfort and maneuverability. Its low thermal conductivity minimizes the cold sensation during contact, further enhancing patient comfort."
+                },
+                {
+                    title: "Difficult Airway Solutions",
+                    text: "With seven models available, the blades address diverse clinical needs. Among them, the high-angulation models HT2, HT3, HT4, and HT P2 are specifically designed for difficult airway scenarios, helping clinicians achieve more efficient and precise airway management."
+                },
+                {
+                    title: "Ergonomic Handle & Quick Button",
+                    text: "Ergonomically designed to fit the hand for enhanced comfort and control. The handle features a quick button providing one-click snapshot capture and long-press video recording."
+                },
+                {
+                    title: "Anti-fog Lens & CMOS Sensor",
+                    text: "High-resolution CMOS sensor combining with high-brightness LED illumination and anti-fog lens technology ensures clear, immediate visualization."
+                },
+                {
+                    title: "Dedicated Video-out Port",
+                    text: "Video-out port for connecting the video cable and imaging part directly to external monitors or display units."
+                }
+            ],
+            specifications: {
+                "Blade Models": "13 Stainless Steel (316L) & 7 Titanium alloy models",
+                "Airway Capability": "High-angulation HT2, HT3, HT4 & HT P2 for difficult airways",
+                "Optics & Display": "High-resolution CMOS anti-fog sensor with video-out port",
+                "Reprocessing": "Reusable immersion disinfection"
+            }
+        },
+        {
+            id: 127,
+            name: "VL4DEX Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "vl4dex-video-laryngoscope",
+            image: "../../assets/products/vl4dex-video-laryngoscope-1.jpg?v=1",
+            gallery: [
+                "../../assets/products/vl4dex-video-laryngoscope-1.jpg?v=1",
+                "../../assets/products/vl4dex-video-laryngoscope-2.png?v=1",
+                "../../assets/products/vl4dex-video-laryngoscope-3.png?v=1",
+                "../../assets/products/vl4dex-video-laryngoscope-4.jpg?v=1"
+            ],
+            short_description: "Single-use video laryngoscope with three processor types, two cable types, two detachable handle types, and three blade types for safe sterile visual intubation across anaesthesia, emergency, and ICU settings.",
+            key_highlights: [
+                "Single-Use Blades for Reduced Cross-Contamination Risk",
+                "Full-Sleeved, Integrated & Semi-Sleeved Blade Options",
+                "High Waterproof Handles (Handle-FD1 & Handle-FD2) for Immersion Disinfection",
+                "Ball Lock Mechanism for Easy Blade Attachment & Detachment",
+                "High-Resolution CMOS Sensor with Anti-Fog Lens & LED Illumination",
+                "Quick Button: One-Click Snapshot & Long-Press Video Recording"
+            ],
+            overview_text: "As a single-use laryngoscope, the VL4DEX offers a wealth of options for reducing disinfection time. The product consists of three processors, two cables, two types of detachable handles, and three types of single-use laryngoscope blades. Through various combinations, the VL4DEX can provide quick and safe sterile visual intubation solutions for scenarios such as the anaesthesia department, emergency department, and ICU.",
+            features: [
+                {
+                    title: "Full-Sleeved Blade",
+                    text: "The full-sleeved blades function with Handle-FD1 or Handle-FD2. Covering most part of the handle, the full-sleeved design provides higher safety level. Handle-FD1 and Handle-FD2, with high waterproof level, can undergo immersion disinfection. Four Macintosh blades and two Miller blades can cover various clinical requirements."
+                },
+                {
+                    title: "Integrated Blade",
+                    text: "The Integrated Blade comes in seven different models, each with an integrated handle and blade. The handle is equipped with a quick-operation button for one-click snapshot and long-press video recording."
+                },
+                {
+                    title: "Semi-Sleeved Blade",
+                    text: "The Semi-Sleeved Blades function with Handle-AD which is compatible with 5 Mac-type blades, as well as 3 CMac blades allowing endotracheal tubes to pass through the channels on the blades. This combination allows users to carry one handle and pair it with multiple blades to meet various on-site needs."
+                },
+                {
+                    title: "Ball Lock Mechanism",
+                    text: "Easy attachment and detachment of the full-sleeved blades via a secure ball lock mechanism, enabling quick blade changes in time-critical scenarios."
+                },
+                {
+                    title: "Anti-Fog Lens & Camera System",
+                    text: "High-resolution CMOS sensor combining with high-brightness LED illumination. The camera system ensures clear, immediate visualization even in challenging airway conditions."
+                },
+                {
+                    title: "Dedicated Video-out Port",
+                    text: "Video-out port for connecting the video cable and imaging part directly to external monitors or display units for enhanced team visualization during intubation."
+                }
+            ],
+            specifications: {
+                "Blade System": "3 single-use types (Full-sleeved, Integrated, Semi-sleeved)",
+                "Compatibility": "8 blade models with Handle-FD1/FD2 & Handle-AD",
+                "Waterproofing": "Handles support immersion disinfection (Ball-lock mechanism)",
+                "Optics & Display": "CMOS sensor with anti-fog lens & dedicated video-out"
+            }
+        },
+        {
+            id: 128,
+            name: "VL3R/VL4R Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "vl3r-vl4r-video-laryngoscope",
+            image: "../../assets/products/vl3r-vl4r-video-laryngoscope-1.jpg?v=1",
+            gallery: [
+                "../../assets/products/vl3r-vl4r-video-laryngoscope-1.jpg?v=1",
+                "../../assets/products/vl3r-vl4r-video-laryngoscope-2.jpg?v=1"
+            ],
+            short_description: "Reusable blade-type video laryngoscope equipped with a 3.5/4-inch rotatable display and 13 reusable blade models made of 316 medical-grade stainless steel.",
+            key_highlights: [
+                "Reusable 3.5/4-Inch Display with 140° Tilt & 180° Swivel Rotation",
+                "13 Reusable Blade Models (5 MAC, 5 Hyperangulated MAC D, 3 Miller)",
+                "Medical-Grade 316 Stainless Steel with IPX8 Waterproof Rating",
+                "High-Resolution Anti-Fog Camera Technology for Instant Visualization",
+                "One-Touch Quick Button for Snapshot and Video Recording",
+                "Long-Lasting 3400mAh Battery with ~120 Minutes Continuous Operation"
+            ],
+            overview_text: "VL3R/VL4R is a reusable blade-type video laryngoscope equipped with a reusable 3.5/4-inch display and 13 models of reusable blades. It is a cost-effective solution that can assist in intubation for multiple groups of people and in multiple scenarios.",
+            features: [
+                {
+                    title: "All-Round Models for Diverse Groups",
+                    text: "VL3R/VL4R blades include 5 standard Macintosh models (MAC series), 5 hyperangulated models for difficult airways (MAC D series), and 3 Miller models (MILLER series). A complete range of models can serve diverse patient groups."
+                },
+                {
+                    title: "Multi-Scenario Application",
+                    text: "VL3R/VL4R, equipped with various blades which can be quickly detached and attached, is suitable for a wide range of intubation scenarios, including but not limited to anesthesia, emergency, and ICU."
+                },
+                {
+                    title: "Cost-Effective & Sturdy 316 Stainless Steel",
+                    text: "The reusable blades are crafted from 316 medical-grade stainless steel offering exceptional corrosion resistance and high resistance to bending or breaking. They can be reused after immersion disinfection."
+                },
+                {
+                    title: "Comfortable and Portable Design",
+                    text: "The handle features an ergonomic design for a comfortable grip. Its compact body and quick-assembly blades make it easy for medical staff to carry and deploy."
+                },
+                {
+                    title: "IPX8 Waterproof Rating",
+                    text: "The blades meet IPX8 waterproof standards, allowing for complete immersion during reprocessing and disinfection without compromising performance."
+                },
+                {
+                    title: "Multi-Angle Observation & Anti-Fog Camera",
+                    text: "Equipped with a rotatable display that tilts 140° up/down and swivels 180° left/right, along with a high resolution anti-fog camera, the device enables clear and flexible visualization for clinicians."
+                },
+                {
+                    title: "Quick Button & Long-Lasting Power",
+                    text: "The one-click button supports rapid snapshot capture and video recording. Powered by a 3400mAh rechargeable battery, the device provides around 120 minutes of continuous operation on a full charge."
+                }
+            ],
+            specifications: {
+                "Display": "3.5\" or 4\" rotatable screen (140° tilt, 180° swivel)",
+                "Blade Range": "13 reusable models (5 MAC, 5 MAC D difficult airway, 3 Miller)",
+                "Material & Water Resistance": "316 medical-grade stainless steel, IPX8 waterproof",
+                "Battery & Runtime": "3400mAh rechargeable (~120 min continuous use)"
+            }
+        },
+        {
+            id: 129,
+            name: "VL3D/VL4D Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "vl3d-vl4d-video-laryngoscope",
+            image: "../../assets/products/vl3d-vl4d-video-laryngoscope-1.jpg?v=1",
+            gallery: [
+                "../../assets/products/vl3d-vl4d-video-laryngoscope-1.jpg?v=1",
+                "../../assets/products/vl3d-vl4d-video-laryngoscope-2.jpg?v=1"
+            ],
+            short_description: "Single-use blade-type video laryngoscope equipped with a reusable 3.5/4-inch processor and 8 single-use blade models for ready-to-use visual intubation.",
+            key_highlights: [
+                "Ready to Use Single-Use Blades — Zero Sterilization Waiting Time",
+                "8 Single-Use Blade Models (5 Standard Macintosh + 3 Channeled CMAC)",
+                "High-Transparency & Shatterproof Polycarbonate Integrated Molding",
+                "Reusable 3.5/4-Inch Display with 140° Tilt & 180° Swivel Rotation",
+                "Anti-Fog Camera Technology with Rapid Heating to Resist Lens Clouding",
+                "Quick Button for Snapshot / Video Recording & Long-Lasting 3400mAh Battery"
+            ],
+            overview_text: "VL3D/VL4D is a single-use blade-type video laryngoscope equipped with a reusable 3.5/4-inch processor and 8 models of single-use blades. It is ready to use whenever needed, eliminating sterilization delays and streamlining hospital airway workflows.",
+            features: [
+                {
+                    title: "Ready to Use",
+                    text: "The single-use blades require no waiting for sterilization, meeting the need for immediate use in various clinical scenarios and effectively improving hospital workflow efficiency."
+                },
+                {
+                    title: "8 Models for Diverse Daily Cases",
+                    text: "The VL3D/VL4D blades include a total of 8 models, including 5 standard Macintosh models (MAC series) and 3 channeled models (CMAC series), catering to the needs of various daily intubation cases."
+                },
+                {
+                    title: "High Transparency and Shatterproof",
+                    text: "The single-use blades are made of high-quality polycarbonate for integrated molding, ensuring clarity in imaging. They are designed to fit snugly with the internal blade curve, ensuring high shatter resistance."
+                },
+                {
+                    title: "Comfortable and Portable Design",
+                    text: "The handle features an ergonomic design for a comfortable grip, while its compact size enables quick assembly and easy portability for clinical teams across departments."
+                },
+                {
+                    title: "Multi-Angle Observation",
+                    text: "Equipped with a rotatable display that tilts 140° up/down and swivels 180° left/right, along with a high-resolution anti-fog camera, the device enables clear and flexible visualization for clinicians."
+                },
+                {
+                    title: "Quick Button Operation",
+                    text: "The multifunctional quick button allows one click for snapshots and a long press for video recording, streamlining procedural documentation."
+                },
+                {
+                    title: "Long-Lasting Power",
+                    text: "With a 3400mAh high-capacity battery, the device provides around 120 minutes of continuous operation on a full charge."
+                }
+            ],
+            specifications: {
+                "Display": "3.5\" or 4\" rotatable screen (140° tilt, 180° swivel)",
+                "Blade Range": "8 single-use models (5 standard MAC + 3 channeled CMAC)",
+                "Material": "Integrated shatterproof, optical-grade polycarbonate",
+                "Battery & Runtime": "3400mAh rechargeable (~120 min continuous use)"
+            }
+        },
+        {
+            id: 130,
+            name: "VL3S Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "vl3s-video-laryngoscope",
+            image: "../../assets/products/vl3s-video-laryngoscope-1.jpg?v=1",
+            gallery: [
+                "../../assets/products/vl3s-video-laryngoscope-1.jpg?v=1",
+                "../../assets/products/vl3s-video-laryngoscope-2.jpg?v=1"
+            ],
+            short_description: "Flexible video laryngoscope with 3 interchangeable monitor options and 6 operational part models, delivering versatile oral and nasal intubation with 1:1 torque replication.",
+            key_highlights: [
+                "3 Interchangeable Monitor Sizes (3.5-Inch, 8-Inch, and 15.6-Inch)",
+                "6 Operational Part Models Covering All Clinical Airway Sizes",
+                "Supports Both Oral & Nasal Intubation for Difficult & Limited Mouth Openings",
+                "650mm Flexible Insertion Tube with 1:1 Torque Ratio Precise Control",
+                "Smart Handle with Quick Snapshot/Video Button, Suction & Biopsy Valve",
+                "IPX7 Waterproof Operational Part for Complete Immersion Disinfection"
+            ],
+            overview_text: "The VL3S consists of an imaging part and an operational part. 3 types of imaging part meet the requirements of different application scenarios. The operational part of the VL3S comes in six models, covering all the sizes required for airway management in clinical settings, thus providing medical professionals with a reliable visualisation solution for flexible airway management.",
+            features: [
+                {
+                    title: "3 Imaging Part Options for Versatile Scenarios",
+                    text: "The VL3S can be combined with 3.5-inch, 8-inch, and 15.6-inch monitors, making it suitable for use across emergency rooms, anesthesia, ICU, and medical teaching scenarios."
+                },
+                {
+                    title: "Born for Challenging Situations",
+                    text: "The 650mm flexible insertion tube can be used for both oral and nasal intubation, providing a dependable solution when faced with the challenges of a limited mouth opening angle. Additionally, the insertion tube can evaluate the entire airway, reducing the risk of intubation-related injury."
+                },
+                {
+                    title: "Reusable and Cost-Effective Design",
+                    text: "The VL3S features an IPX7 waterproof operational part, allowing the entire device to be disinfected by immersion after attaching the waterproof cap. Its reusable architecture significantly reduces consumable costs and hospital expenditure."
+                },
+                {
+                    title: "Versatile Intubation Routes",
+                    text: "Supports both oral and nasal intubation routes, delivering reliable access for patients with trauma, cervical spine immobility, or restricted mouth opening."
+                },
+                {
+                    title: "Smart Handle with Comprehensive Controls",
+                    text: "The handle integrates a quick button for snapshots and video recording, a dedicated suction button for fast connection, a biopsy valve, and an angulation control lever (160° up, 130° down) for optimal maneuverability."
+                },
+                {
+                    title: "1:1 Torque Ratio & Insertion Rotation",
+                    text: "The 1:1 torque ratio accurately replicates the clinician's hand movements for smooth and precise navigation. Optional insertion tube rotation function offers left/right 120° rotation."
+                },
+                {
+                    title: "Easy Immersion Disinfection",
+                    text: "IPX7 waterproofing allows safe, thorough immersion disinfection after attaching the waterproof cap, ensuring reliable reprocessing between patients."
+                }
+            ],
+            specifications: {
+                "Monitor Options": "3.5\", 8\", and 15.6\" interchangeable displays",
+                "Insertion Tube": "650mm flexible tube, 6 clinical size models",
+                "Deflection & Torque": "160° Up / 130° Down with 1:1 torque replication",
+                "Waterproofing": "IPX7 operational part (immersion disinfection)"
+            }
+        },
+        {
+            id: 131,
+            name: "VL3H Video Laryngoscope",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "vl3h-video-laryngoscope",
+            image: "../../assets/products/vl3h-video-laryngoscope-1.png?v=1",
+            gallery: [
+                "../../assets/products/vl3h-video-laryngoscope-1.png?v=1",
+                "../../assets/products/vl3h-video-laryngoscope-2.jpg?v=1"
+            ],
+            short_description: "Stylet-type video laryngoscope with 3.5-inch rotatable display, 2 malleable reusable stylets and 3 single-use stylets, featuring direct oxygen infusion for emergency rapid intubation.",
+            key_highlights: [
+                "Stylet-Type Visual Intubation for Normal & Difficult Emergency Airways",
+                "5 Versatile Stylet Models (2 Malleable Reusable & 3 Single-Use Models)",
+                "Direct Oxygen Infusion Hole for Glottis Oxygenation During Rescue",
+                "Resilient Nickel-Titanium Memory Metal Reshaped with Warm Water (50–60℃)",
+                "3.5-Inch Rotatable Display (140° Tilt & 180° Swivel) with Anti-Fog Camera",
+                "Quick Button for One-Touch Snapshot / Recording & 3400mAh Battery"
+            ],
+            overview_text: "VL3H is a stylet type Video Laryngoscope equipped with a 3.5-inch display, 2 reusable stylets and 3 single-use stylets. It is suitable for rapid intubation in both normal and difficult airways during emergencies, providing direct glottis oxygen supply and instant visualization.",
+            features: [
+                {
+                    title: "Multi-functional for Emergency",
+                    text: "The VL3H can independently perform intubation into the glottis, directly deliver oxygen through the integrated infusion hole, and achieve quick intubation during critical rescue scenarios."
+                },
+                {
+                    title: "Navigate Complex Airways with Ease",
+                    text: "Featuring malleable reusable stylets and a range of pre-set angles on single-use models, the VL3H is designed for intubation in challenging airway scenarios, regardless of mouth opening or patient positioning."
+                },
+                {
+                    title: "Five Versatile Stylet Options",
+                    text: "The VL3H features a simplified range of stylets, including 3 single-use models crafted from 304 medical stainless steel and 2 reusable models made from nickel-titanium memory metal to accommodate diverse patient anatomies."
+                },
+                {
+                    title: "Built with Premium Medical-Grade Materials",
+                    text: "VL3H single-use stylets are crafted from durable 304 medical-grade stainless steel. Reusable stylets feature resilient nickel-titanium alloy memory metal, which can be easily restored to their original shapes with 50℃-60℃ water."
+                },
+                {
+                    title: "Direct Oxygen Infusion Hole",
+                    text: "Oxygen can be delivered directly from the integrated infusion hole at the stylet base, maintaining oxygenation during intubation and saving critical rescue time."
+                },
+                {
+                    title: "Comfortable and Portable Design",
+                    text: "The handle features an ergonomic design for a comfortable grip. Its compact body and quick-assembly stylets make it easy for medical staff to carry and deploy in crash carts or emergency packs."
+                },
+                {
+                    title: "Multi-Angle Observation & Anti-Fog Camera",
+                    text: "Equipped with a rotatable display that tilts 140° up/down and swivels 180° left/right, along with a high resolution anti-fog camera, the device enables clear and flexible visualization for clinicians."
+                },
+                {
+                    title: "Quick Button & Long-Lasting Power",
+                    text: "The one-click button supports rapid snapshot capture and video recording. Powered by a 3400mAh rechargeable battery, the device provides around 120 minutes of continuous operation on a full charge."
+                }
+            ],
+            specifications: {
+                "Display": "3.5\" rotatable screen (140° tilt, 180° swivel)",
+                "Stylet Models": "5 models (2 malleable memory metal + 3 single-use 304 steel)",
+                "Oxygen Delivery": "Integrated direct glottis oxygen infusion port",
+                "Battery & Runtime": "3400mAh rechargeable (~120 min continuous use)"
+            }
+        },
+        {
+            id: 132,
+            name: "MS-8 Workstation",
+            brand: "HUGEMED",
+            category: "Endoscopy",
+            custom_url: "ms-8-workstation",
+            image: "../../assets/products/ms-8-workstation-1.jpg?v=1",
+            gallery: [
+                "../../assets/products/ms-8-workstation-1.jpg?v=1",
+                "../../assets/products/ms-8-workstation-2.jpg?v=1"
+            ],
+            short_description: "All-in-one medical workstation with 15.6\" 1080P FHD touchscreen, dual-scope display, and digital record generation for versatile airway and endoscopy procedures.",
+            key_highlights: [
+                "15.6-Inch 1080P FHD Capacitive Touchscreen for Intuitive Clinical Operation",
+                "All-in-One Compact Design with Integrated Carry Handle and Tabletop/Cart Mount",
+                "Broad Compatibility with HugeMed Video Laryngoscopes & Endoscopes",
+                "Dual Scope Display Supporting Simultaneous Real-Time Airway Views",
+                "Built-in Patient Information Management & Instant Diagnostic Report Generation",
+                "Ample 64GB Local Memory for High-Resolution Image and Video Archiving"
+            ],
+            overview_text: "The MS-8 features a 15.6\" FHD touchscreen and advanced workstation functions, including user management and digital record generation. Its all-in-one compact design, complete with a carry handle and mounting interface, allows for easy tabletop use or cart installation. Compatible with a wide range of HugeMed endoscopes, it enables seamless imaging and documentation across OPDs, endoscopy rooms, operating rooms, emergency departments, and other clinical settings.",
+            features: [
+                {
+                    title: "Crystal-Clear Touchscreen Display",
+                    text: "The 15.6” 1080P FHD touchscreen delivers sharp, detailed images and intuitive operation for enhanced procedural confidence."
+                },
+                {
+                    title: "Broad Compatibility, Versatile Application",
+                    text: "Works seamlessly with HugeMed’s extensive range of endoscopes, supporting diverse clinical scenarios from OPDs to emergency settings."
+                },
+                {
+                    title: "Advanced Workstation Experience",
+                    text: "The MS-8 processes live video directly from the scope, displaying high-quality images on its integrated screen. With built-in user management and report generation, it functions as a complete all-in-one medical workstation, streamlining both diagnostics and documentation."
+                },
+                {
+                    title: "All-in-One Integrated Design",
+                    text: "The MS-8 combines a high-performance image processor and a large display screen into a single compact unit for seamless operation."
+                },
+                {
+                    title: "Dual Scope Display for Airway Management",
+                    text: "The MS-8 can simultaneously provide real-time views for both video laryngoscopes and flexible endoscopes, including VL3S and bronchoscopes, improving clinical efficiency in airway management settings."
+                },
+                {
+                    title: "Digital Information & Report Management",
+                    text: "Operators can directly edit medical records on the screen and generate diagnostic reports without needing external computer systems."
+                },
+                {
+                    title: "Ample 64GB Local Storage",
+                    text: "Snapshots, videos, and reports are stored locally with 64GB of built-in memory for easy access, patient review, and clinical management."
+                }
+            ],
+            specifications: {
+                "Display": "15.6\" 1080P FHD Capacitive Touchscreen",
+                "Compatibility": "Dual-scope input (Video Laryngoscopes, VL3S, Bronchoscopes)",
+                "Workstation Functions": "Patient management & instant diagnostic report generation",
+                "Storage & Design": "64GB internal memory, carry handle & cart/tabletop mount"
+            }
         }
         ];
 
@@ -3094,18 +3412,19 @@ const solutions = [
         "products": [
             "Single-use Rhinolaryngoscope",
             "Single-use Choledochoscope",
-            "Single-use Duodenoscope",
             "Single-use Bronchoscope",
-            "Single-use Collector",
-            "Broncho Sampler",
             "Single-use Ureterorenoscope HU30M",
-            "Single-use Ureterorenoscope",
+            "HU Series Single-use Ureterorenoscope",
             "Single-use Cystoscope",
-            "Single-Use Cysto-Nephroscope",
             "Single-use Ureteral Access Sheath",
-            "Single-use Stent Removal Cystoscope",
-            "Suction Pump",
-            "Video Laryngoscope"
+            "Video Laryngoscope",
+            "VL4REX Video Laryngoscope",
+            "VL4DEX Video Laryngoscope",
+            "VL3R/VL4R Video Laryngoscope",
+            "VL3D/VL4D Video Laryngoscope",
+            "VL3S Video Laryngoscope",
+            "VL3H Video Laryngoscope",
+            "MS-8 Workstation"
         ]
     },
     {

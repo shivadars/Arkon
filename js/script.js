@@ -989,32 +989,31 @@ function initMegaMenu() {
             id: "airway-management",
             name: "Airway Management",
             productNames: [
-                "Single-use Bronchoscope",
-                "Video Laryngoscope",
-                "Single-use Rhinolaryngoscope",
-                "Broncho Sampler",
-                "Suction Pump"
+                "VL4REX Video Laryngoscope",
+                "VL4DEX Video Laryngoscope",
+                "VL3R/VL4R Video Laryngoscope",
+                "VL3D/VL4D Video Laryngoscope",
+                "VL3S Video Laryngoscope",
+                "VL3H Video Laryngoscope",
+                "MS-8 Workstation"
             ]
         },
         {
             id: "single-use-endoscope",
-            name: "Single use endoscope",
+            name: "Single-Use Endoscope",
             productNames: [
                 "Single-use Bronchoscope",
                 "Single-use Rhinolaryngoscope",
                 "Single-use Choledochoscope",
-                "Single-use Duodenoscope",
                 "HU Series Single-use Ureterorenoscope",
                 "Single-use Ureterorenoscope HU30M",
                 "Single-use Cystoscope",
-                "Single-Use Cysto-Nephroscope",
-                "Single-use Ureteral Access Sheath",
-                "Single-use Stent Removal Cystoscope"
+                "Single-use Ureteral Access Sheath"
             ]
         },
         {
             id: "reusable-endoscope",
-            name: "Reusable endoscope",
+            name: "Reusable Endoscope",
             productNames: [
                 "Video Laryngoscope"
             ]
@@ -1039,14 +1038,24 @@ function initMegaMenu() {
                         </div>
                         <div class="mobile-accordion-level" id="mobile-cat-${idx}">
                             ${endoscopySubcategories.map((subcat, sIdx) => `
-                                <div class="mobile-accordion-item" style="padding-left: 14px;">
-                                    <span class="mobile-accordion-link" style="font-size: 13px; font-weight: 600;">${subcat.name}</span>
-                                    <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-endo-sub-${sIdx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                                </div>
-                                <div class="mobile-accordion-level" id="mobile-endo-sub-${sIdx}" style="padding-left: 14px;">
-                                    ${getEndoscopySubcategoryProducts(subcat.id).map(p => `
-                                        <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
-                                    `).join('')}
+                                <div class="mobile-subcat-wrapper">
+                                    <div class="mobile-subcat-item" onclick="toggleMobileAccordion('mobile-endo-sub-${sIdx}', this)">
+                                        <span class="mobile-subcat-link">${subcat.name}</span>
+                                        <button class="mobile-subcat-btn" type="button" aria-label="Toggle ${subcat.name}">
+                                            <svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                        </button>
+                                    </div>
+                                    <div class="mobile-accordion-level mobile-subcat-products" id="mobile-endo-sub-${sIdx}">
+                                        ${(() => {
+                                            const prods = getEndoscopySubcategoryProducts(subcat.id);
+                                            if (prods.length === 0) {
+                                                return `<span style="padding: 10px 16px; font-size: 13px; color: #94a3b8; display: block;">No products currently listed</span>`;
+                                            }
+                                            return prods.map(p => `
+                                                <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                                            `).join('');
+                                        })()}
+                                    </div>
                                 </div>
                             `).join('')}
                         </div>
@@ -1083,14 +1092,24 @@ function initMegaMenu() {
                             </div>
                             <div class="mobile-accordion-level" id="mobile-sol-${idx}">
                                 ${endoscopySubcategories.map((subcat, sIdx) => `
-                                    <div class="mobile-accordion-item" style="padding-left: 14px;">
-                                        <span class="mobile-accordion-link" style="font-size: 13px; font-weight: 600;">${subcat.name}</span>
-                                        <button class="mobile-accordion-btn" onclick="toggleMobileAccordion('mobile-sol-endo-sub-${sIdx}', this)"><svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle; margin-left: 4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                                    </div>
-                                    <div class="mobile-accordion-level" id="mobile-sol-endo-sub-${sIdx}" style="padding-left: 14px;">
-                                        ${getEndoscopySubcategoryProducts(subcat.id).map(p => `
-                                            <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
-                                        `).join('')}
+                                    <div class="mobile-subcat-wrapper">
+                                        <div class="mobile-subcat-item" onclick="toggleMobileAccordion('mobile-sol-endo-sub-${sIdx}', this)">
+                                            <span class="mobile-subcat-link">${subcat.name}</span>
+                                            <button class="mobile-subcat-btn" type="button" aria-label="Toggle ${subcat.name}">
+                                                <svg class="dropdown-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease; vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                            </button>
+                                        </div>
+                                        <div class="mobile-accordion-level mobile-subcat-products" id="mobile-sol-endo-sub-${sIdx}">
+                                            ${(() => {
+                                                const prods = getEndoscopySubcategoryProducts(subcat.id);
+                                                if (prods.length === 0) {
+                                                    return `<span style="padding: 10px 16px; font-size: 13px; color: #94a3b8; display: block;">No products currently listed</span>`;
+                                                }
+                                                return prods.map(p => `
+                                                    <a href="${getProductUrl(p)}" class="mobile-product-item">${p.name}</a>
+                                                `).join('');
+                                            })()}
+                                        </div>
                                     </div>
                                 `).join('')}
                             </div>
@@ -1155,32 +1174,31 @@ function getEndoscopySubcategoryProducts(subcatId) {
             id: "airway-management",
             name: "Airway Management",
             productNames: [
-                "Single-use Bronchoscope",
-                "Video Laryngoscope",
-                "Single-use Rhinolaryngoscope",
-                "Broncho Sampler",
-                "Suction Pump"
+                "VL4REX Video Laryngoscope",
+                "VL4DEX Video Laryngoscope",
+                "VL3R/VL4R Video Laryngoscope",
+                "VL3D/VL4D Video Laryngoscope",
+                "VL3S Video Laryngoscope",
+                "VL3H Video Laryngoscope",
+                "MS-8 Workstation"
             ]
         },
         {
             id: "single-use-endoscope",
-            name: "Single use endoscope",
+            name: "Single-Use Endoscope",
             productNames: [
                 "Single-use Bronchoscope",
                 "Single-use Rhinolaryngoscope",
                 "Single-use Choledochoscope",
-                "Single-use Duodenoscope",
                 "HU Series Single-use Ureterorenoscope",
                 "Single-use Ureterorenoscope HU30M",
                 "Single-use Cystoscope",
-                "Single-Use Cysto-Nephroscope",
-                "Single-use Ureteral Access Sheath",
-                "Single-use Stent Removal Cystoscope"
+                "Single-use Ureteral Access Sheath"
             ]
         },
         {
             id: "reusable-endoscope",
-            name: "Reusable endoscope",
+            name: "Reusable Endoscope",
             productNames: [
                 "Video Laryngoscope"
             ]
@@ -1204,7 +1222,12 @@ function getEndoscopySubcategoryProducts(subcatId) {
 
 function buildProductsListHtml(productsToRender) {
     if (!productsToRender || productsToRender.length === 0) {
-        return `<p style="padding: 20px; color: var(--text-muted);">No products found.</p>`;
+        return `
+            <div style="padding: 32px 24px; color: #64748b; font-size: 14px; line-height: 1.5;">
+                <p style="margin: 0; font-weight: 600; color: #334155;">No products currently listed</p>
+                <p style="margin: 6px 0 0; font-size: 13px; color: #94a3b8;">New products will be added shortly.</p>
+            </div>
+        `;
     }
     return `
         <div class="mega-menu-products-grid">
@@ -1221,8 +1244,8 @@ function buildProductsListHtml(productsToRender) {
 function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {
     const subcats = window.endoscopySubcategories || [
         { id: "airway-management", name: "Airway Management" },
-        { id: "single-use-endoscope", name: "Single use endoscope" },
-        { id: "reusable-endoscope", name: "Reusable endoscope" }
+        { id: "single-use-endoscope", name: "Single-Use Endoscope" },
+        { id: "reusable-endoscope", name: "Reusable Endoscope" }
     ];
     
     const subcatProducts = getEndoscopySubcategoryProducts(activeSubcatId);
@@ -1350,21 +1373,21 @@ const rzSlides = [
     {
         title: "Advance Critical Care & Neonatal Life Support with",
         subtext: "Delivering reliable neonatal ventilators, incubators, and clinical technology backed by our dedicated support team.",
-        image: "assets/products/ai-neonatal.png",
+        image: "assets/products/ai-neonatal.png?v=2",
         name: "Neonatal Care Systems",
         cat: "Critical Care"
     },
     {
         title: "Upgrade Hospital Infrastructure & Surgical Setups with",
         subtext: "Comprehensive clinical solutions spanning advanced ultrasound imaging, surgical equipment, and operating room technology.",
-        image: "assets/products/EP_50_1_d36118899b.png",
+        image: "assets/products/EP_50_1_d36118899b.png?v=2",
         name: "Medical Imaging & Surgery",
         cat: "Hospital Infrastructure"
     },
     {
         title: "Elevate Patient Monitoring & Diagnostic Precision with",
         subtext: "State-of-the-art multi-parameter patient monitoring systems engineered for the evolving demands of modern hospitals.",
-        image: "assets/products/ai-monitor.png",
+        image: "assets/products/ai-monitor.png?v=2",
         name: "Advanced Patient Monitoring",
         cat: "High-Acuity Monitoring"
     }
