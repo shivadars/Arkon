@@ -1633,20 +1633,29 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.accordion-item');
     if (items.length > 0) {
-        const baseHeight = 90;
-
         function onScroll() {
             const windowHeight = window.innerHeight;
             const startY = windowHeight * 0.65; // Starts expanding when top hits 65% of screen
             const peakY = windowHeight * 0.35;  // Fully expanded at 35% of screen
+            const isMobile = window.innerWidth <= 768;
+            const baseHeight = isMobile ? 70 : 90;
 
-            items.forEach((item) => {
+            items.forEach((item, index) => {
                 const rect = item.getBoundingClientRect();
                 
-                // Dynamically calculate peak height based on text length
+                // Dynamically calculate peak height based on text length and header height without excess bottom gap
+                const header = item.querySelector('.accordion-header');
                 const bodyInner = item.querySelector('.accordion-body-inner');
-                // Add baseHeight (90) + text height + extra padding for breathing room
-                const targetPeakHeight = bodyInner ? baseHeight + bodyInner.scrollHeight + 60 : 350;
+                const headerHeight = (header && header.offsetHeight > 0) 
+                    ? header.offsetHeight 
+                    : (isMobile ? (index >= 2 ? 56 : 28) : 34);
+                const bodyHeight = bodyInner ? bodyInner.scrollHeight : 0;
+
+                // Card 1 & 2 have single-line titles; Card 3 & 4 have 2-line wrapped titles on mobile.
+                // Dynamic headerHeight + bodyHeight ensures every card gets the exact same clean bottom breathing space.
+                const targetPeakHeight = isMobile 
+                    ? (headerHeight + bodyHeight + 54) 
+                    : (baseHeight + bodyHeight + 40);
                 
                 let height = baseHeight;
                 let progress = 0;
@@ -1670,7 +1679,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Apply inline height
-                item.style.height = height + 'px';
+                item.style.height = Math.round(height) + 'px';
                 
                 // Map opacity to progress directly
                 if (bodyInner) {
@@ -1689,6 +1698,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
         // Initial setup
         setTimeout(onScroll, 50);
     }

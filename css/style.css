@@ -7377,15 +7377,39 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 }
 
 @media (max-width: 768px) {
+    .accordion-item {
+        min-height: 70px;
+    }
+
     .accordion-content {
-        padding: 24px;
+        padding: 22px 20px 24px 20px;
     }
 
     .accordion-title {
-        font-size: 22px;
+        font-size: 21px;
     }
 
-    /* On mobile, we might want one open by default or rely on tap instead of hover. Tap acts as hover in most mobile browsers. */
+    .accordion-item.active .accordion-body-inner {
+        padding-top: 18px !important;
+    }
+
+    .accordion-body-inner p {
+        text-align: justify !important;
+        text-align-last: left !important;
+        text-justify: inter-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        font-size: 14.5px;
+        line-height: 1.65;
+        letter-spacing: -0.1px;
+        word-spacing: normal;
+        margin-bottom: 12px;
+    }
+
+    .accordion-body-inner p:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .accordion-showcase-section {
