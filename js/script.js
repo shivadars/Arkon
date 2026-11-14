@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStackGallery();
     initMegaMenu();
     initSmartHeader();
+    initLogoNavigation();
 
     setupPhoneLinks();
     
@@ -103,6 +104,48 @@ function initSmartHeader() {
     
     // Check initial scroll state
     onScroll();
+}
+
+// Reliable Brand / Logo Navigation (Desktop & Mobile)
+function initLogoNavigation() {
+    document.addEventListener('click', function(e) {
+        if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
+
+        const brandTarget = e.target.closest('.brand-wrapper, .logo, .brand-text, .mobile-nav-header > div:first-child, .mobile-nav-header > a:first-child');
+        if (!brandTarget) return;
+
+        // If mobile nav overlay is active, close it immediately
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        const isHomePage = !!document.querySelector('.rz-hero');
+
+        if (isHomePage) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.location.hash) {
+                try {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                } catch(ex) {}
+            }
+        } else {
+            const link = brandTarget.closest('a') || brandTarget.querySelector('a');
+            const root = window.ROOT_PATH || '';
+            const homeUrl = root ? `${root}index.html` : 'index.html';
+            const targetHref = (link && link.getAttribute('href') && link.getAttribute('href') !== '#') 
+                ? link.getAttribute('href') 
+                : homeUrl;
+            
+            // If user clicked a non-anchor element (like .brand-text or brand-wrapper padding), navigate programmatically
+            if (!e.target.closest('a')) {
+                e.preventDefault();
+                window.location.href = targetHref;
+            }
+        }
+    });
 }
 
 // Render Functions
@@ -1870,10 +1913,20 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch(ex) {}
         }
 
-        if (hash && document.querySelector(hash)) {
+        if (hash === '#') {
             e.preventDefault();
-            scrollToTarget(hash);
-            // Don't add hash to URL — prevents refresh from scrolling to contact
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        if (hash && hash !== '#') {
+            try {
+                if (document.querySelector(hash)) {
+                    e.preventDefault();
+                    scrollToTarget(hash);
+                    // Don't add hash to URL — prevents refresh from scrolling to contact
+                }
+            } catch(ex) {}
         }
     });
 
