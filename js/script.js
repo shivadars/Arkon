@@ -78,6 +78,12 @@ function initSmartHeader() {
     function onScroll() {
         const currentScrollY = window.scrollY;
         
+        if (currentScrollY > 50) {
+            document.body.classList.add('is-scrolled');
+        } else {
+            document.body.classList.remove('is-scrolled');
+        }
+        
         if (!isFixed && currentScrollY > showThreshold) {
             isFixed = true;
             header.classList.add('header--fixed');

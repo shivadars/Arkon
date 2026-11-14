@@ -271,6 +271,47 @@ p {
 }
 
 
+/* Top Blur Backdrop (Blurs only the upper portion above the floating menu when scrolled) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    z-index: 1004;
+    pointer-events: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.85) 18px,
+        rgba(255, 255, 255, 0.4) 24px,
+        transparent 100%
+    );
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+body.is-scrolled::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 900px) {
+    body::before {
+        height: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    body::before {
+        height: 18px;
+    }
+}
+
 /* Header */
 .header {
     height: 70px;
