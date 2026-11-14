@@ -7295,6 +7295,10 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     flex-direction: column;
     cursor: default;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .accordion-bg {
@@ -7448,18 +7452,30 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 @media (max-width: 768px) {
     .accordion-item {
         min-height: 70px;
+        will-change: height;
     }
 
     .accordion-content {
         padding: 22px 20px 24px 20px;
     }
 
+    .accordion-header {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .accordion-title {
         font-size: 21px;
     }
 
+    .accordion-body-inner {
+        padding-top: 16px !important;
+        transform: none !important;
+    }
+
     .accordion-item.active .accordion-body-inner {
-        padding-top: 18px !important;
+        padding-top: 16px !important;
+        transform: none !important;
     }
 
     .accordion-body-inner p {

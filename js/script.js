@@ -1672,79 +1672,132 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Fluid Scroll-Linked Accordion Animation
+// Fluid Scroll-Linked Accordion Animation (Optimized for 120Hz ProMotion & iOS Safari)
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.accordion-item');
-    if (items.length > 0) {
-        function onScroll() {
-            const windowHeight = window.innerHeight;
-            const startY = windowHeight * 0.65; // Starts expanding when top hits 65% of screen
-            const peakY = windowHeight * 0.35;  // Fully expanded at 35% of screen
-            const isMobile = window.innerWidth <= 768;
-            const baseHeight = isMobile ? 70 : 90;
+    if (items.length === 0) return;
 
-            items.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
-                
-                // Dynamically calculate peak height based on text length and header height without excess bottom gap
-                const header = item.querySelector('.accordion-header');
+    let ticking = false;
+
+    // Pre-measure natural heights to eliminate layout thrashing during scroll
+    function measureCards() {
+        const isMobile = window.innerWidth <= 768;
+        const baseHeight = isMobile ? 70 : 90;
+
+        items.forEach((item, index) => {
+            const header = item.querySelector('.accordion-header');
+            const bodyInner = item.querySelector('.accordion-body-inner');
+
+            // Temporarily clear inline height to measure natural unconstrained height
+            const currentHeight = item.style.height;
+            item.style.height = 'auto';
+
+            const headerHeight = (header && header.offsetHeight > 0)
+                ? header.offsetHeight
+                : (isMobile ? (index >= 2 ? 56 : 28) : 34);
+            const bodyHeight = bodyInner ? bodyInner.scrollHeight : 0;
+
+            item._baseHeight = baseHeight;
+            item._targetPeakHeight = isMobile
+                ? Math.round(headerHeight + bodyHeight + 52)
+                : Math.round(baseHeight + bodyHeight + 40);
+
+            // Restore or set height
+            if (currentHeight) {
+                item.style.height = currentHeight;
+            } else {
+                item.style.height = (item.classList.contains('active') ? item._targetPeakHeight : baseHeight) + 'px';
+            }
+        });
+    }
+
+    measureCards();
+
+    function updateAccordion() {
+        ticking = false;
+        // Use clientHeight to avoid iOS Safari dynamic address bar jitter
+        const windowHeight = document.documentElement.clientHeight || window.innerHeight;
+        const isMobile = window.innerWidth <= 768;
+        const startY = isMobile ? windowHeight * 0.72 : windowHeight * 0.65;
+        const peakY = isMobile ? windowHeight * 0.30 : windowHeight * 0.35;
+        items.forEach((item) => {
+            const rect = item.getBoundingClientRect();
+            const baseHeight = item._baseHeight || (isMobile ? 70 : 90);
+            const peakHeight = item._targetPeakHeight || (isMobile ? 360 : 380);
+
+            // Continuous, completely smooth scroll progress in both scroll directions
+            let progress = 0;
+            if (rect.top <= peakY) {
+                progress = 1;
+            } else if (rect.top < startY) {
+                progress = (startY - rect.top) / (startY - peakY);
+            } else {
+                progress = 0;
+            }
+
+            const height = baseHeight + (peakHeight - baseHeight) * progress;
+            item.style.height = Math.round(height) + 'px';
+
+            const bodyInner = item.querySelector('.accordion-body-inner');
+            if (bodyInner) {
+                const opacity = Math.max(0, Math.min(1, (progress - 0.15) / 0.7));
+                bodyInner.style.opacity = opacity;
+            }
+
+            if (progress > 0.45) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateAccordion);
+            ticking = true;
+        }
+    }
+
+    // Interactive Tap to Toggle for Mobile Users
+    items.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (header) {
+            header.addEventListener('click', () => {
+                const isCurrentlyOpen = item.classList.contains('active') && 
+                    parseInt(item.style.height || '0', 10) > (item._baseHeight || 70) + 30;
+
+                item.style.transition = 'height 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                 const bodyInner = item.querySelector('.accordion-body-inner');
-                const headerHeight = (header && header.offsetHeight > 0) 
-                    ? header.offsetHeight 
-                    : (isMobile ? (index >= 2 ? 56 : 28) : 34);
-                const bodyHeight = bodyInner ? bodyInner.scrollHeight : 0;
 
-                // Card 1 & 2 have single-line titles; Card 3 & 4 have 2-line wrapped titles on mobile.
-                // Dynamic headerHeight + bodyHeight ensures every card gets the exact same clean bottom breathing space.
-                const targetPeakHeight = isMobile 
-                    ? (headerHeight + bodyHeight + 54) 
-                    : (baseHeight + bodyHeight + 40);
-                
-                let height = baseHeight;
-                let progress = 0;
-                let isActive = false;
-                
-                if (rect.top > startY) {
-                    // Below active zone
-                    height = baseHeight;
-                    progress = 0;
-                    isActive = false;
-                } else if (rect.top <= startY && rect.top > peakY) {
-                    // Expanding phase (scrolling down)
-                    progress = (startY - rect.top) / (startY - peakY);
-                    height = baseHeight + (targetPeakHeight - baseHeight) * progress;
-                    if (progress > 0.5) isActive = true;
-                } else if (rect.top <= peakY) {
-                    // Above the middle - STAY EXPANDED!
-                    height = targetPeakHeight;
-                    progress = 1;
-                    isActive = true;
-                }
-
-                // Apply inline height
-                item.style.height = Math.round(height) + 'px';
-                
-                // Map opacity to progress directly
-                if (bodyInner) {
-                    // fade in smoothly as it expands
-                    const opacity = Math.max(0, Math.min(1, (progress - 0.2) / 0.6));
-                    bodyInner.style.opacity = opacity;
-                }
-                
-                // Toggle active class for color and background effects
-                if (isActive) {
-                    item.classList.add('active');
-                } else {
+                if (isCurrentlyOpen) {
+                    item._expanded = false;
+                    item.style.height = (item._baseHeight || 70) + 'px';
                     item.classList.remove('active');
+                    if (bodyInner) bodyInner.style.opacity = '0';
+                } else {
+                    item._expanded = true;
+                    item.style.height = (item._targetPeakHeight || 360) + 'px';
+                    item.classList.add('active');
+                    if (bodyInner) bodyInner.style.opacity = '1';
                 }
+
+                setTimeout(() => { item.style.transition = ''; }, 360);
             });
         }
-        
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
-        // Initial setup
-        setTimeout(onScroll, 50);
-    }
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+        measureCards();
+        onScroll();
+    });
+
+    // Initial check
+    setTimeout(() => {
+        measureCards();
+        updateAccordion();
+    }, 60);
 });
 
 // Contact Section Navigation Highlighting
