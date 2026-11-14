@@ -6100,37 +6100,42 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 
 .mobile-nav-links .mobile-product-item,
 .mobile-product-item {
-    padding: 11px 18px;
-    margin-left: 16px;
-    font-size: 14.5px;
-    color: #000;
-    font-weight: 700;
-    line-height: 1.4;
+    padding: 10px 16px;
+    margin-left: 14px;
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.45;
     text-decoration: none;
-    transition: color 0.2s, background-color 0.2s;
-    display: flex;
-    align-items: center;
+    transition: color 0.2s, background-color 0.2s, padding-left 0.2s;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
     border-radius: 6px;
+    width: auto;
+    box-sizing: border-box;
 }
 
 .mobile-product-item:hover,
 .mobile-product-item:active {
     color: var(--primary, #2E3192);
-    background-color: #f8fafc;
+    background-color: #f1f5f9;
+    padding-left: 20px;
 }
 
-/* Mobile Endoscopy Subcategories (Exact 16px Slide-in to Match) */
+/* Mobile Endoscopy Subcategories */
 .mobile-subcat-wrapper {
     display: flex;
     flex-direction: column;
-    margin-left: 16px;
+    margin-left: 10px;
 }
 
 .mobile-subcat-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 18px;
+    padding: 12px 16px;
     cursor: pointer;
     user-select: none;
     border-bottom: 1px solid #f1f5f9;
@@ -6144,41 +6149,46 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 }
 
 .mobile-subcat-link {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.4;
-    color: #000;
+    color: #0f172a;
     font-family: inherit;
     flex: 1;
+    text-align: left;
 }
 
 .mobile-subcat-btn {
     pointer-events: none;
     background: none;
     border: none;
-    color: #000;
+    color: #64748b;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease;
 }
 
-/* Products inside Endoscopy Subcategories (Exact 16px Slide-in relative to subcat) */
+/* Products inside Endoscopy Subcategories */
 .mobile-subcat-products {
     padding-left: 0;
-    margin-left: 16px;
+    margin-left: 10px;
     margin-top: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    border-left: 2px solid #e2e8f0;
 }
 
 .mobile-subcat-products .mobile-product-item {
-    padding: 10px 18px;
-    margin-left: 0;
-    font-size: 14.5px;
-    color: #000;
-    font-weight: 700;
-    line-height: 1.4;
+    padding: 9px 14px;
+    margin-left: 10px;
+    font-size: 13.5px;
+    color: #334155;
+    font-weight: 600;
+    line-height: 1.45;
     border-radius: 6px;
+    text-align: left !important;
+    justify-content: flex-start !important;
     transition: all 0.2s ease;
 }
 
@@ -6186,29 +6196,32 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 .mobile-subcat-products .mobile-product-item:active {
     color: var(--primary, #2E3192);
     background-color: #f1f5f9;
+    padding-left: 18px;
 }
 
-/* Mobile Specialty Groups under Single-Use Endoscope */
+/* Mobile Specialty Groups under Single-Use & Reusable Endoscope */
 .mobile-specialty-group {
-    margin-top: 10px;
-    margin-bottom: 6px;
+    margin-top: 14px;
+    margin-bottom: 8px;
 }
 
 .mobile-specialty-group:first-child {
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .mobile-specialty-header {
-    padding: 6px 18px;
-    margin-left: 16px;
+    padding: 6px 14px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    text-align: left;
     gap: 8px;
 }
 
 .mobile-specialty-icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #ffffff;
     color: var(--primary, #2E3192);
@@ -6216,18 +6229,18 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    border: 1px solid rgba(46, 49, 146, 0.15);
+    border: 1px solid rgba(46, 49, 146, 0.2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .mobile-specialty-icon svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     display: block;
 }
 
 .mobile-specialty-title {
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -6241,6 +6254,25 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 .mobile-specialty-items {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    margin-top: 4px;
+}
+
+.mobile-specialty-items .mobile-product-item {
+    margin-left: 18px !important;
+    padding: 8px 12px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+.mobile-specialty-items .mobile-product-item:hover,
+.mobile-specialty-items .mobile-product-item:active {
+    color: var(--primary, #2E3192) !important;
+    background-color: #f1f5f9 !important;
+    padding-left: 16px !important;
 }
 
 /* ============================================
@@ -8207,28 +8239,103 @@ html {
     scroll-padding-top: 100px;
 }
 
-/* Footer mobile layout fix for RLABZ 3D text and floating button overlap */
+/* Footer mobile layout: spacious, uncluttered design */
 @media (max-width: 768px) {
-    .footer-bottom-compact p {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        line-height: 1.4;
+    .footer {
+        padding: 32px 0 85px 0 !important; /* Generous breathing room top & bottom to clear pulse button */
     }
-    .footer-bottom-compact p span {
-        display: none !important; /* hide the vertical pipe | */
+
+    .footer-grid-compact {
+        padding: 0 10px;
     }
+
+    .footer-col-compact:nth-child(1) {
+        padding-top: 0 !important;
+        padding-bottom: 24px !important;
+        gap: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .footer-contact-info {
+        margin-top: 18px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+    }
+
+    .footer-contact-item {
+        color: rgba(255, 255, 255, 0.85) !important;
+        font-size: 14.5px !important;
+        line-height: 1.65 !important;
+    }
+
+    .footer-contact-item a {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .footer-col-compact h4 {
+        padding: 20px 0 !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.3px;
+        color: #ffffff !important;
+    }
+
+    .footer-col-compact h4::after {
+        font-size: 20px !important;
+        opacity: 0.7;
+    }
+
+    .footer-col-compact {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .footer-col-compact ul {
+        padding-bottom: 16px !important;
+    }
+
+    .footer-col-compact ul li {
+        margin-bottom: 10px !important;
+    }
+
+    .footer-col-compact ul li a {
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        display: block;
+        padding: 4px 0;
+    }
+
     .footer-bottom-compact {
-        padding-bottom: 50px !important; /* reduced from 90px */
-    }
-    .footer-bottom-compact[style] {
+        padding-top: 24px !important;
+        padding-bottom: 15px !important;
+        margin-top: 0 !important;
         border-top: none !important;
-        margin-top: 0 !important;
     }
-    .footer-col-compact:nth-child(1) > div {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+
+    .footer-bottom-compact p {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        line-height: 1.5 !important;
+        font-size: 13.5px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        text-align: center !important;
+    }
+
+    .footer-bottom-compact a img {
+        transform: translateY(2.5px) !important;
+    }
+
+    /* Hide ONLY the pipe separator on mobile while keeping copyright & made with text visible */
+    .footer-bottom-compact .footer-pipe {
+        display: none !important;
+    }
+
+    .footer-bottom-compact span {
+        display: inline-block !important;
     }
 }
 
