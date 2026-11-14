@@ -7470,16 +7470,49 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .clients-section {
+        background: transparent;
+        padding: 24px 0 32px 0 !important;
+    }
+
+    .clients-heading {
+        margin-bottom: 22px !important;
+    }
+
+    .clients-heading h2 {
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        margin-bottom: 20px !important;
+        line-height: 1.35 !important;
+    }
+
     .clients-grid {
-        /* Use a 3-column grid so 15 logos fit into 5 rows of 3 */
-        grid-template-columns: repeat(3, 1fr);
-        gap: 36px 16px;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 16px 10px !important;
+        min-height: auto !important;
+        padding: 0 4px;
     }
 
     .clients-grid .client-logo {
-        max-width: 95%;
-        max-height: 65px;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 72px !important;
+        max-height: 72px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05) !important;
+        padding: 6px 10px !important;
+        box-sizing: border-box !important;
+        object-fit: contain !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+    }
+
+    .clients-grid .client-logo:active {
+        transform: scale(0.97) !important;
+        border-color: var(--primary) !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
     }
 }/* ---- NEW CONTACT US SECTION ---- */
 .contact-section-new {
@@ -7765,16 +7798,10 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
         padding: 30px 0 !important;
     }
 
-    /* Except hero which has its own specific top padding for the nav */
+    /* Hero specific top padding for nav */
     .rz-hero {
         padding-top: 100px !important;
         padding-bottom: 0px !important;
-    }
-    
-    /* Ensure the client grid doesn't have huge gap on mobile */
-    .clients-grid {
-        gap: 36px 16px !important;
-        min-height: auto !important;
     }
 
     /* Remove excessive padding inside the carousel track on mobile */
