@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=39">
+    <link rel="stylesheet" href="css/style.css?v=40">
 </head>
 <body>
     <!-- Page Loader -->
@@ -539,12 +539,12 @@
                 let html = '';
                 currentItems.forEach(prod => {
                     html += `
-                        <div class="product-card" data-product-id="${prod.id}" style="cursor: pointer;" onclick="window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">
+                        <div class="product-card" data-product-id="${prod.id}" style="cursor: pointer;" onclick="window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : 'products/' + (prod.custom_url || '') + '/'}">
                             <div class="img-wrapper">
                                 <img src="${(prod.image || '').replace('../../', '')}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x300/E8F3EC/075C3A?text=Product'">
                             </div>
                             <h3>${prod.name}</h3>
-                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="event.stopPropagation(); window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : (prod.custom_url || 'product-detail.html?id=' + prod.id)}'">View Details</button>
+                            <button class="btn btn-outline" style="width: 100%; border-color: var(--primary); color: var(--primary); margin-top: 10px;" onclick="event.stopPropagation(); window.location.href='${typeof getProductUrl === 'function' ? getProductUrl(prod) : 'products/' + (prod.custom_url || '') + '/'}">View Details</button>
                         </div>
                     `;
                 });
