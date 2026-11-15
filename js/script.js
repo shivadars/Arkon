@@ -34,10 +34,8 @@ function toggleMobileNav() {
 
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
-    renderCategories();
     initSolutionsCarousel();
     initLogoGrid();
-    initSocialsCard();
     initStackGallery();
     initMegaMenu();
     initSmartHeader();
@@ -146,30 +144,6 @@ function initLogoNavigation() {
             }
         }
     });
-}
-
-// Render Functions
-function renderCategories() {
-    const grid = document.getElementById('category-grid');
-    if (!grid) return;
-
-    // Only render first 4 for the main grid based on design layout reference (optional, can render all)
-    // We will render first 6 in this case. Actually the prompt says: "Use approximately 4 cards per row. Categories: 1. ICU 2. Diagnostic 3. Lab 4. Surgical 5. Patient 6. Furniture"
-    // So all 6 will be rendered, grid will wrap them.
-    
-    let html = '';
-    categories.forEach(cat => {
-        html += `
-            <div class="category-card" onclick="window.location.href='products.html?category=${encodeURIComponent(cat.name)}'">
-                <div class="img-wrapper">
-                    <img src="${cat.img}" alt="${cat.name}">
-                </div>
-                <h3>${cat.name}</h3>
-                <div class="explore">Explore Products &rarr;</div>
-            </div>
-        `;
-    });
-    grid.innerHTML = html;
 }
 
 function initSolutionsCarousel() {
@@ -353,63 +327,6 @@ function initLogoGrid() {
     grid.innerHTML = html;
 }
 
-function renderProviders() {
-    const grid = document.getElementById('providers-grid');
-    if (!grid) return;
-
-    let html = '';
-    providers.forEach(prov => {
-        html += `
-            <div class="provider-card">
-                <div class="provider-icon">${prov.icon}</div>
-                <h3>${prov.title}</h3>
-                <p>${prov.desc}</p>
-                <div class="link-action mt-4">View Solutions &rarr;</div>
-            </div>
-        `;
-    });
-    grid.innerHTML = html;
-}
-
-function renderStats() {
-    const grid = document.getElementById('stats-grid');
-    if (!grid) return;
-
-    let html = '';
-    stats.forEach(stat => {
-        html += `
-            <div class="stat-item">
-                <div class="stat-number">${stat.value}</div>
-                <div class="stat-label">${stat.label}</div>
-            </div>
-        `;
-    });
-    grid.innerHTML = html;
-}
-
-function renderServices() {
-    const grid = document.getElementById('services-grid');
-    if (!grid) return;
-
-    let html = '';
-    services.forEach(srv => {
-        html += `
-            <div class="service-card">
-                <div class="service-icon">${srv.icon}</div>
-                <h3>${srv.title}</h3>
-                <p>${srv.desc}</p>
-            </div>
-        `;
-    });
-    grid.innerHTML = html;
-}
-
-// Interactivity & Actions
-function viewProductDetails(productName) {
-    // In a real application, this would navigate to a product detail page
-    alert(`Viewing details for: ${productName}\n(Navigation to /products/${productName.toLowerCase().replace(/ /g, '-')} would happen here)`);
-}
-
 // Modal Logic / Enquire Now action
 function openQuoteModal(productName = '') {
     const contactSection = document.getElementById('contact');
@@ -501,95 +418,6 @@ function contactWhatsApp(productName = '') {
     window.open(whatsappUrl, '_blank');
 }
 
-// Slider Functionality
-function scrollSlider(containerId, direction) {
-    const container = document.getElementById(containerId);
-    if (container) {
-        // Approximate width of a card + gap
-        const scrollAmount = 260; 
-        container.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-}
-
-
-
-let currentTestimonialIndex = 0;
-let isAnimatingTestimonial = false;
-let testimonialInterval;
-
-function startTestimonialInterval() {
-    clearInterval(testimonialInterval);
-    testimonialInterval = setInterval(() => {
-        changeTestimonial((currentTestimonialIndex + 1) % testimonials.length);
-    }, 5000);
-}
-
-function resetTestimonialInterval() {
-    startTestimonialInterval();
-}
-
-function changeTestimonial(newIndex) {
-    if (isAnimatingTestimonial || newIndex === currentTestimonialIndex) return;
-    isAnimatingTestimonial = true;
-    
-    const wrapper = document.getElementById('ts-wrapper');
-    
-    // Update dots
-    const dots = document.querySelectorAll('.ts-dot-btn');
-    dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === newIndex);
-    });
-    
-    // Animate out
-    wrapper.classList.add('ts-animating-out');
-    
-    setTimeout(() => {
-        // Disable transitions to snap to 'in' state
-        wrapper.classList.add('ts-no-transition');
-        
-        updateTestimonialContent(newIndex);
-        currentTestimonialIndex = newIndex;
-        
-        wrapper.classList.remove('ts-animating-out');
-        wrapper.classList.add('ts-animating-in');
-        
-        // Force reflow
-        void wrapper.offsetWidth;
-        
-        // Re-enable transitions and transition to normal state
-        wrapper.classList.remove('ts-no-transition');
-        wrapper.classList.remove('ts-animating-in');
-        
-        setTimeout(() => {
-            isAnimatingTestimonial = false;
-        }, 600); // Wait for longest transition
-    }, 300); // Time to wait for out transition
-}
-
-function updateTestimonialContent(index) {
-    const t = testimonials[index];
-    const company = document.getElementById('ts-company-text');
-    const quote = document.getElementById('ts-quote-text');
-    const name = document.getElementById('ts-author-name');
-    const role = document.getElementById('ts-author-role');
-    const image = document.getElementById('ts-author-image');
-
-    if(company) company.textContent = t.company;
-    if(quote) quote.textContent = t.quote;
-    if(name) name.textContent = t.name;
-    if(role) role.textContent = t.role;
-    if(image) {
-        image.onerror = () => {
-            image.src = 'assets/testimonials/sarah-fernandez.jpg';
-        };
-        image.src = t.image;
-        image.alt = t.name;
-    }
-}
-
 // Page Loader Logic
 function hideLoader() {
     const loader = document.getElementById('page-loader');
@@ -648,82 +476,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run once on load to set initial state
     updateProgress(); 
 });
-
-// 3D Socials Animated Card Controller
-function initSocialsCard() {
-    const card = document.getElementById('socialsCard');
-    if (!card) return;
-
-    const panels = card.querySelectorAll('.glass-panel');
-    const title = card.querySelector('.socials-title');
-
-    // Panels start hidden — they animate in on hover, out on leave
-    let revealTimeout = null;
-    let rafId = null;
-    let bounds;
-    let isHovered = false;
-
-    function updateCardTransform(e) {
-        if (!bounds) bounds = card.getBoundingClientRect();
-        if (!isHovered) return;
-
-        const mouseX = e.clientX - bounds.left;
-        const mouseY = e.clientY - bounds.top;
-        const centerX = bounds.width / 2;
-        const centerY = bounds.height / 2;
-        const percentX = (mouseX - centerX) / centerX;
-        const percentY = (mouseY - centerY) / centerY;
-
-        const maxTilt = 14;
-        const tiltX = -percentY * maxTilt;
-        const tiltY = percentX * maxTilt;
-
-        card.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
-
-        panels.forEach(panel => {
-            const depth = parseFloat(panel.getAttribute('data-depth')) || 25;
-            const moveX = percentX * (depth * 0.35);
-            const moveY = percentY * (depth * 0.35);
-            // Only apply parallax if panels are fully animated in
-            if (card.classList.contains('ready')) {
-                panel.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, ${depth}px)`;
-            }
-        });
-        // Title position is CSS-driven (center → top-right via .is-animated class)
-    }
-
-    card.addEventListener('mouseenter', () => {
-        isHovered = true;
-        bounds = card.getBoundingClientRect();
-        clearTimeout(revealTimeout);
-        card.classList.remove('ready');
-        card.classList.add('is-animated');
-        revealTimeout = setTimeout(() => {
-            card.classList.add('ready');
-        }, 900);
-    });
-
-    card.addEventListener('mousemove', (e) => {
-        if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => updateCardTransform(e));
-    });
-
-    card.addEventListener('mouseleave', () => {
-        isHovered = false;
-        clearTimeout(revealTimeout);
-        if (rafId) cancelAnimationFrame(rafId);
-
-        // Slide panels back out
-        card.classList.remove('is-animated', 'ready');
-
-        // Reset card tilt
-        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-
-    window.addEventListener('resize', () => {
-        bounds = card.getBoundingClientRect();
-    });
-}
 
 // ============================================
 // Sticky Image Stacking About — Scroll Reveal
@@ -1445,10 +1197,6 @@ function buildEndoscopySpecialtiesHtml(subcatId) {
             }).join('')}
         </div>
     `;
-}
-
-function buildSingleUseSpecialtiesHtml() {
-    return buildEndoscopySpecialtiesHtml('single-use-endoscope');
 }
 
 function renderEndoscopyLvl3(activeSubcatId = 'airway-management') {

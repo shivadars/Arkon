@@ -1,7 +1,6 @@
 // Contact Configuration
 const WHATSAPP_NUMBER = "+918138021100"; // Replace with actual WhatsApp number
 const PHONE_NUMBER = "+914844024426";
-const PHONE_NUMBER_MOBILE = "+918138021100";    // Replace with actual phone number
 
 // Data Structures
 const products = [
@@ -3330,103 +3329,6 @@ const clients = [
     {
         "name": "KMSCL",
         "img": "assets/clients/hq_kmscl.png"
-    }
-];
-
-const providers = [
-    {
-        "title": "Hospitals",
-        "desc": "Equipment for all hospital environments including OT, ICU, and wards.",
-        "icon": "????"
-    },
-    {
-        "title": "Clinics",
-        "desc": "Reliable solutions for clinics and OPDs focusing on primary care.",
-        "icon": "??????"
-    },
-    {
-        "title": "Diagnostic Centers",
-        "desc": "Advanced diagnostic equipment for accurate test results.",
-        "icon": "????"
-    },
-    {
-        "title": "Laboratories",
-        "desc": "High-quality lab instruments for pathological and research facilities.",
-        "icon": "????"
-    }
-];
-
-const services = [
-    {
-        "title": "Equipment Supply",
-        "desc": "Wide range of genuine medical equipment from top brands.",
-        "icon": "????"
-    },
-    {
-        "title": "Installation & Commissioning",
-        "desc": "Professional installation and setup by certified engineers.",
-        "icon": "????"
-    },
-    {
-        "title": "Training & Demonstration",
-        "desc": "Hands-on training for staff to ensure optimal equipment usage.",
-        "icon": "???????????"
-    },
-    {
-        "title": "Maintenance & Support",
-        "desc": "Prompt technical support and routine maintenance services.",
-        "icon": "??????"
-    },
-    {
-        "title": "AMC / Service Contracts",
-        "desc": "Annual maintenance contracts available for long-term peace of mind.",
-        "icon": "????"
-    }
-];
-
-const stats = [
-    {
-        "value": "10+",
-        "label": "Years of Experience"
-    },
-    {
-        "value": "500+",
-        "label": "Products"
-    },
-    {
-        "value": "50+",
-        "label": "Healthcare Clients"
-    },
-    {
-        "value": "1000+",
-        "label": "Installations"
-    }
-];
-
-const testimonials = [
-    {
-        "id": 1,
-        "quote": "Arkon Medical Systems has completely transformed our ICU setup. Their ventilators are top-tier and incredibly reliable.",
-        "name": "Dr. Rajesh Kumar",
-        "role": "Medical Superintendent",
-        "company": "City Hospital",
-        "image": "assets/testimonials/rajesh-kumar.jpg"
-    },
-    {
-        "id": 2,
-        "quote": "The after-sales support is unmatched. When we needed urgent maintenance on our anesthesia machines, their team was there within hours.",
-        "name": "Sarah Fernandez",
-        "role": "Head of Procurement",
-        "company": "St. Mary's Clinic",
-        "image": "assets/testimonials/sarah-fernandez.jpg"
-    },
-    {
-        "id": 3,
-        "quote": "We sourced all our new diagnostic equipment through them. The quality of the HugeMed endoscopes has been fantastic for our surgical wing.",
-        "name": "Dr. Arvind Patel",
-        "role": "Chief Surgeon",
-        "company": "Metro Health",
-        "image": "assets/testimonials/arvind-patel.jpg"
     }
 ];
 
