@@ -260,7 +260,44 @@ function initSolutionsCarousel() {
             });
         }
 
+        // Mobile tap behavior: show hover effect on tap instead of navigating immediately
+        item.addEventListener('click', (e) => {
+            const isMobile = window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches;
+            if (isMobile) {
+                // If clicking the quote button, handled by quoteBtn listener
+                if (e.target.closest('.quote-btn')) {
+                    return;
+                }
+
+                // If card is already active and user taps "Explore Products", allow normal navigation
+                if (item.classList.contains('active') && e.target.closest('.solution-btn-primary')) {
+                    return;
+                }
+
+                // If card is NOT active yet: prevent navigation and show hover effect
+                if (!item.classList.contains('active')) {
+                    e.preventDefault();
+                    // Close any other active card
+                    document.querySelectorAll('.solution-card.active').forEach(c => {
+                        if (c !== item) c.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                } else {
+                    // If card is already active, tapping the image/title again toggles it closed
+                    e.preventDefault();
+                    item.classList.remove('active');
+                }
+            }
+        });
+
         track.appendChild(item);
+    });
+
+    // Close active solution cards when tapping outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.solution-card')) {
+            document.querySelectorAll('.solution-card.active').forEach(c => c.classList.remove('active'));
+        }
     });
 
     // Carousel scrolling logic

@@ -961,18 +961,22 @@ body.is-scrolled::before {
     align-items: center;
     gap: 16px;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.5s ease;
     /* Slower fade in */
     position: relative;
     z-index: 20;
 }
 
-.solution-card:hover .solution-content {
+.solution-card:hover .solution-content,
+.solution-card.active .solution-content {
     transform: translateY(-54px);
 }
 
-.solution-card:hover .solution-actions {
+.solution-card:hover .solution-actions,
+.solution-card.active .solution-actions {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .solution-btn-primary {
@@ -2403,8 +2407,7 @@ body.is-scrolled::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    opacity: 0;
+    z-index: 3000;
     visibility: hidden;
     transition: var(--transition);
 }
@@ -3564,7 +3567,7 @@ body.is-scrolled::before {
     height: 100vh; /* Fallback for older browsers */
     height: 100dvh; /* Modern mobile browsers */
     background: #ebebeb;
-    z-index: 1001;
+    z-index: 2000 !important;
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -4928,8 +4931,7 @@ body.is-scrolled::before {
     justify-content: center;
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    opacity: 0;
+    z-index: 3000;
     visibility: hidden;
     transform: translateY(20px);
     transition: all 400ms ease;
