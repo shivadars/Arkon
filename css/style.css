@@ -282,13 +282,11 @@ body::before {
     pointer-events: none;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.95) 0%,
-        rgba(255, 255, 255, 0.85) 18px,
-        rgba(255, 255, 255, 0.4) 24px,
-        transparent 100%
-    );
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.85) 18px,
+            rgba(255, 255, 255, 0.4) 24px,
+            transparent 100%);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.35s ease, visibility 0.35s ease;
@@ -387,8 +385,10 @@ body.is-scrolled::before {
     height: 60px !important;
     min-width: 60px !important;
     min-height: 60px !important;
-    flex: 0 0 60px !important; /* Strictly forbid flex sizing */
-    aspect-ratio: 1 / 1 !important; /* Force perfect circle */
+    flex: 0 0 60px !important;
+    /* Strictly forbid flex sizing */
+    aspect-ratio: 1 / 1 !important;
+    /* Force perfect circle */
     border-radius: 50%;
     margin-left: 0 !important;
     /* Concentric with pill's left border radius: 35px radius - 30px logo radius = 5px padding-left */
@@ -1679,31 +1679,29 @@ body.is-scrolled::before {
         font-size: 40px;
     }
 
-    
+
 
     .related-grid {
         grid-template-columns: 1fr;
     }
 
-    
+
 }
 
 /* About Page Specifics */
-@media (max-width: 1200px) {
-    
-}
+@media (max-width: 1200px) {}
 
 @media (max-width: 992px) {
 
     .about-hero-grid,
     .wwa-grid,
-    
 
-    
 
-    
 
-    
+
+
+
+
 }
 
 @media (max-width: 768px) {
@@ -1711,17 +1709,17 @@ body.is-scrolled::before {
         font-size: 36px !important;
     }
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
 }
 
 /* ============================================
@@ -1757,8 +1755,10 @@ body.is-scrolled::before {
     right: -100%;
     width: 100%;
     max-width: 100%;
-    height: 100vh; /* Fallback for older browsers */
-    height: 100dvh; /* Modern mobile browsers */
+    height: 100vh;
+    /* Fallback for older browsers */
+    height: 100dvh;
+    /* Modern mobile browsers */
     background: #ebebeb;
     z-index: 2000 !important;
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1920,7 +1920,7 @@ body.is-scrolled::before {
     }
 
     .logo img {
-        height: 28px !important; 
+        height: 28px !important;
         max-height: 28px !important;
         object-fit: contain !important;
         display: block !important;
@@ -1951,11 +1951,11 @@ body.is-scrolled::before {
         padding: 30px 0 60px;
     }
 
-    
 
-    
 
-    
+
+
+
 
     /* Footer */
     .footer-grid-compact {
@@ -1969,7 +1969,7 @@ body.is-scrolled::before {
         padding-right: 0 !important;
     }
 
-    
+
 
     /* Section Headers */
     .header-grid {
@@ -1992,9 +1992,9 @@ body.is-scrolled::before {
         position: static;
     }
 
-    
 
-    
+
+
 
     /* About page inline style overrides */
     .about-hero-grid {
@@ -2045,9 +2045,9 @@ body.is-scrolled::before {
         padding: 24px 0 40px;
     }
 
-    
 
-    
+
+
 
     /* Footer - Accordion Style */
     .footer-grid-compact {
@@ -2181,7 +2181,7 @@ body.is-scrolled::before {
         font-size: 24px;
     }
 
-    
+
 
     /* Pagination */
     .page-btn {
@@ -2200,20 +2200,20 @@ body.is-scrolled::before {
         font-size: 32px !important;
     }
 
-    
 
-    
+
+
 
     .wwa-checks {
         grid-template-columns: 1fr 1fr !important;
         gap: 12px !important;
     }
 
-    
 
-    
 
-    
+
+
+
 
     .ah-buttons {
         flex-direction: column !important;
@@ -2311,14 +2311,14 @@ body.is-scrolled::before {
         padding: 32px 0;
     }
 
-    
+
 
     .btn {
         padding: 12px 20px;
         font-size: 14px;
     }
 
-    
+
 
     /* Footer */
     .footer-grid-compact {
@@ -2348,7 +2348,7 @@ body.is-scrolled::before {
         padding: 6px 12px;
     }
 
-    
+
 }
 
 /* Page Loader */
@@ -2738,7 +2738,9 @@ html {
     transform: scale(1);
 }
 
-.about-stack-card:hover .about-stack-image img { /* hover disabled */ }
+.about-stack-card:hover .about-stack-image img {
+    /* hover disabled */
+}
 
 /* ---- Reversed card: image on left, text on right ---- */
 .about-stack-card--reversed .about-stack-inner {
@@ -2855,8 +2857,10 @@ html {
         position: sticky;
         top: 60px;
         overflow: hidden;
-        background: white; /* Ensure background is solid when sliding over */
-        box-shadow: 0 -10px 30px rgba(0,0,0,0.1); /* Shadow to separate cards vertically */
+        background: white;
+        /* Ensure background is solid when sliding over */
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        /* Shadow to separate cards vertically */
     }
 
     .about-stack-inner {
@@ -2866,7 +2870,8 @@ html {
 
     /* On mobile, image always comes first visually */
     .about-stack-image {
-        height: 35vh; /* Take up 35% of the screen height */
+        height: 35vh;
+        /* Take up 35% of the screen height */
         min-height: auto;
         max-height: none;
         order: -1;
@@ -2882,10 +2887,12 @@ html {
     }
 
     .about-stack-text {
-        display: block; /* Forces text to the top, breaking the desktop flex-centering */
+        display: block;
+        /* Forces text to the top, breaking the desktop flex-centering */
         padding: 24px 20px 32px 20px;
         height: calc(65vh - 60px);
-        overflow-y: auto; /* Let text scroll within the card if it's too long */
+        overflow-y: auto;
+        /* Let text scroll within the card if it's too long */
     }
 
     .about-stack-heading {
@@ -3856,7 +3863,8 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 
 .rz-rotating-text {
     display: block;
-    color: #2E3192; /* Top Blue */
+    color: #2E3192;
+    /* Top Blue */
     font-size: clamp(1.36rem, 1.95vw, 1.78rem);
     font-weight: 700;
     line-height: 1.3;
@@ -4170,10 +4178,12 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
         flex: none;
         width: 100%;
         padding: 0;
-        height: 420px; /* Taller to fit the image properly */
+        height: 420px;
+        /* Taller to fit the image properly */
         position: relative;
         z-index: 1;
-        margin-top: -20px; /* Pull the image slightly up into the text area */
+        margin-top: -20px;
+        /* Pull the image slightly up into the text area */
     }
 
     .rz-blue-bg {
@@ -4228,26 +4238,28 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     }
 
     .rz-image-wrapper::before {
-        width: 280px; 
+        width: 280px;
         height: 280px;
         top: 50%;
         left: 50%;
     }
-    
+
     .rz-image-wrapper img {
-        object-position: center bottom; /* Center the equipment on mobile */
+        object-position: center bottom;
+        /* Center the equipment on mobile */
     }
 
     .rz-nav-arrow {
         display: flex;
         top: auto;
-        bottom: 200px; /* Position arrows on either side of the image */
+        bottom: 200px;
+        /* Position arrows on either side of the image */
     }
-    
+
     .rz-nav-prev {
         left: 10px;
     }
-    
+
     .rz-nav-next {
         right: 10px;
     }
@@ -4622,9 +4634,11 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
         border-color: var(--primary) !important;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
     }
-}/* ---- NEW CONTACT US SECTION ---- */
+}
+
+/* ---- NEW CONTACT US SECTION ---- */
 .contact-section-new {
-    padding: 50px 0 80px 0; 
+    padding: 50px 0 80px 0;
     background-color: #fff;
 }
 
@@ -4653,20 +4667,22 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .contact-left-new {
-        padding-right: 0; /* Remove right padding on mobile */
+        padding-right: 0;
+        /* Remove right padding on mobile */
         order: 2;
     }
-    
+
     .contact-right-new {
         order: 1;
         padding: 40px 30px;
     }
-    
+
     .contact-left-new h3,
     .contact-left-new p.subtitle {
-        text-align: center; /* Center the headers */
+        text-align: center;
+        /* Center the headers */
     }
 }
 
@@ -4789,7 +4805,8 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 }
 
 .contact-right-new {
-    background-color: var(--primary); /* Theme primary */
+    background-color: var(--primary);
+    /* Theme primary */
     border-radius: 20px;
     padding: 50px 40px;
     color: #ffffff;
@@ -4848,39 +4865,6 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     line-height: 1.5;
 }
 
-.contact-social-new {
-    margin-top: 60px;
-}
-
-.contact-social-new h4 {
-    font-size: 13px;
-    color: #94a3b8;
-    margin-bottom: 16px;
-    font-weight: 500;
-}
-
-.contact-social-icons {
-    display: flex;
-    gap: 12px;
-}
-
-.contact-social-icons a {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.contact-social-icons a:hover {
-    background-color: var(--secondary);
-}
-
 /* Brand Text Responsiveness */
 @media (max-width: 1024px) {
     .brand-text {
@@ -4898,6 +4882,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 
 /* Ensure all main sections have perfectly uniform spacing on mobile */
 @media (max-width: 992px) {
+
     .solutions-section,
     .accordion-showcase-section,
     .clients-section,
@@ -4925,9 +4910,12 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     gap: 60px;
     align-items: start;
 }
-.pd-overview-col, .pd-specs-col {
+
+.pd-overview-col,
+.pd-specs-col {
     width: 100%;
 }
+
 @media (max-width: 991px) {
     .pd-overview-specs-grid {
         grid-template-columns: 1fr;
@@ -4940,6 +4928,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     max-width: 900px;
     margin: 0 auto;
 }
+
 .pd-accordion-item {
     background: #fff;
     border: 1px solid var(--border);
@@ -4948,10 +4937,12 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     overflow: hidden;
     transition: all 0.3s ease;
 }
+
 .pd-accordion-item.active {
     border-color: var(--primary);
     box-shadow: 0 4px 20px rgba(46, 49, 146, 0.08);
 }
+
 .pd-accordion-header {
     padding: 24px 32px;
     cursor: pointer;
@@ -4961,11 +4952,13 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     background: #fff;
     user-select: none;
 }
+
 .pd-accordion-title-wrap {
     display: flex;
     align-items: center;
     gap: 16px;
 }
+
 .pd-accordion-icon {
     width: 48px;
     height: 48px;
@@ -4976,22 +4969,26 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     align-items: center;
     justify-content: center;
 }
+
 .pd-accordion-icon svg {
     width: 24px;
     height: 24px;
 }
+
 .pd-accordion-title {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text);
     margin: 0;
 }
+
 .pd-accordion-toggle {
     width: 24px;
     height: 24px;
     position: relative;
     flex-shrink: 0;
 }
+
 .pd-accordion-toggle::before,
 .pd-accordion-toggle::after {
     content: '';
@@ -5000,39 +4997,61 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     transition: transform 0.3s ease, background 0.3s ease;
     border-radius: 2px;
 }
+
 .pd-accordion-toggle::before {
-    top: 11px; left: 0; width: 24px; height: 2px;
+    top: 11px;
+    left: 0;
+    width: 24px;
+    height: 2px;
 }
+
 .pd-accordion-toggle::after {
-    top: 0; left: 11px; width: 2px; height: 24px;
+    top: 0;
+    left: 11px;
+    width: 2px;
+    height: 24px;
 }
+
 .pd-accordion-item.active .pd-accordion-toggle::after {
     transform: rotate(90deg);
 }
+
 .pd-accordion-item.active .pd-accordion-toggle::before,
 .pd-accordion-item.active .pd-accordion-toggle::after {
     background: var(--primary);
 }
+
 .pd-accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     background: #fafafa;
 }
+
 .pd-accordion-item.active .pd-accordion-content {
     max-height: 800px;
     padding: 20px 32px 32px 96px;
 }
+
 .pd-accordion-text {
     font-size: 1rem;
     color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
 }
+
 @media (max-width: 768px) {
-    .pd-accordion-header { padding: 20px; }
-    .pd-accordion-item.active .pd-accordion-content { padding: 0 20px 20px 20px; }
-    .pd-accordion-title-wrap { gap: 12px; }
+    .pd-accordion-header {
+        padding: 20px;
+    }
+
+    .pd-accordion-item.active .pd-accordion-content {
+        padding: 0 20px 20px 20px;
+    }
+
+    .pd-accordion-title-wrap {
+        gap: 12px;
+    }
 }
 
 /* Premium Side-by-Side Features Layout */
@@ -5042,11 +5061,13 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     gap: 80px;
     align-items: start;
 }
+
 .pd-features-subtitle {
     font-size: 1.1rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-top: 8px; /* Tighter spacing below title */
+    margin-top: 8px;
+    /* Tighter spacing below title */
     margin-bottom: 10px;
 }
 
@@ -5054,39 +5075,48 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 .pd-features-accordion {
     max-width: 100%;
 }
+
 .pd-accordion-item {
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 0;
     margin-bottom: 0;
     box-shadow: none !important;
 }
+
 .pd-accordion-item:last-child {
     border-bottom: none;
 }
+
 .pd-accordion-item.active {
-    border-color: rgba(0,0,0,0.08);
+    border-color: rgba(0, 0, 0, 0.08);
 }
+
 .pd-accordion-header {
     background: transparent;
     padding: 24px 0;
 }
+
 .pd-accordion-icon {
     background: transparent;
     width: 32px;
     height: 32px;
 }
+
 .pd-accordion-icon svg {
     width: 28px;
     height: 28px;
 }
+
 .pd-accordion-title {
     font-size: 1.25rem;
 }
+
 .pd-accordion-content {
     background: transparent;
 }
+
 .pd-accordion-item.active .pd-accordion-content {
     padding: 0 0 32px 48px;
 }
@@ -5095,23 +5125,33 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 .pd-accordion-toggle {
     width: 32px;
     height: 32px;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #fff;
 }
+
 .pd-accordion-toggle::before {
-    top: 15px; left: 8px; width: 14px; height: 2px;
+    top: 15px;
+    left: 8px;
+    width: 14px;
+    height: 2px;
 }
+
 .pd-accordion-toggle::after {
-    top: 8px; left: 14px; width: 2px; height: 14px;
+    top: 8px;
+    left: 14px;
+    width: 2px;
+    height: 14px;
 }
+
 .pd-accordion-item.active .pd-accordion-toggle {
     background: var(--primary);
     border-color: var(--primary);
 }
+
 .pd-accordion-item.active .pd-accordion-toggle::before,
 .pd-accordion-item.active .pd-accordion-toggle::after {
     background: #fff;
@@ -5122,9 +5162,11 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
     .pd-accordion-header {
         padding: 20px 0;
     }
+
     .pd-accordion-item.active .pd-accordion-content {
         padding: 0 0 24px 0;
     }
@@ -5138,6 +5180,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     column-gap: 40px;
     align-items: start;
 }
+
 /* Specifically reduce spacing of the section containing Key Features and before footer */
 .pd-section:has(.pd-features-layout),
 .pd-section.bg-light:has(.pd-features-layout) {
@@ -5145,24 +5188,28 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     padding-bottom: 25px !important;
 }
 
-.page-main > .pd-section:last-child,
-.page-main > .pd-section:last-of-type {
+.page-main>.pd-section:last-child,
+.page-main>.pd-section:last-of-type {
     padding-bottom: 25px !important;
 }
 
 .pd-features-layout {
     margin-bottom: 0 !important;
 }
+
 @media (max-width: 991px) {
     .pd-features-layout {
         grid-template-columns: 1fr;
     }
 }
+
 .pd-features-layout-left {
-    margin-bottom: 0px !important; /* Reduces space below Key Features title */
+    margin-bottom: 0px !important;
+    /* Reduces space below Key Features title */
     text-align: left;
     max-width: 100%;
-    grid-column: 1 / -1; /* Make the header span full width */
+    grid-column: 1 / -1;
+    /* Make the header span full width */
 }
 
 /* Make the entire accordion a premium white card */
@@ -5170,8 +5217,8 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     background: #fff;
     border-radius: 16px;
     padding: 10px 40px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .pd-accordion-header {
@@ -5182,6 +5229,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     width: 24px;
     height: 24px;
 }
+
 .pd-accordion-icon svg {
     width: 24px;
     height: 24px;
@@ -5201,8 +5249,10 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     .pd-features-accordion {
         padding: 10px 20px;
     }
+
     .pd-accordion-item.active .pd-accordion-content {
-        padding: 0 0 24px 0 !important; /* Reset indent on mobile */
+        padding: 0 0 24px 0 !important;
+        /* Reset indent on mobile */
     }
 }
 
@@ -5234,12 +5284,13 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 
 /* Guaranteed Mobile Responsiveness Fixes */
 @media (max-width: 768px) {
+
     /* 1. Accordion Card padding and shape */
     .pd-features-accordion {
         padding: 10px 16px !important;
         border-radius: 12px !important;
     }
-    
+
     /* 2. Smaller heading to prevent awkward wrapping */
     .pd-accordion-title {
         font-size: 1.05rem !important;
@@ -5249,19 +5300,19 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     .pd-accordion-title-wrap {
         gap: 12px !important;
     }
-    
+
     /* 4. Shrink the checkmark icon slightly */
     .pd-accordion-icon,
     .pd-accordion-icon svg {
         width: 20px !important;
         height: 20px !important;
     }
-    
+
     /* 5. Perfect indentation for description text (20px icon + 12px gap = 32px) */
     .pd-accordion-item.active .pd-accordion-content {
-        padding: 0 0 24px 32px !important; 
+        padding: 0 0 24px 32px !important;
     }
-    
+
     /* 6. Reduce top heading spacing */
     .pd-features-layout-left {
         margin-bottom: 24px !important;
@@ -5274,13 +5325,17 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
+
 .pd-specs-table {
     width: 100% !important;
     max-width: 100% !important;
     border-collapse: collapse;
 }
+
 @media (max-width: 500px) {
-    .pd-specs-table th, .pd-specs-table td {
+
+    .pd-specs-table th,
+    .pd-specs-table td {
         padding: 12px 10px;
         font-size: 0.9rem;
     }
@@ -5288,22 +5343,25 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
 
 /* Desktop & Laptop Readability Optimizations */
 @media (min-width: 992px) {
+
     /* Allow the two-column layout to stretch and fill the space on large monitors */
     .pd-features-layout {
         max-width: 100% !important;
-        margin: 0 auto !important; /* Centers the block on the page */
+        margin: 0 auto !important;
+        /* Centers the block on the page */
     }
-    
+
     /* Ensure the accordion card doesn't restrict the layout width */
     .pd-features-accordion {
         max-width: 100% !important;
         margin: 0 !important;
     }
-    
+
     /* Add elegant hover effects on desktop for better interactivity */
     .pd-accordion-header {
         transition: opacity 0.2s ease;
     }
+
     .pd-accordion-header:hover .pd-accordion-title {
         color: var(--primary);
     }
@@ -5318,7 +5376,8 @@ html {
 /* Footer mobile layout: spacious, uncluttered design */
 @media (max-width: 768px) {
     .footer {
-        padding: 32px 0 85px 0 !important; /* Generous breathing room top & bottom to clear pulse button */
+        padding: 32px 0 85px 0 !important;
+        /* Generous breathing room top & bottom to clear pulse button */
     }
 
     .footer-grid-compact {
@@ -5434,6 +5493,7 @@ html {
     text-decoration: none;
     transition: color 0.2s ease;
 }
+
 .pd-breadcrumb a:hover {
     color: var(--primary-hover) !important;
     text-decoration: underline;
@@ -5673,34 +5733,65 @@ html {
         max-width: 1380px !important;
         width: 88% !important;
     }
+
     .rz-left {
         padding-left: 56px !important;
     }
+
     .rz-hero .rz-title-rotating-wrapper {
         min-height: 96px !important;
     }
+
     .rz-hero .rz-rotating-text {
         font-size: clamp(1.75rem, 2.35vw, 2.3rem) !important;
     }
+
     .rz-hero .rz-title-static {
         font-size: clamp(2.25rem, 3.0vw, 2.95rem) !important;
     }
+
     .rz-hero .rz-subtext {
         font-size: 18px !important;
         max-width: 600px !important;
     }
+
     .rz-hero .rz-nav-prev {
         left: max(24px, calc((100vw - 1420px) / 2)) !important;
     }
+
     .rz-hero .rz-nav-next {
         right: max(24px, calc((100vw - 1420px) / 2)) !important;
     }
-    .rz-blue-beam-1 { left: calc(50% + 50px) !important; width: 7% !important; }
-    .rz-blue-beam-2 { left: calc(50% + 150px) !important; width: 7% !important; }
-    .rz-blue-beam-3 { left: calc(50% + 250px) !important; width: 7% !important; }
-    .rz-blue-beam-4 { left: calc(50% + 350px) !important; width: 7% !important; }
-    .rz-blue-beam-5 { left: calc(50% + 450px) !important; width: 8% !important; }
-    .rz-blue-beam-6 { left: calc(50% + 560px) !important; width: 60vw !important; }
+
+    .rz-blue-beam-1 {
+        left: calc(50% + 50px) !important;
+        width: 7% !important;
+    }
+
+    .rz-blue-beam-2 {
+        left: calc(50% + 150px) !important;
+        width: 7% !important;
+    }
+
+    .rz-blue-beam-3 {
+        left: calc(50% + 250px) !important;
+        width: 7% !important;
+    }
+
+    .rz-blue-beam-4 {
+        left: calc(50% + 350px) !important;
+        width: 7% !important;
+    }
+
+    .rz-blue-beam-5 {
+        left: calc(50% + 450px) !important;
+        width: 8% !important;
+    }
+
+    .rz-blue-beam-6 {
+        left: calc(50% + 560px) !important;
+        width: 60vw !important;
+    }
 }
 
 /* --- Mid-Sized Laptops, Panels & Split Screens (992px to 1399px) --- */
@@ -5710,6 +5801,7 @@ html {
         max-width: 1260px !important;
         padding: 0 16px !important;
     }
+
     .rz-left {
         flex: 0 0 58% !important;
         max-width: 58% !important;
@@ -5717,29 +5809,53 @@ html {
         padding-right: 16px !important;
         padding-top: 75px !important;
     }
+
     .rz-right {
         flex: 0 0 42% !important;
         max-width: 42% !important;
     }
+
     .rz-hero .rz-title-rotating-wrapper {
         min-height: 86px !important;
     }
+
     .rz-hero .rz-rotating-text {
         font-size: clamp(1.5rem, 2.1vw, 2.05rem) !important;
     }
+
     .rz-hero .rz-title-static {
         font-size: clamp(2.0rem, 2.75vw, 2.65rem) !important;
     }
+
     .rz-hero .rz-subtext {
         font-size: 17px !important;
     }
-    .rz-blue-beam-1 { left: 56% !important; }
-    .rz-blue-beam-2 { left: 64% !important; }
-    .rz-blue-beam-3 { left: 72% !important; }
-    .rz-blue-beam-4 { left: 80% !important; }
-    .rz-blue-beam-5 { left: 88% !important; }
-    .rz-blue-beam-6 { left: 96% !important; width: 50% !important; }
-    
+
+    .rz-blue-beam-1 {
+        left: 56% !important;
+    }
+
+    .rz-blue-beam-2 {
+        left: 64% !important;
+    }
+
+    .rz-blue-beam-3 {
+        left: 72% !important;
+    }
+
+    .rz-blue-beam-4 {
+        left: 80% !important;
+    }
+
+    .rz-blue-beam-5 {
+        left: 88% !important;
+    }
+
+    .rz-blue-beam-6 {
+        left: 96% !important;
+        width: 50% !important;
+    }
+
     .rz-slide .rz-image-wrapper img {
         max-height: 74% !important;
         max-width: 88% !important;
@@ -5755,6 +5871,7 @@ html {
         padding-bottom: 40px !important;
         overflow: hidden !important;
     }
+
     .rz-container {
         flex-direction: column !important;
         height: auto !important;
@@ -5762,6 +5879,7 @@ html {
         width: 92% !important;
         padding: 0 !important;
     }
+
     .rz-left {
         flex: none !important;
         width: 100% !important;
@@ -5770,6 +5888,7 @@ html {
         text-align: left !important;
         padding-top: 0 !important;
     }
+
     .rz-right {
         flex: none !important;
         width: 100% !important;
@@ -5777,22 +5896,28 @@ html {
         height: clamp(340px, 46vh, 440px) !important;
         margin-top: 0 !important;
     }
+
     .rz-hero .rz-title-rotating-wrapper {
         min-height: 72px !important;
     }
+
     .rz-hero .rz-rotating-text {
         font-size: clamp(1.35rem, 3.8vw, 1.65rem) !important;
     }
+
     .rz-hero .rz-title-static {
         font-size: clamp(1.8rem, 4.8vw, 2.2rem) !important;
     }
+
     .rz-hero .rz-subtext {
         font-size: 16px !important;
     }
+
     .rz-slide .rz-image-wrapper {
         justify-content: center !important;
         align-items: flex-end !important;
     }
+
     .rz-slide .rz-image-wrapper img {
         max-height: 85% !important;
         max-width: 85% !important;
@@ -5807,8 +5932,14 @@ html {
         width: 44px !important;
         height: 44px !important;
     }
-    .rz-hero .rz-nav-prev { left: 16px !important; }
-    .rz-hero .rz-nav-next { right: 16px !important; }
+
+    .rz-hero .rz-nav-prev {
+        left: 16px !important;
+    }
+
+    .rz-hero .rz-nav-next {
+        right: 16px !important;
+    }
 }
 
 /* --- Mobile Devices (<= 480px) --- */
@@ -5817,28 +5948,34 @@ html {
         padding-top: 104px !important;
         padding-bottom: 48px !important;
     }
+
     .rz-container {
         width: 100% !important;
         padding: 0 !important;
         gap: 8px !important;
     }
+
     .rz-left {
         padding: 0 20px !important;
     }
+
     .rz-hero .rz-title-rotating-wrapper {
         min-height: 54px !important;
         margin-bottom: 4px !important;
     }
+
     .rz-hero .rz-rotating-text {
         font-size: clamp(1.1rem, 4.3vw, 1.25rem) !important;
         line-height: 1.35 !important;
     }
+
     .rz-hero .rz-title-static {
         font-size: clamp(1.35rem, 5.8vw, 1.58rem) !important;
         line-height: 1.2 !important;
         margin-top: 8px !important;
         letter-spacing: -0.3px !important;
     }
+
     .rz-hero .rz-subtext {
         font-size: 15px !important;
         line-height: 1.6 !important;
@@ -5846,6 +5983,7 @@ html {
         margin-bottom: 22px !important;
         max-width: 100% !important;
     }
+
     .rz-buttons {
         flex-direction: row !important;
         align-items: center !important;
@@ -5854,6 +5992,7 @@ html {
         margin-bottom: 24px !important;
         width: auto !important;
     }
+
     .rz-buttons .btn-primary {
         width: auto !important;
         padding: 12px 22px !important;
@@ -5861,14 +6000,17 @@ html {
         border-radius: 6px !important;
         text-align: center !important;
     }
+
     .rz-buttons .btn-text {
         padding: 6px 4px !important;
         font-size: 14.5px !important;
         text-align: left !important;
     }
+
     .rz-right {
         height: 310px !important;
     }
+
     .rz-hero .rz-nav-arrow {
         bottom: 155px !important;
     }
@@ -5880,6 +6022,7 @@ html {
 
 /* 1. Prevent AOS off-screen horizontal translations from blowing out mobile layout */
 @media (max-width: 991px) {
+
     [data-aos="fade-left"],
     [data-aos="fade-right"],
     [data-aos="fade-up-left"],
@@ -5893,6 +6036,7 @@ html {
 
 /* 2. Mobile Containment for Product Pages */
 @media (max-width: 768px) {
+
     .page-main:has(.pd-hero-modern),
     .page-main.pd-nike-layout {
         overflow-x: hidden !important;
@@ -5946,6 +6090,7 @@ body:has(.about-stack-section) main {
     .pd-hero-modern {
         padding: 95px 0 36px !important;
     }
+
     .pd-hero-container {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
@@ -5956,75 +6101,90 @@ body:has(.about-stack-section) main {
     .pd-hero-modern {
         padding: 85px 0 32px !important;
     }
+
     .pd-hero-container {
         grid-template-columns: 1fr !important;
         gap: 24px !important;
     }
+
     .pd-breadcrumb {
         margin-bottom: 16px !important;
         font-size: 0.82rem !important;
         line-height: 1.4 !important;
     }
+
     .pd-gallery-main {
         padding: 24px 16px !important;
         border-radius: 12px !important;
         margin-bottom: 12px !important;
     }
+
     .pd-gallery-main img {
         max-height: 280px !important;
         margin: 0 auto !important;
     }
+
     .pd-gallery-thumbs {
         gap: 8px !important;
     }
+
     .pd-thumb-item {
         width: 64px !important;
         height: 50px !important;
         padding: 4px !important;
         border-radius: 6px !important;
     }
+
     .pd-brand-badge {
         margin-bottom: 12px !important;
         font-size: 0.8rem !important;
         padding: 5px 10px !important;
     }
+
     .pd-title {
         font-size: clamp(1.5rem, 6vw, 1.95rem) !important;
         margin-bottom: 6px !important;
         line-height: 1.25 !important;
         word-break: break-word !important;
     }
+
     .pd-category {
         font-size: 0.95rem !important;
         margin-bottom: 16px !important;
     }
+
     .pd-short-desc {
         font-size: 0.92rem !important;
         line-height: 1.6 !important;
         margin-bottom: 18px !important;
         text-align: left !important;
     }
+
     .pd-highlights {
         margin-bottom: 22px !important;
     }
+
     .pd-highlights li {
         font-size: 0.88rem !important;
         margin-bottom: 8px !important;
         padding-left: 24px !important;
         line-height: 1.4 !important;
     }
-    
+
     /* Section & Overview mobile spacing */
     .pd-section {
         padding: 42px 0 !important;
     }
+
     .pd-section-header {
         margin-bottom: 18px !important;
     }
+
     .pd-section-title {
         font-size: 1.45rem !important;
         margin-bottom: 8px !important;
     }
+
     .pd-overview-text {
         font-size: 0.92rem !important;
         line-height: 1.65 !important;
@@ -6040,6 +6200,7 @@ body:has(.about-stack-section) main {
         gap: 10px !important;
         width: 100% !important;
     }
+
     .btn-enquire,
     .btn-whatsapp {
         width: 100% !important;
@@ -6056,6 +6217,7 @@ body:has(.about-stack-section) main {
     max-width: 100% !important;
     box-sizing: border-box;
 }
+
 .pd-overview-col,
 .pd-specs-col {
     width: 100% !important;
@@ -6078,10 +6240,12 @@ body:has(.about-stack-section) main {
         max-width: 100% !important;
         border: none !important;
     }
+
     .pd-specs-table tbody {
         display: block !important;
         width: 100% !important;
     }
+
     .pd-specs-table tr {
         display: flex !important;
         flex-direction: column !important;
@@ -6092,6 +6256,7 @@ body:has(.about-stack-section) main {
         overflow: hidden !important;
         background: #fff !important;
     }
+
     .pd-specs-table th {
         width: 100% !important;
         padding: 10px 14px !important;
@@ -6102,6 +6267,7 @@ body:has(.about-stack-section) main {
         font-weight: 600 !important;
         text-align: left !important;
     }
+
     .pd-specs-table td {
         width: 100% !important;
         padding: 10px 14px !important;
@@ -6120,38 +6286,47 @@ body:has(.about-stack-section) main {
         width: 100% !important;
         max-width: 100% !important;
     }
+
     .pd-features-layout-left {
         width: 100% !important;
         margin-bottom: 0 !important;
     }
+
     .pd-features-accordion {
         width: 100% !important;
         max-width: 100% !important;
     }
+
     .pd-features-image-col {
         padding: 10px 0 !important;
         width: 100% !important;
         text-align: center;
     }
+
     .pd-features-image-col img {
         max-height: 280px !important;
         margin: 0 auto !important;
     }
 }
+
 @media (max-width: 768px) {
     .pd-features-accordion {
         padding: 6px 14px !important;
         border-radius: 12px !important;
     }
+
     .pd-accordion-header {
         padding: 16px 0 !important;
     }
+
     .pd-accordion-title {
         font-size: 1rem !important;
     }
+
     .pd-accordion-item.active .pd-accordion-content {
         padding: 0 0 16px 0 !important;
     }
+
     .pd-accordion-text {
         font-size: 0.88rem !important;
         line-height: 1.55 !important;
