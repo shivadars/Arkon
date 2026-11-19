@@ -4812,7 +4812,7 @@ body:has(.mega-menu.is-active) .mega-menu-backdrop {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     overflow: hidden;
 }
