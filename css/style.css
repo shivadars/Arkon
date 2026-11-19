@@ -477,21 +477,6 @@ body.is-scrolled::before {
     stroke: white !important;
 }
 
-.whatsapp-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.whatsapp-icon svg {
-    fill: white !important;
-}
-
-.whatsapp-icon:hover {
-    transform: scale(1.1);
-}
-
 /* Responsive Desktop: Laptop / Mid-sized screens (992px to 1240px) */
 @media (min-width: 992px) and (max-width: 1240px) {
     .header-inner {
